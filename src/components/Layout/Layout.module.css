@@ -1,0 +1,6 @@
+.root {
+  overflow: auto;
+  flex: 1;
+  overflow-x: hidden;
+  min-height: "calc(100% - 200px);";
+}
