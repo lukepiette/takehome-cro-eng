@@ -1,0 +1,38 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  release:
+    concurrency: main
+    name: release
+    runs-on: ubuntu-latest-m
+    outputs:
+      release_created: ${{ steps.step1.outputs.release_created }}
+      version: ${{ steps.step1.outputs.tag_name }}
+      devVersion: v0.${{ github.run_id }}.0
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: step1
+        with:
+          release-type: node
+          package-name: main-ui
+          pull-request-title-pattern: release${component} ${version}
+
+  merge-to-prod:
+    needs: release
+    if: ${{ needs.release.outputs.release_created }}
+    concurrency: main
+    runs-on: ubuntu-latest-m
+    steps:
+      - uses: actions/checkout@master
+
+      - name: merge main -> prod
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          message: "release ${{ needs.release.outputs.version }}"
+          target_branch: prod
+          github_token: ${{ github.token }}
