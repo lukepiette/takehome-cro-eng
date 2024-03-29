@@ -175,7 +175,7 @@ const Calculator = () => {
                 </Stack>
 
                 <Button
-                  href="https://meetings.hubspot.com/runpod/enterprise-discount"
+                  href="https://meetings.runpod.io/meetings/runpod/enterprise-discount"
                   variant="contained"
                 >
                   Book a Call for Enterprise Support

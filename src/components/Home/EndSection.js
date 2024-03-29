@@ -68,7 +68,7 @@ const EndSection = () => {
 
       <Stack direction="row" justifyContent={{ xs: "center", md: "start" }} spacing={2}>
         <Button
-          href={"/console/gpu-secure-cloud"}
+          href={"/console/deploy"}
           variant="outlined"
           size="large"
           sx={{ borderColor: pulseColor, color: "white", mt: -3 }}

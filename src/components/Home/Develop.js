@@ -283,7 +283,7 @@ const Develop = ({ data }) => {
               spacing={2}
             >
               <Button
-                href={"/console/gpu-secure-cloud"}
+                href={"/console/deploy"}
                 variant="outlined"
                 size="large"
                 sx={{ borderColor: pulseColor, color: "white" }}

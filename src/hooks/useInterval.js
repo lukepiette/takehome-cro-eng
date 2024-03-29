@@ -5,6 +5,7 @@ export function useInterval(callback, pollInterval) {
 
   // Remember the latest callback if it changes.
   if (typeof window !== "undefined")
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useLayoutEffect(() => {
       savedCallback.current = callback
     }, [callback])

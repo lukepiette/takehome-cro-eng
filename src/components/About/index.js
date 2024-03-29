@@ -24,7 +24,7 @@ export default function About() {
           }}
         />
 
-        <Typography align={"center"} mb={8} variant="h1">
+        <Typography align={"left"} mb={8} variant="h1">
           About RunPod
         </Typography>
 
@@ -41,19 +41,21 @@ export default function About() {
           </Typography>
         </Stack>
 
-        <Typography align="center" mb={8} mt={20} variant="h1">
+        {/* <Typography align="center" mb={8} mt={20} variant="h1">
           The Team
-        </Typography>
-
-        <Team />
+        </Typography> */}
+        {/* <Team /> */}
 
         <Stack direction={"row"} mt={20} spacing={{ xs: 1, md: 3 }}>
           <ButtonLink variant="outlined" sx={{ width: "200px" }} href="/contact">
             Contact Us
           </ButtonLink>
-          <ButtonLink variant="outlined" sx={{ width: "200px" }} href="/gpu-instance/pricing">
-            Pricing
+          <ButtonLink variant="outlined" sx={{ width: "200px" }} href="/careers">
+            Careers
           </ButtonLink>
+          {/* <ButtonLink variant="outlined" sx={{ width: "200px" }} href="/gpu-instance/pricing">
+            Pricing
+          </ButtonLink> */}
         </Stack>
       </Stack>
     </>

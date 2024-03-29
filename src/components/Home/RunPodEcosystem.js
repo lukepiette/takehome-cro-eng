@@ -186,7 +186,7 @@ const RunPodEcosystem = () => {
                 powerful GPUs, facilitating a smooth start for machine learning and AI development.
               </Typography>
 
-              <ButtonLink href="/console/gpu-secure-cloud" sx={{ mt: 2 }} variant="outlined">
+              <ButtonLink href="/console/deploy" sx={{ mt: 2 }} variant="outlined">
                 GPU Instances
               </ButtonLink>
             </Grid>

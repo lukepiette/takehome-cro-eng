@@ -1,5 +1,5 @@
 import { Card, Paper, Stack, Typography, useTheme } from "@mui/material"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 import ButtonLink from "@components/ButtonLink"
 import SecureGraphic from "/public/static/svg/SecureGraphic.svg"
@@ -97,13 +97,8 @@ function SecureCloud() {
             </Stack>
           </Stack>
           <Stack direction="row" pt={4} spacing={2}>
-            <ButtonLink
-              href={"/console/gpu-secure-cloud"}
-              fullWidth
-              variant="contained"
-              color="primary"
-            >
-              Deploy on Secure Coud
+            <ButtonLink href={"/console/deploy"} fullWidth variant="contained" color="primary">
+              Deploy on GPU Coud
             </ButtonLink>
           </Stack>
         </Stack>
@@ -183,7 +178,12 @@ function CommunityCloud() {
             </Stack>
           </Stack>
           <Stack direction="row" pt={4} spacing={2}>
-            <ButtonLink href={"/console/gpu-cloud"} fullWidth variant="contained" color="primary">
+            <ButtonLink
+              href={"/console/deploy?cloud=community"}
+              fullWidth
+              variant="contained"
+              color="primary"
+            >
               Deploy on Community Cloud
             </ButtonLink>
           </Stack>
@@ -338,7 +338,7 @@ function AIEndpoints() {
             </Stack>
           </Stack>
           <Stack direction="row" pt={4} spacing={2}>
-            <ButtonLink href={"/gpu-cloud"} fullWidth variant="contained" color="primary">
+            <ButtonLink href={"/serverless"} fullWidth variant="contained" color="primary">
               Get Started with AI Endpoints
             </ButtonLink>
           </Stack>

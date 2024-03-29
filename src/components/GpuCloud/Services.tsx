@@ -37,12 +37,7 @@ export default function Services(props: any) {
             private repositories.
           </Typography>
           <Stack direction="row" pt={4} spacing={2} width={"100%"}>
-            <ButtonLink
-              color="primary"
-              fullWidth
-              href="/console/gpu-secure-cloud"
-              variant="outlined"
-            >
+            <ButtonLink color="primary" fullWidth href="/console/deploy" variant="outlined">
               Deploy Now
             </ButtonLink>
             <ButtonLink href="/gpu-instance/pricing" fullWidth variant="outlined" color="primary">

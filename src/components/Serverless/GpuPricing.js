@@ -24,7 +24,9 @@ const rows = [
   { gpu: "A5000", price: 0.00026, size: 24 },
   { gpu: "4090", price: 0.00044, pro: true, size: 24 },
   { gpu: "A6000", price: 0.00048, size: 48 },
+  { gpu: "L40", price: 0.00069, pro: true, size: 48 },
   { gpu: "A100", price: 0.0013, size: 80 },
+  { gpu: "H100", price: 0.0025, pro: true, size: 80 },
 ]
 
 export default function GpuPricing() {
@@ -247,7 +249,7 @@ export default function GpuPricing() {
                 <TableCell align="right">
                   <Typography color="primary" fontSize={14}>
                     <Link
-                      href="https://meetings.hubspot.com/runpod/enterprise-discount"
+                      href="https://meetings.runpod.io/meetings/runpod/enterprise-discount"
                       sx={{ justifyContent: "end", display: "flex" }}
                       target="_blank"
                     >

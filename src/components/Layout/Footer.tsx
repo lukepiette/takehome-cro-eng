@@ -11,7 +11,7 @@ import {
 } from "@mui/material"
 import Link from "@components/Link"
 import GitHubIcon from "@mui/icons-material/GitHub"
-import TwitterIcon from "@mui/icons-material/Twitter"
+import TwitterIcon from "@mui/icons-material/X"
 import InstagramIcon from "@mui/icons-material/Instagram"
 // import FacebookIcon from "@mui/icons-material/Facebook"
 // import LinkedInIcon from "@mui/icons-material/LinkedIn"
@@ -43,60 +43,98 @@ export const Footer = () => {
 
   return (
     <LongFooterWrapper>
-    <Grid maxWidth="lg" container spacing={3} textAlign={{ xs: "left"}}>
-      <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{xs:3,md:0}}>
-        <Typography mb={2} >PRODUCTS</Typography>
-        <Link href="/console/gpu-secure-cloud" sx={{color:textColor}}>Secure Cloud</Link>
-        <br />
-        <Link href="/console/gpu-cloud" sx={{color:textColor}}>Community Cloud</Link>
-        <br />
-        <Link href="/console/serverless" sx={{color:textColor}}>Serverless</Link>
-        <br />
-        <Link href="/endpoints" sx={{color:textColor}}>AI Endpoints</Link>
-      </Grid>
-      <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{xs:3,md:0}}>
-        <Typography mb={2}>RESOURCES</Typography>
-        <Link href="https://docs.runpod.io/graphql-api" sx={{color:textColor}}>API Docs</Link>
-        <br />
-        <Link href="https://docs.runpod.io/faq" sx={{color:textColor}}>FAQ</Link>
-        <br />
-        <Link href="https://blog.runpod.io" sx={{color:textColor}}>Blog</Link>
-        <br />
-        <Link href="/console/host/docs/faq" sx={{color:textColor}}>Become a Host</Link>
-      </Grid>
-      <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{xs:3,md:0}}>
-        <Typography mb={2}>COMPANY</Typography>
-        <Link href="/about" sx={{color:textColor}}>About</Link>
-        <br />
-        <Link href="/legal/cookie-policy" sx={{color:textColor}}>Cookie Policy</Link>
-        <br />
-        <Link href="/legal/disclaimer" sx={{color:textColor}}>Disclaimer</Link>
-        <br />
-        <Link href="/legal/privacy-policy" sx={{color:textColor}}>Privacy Policy</Link>
-        <br />
-        <Link href="/legal/terms-of-service" sx={{color:textColor}}>Terms of Service</Link>
-      </Grid>
-      <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{xs:3,md:0}}>
-        <Typography mb={2}>CONTACT</Typography>
-        <Link href="/contact" sx={{color:textColor}}>Contact Us</Link>
-        <br />
-        <Link href="https://discord.gg/cUpRmau42V" sx={{color:textColor}}>Discord</Link>
-        <br />
-        <Link href="" sx={{color:textColor}}>help@runpod.io</Link>
-        <br />
-        <Link href="" sx={{color:textColor}}>referrals@runpod.io</Link>
-      </Grid>
+      <Grid maxWidth="lg" container spacing={3} textAlign={{ xs: "left" }}>
+        <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{ xs: 3, md: 0 }}>
+          <Typography mb={2}>PRODUCTS</Typography>
+          <Link href="/console/deploy" sx={{ color: textColor }}>
+            Deploy a Pod
+          </Link>
+          <br />
+          <Link href="/console/serverless" sx={{ color: textColor }}>
+            Serverless
+          </Link>
+          <br />
+          <Link href="/endpoints" sx={{ color: textColor }}>
+            AI Endpoints
+          </Link>
+        </Grid>
+        <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{ xs: 3, md: 0 }}>
+          <Typography mb={2}>RESOURCES</Typography>
+          <Link href="https://docs.runpod.io/overview" sx={{ color: textColor }}>
+            Docs
+          </Link>
+          <br />
+          <Link href="https://docs.runpod.io/faq" sx={{ color: textColor }}>
+            FAQ
+          </Link>
+          <br />
+          <Link href="https://blog.runpod.io" sx={{ color: textColor }}>
+            Blog
+          </Link>
+          <br />
+          <Link href="/console/host/docs/faq" sx={{ color: textColor }}>
+            Become a Host
+          </Link>
+        </Grid>
+        <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{ xs: 3, md: 0 }}>
+          <Typography mb={2}>COMPANY</Typography>
+          <Link href="/careers" sx={{ color: textColor }}>
+            Careers
+          </Link>
+          <br />
+          <Link href="/about" sx={{ color: textColor }}>
+            About
+          </Link>
+          <br />
+          <Link href="/compliance" sx={{ color: textColor }}>
+            Compliance
+          </Link>
+          <br />
+          <Link href="/legal/cookie-policy" sx={{ color: textColor }}>
+            Cookie Policy
+          </Link>
+          <br />
+          <Link href="/legal/disclaimer" sx={{ color: textColor }}>
+            Disclaimer
+          </Link>
+          <br />
+          <Link href="/legal/privacy-policy" sx={{ color: textColor }}>
+            Privacy Policy
+          </Link>
+          <br />
+          <Link href="/legal/terms-of-service" sx={{ color: textColor }}>
+            Terms of Service
+          </Link>
+        </Grid>
+        <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{ xs: 3, md: 0 }}>
+          <Typography mb={2}>CONTACT</Typography>
+          <Link href="/contact" sx={{ color: textColor }}>
+            Contact Us
+          </Link>
+          <br />
+          <Link href="https://discord.gg/cUpRmau42V" sx={{ color: textColor }}>
+            Discord
+          </Link>
+          <br />
+          <Link href="" sx={{ color: textColor }}>
+            help@runpod.io
+          </Link>
+          <br />
+          <Link href="" sx={{ color: textColor }}>
+            referrals@runpod.io
+          </Link>
+        </Grid>
 
-      <Grid
-        display="flex"
-        justifyContent={{ xs: "center", md: "end" }}
-        item
-        lineHeight={2.5}
-        xs={6}
-        md={2}
-        lg={2}
-      >
-        {/* <Link
+        <Grid
+          display="flex"
+          justifyContent={{ xs: "center", md: "end" }}
+          item
+          lineHeight={2.5}
+          xs={6}
+          md={2}
+          lg={2}
+        >
+          {/* <Link
           href="https://serp.co/reviews/best/software/cloud-gpu-providers/"
           title="Best Cloud GPU Providers"
           target="blank"
@@ -109,48 +147,51 @@ export const Footer = () => {
             height={97}
           />
         </Link> */}
-      </Grid>
-      <Grid
-        display="flex"
-        justifyContent={{ xs: "left", md: "end" }}
-        item
-        lineHeight={2.5}
-        xs={12}
-        md={2}
-        lg={2}
-      >
-        <Stack spacing={2}>
-          <Stack direction="row" spacing={1}>
-            <Link href="https://github.com/runpod" sx={{color:textColor}} target="_blank">
-              <GitHubIcon />
-            </Link>
-            <Link href="https://discord.gg/cUpRmau42V" sx={{color:textColor}} target="_blank">
-              <DiscordIcon  />
-            </Link>
-            <Link href="https://twitter.com/runpod_io" sx={{color:textColor}} target="_blank">
-              <TwitterIcon />
-            </Link>
-            <Link href="https://www.instagram.com/runpod.io" sx={{color:textColor}} target="_blank">
-              <InstagramIcon />
-            </Link>
+        </Grid>
+        <Grid
+          display="flex"
+          justifyContent={{ xs: "left", md: "end" }}
+          item
+          lineHeight={2.5}
+          xs={12}
+          md={2}
+          lg={2}
+        >
+          <Stack spacing={2}>
+            <Stack direction="row" spacing={1}>
+              <Link href="https://github.com/runpod" sx={{ color: textColor }} target="_blank">
+                <GitHubIcon />
+              </Link>
+              <Link href="https://discord.gg/cUpRmau42V" sx={{ color: textColor }} target="_blank">
+                <DiscordIcon />
+              </Link>
+              <Link href="https://twitter.com/runpod_io" sx={{ color: textColor }} target="_blank">
+                <TwitterIcon />
+              </Link>
+              <Link
+                href="https://www.instagram.com/runpod.io"
+                sx={{ color: textColor }}
+                target="_blank"
+              >
+                <InstagramIcon />
+              </Link>
 
-            {/* <Link href="https://www.facebook.com/RunPod.io/" target="_blank">
+              {/* <Link href="https://www.facebook.com/RunPod.io/" target="_blank">
               <FacebookIcon />
             </Link>
             <Link href="https://www.linkedin.com/company/runpod-io/" target="_blank">
               <LinkedInIcon />
             </Link> */}
-
+            </Stack>
+            <Typography variant="subtitle1">{`\u00A9 RunPod ${new Date().getFullYear()}`}</Typography>
+            <Typography sx={{ fontSize: 8 }}>
+              <Link href="https://storyset.com/people" sx={{ color: textColor }} target="blank">
+                People illustrations by Storyset
+              </Link>
+            </Typography>
           </Stack>
-          <Typography variant="subtitle1">{`\u00A9 RunPod ${new Date().getFullYear()}`}</Typography>
-          <Typography sx={{ fontSize: 8 }}>
-            <Link href="https://storyset.com/people" sx={{color:textColor}} target="blank">
-              People illustrations by Storyset
-            </Link>
-          </Typography>
-        </Stack>
+        </Grid>
       </Grid>
-    </Grid>
     </LongFooterWrapper>
   )
 }

@@ -1,8 +1,8 @@
 import { Stack, Typography, Box, Button } from "@mui/material"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import GitHubIcon from "@mui/icons-material/GitHub"
-import TwitterIcon from "@mui/icons-material/Twitter"
+import TwitterIcon from "@mui/icons-material/X"
 
 const TeamBox = ({ primary, theme, title, name, img, linkedin, github, twitter }) => (
   <Box
@@ -20,29 +20,29 @@ const TeamBox = ({ primary, theme, title, name, img, linkedin, github, twitter }
       zIndex: 1,
     }}
   >
-    <Stack alignItems="center">
+    <Stack alignItems='center'>
       <Image src={img} alt={name} height={225} width={225} style={{ borderRadius: 10 }} />
-      <Typography sx={{ fontSize: 24 }} mt={2} variant="h3">
+      <Typography sx={{ fontSize: 24 }} mt={2} variant='h3'>
         {name}
       </Typography>
-      <Typography sx={{ fontSize: 18 }} variant="body1">
+      <Typography sx={{ fontSize: 18 }} variant='body1'>
         {title}
       </Typography>
-      <Stack direction={{ xs: "row", md: "row-reverse" }} alignItems="start" mt={1} spacing={0}>
+      <Stack direction={{ xs: "row", md: "row-reverse" }} alignItems='start' mt={1} spacing={0}>
         {linkedin !== "" && (
-          <Button href={linkedin} target="_blank">
+          <Button href={linkedin} target='_blank'>
             <LinkedInIcon />
           </Button>
         )}
 
         {github !== "" && (
-          <Button href={github} target="_blank">
+          <Button href={github} target='_blank'>
             <GitHubIcon />
           </Button>
         )}
 
         {twitter !== "" && (
-          <Button href={twitter} target="_blank">
+          <Button href={twitter} target='_blank'>
             <TwitterIcon />
           </Button>
         )}

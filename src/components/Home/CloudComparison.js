@@ -66,10 +66,10 @@ export default function CloudComparison() {
             </Box>
           </Stack>
           <Stack direction="row" pt={4} spacing={2} width={"100%"}>
-            <ButtonLink href={"/console/gpu-cloud"} fullWidth variant="contained" color="primary">
+            <ButtonLink href={"/console/deploy"} fullWidth variant="contained" color="primary">
               Deploy Now
             </ButtonLink>
-            <ButtonLink href={"/about/gpu-cloud"} fullWidth variant="outlined" color="primary">
+            <ButtonLink href={"/about/deploy"} fullWidth variant="outlined" color="primary">
               Learn More
             </ButtonLink>
           </Stack>
@@ -111,15 +111,10 @@ export default function CloudComparison() {
             </Box>
           </Stack>
           <Stack direction="row" pt={4} spacing={2}>
-            <ButtonLink
-              href={"/console/gpu-secure-cloud"}
-              fullWidth
-              variant="contained"
-              color="primary"
-            >
+            <ButtonLink href={"/console/deploy"} fullWidth variant="contained" color="primary">
               Deploy Now
             </ButtonLink>
-            <ButtonLink href={"/about/gpu-cloud"} fullWidth variant="outlined" color="primary">
+            <ButtonLink href={"/about/deploy"} fullWidth variant="outlined" color="primary">
               Learn More
             </ButtonLink>
           </Stack>

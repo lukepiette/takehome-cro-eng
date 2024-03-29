@@ -1,6 +1,6 @@
 import { Box, Card, Stack, Typography, useTheme } from "@mui/material"
 import Head from "next/head"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 import UbuntuLogo from "/public/static/svg/ubuntu-new-logo.svg"
 import WindowsLogo from "/public/static/svg/windows-word-logo.svg"
@@ -50,7 +50,7 @@ export default function GpuBareServer() {
           By eliminating virtualization, you can fully harness dedicated hardware, ensuring that your applications run at their best. 
         </Typography>
 
-        <StartButton to="https://meetings.hubspot.com/runpod/off-platform-computing" title="Book a call"></StartButton>
+        <StartButton to="https://meetings.runpod.io/meetings/runpod/off-platform-computing" title="Book a call"></StartButton>
       </Stack>
 
       <Card
@@ -124,7 +124,7 @@ export default function GpuBareServer() {
         >
           Book a call to learn more about RAM, storage, CPU, network speeds, and available upgrades.
         </Typography>
-        <StartButton to="https://meetings.hubspot.com/runpod/off-platform-computing" title="Book a call"></StartButton>
+        <StartButton to="https://meetings.runpod.io/meetings/runpod/off-platform-computing" title="Book a call"></StartButton>
       </Stack>
     </>
   )

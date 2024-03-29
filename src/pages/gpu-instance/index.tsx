@@ -1,6 +1,6 @@
 import { Box, Card, Stack, Typography, useTheme } from "@mui/material"
 import Head from "next/head"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 import ButtonLink from "@components/ButtonLink"
 import DeploySeconds from "@components/Home/DeploySeconds"
@@ -57,7 +57,7 @@ export default function GpuInstance() {
             sx={{
               width: "200px",
             }}
-            href="/console/gpu-secure-cloud"
+            href="/console/deploy"
           >
             Deploy Instances
           </ButtonLink>

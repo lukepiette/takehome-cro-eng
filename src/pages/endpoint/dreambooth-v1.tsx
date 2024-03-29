@@ -2,7 +2,7 @@ import { Box, Button, Chip, Container, Paper, Stack, Tooltip, Typography } from 
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import { useState } from "react"
 import Head from "next/head"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import Modal from "@mui/material/Modal"
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch"
 import SyntaxHighlighter from "react-syntax-highlighter"

@@ -1,7 +1,7 @@
 import { Alert, AlertTitle, Grid, Paper, Stack, ThemeProvider, Typography } from "@mui/material"
 import { NebulaFighterTheme } from "@components/Layout/ThemeProvider/NebulaFighterTheme"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 import ButtonLink from "@components/ButtonLink"
 import Link from "@components/Link"

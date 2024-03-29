@@ -59,7 +59,7 @@ export default function Pricing({ data }) {
             <ButtonLink
               color="primary"
               fullWidth
-              href="/console/gpu-secure-cloud"
+              href="/console/deploy"
               sx={{ mt: 3 }}
               variant="outlined"
             >
@@ -102,7 +102,7 @@ export default function Pricing({ data }) {
             <ButtonLink
               color="primary"
               fullWidth
-              href="/console/gpu-cloud"
+              href="/console/deploy"
               sx={{ mt: 3 }}
               variant="outlined"
             >

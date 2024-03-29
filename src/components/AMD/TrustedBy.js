@@ -1,4 +1,4 @@
-import { Box, Stack, useTheme, useMediaQuery, styled } from "@mui/material"
+import { Box, useTheme, useMediaQuery, styled } from "@mui/material"
 import Image from "next/legacy/image"
 
 const CarouselContainer = styled("div")(({ theme }) => ({

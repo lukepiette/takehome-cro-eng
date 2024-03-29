@@ -19,9 +19,6 @@ import {
   Tabs,
 } from "@mui/material"
 import React, { useState, useEffect } from "react"
-import { Public } from "@mui/icons-material"
-import CodeIcon from "@mui/icons-material/Code"
-import { Send as SendIcon } from "@mui/icons-material"
 
 const Demo = ({
   apiEndpoint,
@@ -40,7 +37,7 @@ const Demo = ({
   const [generationTime, setGenerationTime] = useState(0)
   const [apiKey, setApiKey] = useState("7NNVY0E03FR9WKHPPBD6U41LTVTO9YWK12XDNVUS")
   const [loading, setLoading] = useState(false)
-  const [requestId, setRequestId] = useState("")
+  const [requestId, _] = useState("")
 
   useEffect(() => {
     fetch(inputParamsFromGithubURL)
@@ -238,14 +235,12 @@ const Demo = ({
 
   const handleInputChange = (name, value) => {
     setInputValues((prev) => ({ ...prev, [name]: value }))
-    console.log(inputValues)
   }
 
   const processOutputData = (json_response) => {
     switch (outputType) {
       case "text":
-        outputData = json_response.output.text[0]
-        setOutputData(outputData)
+        setOutputData(json_response.output.text[0])
         break
       case "image":
         // You mentioned "pass" which means you might want to do nothing here.
@@ -301,7 +296,6 @@ const Demo = ({
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         processOutputData(data)
         const timeDifference = (Date.now() - startTime) / 1000
         setGenerationTime(timeDifference.toFixed(2))

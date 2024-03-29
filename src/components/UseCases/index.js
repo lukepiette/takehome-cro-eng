@@ -1,5 +1,5 @@
 import { Stack, Typography, useTheme } from "@mui/material"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 import ButtonLink from "@components/ButtonLink"
 import castleGraphic from "./castle3.png"
@@ -201,7 +201,7 @@ export default function UseCases() {
             >
               Ready to participate?
             </Typography>
-            <ButtonLink variant="contained" href="/console/gpu-secure-cloud">
+            <ButtonLink variant="contained" href="/console/deploy">
               Deploy a Pod Today
             </ButtonLink>
           </Stack>

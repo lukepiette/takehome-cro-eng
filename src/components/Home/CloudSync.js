@@ -2,7 +2,7 @@ import { Box, LinearProgress, Paper, Stack, Typography, useTheme } from "@mui/ma
 import { useInterval } from "@hooks/useInterval"
 import { useInView } from "react-intersection-observer"
 import { useState } from "react"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 const CloudSync = () => {
   const theme = useTheme()

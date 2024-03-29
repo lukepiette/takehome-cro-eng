@@ -2,6 +2,7 @@ import type { NextPage } from "next"
 import Head from "next/head"
 
 import Contact from "@components/Contact"
+import Script from "next/script"
 
 const ContactPage: NextPage = () => (
   <>
@@ -14,6 +15,10 @@ const ContactPage: NextPage = () => (
     </Head>
 
     <Contact />
+    <Script
+      id="ze-snippet"
+      src="https://static.zdassets.com/ekr/snippet.js?key=d0194ad2-b273-4138-bad5-595f394a4a22"
+    />
   </>
 )
 

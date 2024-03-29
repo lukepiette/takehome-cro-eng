@@ -76,7 +76,7 @@ export default function Hero({ data }) {
               <StartButton to="/console/serverless" />
               <Button
                 sx={{ color: "white" }}
-                href="https://meetings.hubspot.com/runpod/firstconnect"
+                href="https://meetings.runpod.io/meetings/runpod/firstconnect"
               >
                 Book a Call
               </Button>

@@ -1,6 +1,6 @@
 import { Box, Card, CardActionArea, Grid, Stack, styled, Typography, useTheme } from "@mui/material"
 import { useInView } from "react-intersection-observer"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import Link from "next/link"
 
 const CardActionAreaWrapper = styled(CardActionArea)(
@@ -68,7 +68,12 @@ function Services() {
     <Grid container justifyContent={"center"} ref={ref} spacing={2}>
       <Grid item xs={6} sm={3} md={2}>
         <CardWrapper>
-          <Link href="/console/gpu-secure-cloud?template=runpod-torch" passHref prefetch={false}>
+          <Link
+            href="/console/deploy?template=runpod-torch"
+            passHref
+            prefetch={false}
+            legacyBehavior
+          >
             <CardActionAreaWrapper sx={{ p: 2 }}>
               {inView ? (
                 <Image
@@ -90,9 +95,10 @@ function Services() {
       <Grid item xs={6} sm={3} md={2}>
         <CardWrapper>
           <Link
-            href="/console/gpu-secure-cloud?template=runpod-tensorflow"
+            href="/console/deploy?template=runpod-tensorflow"
             passHref
             prefetch={false}
+            legacyBehavior
           >
             <CardActionAreaWrapper sx={{ p: 2 }}>
               {inView ? (
@@ -114,7 +120,7 @@ function Services() {
       </Grid>
       <Grid item xs={6} sm={3} md={2}>
         <CardWrapper>
-          <Link href="/console/gpu-secure-cloud" passHref prefetch={false}>
+          <Link href="/console/deploy" passHref prefetch={false} legacyBehavior>
             <CardActionAreaWrapper sx={{ p: 2 }}>
               {inView ? (
                 <Image src="/static/svg/dockerLogo.svg" alt="docker logo" width={70} height={50} />

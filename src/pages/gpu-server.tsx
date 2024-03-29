@@ -2,7 +2,7 @@ import { Box, Card, Stack, Typography, useTheme } from "@mui/material"
 import Head from "next/head"
 
 import ButtonLink from "@components/ButtonLink"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import UbuntuLogo from "/public/static/svg/ubuntu-word-logo.svg"
 import WindowsLogo from "/public/static/svg/windows-word-logo.svg"
 

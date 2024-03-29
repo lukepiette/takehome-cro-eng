@@ -33,7 +33,7 @@ const ServerlessStartup = () => {
         <Typography align={"center"} sx={{ fontSize: 18 }}>
           Get <strong>25% off</strong> on serverless compute with at least $500 monthly spend.
           Acceptance based on your product <strong>(website or an app)</strong>.{" "}
-          <Link href="https://meetings.hubspot.com/runpod/startup-program">
+          <Link href="https://meetings.runpod.io/meetings/runpod/startup-program">
             <strong>Contact us</strong>
           </Link>{" "}
           with your use case and anticipated spend.

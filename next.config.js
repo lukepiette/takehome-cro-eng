@@ -2,6 +2,23 @@
 const { CONSOLE_URL } = process.env
 
 const nextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Frame-Options",
+            value: "DENY",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "frame-ancestors 'self'",
+          },
+        ],
+      },
+    ]
+  },
   async redirects() {
     return [
       {
@@ -11,7 +28,7 @@ const nextConfig = {
       },
       {
         source: "/gsc",
-        destination: "/console/gpu-secure-cloud",
+        destination: "/console/deploy",
         permanent: true,
       },
       {
@@ -21,7 +38,7 @@ const nextConfig = {
       },
       {
         source: "/gpu-secure-cloud",
-        destination: "/console/gpu-secure-cloud",
+        destination: "/console/deploy",
         permanent: true,
       },
       {
@@ -53,7 +70,19 @@ const nextConfig = {
         source: "/recipes",
         destination: "/blog/tag/recipes",
         permanent: true,
-      }
+      },
+      {
+        permanent: true,
+        basePath: false,
+        source: "/blog/:slug",
+        destination: "https://blog.runpod.io/:slug",
+      },
+      {
+        permanent: true,
+        basePath: false,
+        source: "/blog",
+        destination: "https://blog.runpod.io",
+      },
     ]
   },
   async rewrites() {
@@ -61,7 +90,15 @@ const nextConfig = {
       {
         source: "/:path*",
         destination: `/:path*`,
-      }
+      },
+      {
+        source: "/console",
+        destination: `${CONSOLE_URL}/console`,
+      },
+      {
+        source: "/console/:path*",
+        destination: `${CONSOLE_URL}/console/:path*`,
+      },
     ]
   },
   reactStrictMode: true,

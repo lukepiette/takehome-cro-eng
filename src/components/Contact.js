@@ -1,7 +1,7 @@
 import { Box, Button, Card, Grid, Stack, Typography, useTheme } from "@mui/material"
 import ChatIcon from "@mui/icons-material/Forum"
 import EmailIcon from "@mui/icons-material/Email"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 import PurpleDiscordLogo from "/public/static/svg/discord-logo-purple.svg"
 import WhiteDiscordLogo from "/public/static/svg/discord-logo-white.svg"
@@ -88,7 +88,7 @@ export default function Contact() {
           <Box>
             <Button
               onClick={() => {
-                window.$crisp.push(["do", "chat:open"])
+                zE("messenger", "open")
               }}
               sx={{ height: { xs: "100px", md: "150px" }, width: { xs: "100px", md: "150px" } }}
               variant="outlined"

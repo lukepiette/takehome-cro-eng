@@ -194,7 +194,7 @@ export default function ChatLLM() {
 
   const sendRequest = async (tabValueState) => {
     const url = state.tabs[state.tabValue]["gpuTypes"][state.activeGpuType]
-    console.log(url)
+
     const headers = {
       "Authorization": state.apiKey,
       "Content-Type": "application/json",
