@@ -18,7 +18,7 @@ jobs:
         id: step1
         with:
           release-type: node
-          package-name: main-ui
+          package-name: landing-ui
           pull-request-title-pattern: release${component} ${version}
 
   merge-to-prod:
