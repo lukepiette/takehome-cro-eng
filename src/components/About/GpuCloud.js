@@ -97,7 +97,7 @@ function SecureCloud() {
             </Stack>
           </Stack>
           <Stack direction="row" pt={4} spacing={2}>
-            <ButtonLink href={"/console/deploy"} fullWidth variant="contained" color="primary">
+            <ButtonLink href={"/console/gpu-cloud"} fullWidth variant="contained" color="primary">
               Deploy on GPU Coud
             </ButtonLink>
           </Stack>
@@ -179,7 +179,7 @@ function CommunityCloud() {
           </Stack>
           <Stack direction="row" pt={4} spacing={2}>
             <ButtonLink
-              href={"/console/deploy?cloud=community"}
+              href={"/console/gpu-cloud?cloud=community"}
               fullWidth
               variant="contained"
               color="primary"
@@ -338,7 +338,7 @@ function AIEndpoints() {
             </Stack>
           </Stack>
           <Stack direction="row" pt={4} spacing={2}>
-            <ButtonLink href={"/serverless"} fullWidth variant="contained" color="primary">
+            <ButtonLink href={"/gpu-cloud"} fullWidth variant="contained" color="primary">
               Get Started with AI Endpoints
             </ButtonLink>
           </Stack>

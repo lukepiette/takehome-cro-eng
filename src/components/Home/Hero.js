@@ -139,7 +139,7 @@ export default function Hero() {
 
             <Stack direction="row" justifyContent={{ xs: "center", md: "start" }}>
               <Button
-                href={"/console/deploy"}
+                href={"/console/gpu-cloud"}
                 variant="outlined"
                 size="large"
                 sx={{ borderColor: pulseColor, color: "white" }}

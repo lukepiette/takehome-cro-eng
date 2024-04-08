@@ -69,7 +69,7 @@ function Services() {
       <Grid item xs={6} sm={3} md={2}>
         <CardWrapper>
           <Link
-            href="/console/deploy?template=runpod-torch"
+            href="/console/gpu-cloud?template=runpod-torch"
             passHref
             prefetch={false}
             legacyBehavior
@@ -95,7 +95,7 @@ function Services() {
       <Grid item xs={6} sm={3} md={2}>
         <CardWrapper>
           <Link
-            href="/console/deploy?template=runpod-tensorflow"
+            href="/console/gpu-cloud?template=runpod-tensorflow"
             passHref
             prefetch={false}
             legacyBehavior
@@ -120,7 +120,7 @@ function Services() {
       </Grid>
       <Grid item xs={6} sm={3} md={2}>
         <CardWrapper>
-          <Link href="/console/deploy" passHref prefetch={false} legacyBehavior>
+          <Link href="/console/gpu-cloud" passHref prefetch={false} legacyBehavior>
             <CardActionAreaWrapper sx={{ p: 2 }}>
               {inView ? (
                 <Image src="/static/svg/dockerLogo.svg" alt="docker logo" width={70} height={50} />

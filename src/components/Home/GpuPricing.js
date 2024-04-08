@@ -7,7 +7,7 @@ export default function GpuPricing({ data }) {
 
   return (
     <Stack alignItems="center" my={20} spacing={3}>
-      <ButtonLink href="/console/deploy" color="secondary" sx={{ mt: 0, fontSize: 16 }}>
+      <ButtonLink href="/console/gpu-cloud" color="secondary" sx={{ mt: 0, fontSize: 16 }}>
         Free Bandwidth
       </ButtonLink>
 

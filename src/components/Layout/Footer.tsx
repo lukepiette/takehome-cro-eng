@@ -46,8 +46,12 @@ export const Footer = () => {
       <Grid maxWidth="lg" container spacing={3} textAlign={{ xs: "left" }}>
         <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{ xs: 3, md: 0 }}>
           <Typography mb={2}>PRODUCTS</Typography>
-          <Link href="/console/deploy" sx={{ color: textColor }}>
-            Deploy a Pod
+          <Link href="/console/gpu-secure-cloud" sx={{ color: textColor }}>
+            Secure Cloud
+          </Link>
+          <br />
+          <Link href="/console/gpu-cloud" sx={{ color: textColor }}>
+            Community Cloud
           </Link>
           <br />
           <Link href="/console/serverless" sx={{ color: textColor }}>

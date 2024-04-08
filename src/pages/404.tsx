@@ -37,7 +37,7 @@ const Four04: NextPage = () => {
 
         <Stack spacing={1}>
           <ButtonLink href="/console">Console</ButtonLink>
-          <ButtonLink href="/console/deploy">Secure Cloud</ButtonLink>
+          <ButtonLink href="/console/gpu-cloud">Secure Cloud</ButtonLink>
           <ButtonLink href="/console/pods">My Pods</ButtonLink>
         </Stack>
       </Stack>

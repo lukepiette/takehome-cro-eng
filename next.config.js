@@ -4,20 +4,20 @@ const { CONSOLE_URL } = process.env
 const nextConfig = {
   async headers() {
     return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "X-Frame-Options",
-            value: "DENY",
-          },
-          {
-            key: "Content-Security-Policy",
-            value: "frame-ancestors 'self'",
-          },
-        ],
-      },
-    ]
+        {
+          source: '/(.*)',
+          headers: [
+            {
+              key: 'X-Frame-Options',
+              value: 'DENY',
+            },
+            {
+              key: 'Content-Security-Policy',
+              value: "frame-ancestors 'self'",
+            },
+          ]
+          }
+      ]
   },
   async redirects() {
     return [
@@ -28,7 +28,7 @@ const nextConfig = {
       },
       {
         source: "/gsc",
-        destination: "/console/deploy",
+        destination: "/console/gpu-cloud",
         permanent: true,
       },
       {
@@ -38,7 +38,7 @@ const nextConfig = {
       },
       {
         source: "/gpu-secure-cloud",
-        destination: "/console/deploy",
+        destination: "/console/gpu-cloud",
         permanent: true,
       },
       {

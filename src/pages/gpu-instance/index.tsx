@@ -57,7 +57,7 @@ export default function GpuInstance() {
             sx={{
               width: "200px",
             }}
-            href="/console/deploy"
+            href="/console/gpu-cloud"
           >
             Deploy Instances
           </ButtonLink>

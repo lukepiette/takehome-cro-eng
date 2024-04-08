@@ -201,7 +201,7 @@ export default function UseCases() {
             >
               Ready to participate?
             </Typography>
-            <ButtonLink variant="contained" href="/console/deploy">
+            <ButtonLink variant="contained" href="/console/gpu-cloud">
               Deploy a Pod Today
             </ButtonLink>
           </Stack>
