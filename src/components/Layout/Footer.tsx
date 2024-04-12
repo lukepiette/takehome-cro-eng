@@ -25,6 +25,7 @@ const LongFooterWrapper = styled(Card)(
         flex-grow: 1;
         padding: ${theme.spacing(4)};
         align-items: center;
+        background-color: #000009;
 `
 )
 
