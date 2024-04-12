@@ -2,7 +2,7 @@
 const GpuInfo = {
     name: "H100 80GB SXM5",
     bookCallURL: "https://meetings.runpod.io/meetings/margarita-melkoumov/reserve-h100-80gb-sxm5",
-    gpuImagePath: "/static/images/gpu/H100-gpu.webp",
+    gpuImagePath: "/static/images/gpu/h100-gpu.webp",
     gpuImageXs: '80vw',
     gpuImageSm: 350,
     gpuImageMd: 400,

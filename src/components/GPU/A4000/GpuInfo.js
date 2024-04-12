@@ -2,7 +2,7 @@
 const GpuInfo = {
     name: "RTX A4000",
     bookCallURL: "https://meetings.runpod.io/meetings/margarita-melkoumov/reserve-a4000",
-    gpuImagePath: "/static/images/gpu/A4000-gpu.webp",
+    gpuImagePath: "/static/images/gpu/a4000-gpu.webp",
     gpuImageXs: '80vw',
     gpuImageSm: 350,
     gpuImageMd: 400,
