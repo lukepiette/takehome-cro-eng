@@ -1,5 +1,4 @@
-index blog
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+The landing and marketing pages for runpod.io
 
 ## Getting Started 
 
@@ -9,16 +8,6 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-```
-
-For console:
-
-add a file called .env.local in your console directory
-
-```
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-EDGE_CONFIG=
-NEXT_PUBLIC_GRAPHQL_URI=https://api.runpod.dev/graphql
 ```
 
 For www:
