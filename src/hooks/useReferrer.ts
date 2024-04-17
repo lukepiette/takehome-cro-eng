@@ -11,20 +11,12 @@ const organicReferrers = [
 export default function useReferrer() {
   const router = useRouter()
   const [referrer, setReferrer] = useState('')
-  const [medium, setMedium] = useState('')
 
   useEffect(() => {
     if (typeof window === 'undefined') return
 
     setReferrer(document.referrer)
-    if (!referrer) {
-      setMedium('direct')
-    } else if (organicReferrers.includes(referrer)) {
-      setMedium('organic')
-    }
-
-    window.localStorage.setItem('referrer', referrer)
-    window.localStorage.setItem('referrer_medium', medium)
+    window.localStorage.setItem('referrer_link', referrer)
   }, [router.isReady])
 
   return referrer
