@@ -14,7 +14,7 @@ export default function useReferrer() {
   const [medium, setMedium] = useState('')
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !document) return
+    if (typeof window === 'undefined') return
 
     setReferrer(document.referrer)
     if (!referrer) {
