@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/runpod/landing-ui/compare/v1.0.0...v1.1.0) (2024-04-17)
+
+
+### Features
+
+* referrer from document ([dc82093](https://github.com/runpod/landing-ui/commit/dc8209307d88eac1df967eae0b8ed0a4c613abc0))
+
 ## 1.0.0 (2023-12-05)
 
 
