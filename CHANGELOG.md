@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/runpod/landing-ui/compare/v1.1.0...v1.1.1) (2024-04-17)
+
+
+### Bug Fixes
+
+* depend on window only ([4d9466c](https://github.com/runpod/landing-ui/commit/4d9466caa7654f68dc12ade43e23cc23758c3c7e))
+
 ## [1.1.0](https://github.com/runpod/landing-ui/compare/v1.0.0...v1.1.0) (2024-04-17)
 
 
