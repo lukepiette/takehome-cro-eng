@@ -83,13 +83,13 @@ export const Footer = () => {
         </Grid>
         <Grid item lineHeight={2.5} xs={6} sm={3} md={2} lg={2} mt={{ xs: 3, md: 0 }}>
           <Typography mb={2}>COMPANY</Typography>
-          <Link href="/careers" sx={{ color: textColor }}>
+          <Link target="_blank" href="https://jobs.gusto.com/boards/runpod-inc-28beb0b2-4886-4575-bc81-f0e2f07a86eb" sx={{ color: textColor }}>
             Careers
           </Link>
           <br />
-          <Link href="/about" sx={{ color: textColor }}>
+          {/* <Link href="/about" sx={{ color: textColor }}>
             About
-          </Link>
+          </Link> */}
           <br />
           <Link href="/compliance" sx={{ color: textColor }}>
             Compliance
