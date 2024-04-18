@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/runpod/landing-ui/compare/v1.1.1...v1.1.2) (2024-04-18)
+
+
+### Bug Fixes
+
+* referrer to referrerLink ([0ef51ce](https://github.com/runpod/landing-ui/commit/0ef51ce71f797b11226373c85ec2c5b40bfb86a9))
+
 ## [1.1.1](https://github.com/runpod/landing-ui/compare/v1.1.0...v1.1.1) (2024-04-17)
 
 
