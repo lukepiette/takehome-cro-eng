@@ -89,8 +89,8 @@ export const Footer = () => {
           <br />
           {/* <Link href="/about" sx={{ color: textColor }}>
             About
-          </Link> */}
-          <br />
+          </Link>
+          <br /> */}
           <Link href="/compliance" sx={{ color: textColor }}>
             Compliance
           </Link>
