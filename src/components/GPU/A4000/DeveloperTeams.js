@@ -195,7 +195,7 @@ export default function DeveloperTeams({data}){
                     fontSize: 14,
                     fontWeight: 'bold',
                     textTransform: 'none',
-
+                    marginLeft:{xs:-2, sm:0}
                   }}
                   endIcon={<KeyboardArrowRightIcon />}
                 >

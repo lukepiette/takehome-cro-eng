@@ -1,6 +1,6 @@
 import { Typography, Stack, Button, Box } from "@mui/material"
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight"
-import Metrics from "../Metrics"
+import Metrics from "./Metrics"
 import React from "react";
 import Link from "@components/Link"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
@@ -14,11 +14,11 @@ const PreferredPlatform = () => {
         alignItems="left"
         direction={{ xs: "column-reverse", md: "row-reverse" }}
         justifyContent={"left"}
-        mt={{xs:10, sm: 15}}
+        mt={{xs:10, sm: 12}}
         width="90%"
       >
         <Stack >
-          <Typography variant="h1" sx={{ fontSize: { xs: '1.6rem', sm: '2rem', md: 48, lg: 60 } }}>
+          <Typography variant="h1" sx={{ width:{xs:"100%", sm:"100%", md:"80%", lg:"100%"}, fontSize: { xs: '1.6rem', sm: '2rem', md: 48, lg: 60 } }}>
           The preferred platform for 100,000+ developers worldwide
           </Typography>
 
@@ -92,7 +92,7 @@ const PreferredPlatform = () => {
                We have hundreds of tutorials for all types of workloads.
               </Typography>
             </Stack>
-            <Stack pt={{xs:4, sm:4, md:0}}> 
+            <Stack pt={{xs:4, sm:4, md:0}} pl={{xs:0, sm:0, md:5}}> 
               <Metrics />
               <Stack mt={2} direction="row" spacing={1}>
                 <Button
@@ -123,12 +123,13 @@ const PreferredPlatform = () => {
         </Stack>
       </Stack>
 
-      <Box
+      {/* <Box
         component="img"
         sx={{
           zIndex:-9,
-          position: 'absolute',
-          top: {xs: '285vh', sm: 2900},
+          position: 'fixed',
+          // top: {xs: '285vh', sm: 3100},
+          visibility: {xs: 'hidden',sm:'hidden',md:'visible'},
           right: 0,
           bottom: 0,
           left: 0,
@@ -138,7 +139,8 @@ const PreferredPlatform = () => {
         }}
         alt="4090 gpu background"
         src="/static/images/gpu/gpu-background-middle.webp" // 
-      />
+      /> */}
+
     </>
   )
 }
