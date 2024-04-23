@@ -3,7 +3,7 @@ import FastestCloud from "./FastestCloud"
 import ReservedPricing from "./ReservedPricing"
 import DeveloperTeams from "./DeveloperTeams"
 import Hero from "./Hero"
-import PreferredPlatform from "./PreferredPlatform"
+import PreferredPlatform from "../PreferredPlatform"
 import TrustedBy from "../TrustedBy"
 import GpuInfo from "./GpuInfo"
 

@@ -27,7 +27,7 @@ export default function Hero({data}) {
       sx={{
         width: "100%",
         position: "relative",
-        height: {xs:625, sm:"calc(100vh - 71px)"}
+        height: {xs:625, sm:"calc(100vh - 71px)"},
       }}
     >
       <Stack
@@ -49,17 +49,17 @@ export default function Hero({data}) {
           sx={{ position: "relative" }}
         >
           <Stack spacing={{ xs: 1, md: 1 }}>
-            <Typography mt={{xs:'-12rem', sm: '-7rem', md: -25}} textAlign={{ xs: "center", sm: "left" }} color={"rgb(163 163 163)"} fontSize={{ xs: '1rem', sm: 14 }} mb={{xs:0, md: 0.4}} ml={0.5} variant="h2">
+          <Typography mt={{xs:'-12rem', sm: '-7rem', md: -25}} textAlign={{ xs: "center", sm: "left" }} color={"rgb(163 163 163)"} fontSize={{ xs: '1rem', sm: 14 }} mb={{xs:0, md: 0.4}} ml={0.5} variant="h2">
               RunPod GPU Cloud
             </Typography>
-
+            
             <Typography
-              fontSize={{ xs: '3rem', sm: 50, md: 60, xl: 70 }}
+              fontSize={{ xs: '3rem', sm: 50, md: 60, xl: 65 }}
               textAlign={{ xs: "center", sm: "left" }}
               variant="h1"
               fontWeight={400}
             >
-              {data.name}s On-Demand
+              {data.name} On-Demand
             </Typography>
 
             <Typography
@@ -69,7 +69,7 @@ export default function Hero({data}) {
               pt={2}
               color={"rgb(163 163 163)"}
             >
-              On-Demand {data.name}s from <b>{data.community.price}</b>
+              On-Demand {data.name} from <b>{data.info.price}</b>
             </Typography>
 
             <Stack direction="row" justifyContent={{ xs: "center", sm: "start" }} spacing={4}>
@@ -87,6 +87,7 @@ export default function Hero({data}) {
                     fontSize: 14,
                     fontWeight: 'bold',
                     textTransform: 'none',
+                    mb:4,
                     '&:hover': {
                       background: 'linear-gradient(45deg, #45005E 0%, #000000 100%)',
                     },

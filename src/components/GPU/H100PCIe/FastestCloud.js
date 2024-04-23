@@ -19,7 +19,7 @@ export default function FastestCloud({data}) {
         bottom: 0,
         left: 0,
         width: {xs:800,sm:'100%'},
-        height: {xs: '80vh', sm:1000},
+        height: {xs: '100vh'},
         filter: 'brightness(0.3)',
       }}
       alt="gpu header background"
@@ -29,7 +29,7 @@ export default function FastestCloud({data}) {
       alignItems="left"
       direction={{ xs: "column-reverse", md: "row-reverse" }}
       justifyContent={"left"}
-      mt={{xs: '3rem', sm:15}}
+      mt={{xs: '5rem', sm:15}}
       spacing={2}
       width="90%"
     >

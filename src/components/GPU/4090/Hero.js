@@ -13,7 +13,7 @@ export default function Hero({data}) {
         bottom: 0,
         left: 0,
         width: {xs:'100%', md: '100%'},
-        height: {xs:'100vh', sm:'100vh'},
+        height: {xs:700, sm:'100vh'},
         objectFit: 'cover',
         filter: {xs: 'brightness(0.4)', sm:'brightness(1)'},
   
@@ -27,7 +27,7 @@ export default function Hero({data}) {
       sx={{
         width: "100%",
         position: "relative",
-        height: "calc(100vh - 71px)",
+        height: {xs:625, sm:"calc(100vh - 71px)"}
       }}
     >
       <Stack
@@ -44,7 +44,7 @@ export default function Hero({data}) {
 
         <Stack
           direction="row"
-          height="100%"
+          height={{xs:700,sm:"100%"}}
           alignItems="center"
           sx={{ position: "relative" }}
         >

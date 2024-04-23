@@ -96,9 +96,8 @@ const TrustedBy = () => {
 
   return (
     <>
-    
-    <Box mt={{xs: -20, sm: -15}} zIndex={100} display="flex" flexDirection="column" alignItems={"center"} maxWidth={900} mb={{ xs: 2, sm: 1.5, md: 0 }} overflow="hidden" >
-      <Typography color={"rgb(163 163 163)"} lineHeight={'1.5rem'} variant="h2" textAlign={"center"} display={"flex"} maxWidth={"80vw"} fontSize={14} mb={3}>
+    <Box mt={{xs: -14, sm: -15}} zIndex={100} display="flex" flexDirection="column" alignItems={"center"} maxWidth={900} mb={{ xs: 2, sm: 1.5, md: 0 }} overflow="hidden" >
+      <Typography color={"rgb(163 163 163)"} lineHeight={'1.5rem'} variant="h2" textAlign={"center"} display={"flex"} maxWidth={"80vw"} fontSize={14} mb={{xs:1, sm:3}}>
         RunPod works with Generative AI companies, Acedemic Institutions, and Enterprises
       </Typography>
       {!isSmallScreen ? (

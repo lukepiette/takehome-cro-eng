@@ -35,7 +35,7 @@ export default function FastestCloud({data}) {
     >
       <Stack>
         <Typography variant="h1" sx={{ fontSize: { xs: '2rem', sm: '2rem', md: 48, lg: 60 } }}>
-          The world{"'"}s fastest H100 SXM5 Cloud
+          The world{"'"}s fastest MI250 Cloud
         </Typography>
 
         <Stack direction={{xs:"column", sm:"column", md:"row"}} spacing={{ xs: 0, sm: 0, md: 0, lg: 0 }}>
@@ -107,11 +107,13 @@ export default function FastestCloud({data}) {
                 style={{
                   borderRadius: 0,
                   maxWidth: "100%",
+                  display:"hidden",
+                  margin:"auto"
                 }}
               />
             </Box>
             <Typography variant="h1" mt={3} fontSize={20} align="center">
-              From {data.community.price}
+              From {data.info.price}
             </Typography>
           </Stack>
         </Stack>

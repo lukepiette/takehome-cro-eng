@@ -13,7 +13,7 @@ export default function Hero({data}) {
         bottom: 0,
         left: 0,
         width: {xs:'100%', md: '100%'},
-        height: {xs:'100vh', sm:'100vh'},
+        height: {xs:700, sm:'100vh'},
         objectFit: 'cover',
         filter: {xs: 'brightness(0.4)', sm:'brightness(1)'},
         
@@ -27,7 +27,7 @@ export default function Hero({data}) {
       sx={{
         width: "100%",
         position: "relative",
-        height: "calc(100vh - 71px)",
+        height: {xs:625, sm:"calc(100vh - 71px)"},
       }}
     >
       <Stack
@@ -44,7 +44,7 @@ export default function Hero({data}) {
 
         <Stack
           direction="row"
-          height="100%"
+          height={{xs:700,sm:"100%"}}
           alignItems="center"
           sx={{ position: "relative" }}
         >
@@ -52,7 +52,7 @@ export default function Hero({data}) {
           <Typography mt={{xs:'-12rem', sm: '-7rem', md: -25}} textAlign={{ xs: "center", sm: "left" }} color={"rgb(163 163 163)"} fontSize={{ xs: '1rem', sm: 14 }} mb={{xs:0, md: 0.4}} ml={0.5} variant="h2">
               RunPod GPU Cloud
             </Typography>
-            
+
             <Typography
               fontSize={{ xs: '3rem', sm: 50, md: 60, xl: 65 }}
               textAlign={{ xs: "center", sm: "left" }}
