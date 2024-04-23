@@ -13,15 +13,14 @@ export default function FastestCloud({data}) {
     <Box
       component="img"
       sx={{
-        zIndex:-10,
-        position: 'absolute',
-        top: {xs:'40vh',sm:'102vh'},
+        zIndex:-9,
+        position: 'fixed',
+        // top: {xs: '285vh', sm: 3100},
         right: 0,
         bottom: 0,
         left: 0,
-        width: '100%',
-        height: {xs: '200vh'},
-        objectFit: 'cover',
+        width: {xs:800,sm:'100%'},
+        height: {xs: '80vh', sm:1000},
         filter: 'brightness(0.3)',
       }}
       alt="gpu header background"
