@@ -15,7 +15,6 @@ export default function FastestCloud({data}) {
       sx={{
         zIndex:-9,
         position: 'fixed',
-        // top: {xs: '285vh', sm: 3100},
         right: 0,
         bottom: 0,
         left: 0,

@@ -141,22 +141,6 @@ const PreferredPlatform = () => {
         src="/static/images/gpu/gpu-background-middle.webp" // 
       /> */}
 
-      {/* <Box
-        component="img"
-        sx={{
-          zIndex:-10,
-          position: 'fixed',
-          top: {xs:1800,sm:3000},
-          right: 0,
-          bottom: 0,
-          left: 0,
-          width: '100%',
-          height: {xs: '200vh',sm:0},
-          filter: 'brightness(0.3)',
-        }}
-        alt="gpu header background"
-        src="/static/images/gpu/gpu-background-top.webp" 
-      /> */}
     </>
   )
 }

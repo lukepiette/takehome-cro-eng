@@ -8,14 +8,14 @@ export default function Hero({data}) {
       component="img"
       sx={{
         position: 'absolute',
-        top: {xs: -170, sm: 0},
+        top: {xs: 0, sm: 0},
         right: 0,
         bottom: 0,
         left: 0,
         width: {xs:'100%', md: '100%'},
-        height: {xs: '90vh'},
+        height: {xs:'100vh', sm:'100vh'},
         objectFit: 'cover',
-        filter: 'blur(0px)',
+        filter: {xs: 'brightness(0.4)', sm:'brightness(1)'},
         
       }}
       alt="gpu background"
@@ -49,7 +49,7 @@ export default function Hero({data}) {
           sx={{ position: "relative" }}
         >
           <Stack spacing={{ xs: 1, md: 1 }}>
-            <Typography mt={{xs:'-18rem', md: -25}} textAlign={{ xs: "center", sm: "left" }} color={"rgb(163 163 163)"} fontSize={{ xs: '1rem', sm: 14 }} mb={{xs:0, md: 0.4}} ml={0.5} variant="h2">
+          <Typography mt={{xs:'-12rem', sm: '-7rem', md: -25}} textAlign={{ xs: "center", sm: "left" }} color={"rgb(163 163 163)"} fontSize={{ xs: '1rem', sm: 14 }} mb={{xs:0, md: 0.4}} ml={0.5} variant="h2">
               RunPod GPU Cloud
             </Typography>
 

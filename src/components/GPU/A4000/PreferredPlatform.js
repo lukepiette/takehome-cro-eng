@@ -18,7 +18,7 @@ const PreferredPlatform = () => {
         width="90%"
       >
         <Stack >
-          <Typography variant="h1" sx={{ fontSize: { xs: '1.6rem', sm: '2rem', md: 48, lg: 60 } }}>
+        <Typography variant="h1" sx={{ width:{xs:"100%", sm:"100%", md:"80%"}, fontSize: { xs: '1.6rem', sm: '2rem', md: 48, lg: 60 } }}>
           The preferred platform for 100,000+ developers worldwide
           </Typography>
 
@@ -123,7 +123,7 @@ const PreferredPlatform = () => {
         </Stack>
       </Stack>
 
-      <Box
+      {/* <Box
         component="img"
         sx={{
           zIndex:-9,
@@ -138,7 +138,7 @@ const PreferredPlatform = () => {
         }}
         alt="4090 gpu background"
         src="/static/images/gpu/gpu-background-middle.webp" // 
-      />
+      /> */}
     </>
   )
 }
