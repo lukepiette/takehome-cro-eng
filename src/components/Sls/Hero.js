@@ -3,7 +3,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function Hero() {
   return (
-    <Stack alignItems="center" position="relative" mb={200}>
+    <Stack alignItems="center" position="relative" mb={15}>
       <Stack
         borderRadius={100}
         height={1080}
