@@ -1,10 +1,19 @@
-import { Box, Button, Container, Divider, Drawer, IconButton, Stack, styled } from "@mui/material"
-import { useState } from "react"
-import MenuIcon from "@mui/icons-material/Menu"
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Drawer,
+  IconButton,
+  Stack,
+  styled,
+} from "@mui/material";
+import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 
-import ButtonLink from "@components/ButtonLink"
+import ButtonLink from "@components/ButtonLink";
 // import TopAdvertisement from "@components/TopAdvertisement"
-import Logo from "./Logo"
+import Logo from "./Logo";
 
 const links = [
   {
@@ -27,7 +36,7 @@ const links = [
     name: "Docs",
     to: "https://docs.runpod.io",
   },
-]
+];
 
 const HeaderAndDividerWrapper = styled(Box)(
   ({ theme }) => `
@@ -52,26 +61,34 @@ const HeaderWrapper = styled(Box)(
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 `
-)
+);
 
 export default function Home() {
-  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = (open) => (event) => {
-    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
-      return
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
     }
 
-    setDrawerOpen(open)
-  }
+    setDrawerOpen(open);
+  };
 
   return (
     <>
       {/* <TopAdvertisement></TopAdvertisement> */}
       <HeaderAndDividerWrapper>
         <HeaderWrapper>
-          <Container maxWidth="lg" >
-            <Stack alignItems="center" direction="row" justifyContent="space-between" px={1}>
+          <Container maxWidth="lg">
+            <Stack
+              alignItems="center"
+              direction="row"
+              justifyContent="space-between"
+              px={1}
+            >
               <Logo />
               <Stack
                 direction="row"
@@ -103,15 +120,21 @@ export default function Home() {
                 <MenuIcon />
               </IconButton>
             </Stack>
-            
           </Container>
-          
         </HeaderWrapper>
 
-        <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+        <Drawer
+          anchor="top"
+          open={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+        >
           <Stack spacing={2} sx={{ p: 3 }}>
             <>
-              <ButtonLink href="/console/signup" variant="contained" size="large">
+              <ButtonLink
+                href="/console/signup"
+                variant="contained"
+                size="large"
+              >
                 Sign Up
               </ButtonLink>
               <ButtonLink href="/console/login" variant="outlined" size="large">
@@ -134,10 +157,9 @@ export default function Home() {
             <Divider />
             <Button onClick={() => setDrawerOpen(false)}>Close Menu</Button>
           </Stack>
-
         </Drawer>
         <Divider />
       </HeaderAndDividerWrapper>
     </>
-  )
+  );
 }

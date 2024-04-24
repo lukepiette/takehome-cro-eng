@@ -1,4 +1,4 @@
-import { alpha, createTheme, darken } from "@mui/material/styles"
+import { alpha, createTheme, darken } from "@mui/material/styles";
 
 // import i18n from 'src/i18n/i18n';
 
@@ -13,7 +13,7 @@ const themeColors = {
   white: "#111633",
   primaryAlt: "#111633",
   trueWhite: "#ffffff",
-}
+};
 
 const colors = {
   gradients: {
@@ -37,11 +37,15 @@ const colors = {
     redToGreen: "linear-gradient(135deg, #FF1943 0%, #57CA22 100%)",
   },
   shadows: {
-    success: "0px 1px 4px rgba(68, 214, 0, 0.25), 0px 3px 12px 2px rgba(68, 214, 0, 0.35)",
-    error: "0px 1px 4px rgba(255, 25, 67, 0.25), 0px 3px 12px 2px rgba(255, 25, 67, 0.35)",
+    success:
+      "0px 1px 4px rgba(68, 214, 0, 0.25), 0px 3px 12px 2px rgba(68, 214, 0, 0.35)",
+    error:
+      "0px 1px 4px rgba(255, 25, 67, 0.25), 0px 3px 12px 2px rgba(255, 25, 67, 0.35)",
     info: "0px 1px 4px rgba(51, 194, 255, 0.25), 0px 3px 12px 2px rgba(51, 194, 255, 0.35)",
-    primary: "0px 1px 4px rgba(112, 99, 192, 0.25), 0px 3px 12px 2px rgba(112, 99, 192, 0.35)",
-    warning: "0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35)",
+    primary:
+      "0px 1px 4px rgba(112, 99, 192, 0.25), 0px 3px 12px 2px rgba(112, 99, 192, 0.35)",
+    warning:
+      "0px 1px 4px rgba(255, 163, 25, 0.25), 0px 3px 12px 2px rgba(255, 163, 25, 0.35)",
     card: "0px 0px 2px #6A7199",
     cardSm: "0px 0px 2px #6A7199",
     cardLg:
@@ -49,7 +53,7 @@ const colors = {
   },
   layout: {
     general: {
-      bodyBg: "#00000a",
+      bodyBg: "#000",
     },
     sidebar: {
       background: themeColors.primaryAlt,
@@ -127,7 +131,7 @@ const colors = {
     main: themeColors.info,
     dark: darken(themeColors.info, 0.2),
   },
-}
+};
 
 export const NebulaFighterTheme = createTheme({
   // direction: i18n.dir(),
@@ -328,9 +332,9 @@ export const NebulaFighterTheme = createTheme({
     MuiBackdrop: {
       styleOverrides: {
         root: {
-          "backgroundColor": alpha(darken("#070C27", 0.5), 0.4),
-          "backdropFilter": "blur(2px)",
-          "transition": "none !important",
+          backgroundColor: alpha(darken("#070C27", 0.5), 0.4),
+          backdropFilter: "blur(2px)",
+          transition: "none !important",
 
           "&.MuiBackdrop-invisible": {
             backgroundColor: "transparent",
@@ -362,7 +366,7 @@ export const NebulaFighterTheme = createTheme({
           width: "100%",
           height: "100%",
         },
-        "body": {
+        body: {
           display: "flex",
           flexDirection: "column",
           minHeight: "100%",
@@ -376,7 +380,7 @@ export const NebulaFighterTheme = createTheme({
           flex: 1,
           flexDirection: "column",
         },
-        "html": {
+        html: {
           display: "flex",
           flexDirection: "column",
           minHeight: "100%",
@@ -402,7 +406,7 @@ export const NebulaFighterTheme = createTheme({
         },
         ":root": {
           "--swiper-theme-color": colors.primary.main,
-          "colorScheme": "dark",
+          colorScheme: "dark",
         },
         // code: {
         //   background: colors.info.lighter,
@@ -509,15 +513,15 @@ export const NebulaFighterTheme = createTheme({
     MuiChip: {
       styleOverrides: {
         colorSecondary: {
-          "background": colors.alpha.black[5],
-          "color": colors.alpha.black[100],
+          background: colors.alpha.black[5],
+          color: colors.alpha.black[100],
 
           "&:hover": {
             background: colors.alpha.black[10],
           },
         },
         deleteIcon: {
-          "color": colors.alpha.black[50],
+          color: colors.alpha.black[50],
 
           "&:hover": {
             color: colors.alpha.black[70],
@@ -528,7 +532,7 @@ export const NebulaFighterTheme = createTheme({
     MuiAccordion: {
       styleOverrides: {
         root: {
-          "boxShadow": "none",
+          boxShadow: "none",
 
           "&.Mui-expanded": {
             margin: 0,
@@ -557,10 +561,10 @@ export const NebulaFighterTheme = createTheme({
           alignItems: "center",
         },
         avatar: {
-          "background": colors.alpha.black[10],
-          "fontSize": 13,
-          "color": colors.alpha.black[70],
-          "fontWeight": "bold",
+          background: colors.alpha.black[10],
+          fontSize: 13,
+          color: colors.alpha.black[70],
+          fontWeight: "bold",
 
           "&:first-of-type": {
             border: 0,
@@ -602,15 +606,15 @@ export const NebulaFighterTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          "fontWeight": 400,
-          "textTransform": "none",
-          "paddingLeft": 16,
-          "paddingRight": 16,
+          fontWeight: 400,
+          textTransform: "none",
+          paddingLeft: 16,
+          paddingRight: 16,
 
           ".MuiSvgIcon-root": {
             transition: "all .2s",
           },
-          "color": colors.alpha.trueWhite[90],
+          color: colors.alpha.trueWhite[90],
         },
         endIcon: {
           marginRight: -8,
@@ -621,7 +625,7 @@ export const NebulaFighterTheme = createTheme({
           border: `1px solid ${colors.alpha.black[30]}`,
         },
         outlinedSecondary: {
-          "backgroundColor": colors.alpha.white[100],
+          backgroundColor: colors.alpha.white[100],
 
           "&:hover, &.MuiSelected": {
             backgroundColor: colors.alpha.black[5],
@@ -665,9 +669,9 @@ export const NebulaFighterTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          "color": colors.primary.main,
-          "background": colors.alpha.white[100],
-          "transition": "all .2s",
+          color: colors.primary.main,
+          background: colors.alpha.white[100],
+          transition: "all .2s",
 
           "&:hover, &.Mui-selected, &.Mui-selected:hover": {
             color: themeColors.trueWhite,
@@ -679,8 +683,8 @@ export const NebulaFighterTheme = createTheme({
     MuiIconButton: {
       styleOverrides: {
         root: {
-          "borderRadius": 8,
-          "padding": 8,
+          borderRadius: 8,
+          padding: 8,
 
           "& .MuiTouchRipple-root": {
             borderRadius: 8,
@@ -715,8 +719,8 @@ export const NebulaFighterTheme = createTheme({
           height: 1,
         },
         vertical: {
-          "height": "auto",
-          "width": 1,
+          height: "auto",
+          width: 1,
 
           "&.MuiDivider-flexItem.MuiDivider-fullWidth": {
             height: "auto",
@@ -794,10 +798,10 @@ export const NebulaFighterTheme = createTheme({
     MuiList: {
       styleOverrides: {
         root: {
-          "padding": 0,
+          padding: 0,
 
           "& .MuiListItem-button": {
-            "transition": "all .2s",
+            transition: "all .2s",
 
             "& > .MuiSvgIcon-root": {
               minWidth: 34,
@@ -818,7 +822,7 @@ export const NebulaFighterTheme = createTheme({
           },
         },
         padding: {
-          "padding": "12px",
+          padding: "12px",
 
           "& .MuiListItem-button": {
             borderRadius: 6,
@@ -842,12 +846,12 @@ export const NebulaFighterTheme = createTheme({
     MuiTab: {
       styleOverrides: {
         root: {
-          "padding": 0,
-          "height": 38,
-          "minHeight": 38,
-          "borderRadius": 6,
-          "transition": "color .2s",
-          "textTransform": "capitalize",
+          padding: 0,
+          height: 38,
+          minHeight: 38,
+          borderRadius: 6,
+          transition: "color .2s",
+          textTransform: "capitalize",
 
           "&.MuiButtonBase-root": {
             minWidth: "auto",
@@ -871,14 +875,14 @@ export const NebulaFighterTheme = createTheme({
           padding: 12,
         },
         list: {
-          "padding": 12,
+          padding: 12,
 
           "& .MuiMenuItem-root.MuiButtonBase-root": {
-            "fontSize": 14,
-            "marginTop": 1,
-            "marginBottom": 1,
-            "transition": "all .2s",
-            "color": colors.alpha.black[70],
+            fontSize: 14,
+            marginTop: 1,
+            marginBottom: 1,
+            transition: "all .2s",
+            color: colors.alpha.black[70],
 
             "& .MuiTouchRipple-root": {
               opacity: 0.2,
@@ -895,8 +899,8 @@ export const NebulaFighterTheme = createTheme({
     MuiMenuItem: {
       styleOverrides: {
         root: {
-          "background": "transparent",
-          "transition": "all .2s",
+          background: "transparent",
+          transition: "all .2s",
 
           "&:hover, &:active, &.active, &.Mui-selected": {
             color: colors.alpha.black[100],
@@ -912,7 +916,7 @@ export const NebulaFighterTheme = createTheme({
       styleOverrides: {
         root: {
           "&.MuiButtonBase-root": {
-            "color": colors.secondary.main,
+            color: colors.secondary.main,
 
             "&:hover, &:active, &.active, &.Mui-selected": {
               color: colors.alpha.black[100],
@@ -928,21 +932,22 @@ export const NebulaFighterTheme = createTheme({
           margin: 1,
         },
         root: {
-          ".MuiAutocomplete-inputRoot.MuiOutlinedInput-root .MuiAutocomplete-endAdornment": {
-            right: 14,
-          },
+          ".MuiAutocomplete-inputRoot.MuiOutlinedInput-root .MuiAutocomplete-endAdornment":
+            {
+              right: 14,
+            },
         },
         clearIndicator: {
-          "background": alpha(colors.error.lighter, 0.2),
-          "color": colors.error.main,
-          "marginRight": 8,
+          background: alpha(colors.error.lighter, 0.2),
+          color: colors.error.main,
+          marginRight: 8,
 
           "&:hover": {
             background: alpha(colors.error.lighter, 0.3),
           },
         },
         popupIndicator: {
-          "color": colors.alpha.black[70],
+          color: colors.alpha.black[70],
 
           "&:hover": {
             background: alpha(colors.primary.lighter, 0.2),
@@ -978,7 +983,7 @@ export const NebulaFighterTheme = createTheme({
           background: colors.alpha.black[5],
         },
         root: {
-          "transition": "background-color .2s",
+          transition: "background-color .2s",
 
           "&.MuiTableRow-hover:hover": {
             backgroundColor: alpha(colors.alpha.black[5], 0.05),
@@ -1048,8 +1053,8 @@ export const NebulaFighterTheme = createTheme({
     MuiTimelineItem: {
       styleOverrides: {
         root: {
-          "minHeight": 0,
-          "padding": "8px 0",
+          minHeight: 0,
+          padding: "8px 0",
 
           "&:before": {
             display: "none",
@@ -1077,8 +1082,8 @@ export const NebulaFighterTheme = createTheme({
     MuiSwitch: {
       styleOverrides: {
         root: {
-          "height": 33,
-          "overflow": "visible",
+          height: 33,
+          overflow: "visible",
 
           "& .MuiButtonBase-root": {
             position: "absolute",
@@ -1246,4 +1251,4 @@ export const NebulaFighterTheme = createTheme({
     "none",
     "none",
   ],
-})
+});
