@@ -26,11 +26,11 @@ export default function Hero() {
       <Stack
         alignItems="center"
         borderRadius={100}
-        boxShadow="inset 0 20px 28px #fff, inset 0 72px 27px #673BB8"
-        height={580}
+        boxShadow="inset 0 15px 18px #fff, inset 0 55px 20px #673BB8"
+        height={520}
         position="absolute"
-        top={-190}
-        width={580}
+        top={-140}
+        width={520}
         zIndex={-97}
       />
       <Stack
@@ -85,6 +85,7 @@ export default function Hero() {
           color="#fff"
           fontSize={44}
           letterSpacing={-2}
+          lineHeight={1}
           mt={2}
           variant="h1"
         >
@@ -108,7 +109,7 @@ export default function Hero() {
           fontSize={14}
           fontWeight={300}
           lineHeight={1.5}
-          mt={3}
+          mt={2.5}
           variant="h2"
         >
           Run your AI models with autoscaling, job queueing
