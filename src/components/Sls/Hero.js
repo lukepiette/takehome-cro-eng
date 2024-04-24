@@ -1,32 +1,40 @@
-import { Box, Stack, Typography, alpha } from "@mui/material";
+import { Box, Button, Stack, Typography, alpha } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function Hero() {
   return (
     <Stack alignItems="center" position="relative" mb={200}>
-      <Box
-        height={700}
-        mt={1}
+      <Stack
+        borderRadius={100}
+        height={1080}
+        overflow="hidden"
         position="absolute"
-        sx={{
-          backgroundImage: `linear-gradient(${alpha("#000", 0)} 0%, ${alpha(
-            "#000",
-            0
-          )} 20%, ${alpha("#4110C1", 0.33)} 38%, ${alpha(
-            "#000",
-            0.48
-          )} 48%, ${alpha("#3300C4", 0.2)} 60%, ${alpha(
-            "#673BB8",
-            0.9
-          )} 79%, ${alpha("#000", 1)} 100%)`,
-        }}
-        width="100%"
+        top={-300}
+        width={1080}
         zIndex={-90}
-      />
+      >
+        <Box
+          height={705}
+          mt={34}
+          sx={{
+            backgroundImage: `linear-gradient(${alpha("#000", 0)} 0%, ${alpha(
+              "#000",
+              0
+            )} 30%, ${alpha("#4110C1", 0.33)} 38%, ${alpha(
+              "#000",
+              0.48
+            )} 55%, ${alpha("#3300C4", 0.2)} 65%, ${alpha(
+              "#673BB8",
+              0.9
+            )} 80%, ${alpha("#000", 1)} 100%)`,
+          }}
+          width="100%"
+        />
+      </Stack>
       <Stack
         alignItems="center"
         borderRadius={100}
-        boxShadow="inset 0 15px 18px #fff, inset 0 55px 20px #673BB8"
+        boxShadow="inset 0 18px 18px #fff, inset 0 55px 20px #673BB8"
         height={520}
         position="absolute"
         top={-140}
@@ -61,8 +69,8 @@ export default function Hero() {
       />
       <Stack
         alignItems="center"
-        maxWidth={840}
-        mt={9.4}
+        maxWidth={860}
+        mt={12.1}
         overflow="hidden"
         width="100%"
       >
@@ -108,8 +116,8 @@ export default function Hero() {
           color="#94A3B8"
           fontSize={14}
           fontWeight={300}
-          lineHeight={1.5}
-          mt={2.5}
+          lineHeight={1.4}
+          mt={2}
           variant="h2"
         >
           Run your AI models with autoscaling, job queueing
@@ -117,10 +125,21 @@ export default function Hero() {
           and sub 500ms cold start time.
         </Typography>
 
+        <Stack direction="row" mt={4} spacing={1.8}>
+          <Button variant="contained" sx={{ height: 35 }}>
+            Try it now
+          </Button>
+          <Button variant="outlined" sx={{ height: 35 }}>
+            Read the Docs
+          </Button>
+        </Stack>
+
         <Stack
+          //   bgcolor={`${alpha("#fff", 0.05)}`}
           direction="row"
           justifyContent="space-between"
-          mt={22.2}
+          mt={15}
+          px={4}
           width="100%"
         >
           <CodeBlock />
@@ -133,17 +152,18 @@ export default function Hero() {
 
 const CodeBlock = (props) => (
   <Stack
-    borderRadius="10px 10px 0 0"
+    borderRadius={1}
     bgcolor="#111121"
     height={200}
     sx={{
-      borderImage: `conic-gradient(from 180deg, ${alpha(
-        "#BEC2FD",
-        0.4
-      )} 8%, ${alpha("#BD00FF", 0.4)} 37%, ${alpha(
-        "#4D94FF",
-        0.3
-      )} 54%, ${alpha("#5D29F0", 0.4)} 88%, ${alpha("#EDE1FF", 0.4)} 100%) 1`,
+      //   borderImage: `conic-gradient(from 180deg, ${alpha(
+      //     "#BEC2FD",
+      //     0.4
+      //   )} 8%, ${alpha("#BD00FF", 0.4)} 37%, ${alpha(
+      //     "#4D94FF",
+      //     0.3
+      //   )} 54%, ${alpha("#5D29F0", 0.4)} 88%, ${alpha("#EDE1FF", 0.4)} 100%) 1`,
+      borderColor: `${alpha("#5D29F0", 0.4)}`,
       borderStyle: "solid",
       borderWidth: 1,
       borderBottomWidth: 0,
@@ -152,7 +172,7 @@ const CodeBlock = (props) => (
         0.04
       )}, 0 0 0 8px ${alpha("#fff", 0.04)}`,
     }}
-    width={400}
+    width={380}
     {...props}
   />
 );
