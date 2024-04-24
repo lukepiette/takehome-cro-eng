@@ -16,8 +16,8 @@ export default function Hero() {
             0.48
           )} 48%, ${alpha("#3300C4", 0.2)} 60%, ${alpha(
             "#673BB8",
-            0.8
-          )} 79%, ${alpha("#000", 0.8)} 100%)`,
+            0.9
+          )} 79%, ${alpha("#000", 1)} 100%)`,
         }}
         width="100%"
         zIndex={-90}
@@ -60,9 +60,9 @@ export default function Hero() {
       />
       <Stack
         alignItems="center"
-        height={600}
         maxWidth={840}
         mt={9.4}
+        overflow="hidden"
         width="100%"
       >
         <Stack
@@ -106,23 +106,39 @@ export default function Hero() {
         <Stack
           direction="row"
           justifyContent="space-between"
-          mt={23.8}
+          mt={22.2}
           width="100%"
         >
-          <Stack
-            borderRadius={0.8}
-            bgcolor="#111121"
-            height={200}
-            width={400}
-          ></Stack>
-          <Stack
-            borderRadius={0.8}
-            bgcolor="#111121"
-            height={200}
-            width={400}
-          ></Stack>
+          <CodeBlock />
+          <CodeBlock />
         </Stack>
       </Stack>
     </Stack>
   );
 }
+
+const CodeBlock = (props) => (
+  <Stack
+    borderRadius="10px 10px 0 0"
+    bgcolor="#111121"
+    height={200}
+    sx={{
+      borderImage: `conic-gradient(from 180deg, ${alpha(
+        "#BEC2FD",
+        0.4
+      )} 8%, ${alpha("#BD00FF", 0.4)} 37%, ${alpha(
+        "#4D94FF",
+        0.3
+      )} 54%, ${alpha("#5D29F0", 0.4)} 88%, ${alpha("#EDE1FF", 0.4)} 100%) 1`,
+      borderStyle: "solid",
+      borderWidth: 1,
+      borderBottomWidth: 0,
+      boxShadow: `0 0 0 1px ${alpha("#fff", 0.04)}, 0 0 0 3px ${alpha(
+        "#fff",
+        0.04
+      )}, 0 0 0 8px ${alpha("#fff", 0.04)}`,
+    }}
+    width={400}
+    {...props}
+  />
+);
