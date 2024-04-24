@@ -4,7 +4,7 @@ import Leaderboard from "@components/Leaderboard"
 
 
 const Maintenance: NextPage = () => {
-  const targetDate = new Date('2024-04-24T00:00:00');
+  
 
   return (
     <>
