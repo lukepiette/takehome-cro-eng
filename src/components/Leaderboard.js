@@ -42,16 +42,16 @@ export default function Leaderboard() {
             alignItems={"center"}
             mt={2}
             spacing={1}
-            sx={{ height: 1000 }}
+            sx={{ height: {xs:700,sm:800,md:1000} }}
             >
-            <Box sx={{ height:1100, background: 'radial-gradient(circle, rgba(128,0,128,0.2), rgba(128,0,128,0.1))', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}></Box>
+            <Box sx={{ height:{xs:900,sm:900,md:1100}, background: 'radial-gradient(circle, rgba(128,0,128,0.2), rgba(128,0,128,0.1))', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}></Box>
            
 
-            <Typography variant="h1" pb={2} pt={12} fontSize={{xs:50}} textAlign={"center"} pl="5vw" pr="5vw">
+            <Typography variant="h1" pb={2} pt={{xs:6, sm: 12}} fontSize={{xs:36, sm:50}} textAlign={"center"} pl="5vw" pr="5vw">
                 RunPod RTX 4090 Scavenger Hunt
             </Typography>
             <Stack spacing={1}>
-                <Typography sx={{width:400}} variant="h3" >
+                <Typography sx={{width:400}} fontSize={{xs:16, sm:24}} textAlign="center" variant="h3" >
                     Time Remaining: <b>{timeLeft}</b>
                 </Typography>
                 <Typography variant="h3">
@@ -60,23 +60,23 @@ export default function Leaderboard() {
             </Stack>
 
             <TableContainer
-                sx={{ maxWidth: 1000, minHeight:150, marginLeft: "0 !important", p: 2, backdropFilter: 'blur(100px)', margin:"5vw"}}
+                sx={{ maxWidth: 1000, minHeight:150, marginLeft: "0 !important", pl: "10vw", pr: "10vw", pt:2, backdropFilter: 'blur(100px)', margin:"5vw"}}
             >
                 <Table size="medium">
                     <TableBody>
                         <TableRow>
                             <TableCell component="th" scope="row">
-                                <Typography display="flex" fontSize={18}>
+                                <Typography display="flex" fontSize={{xs:14, sm:18}}>
                                 Rank
                                 </Typography>
                             </TableCell>
                             <TableCell component="th" scope="row">
-                                <Typography display="flex" fontSize={18}>
-                                Twitter Handle
+                                <Typography display="flex" ontSize={{xs:14, sm:18}}>
+                                Twitter
                                 </Typography>
                             </TableCell>
                             <TableCell align="right">
-                                <Typography fontSize={18}>Completed At</Typography>
+                                <Typography ontSize={{xs:14, sm:18}}>Completed</Typography>
                             </TableCell>
                         </TableRow>
 
@@ -92,13 +92,13 @@ export default function Leaderboard() {
                                 </Typography>
                             </TableCell>
                             <TableCell align="right">
-                                <Typography fontSize={14}>April 23, 10:27pm</Typography>
+                                <Typography fontSize={14}>April 22, 10:07pm</Typography>
                             </TableCell>
                         </TableRow>
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Stack pt={20}>
+            <Stack pt={{xs:10,sm:12,md:20}}>
             
             </Stack>
             <Carousel4090 />
