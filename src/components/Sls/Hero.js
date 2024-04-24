@@ -1,4 +1,5 @@
 import { Box, Stack, Typography, alpha } from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function Hero() {
   return (
@@ -70,11 +71,13 @@ export default function Hero() {
           border={`1px solid ${alpha("#fff", 0.1)}`}
           borderRadius={0.8}
           bgcolor={alpha("#fff", 0.1)}
+          direction="row"
           fontSize={12}
-          height={34}
+          height={32}
           justifyContent="center"
           px={1.2}
         >
+          <FavoriteIcon sx={{ fontSize: 12, mr: 1 }} />
           We just raised our 20 million Pre-Seed
         </Stack>
         <Typography
@@ -87,7 +90,17 @@ export default function Hero() {
         >
           Run machine learning
           <br />
-          inference at scale.
+          inference&nbsp;
+          <Box
+            display="inline-flex"
+            sx={{
+              background: "-webkit-linear-gradient(45deg, #CAD9FF, #7F39FF)",
+              backgroundClip: "text",
+              textFillColor: "transparent",
+            }}
+          >
+            at scale.
+          </Box>
         </Typography>
         <Typography
           align="center"
