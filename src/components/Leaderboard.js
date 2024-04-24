@@ -95,6 +95,21 @@ export default function Leaderboard() {
                                 <Typography fontSize={14}>April 22, 10:07pm</Typography>
                             </TableCell>
                         </TableRow>
+                        <TableRow>
+                            <TableCell component="th" scope="row">
+                                <Typography display="flex" fontSize={14}>
+                                2
+                                </Typography>
+                            </TableCell>
+                            <TableCell component="th" scope="row">
+                                <Typography display="flex" fontSize={14}>
+                                @_henrywu
+                                </Typography>
+                            </TableCell>
+                            <TableCell align="right">
+                                <Typography fontSize={14}>April 24, 3:33pm</Typography>
+                            </TableCell>
+                        </TableRow>
                     </TableBody>
                 </Table>
             </TableContainer>
