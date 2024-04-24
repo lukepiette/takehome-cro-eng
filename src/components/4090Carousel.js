@@ -155,8 +155,8 @@ const Carousel4090 = () => {
             <Logo
               key={logo.src}
               src={logo.src}
-              width={logo.width}
-              height={logo.height}
+              width={logo.width / 1.5}
+              height={logo.height / 1.5}
               alt={logo.alt}
             />
           ))}
@@ -164,8 +164,8 @@ const Carousel4090 = () => {
             <Logo
               key={logo.src}
               src={logo.src}
-              width={logo.width}
-              height={logo.height}
+              width={logo.width / 1.5}
+              height={logo.height / 1.5}
               alt={logo.alt}
             />
           ))}
