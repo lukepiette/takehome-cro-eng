@@ -1,5 +1,6 @@
-import { Box, Button, Stack, Typography, alpha } from "@mui/material";
+import { Box, Stack, Typography, alpha } from "@mui/material";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import ButtonLink from "@components/ButtonLink";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
@@ -118,7 +119,8 @@ export default function Hero() {
         </Typography>
 
         <Stack direction="row" mt={4} spacing={1.8}>
-          <Button
+          <ButtonLink
+            href="/console/serverless"
             variant="contained"
             sx={{
               background:
@@ -132,8 +134,9 @@ export default function Hero() {
             }}
           >
             Try it now <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
-          </Button>
-          <Button
+          </ButtonLink>
+          <ButtonLink
+            href="https://docs.runpod.io/serverless/overview"
             variant="outlined"
             sx={{
               background:
@@ -147,7 +150,7 @@ export default function Hero() {
             }}
           >
             Read the Docs <ArrowRightAltIcon sx={{ fontSize: 18, ml: 0.6 }} />
-          </Button>
+          </ButtonLink>
         </Stack>
 
         <Stack
@@ -157,7 +160,7 @@ export default function Hero() {
           px={4}
           width="100%"
         >
-          <CodeBlock>
+          <CodeBlock left>
             <Stack
               alignItems="center"
               bgcolor="#212134"
@@ -259,11 +262,14 @@ export default function Hero() {
   );
 }
 
-const CodeBlock = (props) => (
+const CodeBlock = ({ children, left }) => (
   <Stack
     borderRadius={1}
     bgcolor="#111121"
     height={200}
+    ml={left ? 0 : 2}
+    mr={left ? 2 : 0}
+    overflow="hidden"
     sx={{
       //   borderImage: `conic-gradient(from 180deg, ${alpha(
       //     "#BEC2FD",
@@ -282,6 +288,7 @@ const CodeBlock = (props) => (
       )}, 0 0 0 8px ${alpha("#fff", 0.04)}`,
     }}
     width={380}
-    {...props}
-  />
+  >
+    {children}
+  </Stack>
 );
