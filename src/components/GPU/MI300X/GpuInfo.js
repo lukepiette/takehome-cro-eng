@@ -16,7 +16,7 @@ const GpuInfo = {
         FP8: "5,220 TFLOPs",
         interconnect: "PCIe 128 GB/s",
         network: "3.2 Tb/s",
-        price: "$5.10/hr",
+        price: "$4.99/hr",
         price3Month: "Book a call",
         price6Month: "Book a call",
         price12Month: "$3.25/hr",
