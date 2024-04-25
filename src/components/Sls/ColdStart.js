@@ -1,4 +1,5 @@
-import { Box, Button, Stack, Typography, alpha } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 export default function ColdStart() {
@@ -57,6 +58,53 @@ export default function ColdStart() {
       >
         Try it now <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
       </Button>
+
+      <Stack
+        direction="row"
+        fontSize={16}
+        fontWeight={600}
+        letterSpacing={-0.02}
+        mt={3}
+        spacing={4}
+      >
+        <Stack direction="row">
+          <Stack
+            alignItems="center"
+            bgcolor="rgba(249, 250, 251, 0.24)"
+            borderRadius={100}
+            height={24}
+            justifyContent="center"
+            mr={1}
+            width={24}
+          >
+            <CheckIcon sx={{ fontSize: 14 }} />
+          </Stack>
+          99.99% Uptime
+        </Stack>
+
+        {[
+          "Bring Your Container",
+          "Network Storage",
+          "9 Regions",
+          "Streaming",
+          "Webhooks",
+        ].map((v) => (
+          <Stack direction="row" key={v}>
+            <Stack
+              alignItems="center"
+              bgcolor="rgba(249, 250, 251, 0.24)"
+              borderRadius={100}
+              height={24}
+              justifyContent="center"
+              mr={1}
+              width={24}
+            >
+              <CheckIcon sx={{ fontSize: 14 }} />
+            </Stack>
+            {v}
+          </Stack>
+        ))}
+      </Stack>
     </Stack>
   );
 }
