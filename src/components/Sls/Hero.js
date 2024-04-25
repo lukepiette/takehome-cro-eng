@@ -1,5 +1,7 @@
 import { Box, Button, Stack, Typography, alpha } from "@mui/material";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 export default function Hero() {
   return (
@@ -126,24 +128,141 @@ export default function Hero() {
         </Typography>
 
         <Stack direction="row" mt={4} spacing={1.8}>
-          <Button variant="contained" sx={{ height: 35 }}>
-            Try it now
+          <Button
+            variant="contained"
+            sx={{
+              background:
+                "radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.0472) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #5D29F0",
+              borderRadius: 0.8,
+              boxShadow:
+                "0px 6px 0px rgba(0, 0, 0, 0.5), inset -3px -4px 7px rgba(9, 0, 114, 0.24)",
+              height: 40,
+              pl: 2,
+              pr: 1.4,
+            }}
+          >
+            Try it now <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </Button>
-          <Button variant="outlined" sx={{ height: 35 }}>
-            Read the Docs
+          <Button
+            variant="outlined"
+            sx={{
+              background:
+                "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
+              borderRadius: 0.8,
+              boxShadow:
+                "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
+              height: 40,
+              pl: 2,
+              pr: 1.4,
+            }}
+          >
+            Read the Docs <ArrowRightAltIcon sx={{ fontSize: 18, ml: 0.6 }} />
           </Button>
         </Stack>
 
         <Stack
-          //   bgcolor={`${alpha("#fff", 0.05)}`}
           direction="row"
           justifyContent="space-between"
           mt={15}
           px={4}
           width="100%"
         >
-          <CodeBlock />
-          <CodeBlock />
+          <CodeBlock>
+            <Stack
+              alignItems="center"
+              bgcolor="#212134"
+              direction="row"
+              height={34}
+              pl={1.6}
+              spacing={0.6}
+            >
+              <Box bgcolor="#EE6A5E" borderRadius={100} height={8} width={8} />
+              <Box bgcolor="#F5BF4F" borderRadius={100} height={8} width={8} />
+              <Box bgcolor="#62C554" borderRadius={100} height={8} width={8} />
+            </Stack>
+            <Stack direction="row" ml={3} mt={2}>
+              <Typography color="#B4BAC5" fontSize={12}>
+                1<br />2<br />3<br />4<br />5<br />6
+              </Typography>
+              <Typography color="#fff" fontSize={12} pl={2}>
+                <span style={{ color: "#EC9D4C" }}>import</span> runpod
+                <br />
+                <span style={{ color: "#EC9D4C" }}>def</span>{" "}
+                <span style={{ color: "#F776F7" }}>handler</span>(job):
+                <Typography color="#fff" fontSize={12} pl={2}>
+                  job_input = job[
+                  <span style={{ color: "#95EC4D" }}>&quot;input&quot;</span>]
+                  <br />
+                  <span style={{ color: "#EC9D4C" }}>return</span>{" "}
+                  <span style={{ color: "#95EC4D" }}>
+                    &quot;Running on Runpod!&quot;
+                  </span>
+                </Typography>
+                runpod.serverless.start&#40;&#123;
+                <span style={{ color: "#95EC4D" }}>&quot;handler&quot;</span>:
+                handler&#125;&#41;
+                <br />
+              </Typography>
+            </Stack>
+          </CodeBlock>
+          <CodeBlock>
+            <Stack
+              alignItems="center"
+              bgcolor="#212134"
+              direction="row"
+              height={34}
+              px={1.6}
+              py={1.4}
+              spacing={0.6}
+            >
+              <Box
+                bgcolor={`${alpha("#fff", 0.8)}`}
+                border="1px solid #fff"
+                borderRadius={100}
+                height={8}
+                sx={{ opacity: 0.3 }}
+                width={8}
+              />
+              <Box
+                bgcolor={`${alpha("#fff", 0.4)}`}
+                border="1px solid #fff"
+                borderRadius={100}
+                height={8}
+                sx={{ opacity: 0.3 }}
+                width={8}
+              />
+              <Box
+                bgcolor={`${alpha("#fff", 0.1)}`}
+                border="1px solid #fff"
+                borderRadius={100}
+                height={8}
+                sx={{ opacity: 0.3 }}
+                width={8}
+              />
+              <Typography
+                align="right"
+                color={`${alpha("#F9FAFB", 0.48)}`}
+                fontSize={12}
+                flexGrow={1}
+              >
+                runpodctl -- zsh
+              </Typography>
+            </Stack>
+            <Typography fontSize={12} ml={3} mt={2}>
+              &gt; runpodctl config --apiKey $(RUNPOD_API_KEY)
+              <br />
+              &gt; runpodctl project create
+              <br />
+              &gt; runpodctl project deploy
+              <br />
+              <br />
+              Deploying project...
+              <br />
+              Syncing files...
+              <br />
+              Project deployed successfully!
+            </Typography>
+          </CodeBlock>
         </Stack>
       </Stack>
     </Stack>
