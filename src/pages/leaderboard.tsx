@@ -3,7 +3,7 @@ import type { NextPage } from "next"
 import Leaderboard from "@components/Leaderboard"
 
 
-const Maintenance: NextPage = () => {
+const LeaderboardPage: NextPage = () => {
   
 
   return (
@@ -18,4 +18,4 @@ const Maintenance: NextPage = () => {
   )
 }
 
-export default Maintenance
+export default LeaderboardPage
