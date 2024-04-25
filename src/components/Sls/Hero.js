@@ -8,27 +8,19 @@ export default function Hero() {
     <Stack alignItems="center" position="relative" mb={15}>
       <Stack
         borderRadius={100}
-        height={1080}
+        height={1200}
         overflow="hidden"
         position="absolute"
-        top={-300}
-        width={1080}
+        top={-400}
+        width={1200}
         zIndex={-90}
       >
         <Box
-          height={705}
-          mt={34}
+          height={704}
+          mt={44}
           sx={{
-            backgroundImage: `linear-gradient(${alpha("#000", 0)} 0%, ${alpha(
-              "#000",
-              0
-            )} 30%, ${alpha("#4110C1", 0.33)} 38%, ${alpha(
-              "#000",
-              0.48
-            )} 55%, ${alpha("#3300C4", 0.2)} 65%, ${alpha(
-              "#673BB8",
-              0.9
-            )} 80%, ${alpha("#000", 1)} 100%)`,
+            background:
+              "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(65, 16, 193, 0.32) 45%, rgba(0, 0, 0, 0.48) 55%, rgba(51, 0, 196, 0.08) 70%, #673BB8 90%, #000000 100%)",
           }}
           width="100%"
         />
@@ -36,43 +28,41 @@ export default function Hero() {
       <Stack
         alignItems="center"
         borderRadius={100}
-        boxShadow="inset 0 18px 18px #fff, inset 0 55px 20px #673BB8"
-        height={520}
+        boxShadow="0px -2px 2px #BD00FF, inset 0px 20px 20px rgba(255, 255, 255, 0.74), inset 0px 72px 27px #673BB8"
+        height={700}
         position="absolute"
-        top={-140}
-        width={520}
+        top={-300}
+        width={700}
         zIndex={-97}
       />
       <Stack
         alignItems="center"
         borderRadius={100}
-        boxShadow="inset 0 -15px 20px #AD47AC, inset 0 -50px #979DFF"
-        height={900}
+        boxShadow="0px 2.7402px 2.7402px rgba(77, 148, 255, 0.25), inset 0px -20px 30px #AD47AC, inset 0px -60px 0px #979DFF"
+        height={1000}
         position="absolute"
-        top={-200}
-        width={900}
+        top={-300}
+        width={1000}
         zIndex={-98}
       />
       <Stack
         alignItems="center"
         borderRadius={100}
-        boxShadow={`inset 0 -20px 35px ${alpha(
-          "#4D94FF",
-          0.25
-        )}, inset 0 -50px 60px #BD00FF`}
-        height={1080}
+        boxShadow="0px 2.7402px 2.7402px rgba(77, 148, 255, 0.25), inset 0px -20.5515px 34.2526px rgba(77, 148, 255, 0.25), inset 0px -68.5051px 68.5051px #BD00FF"
+        height={1200}
         position="absolute"
         sx={{
-          background: "radial-gradient(circle, #000 0%, #000 59%, #000342 80%)",
+          background:
+            "radial-gradient(85.83% 85.83% at 50% 14.17%, #000000 0%, #000000 59.12%, #000342 85.94%)",
         }}
-        top={-300}
-        width={1080}
+        top={-400}
+        width={1200}
         zIndex={-99}
       />
       <Stack
         alignItems="center"
         maxWidth={860}
-        mt={12.1}
+        mt={11.2}
         overflow="hidden"
         width="100%"
       >
@@ -93,9 +83,9 @@ export default function Hero() {
         <Typography
           align="center"
           color="#fff"
-          fontSize={44}
+          fontSize={58}
           letterSpacing={-2}
-          lineHeight={1}
+          lineHeight={0.9}
           mt={2}
           variant="h1"
         >
@@ -116,7 +106,7 @@ export default function Hero() {
         <Typography
           align="center"
           color="#94A3B8"
-          fontSize={14}
+          fontSize={16}
           fontWeight={300}
           lineHeight={1.4}
           mt={2}
@@ -163,7 +153,7 @@ export default function Hero() {
         <Stack
           direction="row"
           justifyContent="space-between"
-          mt={15}
+          mt={11.6}
           px={4}
           width="100%"
         >
