@@ -1,4 +1,5 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { alpha, Box, Stack, Typography } from "@mui/material";
+import { CodeBlock } from "./Hero";
 import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
@@ -186,9 +187,166 @@ export default function Analytics() {
           cold start count, GPU utilization, and more.
         </HeadlineBox>
       </Stack>
+
+      <Stack
+        direction="row"
+        mt={6}
+        overflow="hidden"
+        position="relative"
+        spacing={3}
+      >
+        <HeadlineBox title="Real-Time Logs">
+          Get descriptive, real-time logs to show you exactly what&apos;s
+          happening across your active and flex GPU workers at all times.
+        </HeadlineBox>
+        <Stack
+          alignItems="center"
+          border="1px solid #1E293B"
+          borderRadius={2.4}
+          height={495}
+          overflow="hidden"
+          position="relative"
+          width={781}
+          sx={{
+            background:
+              "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, rgba(15, 23, 42, 0.0001) 100%)",
+          }}
+        >
+          <CodeBlock
+            height="auto"
+            light
+            minWidth={540}
+            mt={9}
+            position="absolute"
+          >
+            <Stack
+              alignItems="center"
+              bgcolor="#212134"
+              direction="row"
+              height={34}
+              px={1.6}
+              py={2}
+              spacing={0.6}
+            >
+              <Box
+                bgcolor={`${alpha("#fff", 0.3)}`}
+                borderRadius={100}
+                height={9}
+                width={9}
+              />
+              <Box
+                bgcolor={`${alpha("#fff", 0.2)}`}
+                borderRadius={100}
+                height={9}
+                width={9}
+              />
+              <Box
+                bgcolor={`${alpha("#fff", 0.1)}`}
+                borderRadius={100}
+                height={9}
+                width={9}
+              />
+              <Typography
+                align="right"
+                color={`${alpha("#F9FAFB", 0.48)}`}
+                fontSize={12}
+                flexGrow={1}
+              >
+                runpodctl -- zsh
+              </Typography>
+            </Stack>
+            <Typography color="#94A3B8" fontSize={14} ml={3} my={2}>
+              2022-12-18T19:56:00.826485895Z{" "}
+              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
+              <ColorText color="#fff">
+                Started job <ColorText color="#9DC2F6">db7c79</ColorText>
+              </ColorText>
+              <br />
+              2022-12-18T19:56:03.166717597Z
+              <br />
+              <ColorText color="#fff">
+                0% | | 0/28 [00:00&lt;?, ?it/s]
+                <br />
+                14% |██ | 4/28 [00:00&lt;00:01, 12.06it/s]
+                <br />
+                43% |████ | 12/28 [00:00&lt;00:01, 12.14it/s]
+                <br />
+                79% |████████ | 22/28 [00:01&lt;00:00, 12.14it/s]
+                <br />
+                100% |██████████| 28/28 [00:02&lt;00:00, 12.13it/s]
+              </ColorText>
+              <br />
+              2022-12-18T19:56:04.137438407Z{" "}
+              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
+              <ColorText color="#fff">
+                Completed job <ColorText color="#9DC2F6">db7c79</ColorText> in
+                2.9s
+              </ColorText>
+              <br />
+              2022-12-18T19:57:00.826485895Z{" "}
+              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
+              <ColorText color="#fff">
+                Started job <ColorText color="#9DC2F6">db7c79</ColorText>
+              </ColorText>
+              <br />
+              2022-12-18T19:57:03.166717597Z
+              <br />
+              <ColorText color="#fff">
+                0% | | 0/28 [00:00&lt;?, ?it/s]
+                <br />
+                11% |██ | 4/28 [00:00&lt;00:01, 11.90it/s]
+                <br />
+                39% |████ | 12/28 [00:00&lt;00:01, 11.94it/s]
+                <br />
+                69% |████████ | 22/28 [00:01&lt;00:00, 11.94it/s]
+                <br />
+                100% |██████████| 28/28 [00:02&lt;00:00, 11.94it/s]
+              </ColorText>
+              <br />
+              2022-12-18T19:57:04.137438407Z{" "}
+              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
+              <ColorText color="#fff">
+                Completed job <ColorText color="#9DC2F6">db7c79</ColorText> in
+                2.9s
+              </ColorText>
+              <br />
+              2022-12-18T19:58:00.826485895Z{" "}
+              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
+              <ColorText color="#fff">
+                Started job <ColorText color="#9DC2F6">db7c79</ColorText>
+              </ColorText>
+              <br />
+              2022-12-18T19:58:03.166717597Z
+              <br />
+              <ColorText color="#fff">
+                0%| | 0/28 [00:00&lt;?, ?it/s]
+                <br />
+                14%|██ | 4/28 [00:00&lt;00:01, 12.06it/s]
+                <br />
+                43%|████ | 12/28 [00:00&lt;00:01, 12.14it/s]
+                <br />
+                79%|████████ | 22/28 [00:01&lt;00:00, 12.14it/s]
+                <br />
+                100%|██████████| 28/28 [00:02&lt;00:00, 12.13it/s]
+              </ColorText>
+              <br />
+              2022-12-18T19:58:04.137438407Z{" "}
+              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
+              <ColorText color="#fff">
+                Completed job <ColorText color="#9DC2F6">db7c79</ColorText> in
+                2.9s
+              </ColorText>
+            </Typography>
+          </CodeBlock>
+        </Stack>
+      </Stack>
     </Stack>
   );
 }
+
+const ColorText = ({ children, color }) => (
+  <span style={{ color }}>{children}</span>
+);
 
 const HeadlineBox = ({ children, title }) => (
   <Stack
