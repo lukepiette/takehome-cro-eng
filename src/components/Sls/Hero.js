@@ -209,27 +209,21 @@ export default function Hero() {
               spacing={0.6}
             >
               <Box
-                bgcolor={`${alpha("#fff", 0.8)}`}
-                border="1px solid #fff"
+                bgcolor={`${alpha("#fff", 0.3)}`}
                 borderRadius={100}
                 height={8}
-                sx={{ opacity: 0.3 }}
                 width={8}
               />
               <Box
-                bgcolor={`${alpha("#fff", 0.4)}`}
-                border="1px solid #fff"
+                bgcolor={`${alpha("#fff", 0.2)}`}
                 borderRadius={100}
                 height={8}
-                sx={{ opacity: 0.3 }}
                 width={8}
               />
               <Box
                 bgcolor={`${alpha("#fff", 0.1)}`}
-                border="1px solid #fff"
                 borderRadius={100}
                 height={8}
-                sx={{ opacity: 0.3 }}
                 width={8}
               />
               <Typography
@@ -262,7 +256,7 @@ export default function Hero() {
   );
 }
 
-const CodeBlock = ({ children, left }) => (
+export const CodeBlock = ({ children, light, left, sx, ...props }) => (
   <Stack
     borderRadius={1}
     bgcolor="#111121"
@@ -271,23 +265,20 @@ const CodeBlock = ({ children, left }) => (
     mr={left ? 2 : 0}
     overflow="hidden"
     sx={{
-      //   borderImage: `conic-gradient(from 180deg, ${alpha(
-      //     "#BEC2FD",
-      //     0.4
-      //   )} 8%, ${alpha("#BD00FF", 0.4)} 37%, ${alpha(
-      //     "#4D94FF",
-      //     0.3
-      //   )} 54%, ${alpha("#5D29F0", 0.4)} 88%, ${alpha("#EDE1FF", 0.4)} 100%) 1`,
       borderColor: `${alpha("#5D29F0", 0.4)}`,
       borderStyle: "solid",
-      borderWidth: 1,
+      borderWidth: light ? 0 : 1,
       borderBottomWidth: 0,
-      boxShadow: `0 0 0 1px ${alpha("#fff", 0.04)}, 0 0 0 3px ${alpha(
-        "#fff",
-        0.04
-      )}, 0 0 0 8px ${alpha("#fff", 0.04)}`,
+      boxShadow: light
+        ? "0px 0px 0px 4px rgba(255, 255, 255, 0.04), 0px 0px 0px 8px rgba(255, 255, 255, 0.04)"
+        : `0 0 0 1px ${alpha("#fff", 0.04)}, 0 0 0 3px ${alpha(
+            "#fff",
+            0.04
+          )}, 0 0 0 8px ${alpha("#fff", 0.04)}`,
+      ...sx,
     }}
     width={380}
+    {...props}
   >
     {children}
   </Stack>
