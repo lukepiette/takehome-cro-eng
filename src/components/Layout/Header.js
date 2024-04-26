@@ -58,8 +58,8 @@ const HeaderWrapper = styled(Box)(
     position: sticky !important;
     top: 0 !important;
     z-index: 1100;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 `
 );
 
