@@ -188,13 +188,23 @@ export default function Analytics() {
         </HeadlineBox>
       </Stack>
 
-      <Stack
-        direction="row"
-        mt={6}
-        overflow="hidden"
-        position="relative"
-        spacing={3}
-      >
+      <Stack direction="row" justifyContent="center" mt={6} position="relative">
+        <Box
+          borderRadius={100}
+          boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1.20311px 1.20311px rgba(77, 148, 255, 0.25), inset 0px -9.02332px 15.0389px #ECD3F7, inset 0px -30.0777px 30.0777px #BD00FF"
+          height={1502}
+          position="absolute"
+          top={-354}
+          width={495}
+          sx={{
+            background:
+              "radial-gradient(85.83% 85.83% at 50% 14.17%, #6366F1 0%, rgba(128, 0, 255, 0.39) 28%, rgba(77, 148, 255, 0.25) 100%)",
+            filter: "blur(200px)",
+            opacity: 0.65,
+            transform: "rotate(-90deg)",
+          }}
+          zIndex={-1}
+        />
         <HeadlineBox title="Real-Time Logs">
           Get descriptive, real-time logs to show you exactly what&apos;s
           happening across your active and flex GPU workers at all times.
@@ -205,6 +215,7 @@ export default function Analytics() {
           borderRadius={2.4}
           height={495}
           overflow="hidden"
+          ml={3}
           position="relative"
           width={781}
           sx={{
