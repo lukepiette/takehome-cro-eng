@@ -252,90 +252,15 @@ export default function Analytics() {
                 fontSize={12}
                 flexGrow={1}
               >
-                runpodctl -- zsh
+                worker logs -- zsh
               </Typography>
             </Stack>
             <Typography color="#94A3B8" fontSize={14} ml={3} my={2}>
-              2022-12-18T19:56:00.826485895Z{" "}
-              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
-              <ColorText color="#fff">
-                Started job <ColorText color="#9DC2F6">db7c79</ColorText>
-              </ColorText>
+              <Logs add={0} id="db7c79" minute={56} />
               <br />
-              2022-12-18T19:56:03.166717597Z
+              <Logs add={3} id="ea1r14" minute={57} />
               <br />
-              <ColorText color="#fff">
-                0% | | 0/28 [00:00&lt;?, ?it/s]
-                <br />
-                14% |██ | 4/28 [00:00&lt;00:01, 12.06it/s]
-                <br />
-                43% |████ | 12/28 [00:00&lt;00:01, 12.14it/s]
-                <br />
-                79% |████████ | 22/28 [00:01&lt;00:00, 12.14it/s]
-                <br />
-                100% |██████████| 28/28 [00:02&lt;00:00, 12.13it/s]
-              </ColorText>
-              <br />
-              2022-12-18T19:56:04.137438407Z{" "}
-              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
-              <ColorText color="#fff">
-                Completed job <ColorText color="#9DC2F6">db7c79</ColorText> in
-                2.9s
-              </ColorText>
-              <br />
-              2022-12-18T19:57:00.826485895Z{" "}
-              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
-              <ColorText color="#fff">
-                Started job <ColorText color="#9DC2F6">db7c79</ColorText>
-              </ColorText>
-              <br />
-              2022-12-18T19:57:03.166717597Z
-              <br />
-              <ColorText color="#fff">
-                0% | | 0/28 [00:00&lt;?, ?it/s]
-                <br />
-                11% |██ | 4/28 [00:00&lt;00:01, 11.90it/s]
-                <br />
-                39% |████ | 12/28 [00:00&lt;00:01, 11.94it/s]
-                <br />
-                69% |████████ | 22/28 [00:01&lt;00:00, 11.94it/s]
-                <br />
-                100% |██████████| 28/28 [00:02&lt;00:00, 11.94it/s]
-              </ColorText>
-              <br />
-              2022-12-18T19:57:04.137438407Z{" "}
-              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
-              <ColorText color="#fff">
-                Completed job <ColorText color="#9DC2F6">db7c79</ColorText> in
-                2.9s
-              </ColorText>
-              <br />
-              2022-12-18T19:58:00.826485895Z{" "}
-              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
-              <ColorText color="#fff">
-                Started job <ColorText color="#9DC2F6">db7c79</ColorText>
-              </ColorText>
-              <br />
-              2022-12-18T19:58:03.166717597Z
-              <br />
-              <ColorText color="#fff">
-                0%| | 0/28 [00:00&lt;?, ?it/s]
-                <br />
-                14%|██ | 4/28 [00:00&lt;00:01, 12.06it/s]
-                <br />
-                43%|████ | 12/28 [00:00&lt;00:01, 12.14it/s]
-                <br />
-                79%|████████ | 22/28 [00:01&lt;00:00, 12.14it/s]
-                <br />
-                100%|██████████| 28/28 [00:02&lt;00:00, 12.13it/s]
-              </ColorText>
-              <br />
-              2022-12-18T19:58:04.137438407Z{" "}
-              <ColorText color="#58FFD7">INFO</ColorText> |{" "}
-              <ColorText color="#fff">
-                Completed job <ColorText color="#9DC2F6">db7c79</ColorText> in
-                2.9s
-              </ColorText>
+              <Logs add={6} id="gn3a25" minute={58} />
             </Typography>
           </CodeBlock>
         </Stack>
@@ -344,8 +269,10 @@ export default function Analytics() {
   );
 }
 
-const ColorText = ({ children, color }) => (
-  <span style={{ color }}>{children}</span>
+const ColorText = ({ children, color, width }) => (
+  <span style={{ display: "inline-block", color, width: width }}>
+    {children}
+  </span>
 );
 
 const HeadlineBox = ({ children, title }) => (
@@ -498,6 +425,53 @@ const LegendLabel = ({ color, title, value }) => (
       {value}
     </Typography>
   </Stack>
+);
+
+const Size10 = (props) => <span style={{ fontSize: 10 }} {...props} />;
+const Size14 = (props) => <span style={{ fontSize: 14 }} {...props} />;
+const Logs = ({ add, id, minute }) => (
+  <>
+    2024-03-15T19:{minute}:00.8264895Z{" "}
+    <ColorText color="#58FFD7">INFO</ColorText> |{" "}
+    <ColorText color="#fff">
+      Started job <ColorText color="#9DC2F6">{id}</ColorText>
+    </ColorText>
+    <br />
+    2024-03-15T19:{minute}:03.2667597Z
+    <br />
+    <ColorText color="#fff" width={35}>
+      0%
+    </ColorText>{" "}
+    <Size10>| |</Size10> <Size14>0/28 [00:00&lt;?, ?it/s]</Size14>
+    <br />
+    <ColorText color="#fff" width={35}>
+      {12 + add}%
+    </ColorText>{" "}
+    <Size10>|██ |</Size10> <Size14>4/28 [00:00&lt;00:01, 12.06it/s]</Size14>
+    <br />
+    <ColorText color="#fff" width={35}>
+      {38 + add}%
+    </ColorText>{" "}
+    <Size10>|████ |</Size10> <Size14>12/28 [00:00&lt;00:01, 12.14it/s]</Size14>
+    <br />
+    <ColorText color="#fff" width={35}>
+      {77 + add}%
+    </ColorText>{" "}
+    <Size10>|████████ |</Size10>{" "}
+    <Size14>22/28 [00:01&lt;00:00, 12.14it/s]</Size14>
+    <br />
+    <ColorText color="#fff" width={35}>
+      100%
+    </ColorText>{" "}
+    <Size10>|██████████|</Size10>{" "}
+    <Size14>28/28 [00:02&lt;00:00, 12.13it/s]</Size14>
+    <br />
+    2024-03-15T19:{minute}:04.7438407Z{" "}
+    <ColorText color="#58FFD7">INFO</ColorText> |{" "}
+    <ColorText color="#fff">
+      Completed job <ColorText color="#9DC2F6">{id}</ColorText> in 2.9s
+    </ColorText>
+  </>
 );
 
 const SvgExecutionChart = () => (
