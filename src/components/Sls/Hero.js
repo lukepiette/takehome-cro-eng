@@ -6,7 +6,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 export default function Hero() {
   return (
-    <Stack alignItems="center" position="relative" mb={15}>
+    <Stack alignItems="center" position="relative" mb={15} width="100%">
       <Stack
         borderRadius={100}
         height={1200}
@@ -18,7 +18,7 @@ export default function Hero() {
       >
         <Box
           height={704}
-          mt={44}
+          mt={{ xs: 55, md: 44 }}
           sx={{
             background:
               "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(65, 16, 193, 0.32) 45%, rgba(0, 0, 0, 0.48) 55%, rgba(51, 0, 196, 0.08) 70%, #673BB8 90%, #000000 100%)",
@@ -84,8 +84,9 @@ export default function Hero() {
         <Typography
           align="center"
           color="#fff"
-          fontSize={58}
-          letterSpacing={-2}
+          fontSize={{ xs: 28, sm: 48, md: 58 }}
+          fontWeight={{ xs: 600, sm: 400, md: 400 }}
+          letterSpacing={{ xs: 0, sm: -1, md: -2 }}
           lineHeight={0.9}
           mt={2}
           variant="h1"
@@ -107,18 +108,19 @@ export default function Hero() {
         <Typography
           align="center"
           color="#94A3B8"
-          fontSize={16}
+          fontSize={{ xs: 14, sm: 16 }}
           fontWeight={300}
           lineHeight={1.4}
+          maxWidth={420}
           mt={2}
+          px={2}
           variant="h2"
         >
-          Run your AI models with autoscaling, job queueing
-          <br />
-          and sub 500ms cold start time.
+          Run your AI models with autoscaling, job queueing and sub 500ms cold
+          start time.
         </Typography>
 
-        <Stack direction="row" mt={4} spacing={1.8}>
+        <Stack direction="row" mt={4} spacing={{ xs: 1, sm: 1.8 }}>
           <ButtonLink
             href="/console/serverless"
             variant="contained"
@@ -154,13 +156,15 @@ export default function Hero() {
         </Stack>
 
         <Stack
-          direction="row"
+          alignItems="center"
+          direction={{ sm: "column", md: "row" }}
+          gap={4}
           justifyContent="space-between"
-          mt={11.6}
-          px={4}
+          mt={{ xs: 8, md: 11.6 }}
+          px={{ xs: 2, sm: 4 }}
           width="100%"
         >
-          <CodeBlock left>
+          <CodeBlock>
             <Stack
               alignItems="center"
               bgcolor="#212134"
@@ -261,8 +265,7 @@ export const CodeBlock = ({ children, light, left, sx, ...props }) => (
     borderRadius={1}
     bgcolor="#111121"
     height={200}
-    ml={left ? 0 : 2}
-    mr={left ? 2 : 0}
+    maxWidth={380}
     overflow="hidden"
     sx={{
       borderColor: `${alpha("#5D29F0", 0.4)}`,
@@ -277,7 +280,7 @@ export const CodeBlock = ({ children, light, left, sx, ...props }) => (
           )}, 0 0 0 8px ${alpha("#fff", 0.04)}`,
       ...sx,
     }}
-    width={380}
+    width="100%"
     {...props}
   >
     {children}

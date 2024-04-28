@@ -12,18 +12,18 @@ export default function Autoscale() {
     >
       <Stack
         borderBottom="1px solid #1E293B"
-        direction="row"
+        direction={{ xs: "column", md: "row" }}
+        gap={3}
         justifyContent="space-between"
         pb={4}
         px={4}
-        spacing={3}
         sx={{
           background:
             "radial-gradient(99.75% 99.75% at 50% 99.75%, rgba(30, 41, 59, 0.72) 0%, rgba(15, 23, 42, 7.2e-05) 100%)",
         }}
         width="100%"
       >
-        <Stack alignItems="start" spacing={1} width="50%">
+        <Stack alignItems="start" spacing={1} width={{ xs: "100%", md: "50%" }}>
           <Stack
             alignItems="center"
             direction="row"
@@ -43,7 +43,11 @@ export default function Autoscale() {
               -40% DISCOUNT
             </Typography>
           </Stack>
-          <Typography color="#94A3B8" fontSize={16} letterSpacing={-0.25}>
+          <Typography
+            color="#94A3B8"
+            fontSize={{ xs: 14, md: 16 }}
+            letterSpacing={-0.25}
+          >
             Dedicated GPUs that handle consistent workloads 24/7.
             <br />
             Get them at a lower cost so you don&apos;t break the bank for stable
@@ -51,7 +55,12 @@ export default function Autoscale() {
           </Typography>
         </Stack>
 
-        <Stack alignItems="start" pl={7} spacing={1} width="50%">
+        <Stack
+          alignItems="start"
+          pl={{ xs: 0, md: 7 }}
+          spacing={1}
+          width={{ xs: "100%", md: "50%" }}
+        >
           <Stack
             alignItems="center"
             direction="row"
@@ -60,7 +69,11 @@ export default function Autoscale() {
           >
             <TitleWithTextClip>Flex Workers</TitleWithTextClip>
           </Stack>
-          <Typography color="#94A3B8" fontSize={16} letterSpacing={-0.25}>
+          <Typography
+            color="#94A3B8"
+            fontSize={{ xs: 14, sm: 16 }}
+            letterSpacing={-0.25}
+          >
             Flexible GPUs that cost nothing when idle.
             <br />
             Ready to scale up as soon as your launch goes viral.
@@ -68,13 +81,17 @@ export default function Autoscale() {
         </Stack>
       </Stack>
 
-      <Stack direction="row" spacing={3} width="100%">
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        gap={{ xs: 0, md: 3 }}
+        width="100%"
+      >
         <Stack
           borderBottom="1px solid #1E293B"
           pb={4}
           pl={8}
           pt={12}
-          width="50%"
+          width={{ xs: "100%", md: "50%" }}
           sx={{
             background:
               "radial-gradient(99.75% 99.75% at 50% 99.75%, rgba(30, 41, 59, 0.72) 0%, rgba(15, 23, 42, 7.2e-05) 100%)",
@@ -101,7 +118,7 @@ export default function Autoscale() {
           pl={7}
           pr={10}
           pt={12}
-          width="50%"
+          width={{ xs: "100%", md: "50%" }}
           sx={{
             background:
               "radial-gradient(99.75% 99.75% at 50% 99.75%, rgba(30, 41, 59, 0.72) 0%, rgba(15, 23, 42, 7.2e-05) 100%)",
@@ -123,13 +140,13 @@ export default function Autoscale() {
         </Stack>
       </Stack>
 
-      <Stack direction="row" spacing={3} width="100%">
+      <Stack direction={{ xs: "column", md: "row" }} gap={3} width="100%">
         <Stack
           borderBottom="1px solid #1E293B"
           pb={3.2}
           pl={3}
           pt={4}
-          width="50%"
+          width={{ xs: "100%", md: "50%" }}
           sx={{
             background:
               "radial-gradient(99.75% 99.75% at 50% 99.75%, rgba(30, 41, 59, 0.72) 0%, rgba(15, 23, 42, 7.2e-05) 100%)",
@@ -163,7 +180,7 @@ export default function Autoscale() {
           pl={3}
           pr={18}
           pt={4}
-          width="50%"
+          width={{ xs: "100%", md: "50%" }}
           sx={{
             background:
               "radial-gradient(99.75% 99.75% at 50% 99.75%, rgba(30, 41, 59, 0.72) 0%, rgba(15, 23, 42, 7.2e-05) 100%)",
@@ -199,7 +216,7 @@ export default function Autoscale() {
 const TitleWithTextClip = ({ children }) => (
   <Typography
     color="#fff"
-    fontSize={20}
+    fontSize={{ xs: 16, sm: 20 }}
     letterSpacing={-0.25}
     sx={{
       background:

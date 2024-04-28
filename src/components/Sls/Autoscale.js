@@ -22,7 +22,7 @@ export default function Autoscale() {
       <Typography
         align="center"
         color="#fff"
-        fontSize={44}
+        fontSize={{ xs: 28, sm: 38, md: 44 }}
         letterSpacing={-2}
         lineHeight={1}
         mt={2}
@@ -48,12 +48,13 @@ export default function Autoscale() {
         color="#94A3B8"
         fontSize={16}
         letterSpacing={-0.25}
+        maxWidth={930}
         mt={3}
+        px={2}
       >
         For your expected load, keep active workers running 24/7 with a 40%
-        discount. But stay safe by provisioning as many flex
-        <br />
-        workers as you&apos;ll ever need on-demand.
+        discount. But stay safe by provisioning as many flex workers as
+        you&apos;ll ever need on-demand.
       </Typography>
 
       <ButtonLink
@@ -75,13 +76,19 @@ export default function Autoscale() {
       </ButtonLink>
 
       <Stack
+        alignItems="center"
         color="rgba(255, 255, 255, .8)"
+        columnGap={4}
         direction="row"
+        display={{ xs: "none", sm: "inherit" }}
+        flexWrap="wrap"
         fontSize={16}
         fontWeight={600}
+        justifyContent="center"
         letterSpacing={-0.02}
         mt={3}
-        spacing={4}
+        mx={2}
+        rowGap={2}
       >
         <Stack direction="row">
           <Stack
@@ -139,7 +146,7 @@ export default function Autoscale() {
         border="1px solid #1E293B"
         borderRadius={2.4}
         height={400}
-        minWidth={800}
+        maxWidth="calc(100% - 40px)"
         mt={5}
         overflow="hidden"
         position="relative"
