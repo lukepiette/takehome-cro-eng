@@ -1,9 +1,7 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
-import { LightThemeProvider } from "@components/ThemeProvider";
-import { useMemo, useState } from "react";
+import { Box, Stack, Typography } from "@mui/material";
+import { RunPodIcon } from "@components/Layout/Logo";
 import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { RunPodIcon } from "@components/Layout/Logo";
 
 export default function Startup() {
   return (
