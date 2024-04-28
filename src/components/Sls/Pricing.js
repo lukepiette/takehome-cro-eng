@@ -1,9 +1,15 @@
-import { Box, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  InputAdornment,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { LightThemeProvider } from "@components/ThemeProvider";
+import { useMemo, useState } from "react";
 import ButtonLink from "@components/ButtonLink";
-import CheckIcon from "@mui/icons-material/Check";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import LaunchIcon from "@mui/icons-material/Launch";
-import Link from "next/link";
 
 export default function Pricing() {
   return (
@@ -181,7 +187,7 @@ export default function Pricing() {
           </GpuBox>
         </Stack>
 
-        <Stack height={778} width={490}>
+        <Stack width={490}>
           <Typography
             fontSize={20}
             letterSpacing="-0.02em"
@@ -220,6 +226,19 @@ export default function Pricing() {
             label="Europe"
             regions={["EU-NL-1", "EU-RO-1", "EU-SE-1"]}
           />
+
+          <PricingCalculator />
+          <Typography
+            color="#F9FAFB"
+            fontSize={12}
+            letterSpacing="-0.02em"
+            mt={2}
+            sx={{ opacity: 0.7 }}
+            width={300}
+          >
+            1. Cost estimation includes 50% of the requests using active price
+            &amp; running into 1s cold-start.
+          </Typography>
         </Stack>
       </Stack>
     </Stack>
@@ -310,6 +329,229 @@ const GpuBox = ({ children, name, priceActive, priceFlex, pro, vram }) => (
     </Stack>
   </Stack>
 );
+
+const gpuFlexPrice = {
+  16: 0.0002,
+  24: 0.00026,
+  24.9: 0.00044,
+  48: 0.00048,
+  48.9: 0.00069,
+  80: 0.0013,
+  80.9: 0.0025,
+};
+const gpuActivePrice = {
+  16: 0.00012,
+  24: 0.00016,
+  24.9: 0.00026,
+  48: 0.00029,
+  48.9: 0.00041,
+  80: 0.00078,
+  80.9: 0.0015,
+};
+const PricingCalculator = () => {
+  const [executionTime, setExecutionTime] = useState(3);
+  const [requests, setRequests] = useState(100);
+  const [vram, setVram] = useState(24);
+  const handleExecutionTime = (e) => {
+    setExecutionTime(e.target.value);
+  };
+  const handleRequests = (e) => {
+    setRequests(e.target.value);
+  };
+  const handleVram = (v) => () => setVram(v);
+
+  const price = useMemo(() => {
+    const baseFlex = gpuFlexPrice[vram] * requests * executionTime * 0.5;
+    const baseReserved = gpuActivePrice[vram] * requests * executionTime * 0.5;
+    const coldstart = gpuFlexPrice[vram] * requests * 0.5 * 1;
+    const total = (baseFlex + baseReserved + coldstart) * 24 * 30;
+    return baseFlex <= 0 ? 0 : total;
+  }, [executionTime, requests, vram]);
+
+  return (
+    <Stack
+      border="1px solid rgba(28, 28, 28, 0.2)"
+      borderRadius={0.7}
+      boxShadow="0px 0px 0px 4.3px rgba(255, 255, 255, 0.04), 0px 0px 0px 1.4px rgba(255, 255, 255, 0.08)"
+      mt={5}
+      overflow="hidden"
+      sx={{
+        backdropFilter: "blur(43.2192px)",
+      }}
+      width="fit-content"
+    >
+      <Stack
+        borderBottom="0.4px solid rgba(255, 255, 255, 0.08)"
+        gap={1.8}
+        pb={2.5}
+        pt={3}
+        px={2.5}
+        sx={{
+          background:
+            "radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%) #050040",
+        }}
+      >
+        <Typography
+          color="#fff"
+          fontSize={16}
+          fontWeight={600}
+          letterSpacing="-0.02em"
+        >
+          Serverless Pricing Calculator
+        </Typography>
+        <Stack
+          alignItems="center"
+          bgcolor="rgba(255, 255, 255, 0.1)"
+          border="1px solid rgba(255, 255, 255, 0.1)"
+          borderRadius={0.8}
+          direction="row"
+          flexWrap="wrap"
+          justifyContent="center"
+          p={1}
+          rowGap={0.5}
+          width={310}
+        >
+          {[80, 80.9, 48, 48.9, 0, 24, 24.9, 16].map((v, i) =>
+            v === 0 ? (
+              <Box flexBasis="100%" height={0} key={i} />
+            ) : (
+              <Button
+                alignItems="center"
+                display="flex"
+                key={i}
+                onClick={handleVram(v)}
+                sx={{
+                  background:
+                    v == vram ? "#fff !important" : "transparent !important",
+                  borderLeft:
+                    i > 0 && v !== 24
+                      ? "1px solid rgba(255, 255, 255, 0.1)"
+                      : "",
+                  border: v == vram ? "0.5px solid rgba(0, 0, 0, 0.04)" : "",
+                  borderRadius: v == vram ? 0.7 : 0,
+                  boxShadow:
+                    v == vram
+                      ? "0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04)"
+                      : "",
+                  color: v == vram ? "#1C1C1C" : "rgba(255, 255, 255, 0.8)",
+                  fontSize: 12,
+                  letterSpacing: "-0.02em",
+                  px: 1,
+                  py: 0.4,
+                }}
+              >
+                {Math.floor(v)}GB
+                {Math.floor(v) !== v && (
+                  <Typography
+                    bgcolor="#6A1AFF"
+                    borderRadius={0.3}
+                    boxShadow="inset -1.08048px -1.44064px 2.52112px rgba(9, 0, 114, 0.24)"
+                    color="#fff"
+                    display="inline-flex"
+                    fontSize={8}
+                    ml={0.8}
+                    px={0.4}
+                    py={0.2}
+                  >
+                    PRO
+                  </Typography>
+                )}
+              </Button>
+            )
+          )}
+        </Stack>
+      </Stack>
+
+      <Stack
+        sx={{
+          background:
+            "linear-gradient(180.11deg, #FFFFFF 24.54%, #FFFFFF 63.22%, #D3D2FF 108.47%)",
+        }}
+      >
+        <Stack alignItems="end" my={3} width="100%">
+          <LightThemeProvider>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              spacing={2}
+              width={320}
+            >
+              <Box width="40%">
+                <TextField
+                  fullWidth
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  label="Requests / Hour"
+                  onChange={handleRequests}
+                  type="number"
+                  value={requests}
+                  variant="standard"
+                />
+              </Box>
+              <Box width="60%">
+                <TextField
+                  fullWidth
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="start">
+                        <Typography color="rgba(34, 51, 84, 0.7)" fontSize={12}>
+                          seconds
+                        </Typography>
+                      </InputAdornment>
+                    ),
+                  }}
+                  label="Execution Time / Request"
+                  onChange={handleExecutionTime}
+                  type="number"
+                  value={executionTime}
+                  variant="standard"
+                />
+              </Box>
+            </Stack>
+          </LightThemeProvider>
+        </Stack>
+
+        <Typography
+          align="right"
+          color="#1C1C1C"
+          fontSize={24}
+          letterSpacing="-0.02em"
+          mr={2.5}
+          mt={1.5}
+        >
+          &#36;{" "}
+          {price.toLocaleString("en-US", {
+            maximumFractionDigits: 0,
+          })}{" "}
+          /mo
+          <Typography
+            color="#1C1C1C"
+            display="inline-flex"
+            fontSize={12}
+            position="relative"
+            top={-10}
+          >
+            1
+          </Typography>
+        </Typography>
+        <Typography
+          align="right"
+          color="#616774"
+          fontSize={14}
+          letterSpacing="0.002em"
+          mb={2}
+          mr={2.8}
+        >
+          {(requests * 30 * 24).toLocaleString("en-US")} requests per month
+        </Typography>
+      </Stack>
+    </Stack>
+  );
+};
 
 const RegionsBox = ({ label, regions, ...props }) => (
   <Box mt={3} {...props}>
