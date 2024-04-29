@@ -322,7 +322,7 @@ const HeadlineBox = ({ children, title, ...props }) => (
     {...props}
   >
     <Typography
-      fontSize={20}
+      fontSize={18}
       letterSpacing="-0.02em"
       sx={{
         background:

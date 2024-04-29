@@ -23,7 +23,7 @@ export default function Autoscale() {
         align="center"
         color="#fff"
         fontSize={{ xs: 28, sm: 38, md: 44 }}
-        letterSpacing={-2}
+        letterSpacing={-1}
         lineHeight={1}
         mt={2}
         variant="h2"
@@ -66,6 +66,7 @@ export default function Autoscale() {
           borderRadius: 0.8,
           boxShadow:
             "0px 6px 0px rgba(0, 0, 0, 0.5), inset -3px -4px 7px rgba(9, 0, 114, 0.24)",
+          fontWeight: 600,
           height: 40,
           my: 3,
           pl: 2,

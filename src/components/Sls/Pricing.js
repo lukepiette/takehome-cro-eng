@@ -95,6 +95,7 @@ export default function Pricing() {
             borderRadius: 0.8,
             boxShadow:
               "0px 6px 0px rgba(0, 0, 0, 0.5), inset -3px -4px 7px rgba(9, 0, 114, 0.24)",
+            fontWeight: 600,
             height: 40,
             pl: 2,
             pr: 1.4,
@@ -111,6 +112,7 @@ export default function Pricing() {
             borderRadius: 0.8,
             boxShadow:
               "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
+            fontWeight: 600,
             height: 40,
             pl: 2,
             pr: 1.4,
@@ -320,12 +322,7 @@ const GpuBox = ({ children, name, priceActive, priceFlex, pro, vram }) => (
           </Typography>
         )}
       </Stack>
-      <Typography
-        color="#94A3B8"
-        fontSize={16}
-        fontWeight={600}
-        letterSpacing="-0.02em"
-      >
+      <Typography color="#94A3B8" fontSize={14} letterSpacing="-0.02em">
         {children}
       </Typography>
     </Stack>

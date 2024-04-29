@@ -85,8 +85,8 @@ export default function Hero() {
           align="center"
           color="#fff"
           fontSize={{ xs: 28, sm: 48, md: 58 }}
-          fontWeight={{ xs: 600, sm: 400, md: 400 }}
-          letterSpacing={{ xs: 0, sm: -1, md: -2 }}
+          fontWeight={600}
+          letterSpacing="-0.04em"
           lineHeight={0.9}
           mt={2}
           variant="h1"
@@ -130,6 +130,7 @@ export default function Hero() {
               borderRadius: 0.8,
               boxShadow:
                 "0px 6px 0px rgba(0, 0, 0, 0.5), inset -3px -4px 7px rgba(9, 0, 114, 0.24)",
+              fontWeight: 600,
               height: 40,
               pl: 2,
               pr: 1.4,
@@ -146,6 +147,7 @@ export default function Hero() {
               borderRadius: 0.8,
               boxShadow:
                 "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
+              fontWeight: 600,
               height: 40,
               pl: 2,
               pr: 1.4,
