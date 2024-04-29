@@ -27,7 +27,7 @@ export default function Analytics() {
         fontSize={{ xs: 32, sm: 40, md: 48 }}
         fontWeight={600}
         letterSpacing="-0.03em"
-        lineHeight="96%"
+        lineHeight="112%"
         maxWidth={800}
         px={2}
         sx={{
@@ -37,7 +37,7 @@ export default function Analytics() {
           textFillColor: "transparent",
         }}
       >
-        Monitor your endpoint with comprehensive{" "}
+        Monitor your endpoint with{" "}
         <Box
           display="inline-flex"
           sx={{
