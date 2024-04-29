@@ -89,8 +89,9 @@ export default function Autoscale() {
         <Stack
           borderBottom="1px solid #1E293B"
           pb={4}
-          pl={8}
-          pt={12}
+          pl={{ xs: 4, sm: 8 }}
+          pr={{ xs: 2, sm: 0 }}
+          pt={{ xs: 10, md: 12 }}
           width={{ xs: "100%", md: "50%" }}
           sx={{
             background:
@@ -115,9 +116,9 @@ export default function Autoscale() {
         <Stack
           borderBottom="1px solid #1E293B"
           pb={4}
-          pl={7}
-          pr={10}
-          pt={12}
+          pl={{ xs: 4, sm: 7 }}
+          pr={{ xs: 2, sm: 10 }}
+          pt={{ xs: 10, md: 12 }}
           width={{ xs: "100%", md: "50%" }}
           sx={{
             background:
@@ -145,6 +146,7 @@ export default function Autoscale() {
           borderBottom="1px solid #1E293B"
           pb={3.2}
           pl={3}
+          pr={{ xs: 2, sm: 0 }}
           pt={4}
           width={{ xs: "100%", md: "50%" }}
           sx={{
@@ -156,7 +158,7 @@ export default function Autoscale() {
             color="#F7F9FB"
             direction="row"
             display="flex"
-            fontSize={16}
+            fontSize={{ xs: 15, sm: 16 }}
             letterSpacing={-0.25}
             mt={1}
           >
@@ -166,6 +168,7 @@ export default function Autoscale() {
               borderRadius={100}
               height={24}
               justifyContent="center"
+              minWidth={24}
               mr={2}
               width={24}
             >
@@ -178,7 +181,7 @@ export default function Autoscale() {
           borderBottom="1px solid #1E293B"
           pb={3.2}
           pl={3}
-          pr={18}
+          pr={{ xs: 2, sm: 18 }}
           pt={4}
           width={{ xs: "100%", md: "50%" }}
           sx={{
@@ -190,7 +193,7 @@ export default function Autoscale() {
             color="#F7F9FB"
             direction="row"
             display="flex"
-            fontSize={16}
+            fontSize={{ xs: 15, sm: 16 }}
             letterSpacing={-0.25}
             mt={1}
           >
@@ -200,6 +203,7 @@ export default function Autoscale() {
               borderRadius={100}
               height={24}
               justifyContent="center"
+              minWidth={24}
               mr={2}
               width={24}
             >

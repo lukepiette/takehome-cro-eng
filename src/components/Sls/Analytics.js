@@ -24,10 +24,12 @@ export default function Analytics() {
 
       <Typography
         align="center"
-        fontSize={48}
+        fontSize={{ xs: 32, sm: 40, md: 48 }}
         fontWeight={600}
         letterSpacing="-0.03em"
         lineHeight="96%"
+        maxWidth={800}
+        px={2}
         sx={{
           background:
             "linear-gradient(313.71deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%)",
@@ -35,9 +37,7 @@ export default function Analytics() {
           textFillColor: "transparent",
         }}
       >
-        Monitor your endpoint with
-        <br />
-        comprehensive{" "}
+        Monitor your endpoint with comprehensive{" "}
         <Box
           display="inline-flex"
           sx={{
@@ -50,7 +50,13 @@ export default function Analytics() {
         </Box>
       </Typography>
 
-      <Stack direction="row" mt={6} spacing={3}>
+      <Stack
+        alignItems={{ xs: "center", lg: "stretch" }}
+        direction={{ xs: "column", lg: "row" }}
+        mt={6}
+        mx={3}
+        spacing={3}
+      >
         <HeadlineBox title="Usage Analytics">
           Monitor your endpoint usage with real-time analytics on requests
           completed and failed. Useful for endpoints that have fluctuating usage
@@ -62,32 +68,35 @@ export default function Analytics() {
           border="1px solid #1E293B"
           borderRadius={2.4}
           height={495}
+          maxWidth={781}
           overflow="hidden"
           position="relative"
-          width={781}
+          width={{ xs: "100%", lg: 781 }}
           sx={{
             background:
               "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, rgba(15, 23, 42, 0.0001) 100%)",
           }}
         >
-          <GraphLine sx={{ top: 170 }} />
-          <GraphLine sx={{ top: 230 }} />
-          <GraphLine sx={{ top: 290 }} />
+          <GraphLine sx={{ top: { xs: 230, sm: 170 } }} />
+          <GraphLine sx={{ top: { xs: 270, sm: 230 } }} />
+          <GraphLine sx={{ top: { xs: 310, sm: 290 } }} />
           <GraphLine sx={{ top: 350 }} />
           <Legend
-            border="1px solid #1E293B"
+            alignSelf="center"
+            border={{ xs: "", sm: "1px solid #1E293B" }}
             borderRadius={2.4}
             boxShadow="0px 4px 100px rgba(0, 0, 0, 0.16)"
-            height={110}
-            ml={16}
-            mt={8}
+            height={{ xs: "auto", sm: 110 }}
+            mt={{ xs: 1, sm: 8 }}
             pl={4}
             pt={2.8}
-            width={475}
+            width={{ xs: "100%", sm: 475 }}
             sx={{
               backgropFilter: "blur(50px)",
-              background:
-                "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, rgba(15, 23, 42, 0.0001) 100%)",
+              background: {
+                xs: "",
+                sm: "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, rgba(15, 23, 42, 0.0001) 100%)",
+              },
             }}
             title="Active"
             subTitle="Requests"
@@ -98,19 +107,19 @@ export default function Analytics() {
             ]}
           />
           <Box
-            top={118}
+            bottom={{ xs: 22, sm: 58 }}
+            height={{ xs: 314, sm: 314 }}
             left={0}
+            maxWidth="100%"
             position="absolute"
-            zIndex={0}
             sx={{ opacity: 0.8 }}
+            zIndex={0}
           >
-            <SvgRequestChart />
+            <SvgRequestChart height="100%" width="100%" />
             <Stack
-              alignItems="start"
               direction="row"
-              ml={9}
-              mt={-4}
-              spacing={17}
+              justifyContent="space-evenly"
+              mt={{ xs: -7, sm: -4 }}
             >
               {[5, 6, 7, 8].map((v) => (
                 <Stack alignItems="center" key={v} spacing={1.8}>
@@ -120,7 +129,7 @@ export default function Analytics() {
                     sx={{ opacity: 0.4 }}
                     width="1px"
                   />
-                  <Typography>1{v}:00</Typography>
+                  <Typography fontSize={{ xs: 12, sm: 14 }}>1{v}:00</Typography>
                 </Stack>
               ))}
             </Stack>
@@ -129,8 +138,9 @@ export default function Analytics() {
       </Stack>
 
       <Stack
-        direction="row"
+        direction={{ xs: "column-reverse", lg: "row" }}
         mt={6}
+        mx={3}
         overflow="hidden"
         position="relative"
         spacing={3}
@@ -139,10 +149,11 @@ export default function Analytics() {
           alignItems="start"
           border="1px solid #1E293B"
           borderRadius={2.4}
-          height={495}
+          height={{ xs: 550, sm: 495 }}
+          maxWidth={781}
           overflow="hidden"
           position="relative"
-          width={781}
+          width={{ xs: "100%", lg: 781 }}
           sx={{
             background:
               "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, rgba(15, 23, 42, 0.0001) 100%)",
@@ -188,14 +199,20 @@ export default function Analytics() {
         </HeadlineBox>
       </Stack>
 
-      <Stack direction="row" justifyContent="center" mt={6} position="relative">
+      <Stack
+        direction={{ xs: "column", lg: "row" }}
+        justifyContent="center"
+        mt={6}
+        mx={3}
+        position="relative"
+      >
         <Box
           borderRadius={100}
           boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1.20311px 1.20311px rgba(77, 148, 255, 0.25), inset 0px -9.02332px 15.0389px #ECD3F7, inset 0px -30.0777px 30.0777px #BD00FF"
           height={1502}
           position="absolute"
           top={-354}
-          width={495}
+          width={{ xs: "100%", sm: 495 }}
           sx={{
             background:
               "radial-gradient(85.83% 85.83% at 50% 14.17%, #6366F1 0%, rgba(128, 0, 255, 0.39) 28%, rgba(77, 148, 255, 0.25) 100%)",
@@ -214,10 +231,12 @@ export default function Analytics() {
           border="1px solid #1E293B"
           borderRadius={2.4}
           height={495}
+          maxWidth={781}
           overflow="hidden"
-          ml={3}
+          ml={{ xs: 0, lg: 3 }}
+          mt={{ xs: 3, lg: 0 }}
           position="relative"
-          width={781}
+          width={{ xs: "100%", lg: 781 }}
           sx={{
             background:
               "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, rgba(15, 23, 42, 0.0001) 100%)",
@@ -226,8 +245,8 @@ export default function Analytics() {
           <CodeBlock
             height="auto"
             light
-            minWidth={540}
-            mt={9}
+            minWidth={{ xs: "100%", sm: 540 }}
+            mt={{ xs: 0, sm: 9 }}
             position="absolute"
           >
             <Stack
@@ -286,19 +305,21 @@ const ColorText = ({ children, color, width }) => (
   </span>
 );
 
-const HeadlineBox = ({ children, title }) => (
+const HeadlineBox = ({ children, title, ...props }) => (
   <Stack
     alignItems="start"
     border="1px solid #1E293B"
     borderRadius={2.4}
-    height={495}
-    pt={5}
-    px={6}
-    width={395}
+    maxWidth={781}
+    pb={10}
+    pt={{ xs: 2.5, sm: 5 }}
+    px={{ xs: 4, sm: 6 }}
+    width={{ xs: "100%", lg: 395 }}
     sx={{
       background:
         "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, rgba(15, 23, 42, 0.0001) 100%)",
     }}
+    {...props}
   >
     <Typography
       fontSize={20}
@@ -383,7 +404,14 @@ const Legend = ({ labels, title, subTitle, ...props }) => (
       )}
     </Stack>
 
-    <Stack alignItems="center" direction="row" mt={0.6} spacing={4}>
+    <Stack
+      alignItems={{ xs: "start", sm: "center" }}
+      columnGap={{ xs: 2, sm: 4 }}
+      direction="row"
+      flexWrap="wrap"
+      mt={{ xs: 2, sm: 0.6 }}
+      rowGap={1}
+    >
       {labels.map((v) => (
         <LegendLabel
           color={v.color}
@@ -769,10 +797,10 @@ const SvgExecutionChart = () => (
   </svg>
 );
 
-const SvgRequestChart = () => (
+const SvgRequestChart = ({ height, width }) => (
   <svg
-    width="781"
-    height="314"
+    width={width}
+    height={height}
     viewBox="0 0 781 314"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

@@ -44,7 +44,7 @@ export default function Pricing() {
       <Typography
         align="center"
         color="#fff"
-        fontSize={48}
+        fontSize={{ xs: 34, sm: 44, md: 48 }}
         letterSpacing="-0.03em"
         lineHeight={1}
         mt={2}
@@ -69,9 +69,19 @@ export default function Pricing() {
         fontSize={16}
         letterSpacing={-0.25}
         mt={2.5}
+        mx={3}
       >
         Save 15% over other Serverless cloud providers on flex workers alone.
-        <br />
+      </Typography>
+
+      <Typography
+        align="center"
+        color="#94A3B8"
+        display={{ xs: "none", sm: "flex" }}
+        fontSize={16}
+        letterSpacing={-0.25}
+        mx={3}
+      >
         Create active workers and configure queue delay for even more savings.
       </Typography>
 
@@ -111,14 +121,20 @@ export default function Pricing() {
       </Stack>
 
       <Stack
-        alignItems="start"
-        direction="row"
+        alignItems={{ xs: "center", lg: "start" }}
+        direction={{ xs: "column-reverse", lg: "row" }}
         justifyContent="space-between"
         maxWidth={1200}
         mt={10}
         width="100%"
       >
-        <Stack direction="row" flexWrap="wrap" gap={1.8} width={645}>
+        <Stack
+          direction="row"
+          flexWrap="wrap"
+          gap={1.8}
+          justifyContent={{ xs: "center", sm: "start" }}
+          width={{ xs: "100%", sm: 645 }}
+        >
           <GpuBox
             name="A100"
             priceActive={0.00078}
@@ -187,58 +203,67 @@ export default function Pricing() {
           </GpuBox>
         </Stack>
 
-        <Stack width={490}>
-          <Typography
-            fontSize={20}
-            letterSpacing="-0.02em"
-            sx={{
-              background:
-                "linear-gradient(0deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%)",
-              backgroundClip: "text",
-              textFillColor: "transparent",
-            }}
-          >
-            Thousands of GPUs across 9 Regions
-          </Typography>
-          <Typography
-            color="#94A3B8"
-            fontSize={16}
-            letterSpacing="-0.25px"
-            mt={0.5}
-            mr={3}
-          >
-            Update your endpoint&apos;s region in two clicks. Scale up to 9
-            regions at a time. Global automated failover is supported
-            out-of-the-box, so you won&apos;t have to worry about GPU errors
-            interrupting your inference workloads.
-          </Typography>
+        <Stack
+          alignItems={{ xs: "center", md: "start" }}
+          direction={{ xs: "column-reverse", md: "row", lg: "column" }}
+          px={{ xs: 3, sm: 10, lg: 0 }}
+          width={{ xs: "100%", lg: 490 }}
+        >
+          <Box mb={{ xs: 10, lg: 0 }}>
+            <Typography
+              fontSize={20}
+              letterSpacing="-0.02em"
+              sx={{
+                background:
+                  "linear-gradient(0deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%)",
+                backgroundClip: "text",
+                textFillColor: "transparent",
+              }}
+            >
+              Thousands of GPUs across 9 Regions
+            </Typography>
+            <Typography
+              color="#94A3B8"
+              fontSize={16}
+              letterSpacing="-0.25px"
+              mt={0.5}
+              mr={3}
+            >
+              Update your endpoint&apos;s region in two clicks. Scale up to 9
+              regions at a time. Global automated failover is supported
+              out-of-the-box, so you won&apos;t have to worry about GPU errors
+              interrupting your inference workloads.
+            </Typography>
 
-          <RegionsBox
-            label="North America"
-            mt={5}
-            regions={["UR-OR-1", "CA-MTL-1", "CA-MTL-2"]}
-          />
-          <RegionsBox
-            label="European Union"
-            regions={["EUR-IS-1", "EUR-IS-2", "EUR-NO-1"]}
-          />
-          <RegionsBox
-            label="Europe"
-            regions={["EU-NL-1", "EU-RO-1", "EU-SE-1"]}
-          />
+            <RegionsBox
+              label="North America"
+              mt={5}
+              regions={["UR-OR-1", "CA-MTL-1", "CA-MTL-2"]}
+            />
+            <RegionsBox
+              label="European Union"
+              regions={["EUR-IS-1", "EUR-IS-2", "EUR-NO-1"]}
+            />
+            <RegionsBox
+              label="Europe"
+              regions={["EU-NL-1", "EU-RO-1", "EU-SE-1"]}
+            />
+          </Box>
 
-          <PricingCalculator />
-          <Typography
-            color="#F9FAFB"
-            fontSize={12}
-            letterSpacing="-0.02em"
-            mt={2}
-            sx={{ opacity: 0.7 }}
-            width={300}
-          >
-            1. Cost estimation includes 50% of the requests using active price
-            &amp; running into 1s cold-start.
-          </Typography>
+          <Box mb={{ xs: 7, lg: 0 }}>
+            <PricingCalculator />
+            <Typography
+              color="#F9FAFB"
+              fontSize={12}
+              letterSpacing="-0.02em"
+              mt={2}
+              sx={{ opacity: 0.7 }}
+              width={300}
+            >
+              1. Cost estimation includes 50% of the requests using active price
+              &amp; running into 1s cold-start.
+            </Typography>
+          </Box>
         </Stack>
       </Stack>
     </Stack>
@@ -373,7 +398,7 @@ const PricingCalculator = () => {
       border="1px solid rgba(28, 28, 28, 0.2)"
       borderRadius={0.7}
       boxShadow="0px 0px 0px 4.3px rgba(255, 255, 255, 0.04), 0px 0px 0px 1.4px rgba(255, 255, 255, 0.08)"
-      mt={5}
+      mt={{ xs: 0, lg: 5 }}
       overflow="hidden"
       sx={{
         backdropFilter: "blur(43.2192px)",
