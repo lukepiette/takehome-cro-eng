@@ -322,7 +322,7 @@ const GpuBox = ({ children, name, priceActive, priceFlex, pro, vram }) => (
           </Typography>
         )}
       </Stack>
-      <Typography color="#94A3B8" fontSize={14} letterSpacing="-0.02em">
+      <Typography color="#B4BAC5" fontSize={14} letterSpacing="-0.02em">
         {children}
       </Typography>
     </Stack>
