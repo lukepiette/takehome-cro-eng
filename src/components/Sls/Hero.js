@@ -180,15 +180,25 @@ export default function Hero() {
               <Box bgcolor="#62C554" borderRadius={100} height={8} width={8} />
             </Stack>
             <Stack direction="row" ml={3} mt={2}>
-              <Typography color="#B4BAC5" fontSize={12}>
+              <Typography color="#B4BAC5" fontFamily="monospace" fontSize={12}>
                 1<br />2<br />3<br />4<br />5<br />6
               </Typography>
-              <Typography color="#fff" fontSize={12} pl={2}>
+              <Typography
+                color="#fff"
+                fontFamily="monospace"
+                fontSize={12}
+                pl={2}
+              >
                 <span style={{ color: "#EC9D4C" }}>import</span> runpod
                 <br />
                 <span style={{ color: "#EC9D4C" }}>def</span>{" "}
                 <span style={{ color: "#F776F7" }}>handler</span>(job):
-                <Typography color="#fff" fontSize={12} pl={2}>
+                <Typography
+                  color="#fff"
+                  fontFamily="monospace"
+                  fontSize={12}
+                  pl={2}
+                >
                   job_input = job[
                   <span style={{ color: "#95EC4D" }}>&quot;input&quot;</span>]
                   <br />
@@ -235,13 +245,14 @@ export default function Hero() {
               <Typography
                 align="right"
                 color={`${alpha("#F9FAFB", 0.48)}`}
+                fontFamily="monospace"
                 fontSize={12}
                 flexGrow={1}
               >
                 runpodctl -- zsh
               </Typography>
             </Stack>
-            <Typography fontSize={12} ml={3} mt={2}>
+            <Typography fontFamily="monospace" fontSize={12} ml={3} mt={2}>
               &gt; runpodctl config --apiKey $(RUNPOD_API_KEY)
               <br />
               &gt; runpodctl project create

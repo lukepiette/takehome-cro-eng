@@ -279,13 +279,20 @@ export default function Analytics() {
               <Typography
                 align="right"
                 color={`${alpha("#F9FAFB", 0.48)}`}
+                fontFamily="monospace"
                 fontSize={12}
                 flexGrow={1}
               >
                 worker logs -- zsh
               </Typography>
             </Stack>
-            <Typography color="#94A3B8" fontSize={14} ml={3} my={2}>
+            <Typography
+              color="#94A3B8"
+              fontFamily="monospace"
+              fontSize={14}
+              ml={3}
+              my={2}
+            >
               <Logs add={0} id="db7c79" minute={56} />
               <br />
               <Logs add={3} id="ea1r14" minute={57} />
