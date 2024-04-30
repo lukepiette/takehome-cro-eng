@@ -340,7 +340,7 @@ const HeadlineBox = ({ children, title, ...props }) => (
     >
       {title}
     </Typography>
-    <Typography color="#94A3B8" fontSize={16} letterSpacing="-0.25px" mt={0.5}>
+    <Typography color="#94A3B8" fontSize={14} letterSpacing="-0.25px" mt={0.5}>
       {children}
     </Typography>
 

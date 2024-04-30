@@ -46,15 +46,14 @@ export default function Autoscale() {
       <Typography
         align="center"
         color="#94A3B8"
-        fontSize={16}
+        fontSize={14}
         letterSpacing={-0.25}
-        maxWidth={930}
+        maxWidth={570}
         mt={3}
         px={2}
       >
-        For your expected load, keep active workers running 24/7 with a 40%
-        discount. But stay safe by provisioning as many flex workers as
-        you&apos;ll ever need on-demand.
+        For your expected load, provision active workers running 24/7 with a 40%
+        discount &amp; flex workers to handle any burst traffic.
       </Typography>
 
       <ButtonLink
@@ -84,7 +83,7 @@ export default function Autoscale() {
         display={{ xs: "none", sm: "inherit" }}
         flexWrap="wrap"
         fontSize={16}
-        fontWeight={600}
+        fontWeight={500}
         justifyContent="center"
         letterSpacing={-0.02}
         mt={3}

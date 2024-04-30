@@ -66,7 +66,7 @@ export default function Pricing() {
       <Typography
         align="center"
         color="#94A3B8"
-        fontSize={16}
+        fontSize={14}
         letterSpacing={-0.25}
         mt={2.5}
         mx={3}
@@ -78,7 +78,7 @@ export default function Pricing() {
         align="center"
         color="#94A3B8"
         display={{ xs: "none", sm: "flex" }}
-        fontSize={16}
+        fontSize={14}
         letterSpacing={-0.25}
         mx={3}
       >
@@ -226,7 +226,7 @@ export default function Pricing() {
             </Typography>
             <Typography
               color="#94A3B8"
-              fontSize={16}
+              fontSize={14}
               letterSpacing="-0.25px"
               mt={0.5}
               mr={3}
@@ -252,7 +252,7 @@ export default function Pricing() {
             />
           </Box>
 
-          <Box mb={{ xs: 7, lg: 0 }}>
+          <Box mb={{ xs: 7, lg: 0 }} width="100%">
             <PricingCalculator />
             <Typography
               color="#F9FAFB"
@@ -395,12 +395,14 @@ const PricingCalculator = () => {
       border="1px solid rgba(28, 28, 28, 0.2)"
       borderRadius={0.7}
       boxShadow="0px 0px 0px 4.3px rgba(255, 255, 255, 0.04), 0px 0px 0px 1.4px rgba(255, 255, 255, 0.08)"
+      maxWidth="100%"
+      minWidth={{ xs: 0, sm: 380 }}
       mt={{ xs: 0, lg: 5 }}
       overflow="hidden"
       sx={{
         backdropFilter: "blur(43.2192px)",
       }}
-      width="fit-content"
+      width={{ xs: "100%", lg: "98%" }}
     >
       <Stack
         borderBottom="0.4px solid rgba(255, 255, 255, 0.08)"
@@ -431,7 +433,6 @@ const PricingCalculator = () => {
           justifyContent="center"
           p={1}
           rowGap={0.5}
-          width={310}
         >
           {[80, 80.9, 48, 48.9, 0, 24, 24.9, 16].map((v, i) =>
             v === 0 ? (
@@ -457,7 +458,7 @@ const PricingCalculator = () => {
                   color: v == vram ? "#1C1C1C" : "rgba(255, 255, 255, 0.8)",
                   fontSize: 12,
                   letterSpacing: "-0.02em",
-                  px: 1,
+                  px: { xs: 1, lg: 2 },
                   py: 0.4,
                 }}
               >
@@ -495,7 +496,7 @@ const PricingCalculator = () => {
               direction="row"
               justifyContent="space-between"
               spacing={2}
-              width={320}
+              width="92%"
             >
               <Box width="40%">
                 <TextField
@@ -540,6 +541,7 @@ const PricingCalculator = () => {
           align="right"
           color="#1C1C1C"
           fontSize={24}
+          fontWeight={500}
           letterSpacing="-0.02em"
           mr={2.5}
           mt={1.5}
@@ -595,6 +597,7 @@ const RegionsBox = ({ label, regions, ...props }) => (
           border="1px solid rgba(255, 255, 255, 0.1)"
           borderRadius={0.4}
           color="#fff"
+          fontFamily="monospace"
           fontSize={12}
           key={v}
           px={0.9}
