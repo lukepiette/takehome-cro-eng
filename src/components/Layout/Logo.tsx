@@ -13,7 +13,7 @@ export const RunPodIcon = (props: any) => (
   </SvgIcon>
 );
 
-export default function Logo() {
+export default function Logo({ footer }: { footer?: boolean }) {
   const theme = useTheme();
 
   return (
@@ -32,13 +32,17 @@ export default function Logo() {
         }}
       >
         <RunPodIcon
-          color="primary"
-          style={{ height: 32, marginRight: 2, width: 32 }}
+          style={{
+            color: footer ? "#F9FAFB" : "primary",
+            height: footer ? 34 : 32,
+            marginRight: footer ? 3 : 2,
+            width: footer ? 34 : 32,
+          }}
         />
 
         <Typography
           color="#F9FAFB"
-          fontSize={18}
+          fontSize={footer ? 16 : 18}
           fontWeight={500}
           letterSpacing="-0.03em"
         >
