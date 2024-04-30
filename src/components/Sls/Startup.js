@@ -149,7 +149,7 @@ export default function Startup() {
         border="1px solid rgba(255, 255, 255, 0.08)"
         mt={10}
         overflow="hidden"
-        px={3}
+        px={{ xs: 4, sm: 6, md: 4 }}
         py={5}
         sx={{ backdropFilter: "blur(50px)" }}
         width="100%"
