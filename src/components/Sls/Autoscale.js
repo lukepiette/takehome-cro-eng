@@ -259,8 +259,8 @@ const SvgAutoscaleLines = () => (
         y2="157.431"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#C3BDFF" />
-        <stop offset="1" stop-color="#9E69FF" />
+        <stop stopColor="#C3BDFF" />
+        <stop offset="1" stopColor="#9E69FF" />
       </linearGradient>
     </defs>
   </svg>
