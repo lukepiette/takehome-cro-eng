@@ -39,7 +39,7 @@ export default function Footer() {
           letterSpacing="-0.03em"
           sx={{
             background:
-              "linear-gradient(313.71deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%)",
+              "linear-gradient(0deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%)",
             backgroundClip: "text",
             textFillColor: "transparent",
           }}
