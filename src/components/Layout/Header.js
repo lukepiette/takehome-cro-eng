@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 import ButtonLink from "@components/ButtonLink";
 // import TopAdvertisement from "@components/TopAdvertisement"
@@ -39,7 +40,7 @@ const links = [
 ];
 
 const HeaderAndDividerWrapper = styled(Box)(
-  ({ theme }) => `
+  () => `
     width: 100%;
     position: -webkit-sticky !important; // For Safari
     position: sticky !important;
@@ -49,17 +50,19 @@ const HeaderAndDividerWrapper = styled(Box)(
 );
 
 const HeaderWrapper = styled(Box)(
-  ({ theme }) => `
+  () => `
     width: 100%;
     display: flex;
     align-items: center;
-    height: 70px;
+    height: 56px;
     position: -webkit-sticky !important; // For Safari
     position: sticky !important;
     top: 0 !important;
     z-index: 1100;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    background: rgba(28, 28, 28, 0.1);
+    backdrop-filter: blur(50px);
+    border-bottom: 1px solid rgba(249, 250, 251, 0.16);
+    -webkit-backdrop-filter: blur(50px);
 `
 );
 
@@ -90,25 +93,74 @@ export default function Home() {
               px={1}
             >
               <Logo />
+
               <Stack
-                direction="row"
-                justifyContent="end"
                 alignItems="center"
-                sx={{ display: { xs: "none", md: "inherit" }, width: "100%" }}
+                direction="row"
+                justifyContent="center"
+                spacing={1}
+                sx={{
+                  display: { xs: "none", md: "inherit" },
+                }}
               >
-                <Stack direction="row" alignItems="center" spacing={1}>
-                  {links.map(({ name, to }) => (
-                    <ButtonLink key={to} href={to}>
-                      {name}
-                    </ButtonLink>
-                  ))}
-                  <ButtonLink href="/console/signup" variant="outlined">
-                    Sign Up
+                {links.map(({ name, to }) => (
+                  <ButtonLink
+                    key={to}
+                    href={to}
+                    sx={{
+                      color: "rgba(249, 250, 251, 0.72)",
+                      fontSize: 14,
+                      fontWeight: 500,
+                      letterSpacing: "-0.02em",
+                    }}
+                  >
+                    {name}
                   </ButtonLink>
-                  <ButtonLink href="/console/login" variant="outlined">
-                    Login
-                  </ButtonLink>
-                </Stack>
+                ))}
+              </Stack>
+
+              <Stack
+                alignItems="end"
+                direction="row"
+                justifyContent="center"
+                spacing={1}
+              >
+                <ButtonLink
+                  href="/console/signup"
+                  variant="contained"
+                  sx={{
+                    background:
+                      "radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.0472) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #5D29F0",
+                    borderRadius: 0.8,
+                    boxShadow:
+                      "0px 6px 0px rgba(0, 0, 0, 0.5), inset -3px -4px 7px rgba(9, 0, 114, 0.24)",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    height: 36,
+                    pl: 2,
+                    pr: 1.4,
+                  }}
+                >
+                  Sign Up{" "}
+                  <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+                </ButtonLink>
+                <ButtonLink
+                  href="/console/login"
+                  variant="outlined"
+                  sx={{
+                    background:
+                      "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
+                    borderRadius: 0.8,
+                    boxShadow:
+                      "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    height: 36,
+                    px: 2,
+                  }}
+                >
+                  Login
+                </ButtonLink>
               </Stack>
 
               <IconButton

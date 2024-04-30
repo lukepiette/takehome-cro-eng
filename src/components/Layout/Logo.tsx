@@ -1,6 +1,6 @@
-import { Stack, SvgIcon, Typography, useTheme } from "@mui/material"
+import { Stack, SvgIcon, Typography, useTheme } from "@mui/material";
 
-import Link from "@components/Link"
+import Link from "@components/Link";
 
 export const RunPodIcon = (props: any) => (
   <SvgIcon {...props}>
@@ -11,26 +11,40 @@ export const RunPodIcon = (props: any) => (
       </g>
     </svg>
   </SvgIcon>
-)
+);
 
 export default function Logo() {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
-    <Stack direction="row" alignItems="center" justifyContent="center" spacing={0.5}>
+    <Stack
+      alignItems="center"
+      direction="row"
+      justifyContent="center"
+      spacing={0.5}
+    >
       <Link
         href="/"
         sx={{
+          alignItems: "center",
           display: "flex",
           textDecoration: "none",
         }}
       >
-        <RunPodIcon style={{ width: "36px", height: "36px" }} color="primary"></RunPodIcon>
+        <RunPodIcon
+          color="primary"
+          style={{ height: 32, marginRight: 2, width: 32 }}
+        />
 
-        <Typography fontSize={24} color={theme.palette.text.primary}>
+        <Typography
+          color="#F9FAFB"
+          fontSize={18}
+          fontWeight={500}
+          letterSpacing="-0.03em"
+        >
           RunPod
         </Typography>
       </Link>
     </Stack>
-  )
+  );
 }
