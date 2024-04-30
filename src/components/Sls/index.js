@@ -3,6 +3,7 @@ import Analytics from "./Analytics";
 import Autoscale from "./Autoscale";
 import Community from "./Community";
 import Counter from "./Counter";
+import Footer from "./Footer";
 import Hero from "./Hero";
 import Pricing from "./Pricing";
 import Startup from "./Startup";
@@ -19,7 +20,7 @@ export default function Serverless({ data }) {
       <Startup />
       <Community />
       <Counter data={data} />
-      <div style={{ height: 300 }} />
+      <Footer />
     </Stack>
   );
 }
