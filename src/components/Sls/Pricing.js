@@ -438,7 +438,6 @@ const PricingCalculator = () => {
               <Box flexBasis="100%" height={0} key={i} />
             ) : (
               <Button
-                alignItems="center"
                 display="flex"
                 key={i}
                 onClick={handleVram(v)}
