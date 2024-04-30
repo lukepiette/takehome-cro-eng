@@ -122,8 +122,9 @@ export default function Home() {
               <Stack
                 alignItems="end"
                 direction="row"
-                justifyContent="center"
+                justifyContent="end"
                 spacing={1}
+                width={{ xs: "100%", md: "fit-content" }}
               >
                 <ButtonLink
                   href="/console/signup"
@@ -137,12 +138,19 @@ export default function Home() {
                     fontSize: 13,
                     fontWeight: 500,
                     height: 36,
+                    mr: { xs: 1, md: 0 },
                     pl: 2,
-                    pr: 1.4,
+                    pr: { xs: 2, md: 1.4 },
                   }}
                 >
-                  Sign Up{" "}
-                  <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+                  Sign Up
+                  <KeyboardArrowRightIcon
+                    sx={{
+                      display: { xs: "none", md: "inherit" },
+                      fontSize: 20,
+                      ml: 0.6,
+                    }}
+                  />
                 </ButtonLink>
                 <ButtonLink
                   href="/console/login"
@@ -153,6 +161,7 @@ export default function Home() {
                     borderRadius: 0.8,
                     boxShadow:
                       "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
+                    display: { xs: "none", md: "inherit" },
                     fontSize: 13,
                     fontWeight: 500,
                     height: 36,
@@ -165,7 +174,16 @@ export default function Home() {
 
               <IconButton
                 sx={{
+                  background:
+                    "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
+                  borderRadius: 0.5,
+                  boxShadow:
+                    "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
                   display: { xs: "inherit", md: "none" },
+                  fontSize: 13,
+                  fontWeight: 500,
+                  height: 36,
+                  px: 0.8,
                 }}
                 onClick={() => setDrawerOpen(true)}
               >
@@ -179,6 +197,7 @@ export default function Home() {
           anchor="top"
           open={drawerOpen}
           onClose={() => setDrawerOpen(false)}
+          sx={{ bgcolor: "rgba(0, 0, 0, .85)" }}
         >
           <Stack spacing={2} sx={{ p: 3 }}>
             <>
