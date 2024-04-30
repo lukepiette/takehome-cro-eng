@@ -161,7 +161,7 @@ export default function Community() {
   );
 }
 
-const CircleColor = ({ color }) => (
+export const CircleColor = ({ color }) => (
   <Stack
     alignItems="center"
     border="1px solid rgba(255, 255, 255, 0.3)"

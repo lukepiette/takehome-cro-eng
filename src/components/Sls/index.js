@@ -2,6 +2,7 @@ import { Stack } from "@mui/material";
 import Analytics from "./Analytics";
 import Autoscale from "./Autoscale";
 import Community from "./Community";
+import Counter from "./Counter";
 import Hero from "./Hero";
 import Pricing from "./Pricing";
 import Startup from "./Startup";
@@ -17,6 +18,7 @@ export default function Serverless({ data }) {
       <Pricing />
       <Startup />
       <Community />
+      <Counter data={data} />
       <div style={{ height: 300 }} />
     </Stack>
   );
