@@ -6,7 +6,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 export default function Hero() {
   return (
-    <Stack alignItems="center" position="relative" mb={15} width="100%">
+    <Stack alignItems="center" position="relative" mb={18} width="100%">
       <Stack
         borderRadius={100}
         height={1200}
@@ -29,11 +29,11 @@ export default function Hero() {
       <Stack
         alignItems="center"
         borderRadius={100}
-        boxShadow="0px -2px 2px #BD00FF, inset 0px 20px 20px rgba(255, 255, 255, 0.74), inset 0px 72px 27px #673BB8"
-        height={700}
+        boxShadow="0px -2.74px 2.74px #BD00FF, inset 0px 34px 34px rgba(255, 255, 255, 0.74), inset 0px 72px 27px #673BB8"
+        height={795}
         position="absolute"
-        top={-300}
-        width={700}
+        top={-250}
+        width={795}
         zIndex={-97}
       />
       <Stack
@@ -49,7 +49,7 @@ export default function Hero() {
       <Stack
         alignItems="center"
         borderRadius={100}
-        boxShadow="0px 2.7402px 2.7402px rgba(77, 148, 255, 0.25), inset 0px -20.5515px 34.2526px rgba(77, 148, 255, 0.25), inset 0px -68.5051px 68.5051px #BD00FF"
+        boxShadow="0px 2.74px 2.74px rgba(77, 148, 255, 0.25), inset 0px -20px 34px rgba(77, 148, 255, 0.25), inset 0px -68px 68px #BD00FF"
         height={1200}
         position="absolute"
         sx={{
@@ -60,6 +60,7 @@ export default function Hero() {
         width={1200}
         zIndex={-99}
       />
+
       <Stack
         alignItems="center"
         maxWidth={860}
@@ -84,7 +85,7 @@ export default function Hero() {
         <Typography
           align="center"
           color="#fff"
-          fontSize={{ xs: 28, sm: 48, md: 58 }}
+          fontSize={{ xs: 28, sm: 48, md: 62 }}
           fontWeight={600}
           letterSpacing="-0.04em"
           lineHeight={0.9}
@@ -162,7 +163,7 @@ export default function Hero() {
           direction={{ sm: "column", md: "row" }}
           gap={4}
           justifyContent="space-between"
-          mt={{ xs: 8, md: 11.6 }}
+          mt={{ xs: 8, md: 11 }}
           px={{ xs: 2, sm: 4 }}
           width="100%"
         >
