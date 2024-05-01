@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { RunPodIcon } from "@components/Layout/Logo";
 import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { RunPodIcon } from "@components/Layout/Logo";
 
 export default function Footer() {
   return (

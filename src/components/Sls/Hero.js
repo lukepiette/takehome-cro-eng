@@ -1,10 +1,15 @@
 import { Box, Stack, Typography, alpha } from "@mui/material";
+import { useInterval } from "@hooks/useInterval";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import ButtonLink from "@components/ButtonLink";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useState } from "react";
 
 export default function Hero() {
+  const [progress, setProgress] = useState(0);
+  useInterval(() => setProgress(progress + 1), 300);
+
   return (
     <Stack alignItems="center" position="relative" mb={18} width="100%">
       <Stack
@@ -254,18 +259,26 @@ export default function Hero() {
               </Typography>
             </Stack>
             <Typography fontFamily="monospace" fontSize={12} ml={3} mt={2}>
-              &gt; runpodctl config --apiKey $(RUNPOD_API_KEY)
+              {progress > 0 && (
+                <div>&gt; runpodctl config --apiKey $(RUNPOD_API_KEY)</div>
+              )}
+              {progress > 2 && <div>&gt; runpodctl project create</div>}
+              {progress > 4 && <div>&gt; runpodctl project deploy</div>}
               <br />
-              &gt; runpodctl project create
-              <br />
-              &gt; runpodctl project deploy
-              <br />
-              <br />
-              Deploying project...
-              <br />
-              Syncing files...
-              <br />
-              Project deployed successfully!
+              {progress > 5 && (
+                <div>
+                  Deploying project.
+                  {progress > 6 && "."}
+                  {progress > 7 && "."}
+                </div>
+              )}
+              {progress > 8 && (
+                <div>
+                  Syncing files.{progress > 9 && "."}
+                  {progress > 10 && "."}
+                </div>
+              )}
+              {progress > 11 && <div>Project deployed successfully!</div>}
             </Typography>
           </CodeBlock>
         </Stack>
