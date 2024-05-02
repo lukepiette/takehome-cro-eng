@@ -263,7 +263,7 @@ export default function Startup() {
             towards on-demand GPUs and Serverless endpoints.
           </Typography>
           <ButtonLink
-            href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+            href="https://share.hsforms.com/1tvg18CtoSH6EYna-eQzpgAecykq"
             variant="contained"
             sx={{
               background:
