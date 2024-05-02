@@ -22,18 +22,18 @@ export default function Analytics() {
       completed: v,
       retried: v % 3 === 0 ? 6 : 2,
       failed: i == 1 || i == 3 ? 3 : 1,
-      ts: new Date(`2023-09-08 14:${i}:00`).getTime(),
+      ts: new Date(`2024-03-10 14:${i}:00`).getTime(),
     }))
   );
   const [executionMetrics] = useState(
     [6, 8, 9, 7, 18, 19, 10, 8, 7, 8, 18, 8, 10].map((v, i) => ({
-      p98: 1,
-      p98_value: v + 1,
-      p90: 2,
-      p90_value: v + 2,
+      p98: 2,
+      p98_value: v + 5,
+      p90: 3,
+      p90_value: v + 3,
       p70: v,
       p70_value: v,
-      ts: new Date(`2023-09-08 14:${i}:00`).getTime(),
+      ts: new Date(`2024-03-10 14:${i}:00`).getTime(),
     }))
   );
 
@@ -214,12 +214,12 @@ export default function Analytics() {
               labels={[
                 { title: "Total", value: "1,420s" },
                 {
-                  background: "#BE7DF7",
+                  background: "#979DFF",
                   title: "P70",
-                  value: "7s",
+                  value: "8s",
                 },
-                { background: "#5B5BF5", title: "P90", value: "10s" },
-                { background: "#979DFF", title: "P98", value: "11s" },
+                { background: "#5B5BF5", title: "P90", value: "19s" },
+                { background: "#BE7DF7", title: "P98", value: "22s" },
               ]}
               zIndex={99}
             />
@@ -231,7 +231,7 @@ export default function Analytics() {
               width="100%"
             >
               <ComposedChart
-                colors={["#BE7DF7", "#5B5BF5", "#979DFF"]}
+                colors={["#979DFF", "#5B5BF5", "#BE7DF7"]}
                 data={executionMetrics}
                 bars={["p70", "p90", "p98"]}
                 barsAlias={{ p98: "P98", p90: "P90", p70: "P70" }}
