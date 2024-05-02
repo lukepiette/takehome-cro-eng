@@ -34,12 +34,49 @@ export default function Startup() {
           height={464}
           justifyContent="center"
           maxWidth={508}
+          overflow="hidden"
+          position="relative"
           width="100%"
           sx={{
             background:
               "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, rgba(15, 23, 42, 0.0001) 100%)",
           }}
         >
+          <Box
+            height="100%"
+            left={0}
+            position="absolute"
+            sx={{
+              background:
+                "linear-gradient(180deg, #000 40%, #4413a9 90%, #9467fd 200%)",
+            }}
+            top={0}
+            width="100%"
+          />
+          <Box
+            height="100%"
+            left={0}
+            position="absolute"
+            sx={{
+              background: "linear-gradient(145deg, #000 80%, #fff 100%)",
+              opacity: 0.2,
+            }}
+            top={0}
+            width="100%"
+          />
+          <Box
+            height={800}
+            left={-350}
+            position="absolute"
+            sx={{
+              background:
+                "linear-gradient(180deg, #000 75%, #330e80 92%, #9467fd 100%)",
+              transform: "rotate(0.9turn)",
+            }}
+            top={-430}
+            width={800}
+          />
+
           <Stack
             border="1px solid rgba(249, 250, 251, 0.16)"
             borderRadius={0.8}
@@ -147,7 +184,7 @@ export default function Startup() {
       <Stack
         alignItems="center"
         border="1px solid rgba(255, 255, 255, 0.08)"
-        mt={10}
+        mt={20}
         overflow="hidden"
         px={{ xs: 4, sm: 6, md: 4 }}
         py={5}
