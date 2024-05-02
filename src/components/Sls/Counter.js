@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { CircleColor } from "./Community";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useInterval } from "@hooks/useInterval";
 import { useTheme } from "@mui/material/styles";
 import ButtonLink from "@components/ButtonLink";
@@ -13,10 +13,40 @@ import useTrigger from "react-use-trigger/useTrigger";
 
 const requestTrigger = createTrigger();
 
+const reviews = [
+  {
+    name: "Tengwei Cai",
+    title: "Head of Product",
+    review: `The ability to capture responses is a game-changer. If a user gets
+  tired of the sign up and leaves, that data is still persisted.
+  Additionally, it&apos;s great to be able to select between formats.`,
+  },
+  {
+    name: "Jessie J",
+    title: "Head of Data",
+    review: `The ability to capture responses is a game-changer. If a user gets
+  tired of the sign up and leaves, that data is still persisted.
+  Additionally, it&apos;s great to be able to select between formats.`,
+  },
+  {
+    name: "Mark Luk",
+    title: "Head of Eng",
+    review: `The ability to capture responses is a game-changer. If a user gets
+  tired of the sign up and leaves, that data is still persisted.
+  Additionally, it&apos;s great to be able to select between formats.`,
+  },
+];
+
 export default function Counter({ data }) {
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.up("sm"));
   const md = useMediaQuery(theme.breakpoints.up("md"));
+
+  const [reviewActive, setReviewActive] = useState(reviews[0].name);
+  const activeReview = useMemo(
+    () => reviews.find((v) => v.name === reviewActive),
+    [reviewActive]
+  );
 
   const ref = useRef(null);
   const [width, setWidth] = useState(0);
@@ -79,10 +109,8 @@ export default function Counter({ data }) {
 
       <Stack alignItems="center" height={1305} justifyContent="center">
         <Stack>
-          <ReviewBox name="Tengwei Cai" title="Head of Product">
-            The ability to capture responses is a game-changer. If a user gets
-            tired of the sign up and leaves, that data is still persisted.
-            Additionally, it&apos;s great to be able to select between formats.
+          <ReviewBox name={activeReview.name} title={activeReview.title}>
+            {activeReview.review}
           </ReviewBox>
           <Stack
             alignItems="center"
@@ -92,9 +120,15 @@ export default function Counter({ data }) {
             mt={3}
             rowGap={1.4}
           >
-            <ReviewTab active name="Tengwei Cai" title="Head of Product" />
-            <ReviewTab name="Tengwei Cai" title="Head of Product" />
-            <ReviewTab name="Tengwei Cai" title="Head of Product" />
+            {reviews.map((v) => (
+              <ReviewTab
+                active={reviewActive === v.name}
+                handle={() => setReviewActive(v.name)}
+                key={v.name}
+                name={v.name}
+                title={v.title}
+              />
+            ))}
           </Stack>
         </Stack>
 
@@ -230,17 +264,19 @@ const ReviewBox = ({ children, name, title }) => (
   </Stack>
 );
 
-const ReviewTab = ({ active, name, title }) => (
+const ReviewTab = ({ active, handle, name, title }) => (
   <div
+    onClick={handle}
     style={{
       background: "rgba(28, 28, 28, 0.3)",
       borderRadius: 18,
       boxShadow: "0px -1px 3px rgba(226, 232, 240, 0.7)",
       color: "#F8FAFC",
+      cursor: active ? "default" : "pointer",
       fontSize: 12,
       fontWeight: 500,
       letterSpacing: "-0.02em",
-      opacity: active ? 1 : 0.4,
+      opacity: active ? 1 : 0.5,
       padding: "9px 14px 10px",
     }}
   >
