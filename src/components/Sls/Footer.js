@@ -14,6 +14,7 @@ export default function Footer() {
         sx={{
           background:
             "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.48) 25%, #000000 50%, #000824 75%, #7F52FF 100%)",
+          opacity: 0.2,
         }}
         zIndex={-99}
       />

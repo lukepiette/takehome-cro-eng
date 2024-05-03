@@ -14,7 +14,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 export default function Pricing() {
   return (
     <Stack alignItems="center" position="relative" mt={25} pb={7} width="100%">
-      <Box
+      {/* <Box
         bgcolor="#3D3DF2"
         borderRadius={2.4}
         height={491}
@@ -39,7 +39,7 @@ export default function Pricing() {
           background:
             "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.48) 14.23%, #000000 42.26%, #000824 69.39%, #7F52FF 100%)",
         }}
-      />
+      /> */}
 
       <Typography
         align="center"
