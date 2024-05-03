@@ -171,7 +171,7 @@ export default function Hero() {
           px={{ xs: 2, sm: 2 }}
           width="100%"
         >
-          <CodeBlock sx={{ height: 175}}>
+          <CodeBlock sx={{ height: 200}}>
             <Stack
               alignItems="center"
               bgcolor="#212134"
@@ -218,7 +218,7 @@ export default function Hero() {
               </Typography>
             </Stack>
           </CodeBlock>
-          <CodeBlock sx={{height:260}}>
+          <CodeBlock sx={{height:200}}>
             <Stack
               alignItems="center"
               bgcolor="#212134"
@@ -257,28 +257,28 @@ export default function Hero() {
               </Typography>
             </Stack>
             <Typography fontFamily="monospace" fontSize={12} ml={3} mt={2}>
-              {progress > 0 && (
+              {/* {progress > 0 && (
                 <div>&gt; runpodctl config --apiKey $(RUNPOD_API_KEY)</div>
               )}
-              {progress > 2 && <div>&gt; runpodctl project create</div>}
-              {progress > 4 && <div>&gt; runpodctl project deploy</div>}
+              {progress > 2 && <div>&gt; runpodctl project create</div>} */}
+              {progress > 0 && <div>&gt; runpodctl project deploy</div>}
               <br />
-              {progress > 5 && (
+              {progress > 1 && (
                 <div>
                   Deploying project.
-                  {progress > 6 && "."}
-                  {progress > 7 && "."}
+                  {progress > 3 && "."}
+                  {progress > 4 && "."}
                 </div>
               )}
-              {progress > 8 && (
+              {/* {progress > 5 && (
                 <div>
                   Syncing files.{progress > 9 && "."}
                   {progress > 10 && "."}
                 </div>
-              )}
-              {progress > 11 && <div>Project deployed successfully!</div>}
+              )} */}
+              {progress > 5 && <div>Project deployed successfully!</div>}
               <br />
-              {progress > 13 && <div>Your Serverless API Endpoint: <span style={{ color: "#95EC4D" }}>https://api.runpod.ai/v2/u4y2rv11na8hlx/runsync</span></div>}
+              {progress > 7 && <div>Your Serverless API Endpoint: <span style={{ color: "#95EC4D" }}>https://api.runpod.ai/v2/u4y2rv11na8hlx/runsync</span></div>}
             </Typography>
           </CodeBlock>
         </Stack>
