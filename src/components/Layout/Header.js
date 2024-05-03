@@ -26,10 +26,6 @@ const links = [
     to: "/serverless-gpu",
   },
   {
-    name: "Endpoints",
-    to: "/endpoints",
-  },
-  {
     name: "Blog",
     to: "https://blog.runpod.io",
   },

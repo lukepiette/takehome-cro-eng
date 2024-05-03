@@ -164,7 +164,7 @@ export default function Autoscale() {
           >
             <Stack
               alignItems="center"
-              bgcolor="rgba(249, 250, 251, 0.24)"
+              bgcolor="green" //rgba(249, 250, 251, 0.24)
               borderRadius={100}
               height={24}
               justifyContent="center"
@@ -199,7 +199,7 @@ export default function Autoscale() {
           >
             <Stack
               alignItems="center"
-              bgcolor="rgba(249, 250, 251, 0.24)"
+              bgcolor="green" //rgba(249, 250, 251, 0.24)
               borderRadius={100}
               height={24}
               justifyContent="center"

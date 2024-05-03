@@ -42,7 +42,6 @@ export const Footer = () => (
         <FooterLink href="/console/gpu-secure-cloud">Secure Cloud</FooterLink>
         <FooterLink href="/console/gpu-cloud">Community Cloud</FooterLink>
         <FooterLink href="/console/serverless">Serverless</FooterLink>
-        <FooterLink href="/endpoints">AI Endpoints</FooterLink>
       </Stack>
 
       <Stack width={130}>
@@ -70,12 +69,11 @@ export const Footer = () => (
 
       <Stack width={130}>
         <Title name="Contact" />
-        <FooterLink href="/contact">Contact Us</FooterLink>
+        <FooterLink href="https://contact.runpod.io">Contact Us</FooterLink>
         <FooterLink href="https://discord.gg/cUpRmau42V">Discord</FooterLink>
         <FooterLink href="mailto:help@runpod.io">help@runpod.io</FooterLink>
-        <FooterLink href="mailto:referrals@runpod.io">
-          referrals@runpod.io
-        </FooterLink>
+        <FooterLink href="mailto:referrals@runpod.io">referrals@runpod.io</FooterLink>
+        <FooterLink href="mailto:press@runpod.io">press@runpod.io</FooterLink>
       </Stack>
     </Stack>
 

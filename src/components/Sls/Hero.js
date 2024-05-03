@@ -22,7 +22,7 @@ export default function Hero() {
         zIndex={-90}
       >
         <Box
-          height={704}
+          height={820}
           mt={{ xs: 55, md: 44 }}
           sx={{
             background:
@@ -73,7 +73,7 @@ export default function Hero() {
         overflow="hidden"
         width="100%"
       >
-        <Stack
+        {/* <Stack
           alignItems="center"
           border={`1px solid ${alpha("#fff", 0.1)}`}
           borderRadius={0.8}
@@ -86,7 +86,7 @@ export default function Hero() {
         >
           <FavoriteIcon sx={{ fontSize: 12, mr: 1 }} />
           We just raised our 20 million Pre-Seed
-        </Stack>
+        </Stack> */}
         <Typography
           align="center"
           color="#fff"
@@ -122,8 +122,7 @@ export default function Hero() {
           px={2}
           variant="h2"
         >
-          Run your AI models with autoscaling, job queueing and sub 500ms cold
-          start time.
+          Only pay for what you use — no idle costs, just unparalleled speed and scalability.
         </Typography>
 
         <Stack direction="row" mt={4} spacing={{ xs: 1, sm: 1.8 }}>
@@ -164,15 +163,15 @@ export default function Hero() {
         </Stack>
 
         <Stack
-          alignItems="center"
+          alignItems={{ xs: "center", md: "flex-start"}}
           direction={{ sm: "column", md: "row" }}
           gap={4}
-          justifyContent="space-between"
+          justifyContent="center"
           mt={{ xs: 8, md: 11 }}
-          px={{ xs: 2, sm: 4 }}
+          px={{ xs: 2, sm: 2 }}
           width="100%"
         >
-          <CodeBlock>
+          <CodeBlock sx={{ height: 175}}>
             <Stack
               alignItems="center"
               bgcolor="#212134"
@@ -187,7 +186,7 @@ export default function Hero() {
             </Stack>
             <Stack direction="row" ml={3} mt={2}>
               <Typography color="#B4BAC5" fontFamily="monospace" fontSize={12}>
-                1<br />2<br />3<br />4<br />5<br />6
+                1<br />2<br />3<br />4<br />5
               </Typography>
               <Typography
                 color="#fff"
@@ -214,13 +213,12 @@ export default function Hero() {
                   </span>
                 </Typography>
                 runpod.serverless.start&#40;&#123;
-                <span style={{ color: "#95EC4D" }}>&quot;handler&quot;</span>:
-                handler&#125;&#41;
+                <span style={{ color: "#95EC4D" }}>&quot;handler&quot;</span>:handler&#125;&#41;
                 <br />
               </Typography>
             </Stack>
           </CodeBlock>
-          <CodeBlock>
+          <CodeBlock sx={{height:260}}>
             <Stack
               alignItems="center"
               bgcolor="#212134"
@@ -279,6 +277,8 @@ export default function Hero() {
                 </div>
               )}
               {progress > 11 && <div>Project deployed successfully!</div>}
+              <br />
+              {progress > 13 && <div>Your Serverless API Endpoint: <span style={{ color: "#95EC4D" }}>https://api.runpod.ai/v2/u4y2rv11na8hlx/runsync</span></div>}
             </Typography>
           </CodeBlock>
         </Stack>
@@ -291,8 +291,7 @@ export const CodeBlock = ({ children, light, left, sx, ...props }) => (
   <Stack
     borderRadius={1}
     bgcolor="#111121"
-    height={200}
-    maxWidth={380}
+    maxWidth={390}
     overflow="hidden"
     sx={{
       borderColor: `${alpha("#5D29F0", 0.4)}`,

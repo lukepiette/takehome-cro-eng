@@ -6,11 +6,23 @@ import Serverless from "@components/Sls";
 const AI: NextPage = ({ data }: any) => (
   <>
     <Head>
-      <title>Serverless GPUs for AI Inference and Training</title>
-      <meta
-        name="description"
-        content="Serverless GPUs to deploy your ML models to production without worrying about infrastructure or scale."
-      />
+      <title>Serverless GPU Endpoints for AI Inference</title>
+      <meta name="description" content="Run machine learning inference at scale with RunPod Serverless GPU endpoints." />
+      <meta name="author" content="RunPod" />
+
+      {/* Open Graph Tags */}
+      <meta property="og:title" content="Serverless GPU Endpoints for AI Inference" />
+      <meta property="og:description" content="Run machine learning inference at scale with RunPod Serverless GPU endpoints." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.runpod.io/serverless-gpu" />
+      <meta property="og:image" content="https://www.runpod.io/static/images/serverless-preview.webp" />
+
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@runpod_io" />
+      <meta name="twitter:title" content="Serverless GPU Endpoints for AI Inference" />
+      <meta name="twitter:description" content="Run machine learning inference at scale with RunPod Serverless GPU endpoints." />
+      <meta name="twitter:image" content="https://www.runpod.io/static/images/serverless-preview.webp" />
     </Head>
     <Serverless data={data} />
   </>
