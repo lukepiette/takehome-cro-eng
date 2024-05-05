@@ -1,8 +1,63 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { useState } from "react";
 import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
+const reviews = [
+  {
+    name: "Tengwei Cai",
+    title: "Staff Engineer",
+    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
+  everything from model serving, to auto-scaling, to iterating on
+  products around those models, so we can deliver value to our
+  customers and not worry about ML infrastructure.`,
+  },
+  {
+    name: "John Lee",
+    title: "VP of Engineer",
+    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
+  everything from model serving, to auto-scaling, to iterating on
+  products around those models, so we can deliver value to our
+  customers and not worry about ML infrastructure.`,
+  },
+  {
+    name: "Bob Lee",
+    title: "Dir of Engineer",
+    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
+  everything from model serving, to auto-scaling, to iterating on
+  products around those models, so we can deliver value to our
+  customers and not worry about ML infrastructure.`,
+  },
+  {
+    name: "James Lee",
+    title: "VP of Product",
+    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
+  everything from model serving, to auto-scaling, to iterating on
+  products around those models, so we can deliver value to our
+  customers and not worry about ML infrastructure.`,
+  },
+  {
+    name: "James Lee",
+    title: "VP of Product",
+    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
+  everything from model serving, to auto-scaling, to iterating on
+  products around those models, so we can deliver value to our
+  customers and not worry about ML infrastructure.`,
+  },
+];
+
 export default function Community() {
+  const startReviewIndex = Math.floor(reviews.length / 2);
+  const [reviewIndex, setReviewIndex] = useState(startReviewIndex);
+
+  const handleReviewIndex = (v) => () => {
+    setReviewIndex((c) => {
+      const newState = c + v;
+      if (newState > reviews.length - 1 || newState < 0) return c;
+      return newState;
+    });
+  };
+
   return (
     <Stack alignItems="center" position="relative" mt={15} mb={7} width="100%">
       <Box
@@ -21,7 +76,12 @@ export default function Community() {
         zIndex={-10}
       />
 
-      <Stack alignItems="center" px={{ xs: 4, sm: 6, md: 4 }} width="100%">
+      <Stack
+        alignItems="center"
+        mb={15}
+        px={{ xs: 4, sm: 6, md: 4 }}
+        width="100%"
+      >
         <Stack alignItems="start" maxWidth={1090} width="100%">
           <Typography
             fontSize={{ xs: 30, sm: 38, md: 48 }}
@@ -92,70 +152,73 @@ export default function Community() {
       <Stack
         direction="row"
         justifyContent="center"
-        mt={15}
         position="relative"
         maxWidth="100%"
       >
-        <Box
-          display={{ xs: "none", sm: "inherit" }}
-          height="100%"
-          left={0}
-          position="absolute"
-          top={0}
-          width={{ xs: 100, sm: 80, md: 220, lg: 368 }}
-          sx={{
-            background:
-              "linear-gradient(270deg, #000000 0%, rgba(1, 1, 17, 0) 100%), linear-gradient(270deg, #000000 0%, rgba(1, 1, 17, 0) 100%)",
-            transform: "matrix(-1, 0, 0, 1, 0, 0)",
-          }}
-        />
-        <Box
-          display={{ xs: "none", sm: "inherit" }}
-          height="100%"
-          right={0}
-          position="absolute"
-          top={0}
-          width={{ xs: 100, sm: 80, md: 220, lg: 368 }}
-          sx={{
-            background:
-              "linear-gradient(270deg, #000000 0%, rgba(1, 1, 17, 0) 100%), linear-gradient(270deg, #000000 0%, rgba(1, 1, 17, 0) 100%)",
-          }}
-        />
+        {[-1, 1].map((v, i) => (
+          <Stack
+            display={{
+              xs: "none",
+              sm: "inherit",
+            }}
+            height="100%"
+            key={i}
+            left={v <= 0 ? 0 : "inherit"}
+            position="absolute"
+            right={v > 0 ? 0 : "inherit"}
+            top={0}
+            width={{ xs: 100, sm: 80, md: 220, lg: 368 }}
+            sx={{
+              background:
+                "linear-gradient(270deg, #000000 0%, rgba(1, 1, 17, 0) 100%), linear-gradient(270deg, #000000 0%, rgba(1, 1, 17, 0) 100%)",
+              transform: v < 0 ? "matrix(-1, 0, 0, 1, 0, 0)" : "",
+            }}
+            zIndex={99}
+          >
+            <div
+              onClick={handleReviewIndex(v)}
+              style={{
+                alignItems: "center",
+                cursor: "pointer",
+                display:
+                  reviewIndex + v > reviews.length - 1 || reviewIndex + v < 0
+                    ? "none"
+                    : "flex",
+                height: "100%",
+                justifyContent: "end",
+                width: "100%",
+              }}
+            >
+              <KeyboardArrowRightIcon style={{ marginRight: "20%" }} />
+            </div>
+          </Stack>
+        ))}
 
-        <ReviewBox
-          cost={40}
-          name="Tengwei Cai"
-          speed={20}
-          title="Staff Engineer"
+        <Stack
+          columnGap={3}
+          direction="row"
+          justifyContent="center"
+          position="relative"
+          maxWidth="100%"
+          sx={{
+            transform: `translateX(${
+              (reviewIndex - startReviewIndex) * (557 + 27) * -1
+            }px)`,
+            transition: "transform 500ms ease",
+          }}
         >
-          Now, our small, scrappy team can punch above our weight. It&apos;s
-          everything from model serving, to auto-scaling, to iterating on
-          products around those models, so we can deliver value to our customers
-          and not worry about ML infrastructure.
-        </ReviewBox>
-        <ReviewBox
-          cost={40}
-          name="Tengwei Cai"
-          mx={3}
-          speed={20}
-          title="Staff Engineer"
-        >
-          Now, our small, scrappy team can punch above our weight. It&apos;s
-          everything from model serving, to auto-scaling, to iterating on
-          products around those models, so we can deliver value to our customers
-          and not worry about ML infrastructure.
-        </ReviewBox>
-        <ReviewBox
-          cost={40}
-          name="Tengwei Cai"
-          speed={20}
-          title="Staff Engineer"
-        >
-          Now, our small, scrappy team can punch above our weight. It&apos;s
-          everything from model serving, to auto-scaling, to iterating on
-          products around those models, so we can deliver value to our customers
-          and not worry about ML infrastructure.
-        </ReviewBox>
+          {reviews.map((v, i) => (
+            <ReviewBox
+              cost={40}
+              key={i}
+              name={v.name}
+              speed={20}
+              title={v.title}
+            >
+              {v.review}
+            </ReviewBox>
+          ))}
+        </Stack>
       </Stack>
     </Stack>
   );
