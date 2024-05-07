@@ -1,29 +1,27 @@
-import { Container } from "@mui/material"
-import Develop from "./Develop"
-import EndSection from "./EndSection"
-import Hero from "./Hero"
-import Production from "./Production"
-import RunPodEcosystem from "./RunPodEcosystem"
-import Summary from "./Summary"
+import { Stack } from "@mui/material";
+import { Develop } from "./Develop";
+import EndSection from "./EndSection";
+import Hero from "./Hero";
+import Production from "./Production";
+import RunPodEcosystem from "./RunPodEcosystem";
+import Summary from "./Summary";
+import { Features } from "./Features";
 
 export default function Overview({ data }) {
   return (
-    <Container
+    <Stack
       sx={{
         alignItems: "center",
         display: "flex",
         flexDirection: "column",
         marginLeft: "auto",
         marginRight: "auto",
-        maxWidth: 1050,
+        zIndex: 0,
       }}
     >
       <Hero data={data} />
-      <Summary />
-      <Develop data={data} />
-      <Production data={data} />
-      <RunPodEcosystem />
-      <EndSection />
-    </Container>
-  )
+      <Develop />
+      <Features />
+    </Stack>
+  );
 }

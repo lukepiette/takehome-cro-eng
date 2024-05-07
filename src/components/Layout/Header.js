@@ -122,23 +122,7 @@ export default function Home() {
                 spacing={1}
                 width={{ xs: "100%", md: "fit-content" }}
               >
-                <ButtonLink
-                  href="/console/signup"
-                  variant="contained"
-                  sx={{
-                    background:
-                      "radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.0472) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #5D29F0",
-                    borderRadius: 0.8,
-                    boxShadow:
-                      "0px 6px 0px rgba(0, 0, 0, 0.5), inset -3px -4px 7px rgba(9, 0, 114, 0.24)",
-                    fontSize: 13,
-                    fontWeight: 500,
-                    height: 36,
-                    mr: { xs: 1, md: 0 },
-                    pl: 2,
-                    pr: { xs: 2, md: 1.4 },
-                  }}
-                >
+                <ButtonLink href="/console/signup" variant="contained" gradient>
                   Sign Up
                   <KeyboardArrowRightIcon
                     sx={{
@@ -148,22 +132,7 @@ export default function Home() {
                     }}
                   />
                 </ButtonLink>
-                <ButtonLink
-                  href="/console/login"
-                  variant="outlined"
-                  sx={{
-                    background:
-                      "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
-                    borderRadius: 0.8,
-                    boxShadow:
-                      "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
-                    display: { xs: "none", md: "inherit" },
-                    fontSize: 13,
-                    fontWeight: 500,
-                    height: 36,
-                    px: 2,
-                  }}
-                >
+                <ButtonLink href="/console/login" variant="outlined" gradient>
                   Login
                 </ButtonLink>
               </Stack>

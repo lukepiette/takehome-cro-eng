@@ -1,5 +1,5 @@
 import { alpha, Box, Stack, Typography } from "@mui/material";
-import { CodeBlock } from "./Hero";
+import { ShellBlock } from "@components/ShellBlock";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import ButtonLink from "@components/ButtonLink";
@@ -296,50 +296,14 @@ export default function Analytics() {
               "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, rgba(15, 23, 42, 0.0001) 100%)",
           }}
         >
-          <CodeBlock
+          <ShellBlock
             height="auto"
             light
             minWidth={{ xs: "100%", sm: 540 }}
             mt={{ xs: 0, sm: 9 }}
             position="absolute"
+            title="worker logs -- zsh"
           >
-            <Stack
-              alignItems="center"
-              bgcolor="#212134"
-              direction="row"
-              height={34}
-              px={1.6}
-              py={2}
-              spacing={0.6}
-            >
-              <Box
-                bgcolor={`${alpha("#fff", 0.3)}`}
-                borderRadius={100}
-                height={9}
-                width={9}
-              />
-              <Box
-                bgcolor={`${alpha("#fff", 0.2)}`}
-                borderRadius={100}
-                height={9}
-                width={9}
-              />
-              <Box
-                bgcolor={`${alpha("#fff", 0.1)}`}
-                borderRadius={100}
-                height={9}
-                width={9}
-              />
-              <Typography
-                align="right"
-                color={`${alpha("#F9FAFB", 0.48)}`}
-                fontFamily="monospace"
-                fontSize={12}
-                flexGrow={1}
-              >
-                worker logs -- zsh
-              </Typography>
-            </Stack>
             <Typography
               color="#94A3B8"
               fontFamily="monospace"
@@ -353,7 +317,7 @@ export default function Analytics() {
               <br />
               <Logs add={6} id="gn3a25" minute={58} />
             </Typography>
-          </CodeBlock>
+          </ShellBlock>
         </Stack>
       </Stack>
     </Stack>
