@@ -237,6 +237,61 @@ export default function Pricing() {
               interrupting your inference workloads.
             </Typography>
 
+            <Stack spacing={1} mt={3} direction={{xs: "column", sm: "row"}}>
+              <Box
+                component="img"
+                sx={{
+                  top: {xs: 0, sm: 0},
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  width: 100,
+                  height: 100,          
+                }}
+                alt="gpu background"
+                src="/static/images/soc2-light.webp"
+              />
+              <Box
+                component="img"
+                sx={{
+                  top: {xs: 0, sm: 0},
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  width: 100,
+                  height: 100,          
+                }}
+                alt="gpu background"
+                src="/static/images/iso27001-light.webp"
+              />
+              <Box
+                component="img"
+                sx={{
+                  top: {xs: 0, sm: 0},
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  width: 100,
+                  height: 100,          
+                }}
+                alt="gpu background"
+                src="/static/images/hipaa-light.webp"
+              />
+              <Box
+                component="img"
+                sx={{
+                  top: {xs: 0, sm: 0},
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  width: 100,
+                  height: 100,          
+                }}
+                alt="gpu background"
+                src="/static/images/gdpr-light.webp"
+              />
+            </Stack>
+
             <RegionsBox
               label="North America"
               mt={5}
