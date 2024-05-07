@@ -5,45 +5,29 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const reviews = [
   {
-    name: "Tengwei Cai",
-    title: "Staff Engineer",
-    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
-  everything from model serving, to auto-scaling, to iterating on
-  products around those models, so we can deliver value to our
-  customers and not worry about ML infrastructure.`,
+    name: "Hara Kang",
+    title: "CTO, LOVO AI",
+    review: `"There are definitely providers who offer much cheaper pricing than Runpod. But everytime, they have an inferior developer experience. If you're paying 50% less for a GPU elsewhere, that cost is coming out somewhere else, be it developer time or lack of reliability. For the value, Runpod provides competitive prices and we're willing to pay a premium to reduce the headache that normally comes with ML ops."`,
+    cost: 20,
+    speed: 30
   },
   {
-    name: "John Lee",
-    title: "VP of Engineer",
-    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
-  everything from model serving, to auto-scaling, to iterating on
-  products around those models, so we can deliver value to our
-  customers and not worry about ML infrastructure.`,
+    name: "Josh Payne",
+    title: "CEO, Coframe",
+    review: `"The setup process was great! Very quick and easy. RunPod had the exact GPUs we needed for AI inference and the pricing was very fair based on what I saw out on the market. The main value proposition for us was the flexibility RunPod offered. We were able to scale up effortlessly to meet the demand at launch."`,
+  cost: 35,
+  speed: 60
   },
   {
-    name: "Bob Lee",
-    title: "Dir of Engineer",
-    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
-  everything from model serving, to auto-scaling, to iterating on
-  products around those models, so we can deliver value to our
-  customers and not worry about ML infrastructure.`,
+    name: "Giacomo Locci",
+    title: "CPO, KRNL.ai",
+    review: `"The cost savings on RunPod have been incredible. Since switching, our team has been able to focus on building the product instead of the infrastructure.
+    We often have unpredictable demand from our users which makes it hard to manage our cloud costs. But with RunPod, we've been able to scale up and down quickly and painlessly.
+    Great reliability in multiple regions and great customer support is why we've been with them for over a year now."`,
+  cost: 65,
+  speed: 30
   },
-  {
-    name: "James Lee",
-    title: "VP of Product",
-    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
-  everything from model serving, to auto-scaling, to iterating on
-  products around those models, so we can deliver value to our
-  customers and not worry about ML infrastructure.`,
-  },
-  {
-    name: "James Lee",
-    title: "VP of Product",
-    review: `Now, our small, scrappy team can punch above our weight. It&apos;s
-  everything from model serving, to auto-scaling, to iterating on
-  products around those models, so we can deliver value to our
-  customers and not worry about ML infrastructure.`,
-  },
+  ,
 ];
 
 export default function Community() {
@@ -124,7 +108,7 @@ export default function Community() {
             width={380}
           >
             RunPod is built by developers, for developers. Our community of
-            10,000+ developers on Discord is here to support you getting
+            10,000+ developers on Discord is here for support while you get
             started.
           </Typography>
           <ButtonLink
@@ -201,18 +185,17 @@ export default function Community() {
           position="relative"
           maxWidth="100%"
           sx={{
-            transform: `translateX(${
-              (reviewIndex - startReviewIndex) * (557 + 27) * -1
-            }px)`,
+            transform: `translateX(${(reviewIndex - startReviewIndex) * (557 + 27) * -1
+              }px)`,
             transition: "transform 500ms ease",
           }}
         >
           {reviews.map((v, i) => (
             <ReviewBox
-              cost={40}
+              cost={v.cost}
               key={i}
               name={v.name}
-              speed={20}
+              speed={v.speed}
               title={v.title}
             >
               {v.review}
@@ -237,14 +220,14 @@ export const CircleColor = ({ color }) => (
         color == "orange"
           ? "linear-gradient(0deg, rgba(255, 109, 62, 0.45), rgba(255, 109, 62, 0.45)), linear-gradient(180deg, #C61800 0%, #FF8A00 100%)"
           : color == "lightpurple"
-          ? "linear-gradient(0deg, rgba(83, 162, 255, 0.53), rgba(83, 162, 255, 0.53)), linear-gradient(180deg, #FF9153 0%, #FF007A 100%)"
-          : color == "blue"
-          ? "linear-gradient(0deg, rgba(91, 91, 224555, 1), rgba(91, 91, 245, .8)), linear-gradient(180deg, #fff 0%, #fff 100%)"
-          : color == "lightblue"
-          ? "linear-gradient(0deg, rgba(151, 157, 255, 1), rgba(151, 157, 255, .8)), linear-gradient(180deg, #fff 0%, #fff 100%)"
-          : color == "purple"
-          ? "linear-gradient(0deg, rgba(207, 185, 255, 0.45), rgba(207, 185, 255, 0.45)), linear-gradient(180deg, #538DFF 0%, #8F00FF 100%)"
-          : "linear-gradient(0deg, rgba(0, 107, 68, 0.45), rgba(0, 107, 68, 0.45)), linear-gradient(180deg, #53FFCB 0%, #008C62 100%)",
+            ? "linear-gradient(0deg, rgba(83, 162, 255, 0.53), rgba(83, 162, 255, 0.53)), linear-gradient(180deg, #FF9153 0%, #FF007A 100%)"
+            : color == "blue"
+              ? "linear-gradient(0deg, rgba(91, 91, 224555, 1), rgba(91, 91, 245, .8)), linear-gradient(180deg, #fff 0%, #fff 100%)"
+              : color == "lightblue"
+                ? "linear-gradient(0deg, rgba(151, 157, 255, 1), rgba(151, 157, 255, .8)), linear-gradient(180deg, #fff 0%, #fff 100%)"
+                : color == "purple"
+                  ? "linear-gradient(0deg, rgba(207, 185, 255, 0.45), rgba(207, 185, 255, 0.45)), linear-gradient(180deg, #538DFF 0%, #8F00FF 100%)"
+                  : "linear-gradient(0deg, rgba(0, 107, 68, 0.45), rgba(0, 107, 68, 0.45)), linear-gradient(180deg, #53FFCB 0%, #008C62 100%)",
     }}
     width={8}
   />

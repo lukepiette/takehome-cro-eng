@@ -135,7 +135,7 @@ export default function Autoscale() {
             letterSpacing={-0.25}
             mt={1}
           >
-            We built an optimization layer for our container system to manage
+            Flashboot is an optimization layer for our container system to manage
             deployments and scale up workers in real time.
           </Typography>
         </Stack>

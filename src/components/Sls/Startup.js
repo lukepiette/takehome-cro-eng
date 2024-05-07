@@ -156,8 +156,8 @@ export default function Startup() {
             mt={3}
             width="100%"
           >
-            Speak with our team to gain additional cost savings on reserved
-            active workers and flex worker commitments.
+            Save more by committing to longer-term usage.
+            Reserve discounted active and flex workers by speaking with our team.
           </Typography>
           <ButtonLink
             href="https://meetings.runpod.io/meetings/runpod/firstconnect"
@@ -175,7 +175,7 @@ export default function Startup() {
               pr: 1.4,
             }}
           >
-            Book a Call{" "}
+            Book a call{" "}
             <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
         </Stack>
@@ -286,7 +286,7 @@ export default function Startup() {
             }}
             width={480}
           >
-            Are you an early-stage startup or academic?
+            Are you an early-stage startup or ML researcher?
           </Typography>
           <Typography
             color="#94A3B8"
@@ -296,7 +296,7 @@ export default function Startup() {
             mt={1.5}
             width={480}
           >
-            Get up to 25K in free compute credits with Runpod. These can be used
+            Get up to $25K in free compute credits with Runpod. These can be used
             towards on-demand GPUs and Serverless endpoints.
           </Typography>
           <ButtonLink

@@ -101,7 +101,7 @@ export default function Pricing() {
             pr: 1.4,
           }}
         >
-          Get Started <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+          Get started <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
         </ButtonLink>
         <ButtonLink
           href="https://meetings.runpod.io/meetings/runpod/firstconnect"
@@ -118,7 +118,7 @@ export default function Pricing() {
             pr: 1.4,
           }}
         >
-          Book a Call <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+          Book a call <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
         </ButtonLink>
       </Stack>
 
@@ -234,7 +234,7 @@ export default function Pricing() {
               Update your endpoint&apos;s region in two clicks. Scale up to 9
               regions at a time. Global automated failover is supported
               out-of-the-box, so you won&apos;t have to worry about GPU errors
-              interrupting your inference workloads.
+              interrupting your ML inference.
             </Typography>
 
             <RegionsBox
