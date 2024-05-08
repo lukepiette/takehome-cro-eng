@@ -1,10 +1,9 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 
 import ButtonLink from "@components/ButtonLink";
 import { Pricing } from "@components/Home/Pricing";
 
 export default function InstancePricing({ data }) {
-  console.log({ instancePricing: data });
   return (
     <Stack alignItems="center">
       <Pricing data={data} />
