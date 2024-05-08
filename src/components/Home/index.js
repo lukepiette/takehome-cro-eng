@@ -4,6 +4,8 @@ import { Hero } from "./Hero";
 import { Features } from "./Features";
 import { Pricing } from "./Pricing";
 import { Scale } from "./Scale";
+import { Community } from "./Community";
+import { Everything } from "./Everything"
 
 export default function Overview({ data }) {
   return (
@@ -23,6 +25,8 @@ export default function Overview({ data }) {
       <Features />
       <Pricing data={data} />
       <Scale />
+      <Community />
+      <Everything />
     </Stack>
   );
 }
