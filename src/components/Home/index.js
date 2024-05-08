@@ -1,13 +1,12 @@
 import { Stack } from "@mui/material";
 import { Develop } from "./Develop";
-import EndSection from "./EndSection";
-import Hero from "./Hero";
-import Production from "./Production";
-import RunPodEcosystem from "./RunPodEcosystem";
-import Summary from "./Summary";
+import { Hero } from "./Hero";
 import { Features } from "./Features";
+import { Pricing } from "./Pricing";
+import { Scale } from "./Scale";
 
 export default function Overview({ data }) {
+  console.log(data);
   return (
     <Stack
       sx={{
@@ -17,11 +16,14 @@ export default function Overview({ data }) {
         marginLeft: "auto",
         marginRight: "auto",
         zIndex: 0,
+        overflow: "hidden",
       }}
     >
       <Hero data={data} />
       <Develop />
       <Features />
+      <Pricing data={data} />
+      <Scale />
     </Stack>
   );
 }

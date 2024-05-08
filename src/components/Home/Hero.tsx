@@ -8,7 +8,7 @@ import Cloud1 from "@assets/cloud1.svg";
 import Cloud2 from "@assets/cloud2.svg";
 import Cloud3 from "@assets/cloud3.svg";
 
-export default function Hero() {
+export function Hero() {
   return (
     <Stack
       alignItems="center"
