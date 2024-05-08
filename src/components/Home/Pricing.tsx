@@ -181,7 +181,7 @@ export function Pricing({
     gpu: Gpu[];
   };
 }) {
-  const gpusByName = R.indexBy((gpu: Gpu) => gpu?.id, data?.gpu);
+  const gpusByName = R.indexBy((gpu: Gpu) => gpu?.id, data?.gpu || []);
 
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
