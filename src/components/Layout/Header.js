@@ -243,7 +243,10 @@ export default function Home() {
                 }}
               >
                 Learn more
-                <KeyboardArrowRightIcon sx={{ color: "#fff" }} />
+                <KeyboardArrowRightIcon
+                  fontSize="small"
+                  sx={{ color: "#fff" }}
+                />
               </ButtonLink>
             )}
           </Stack>
