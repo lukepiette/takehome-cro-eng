@@ -27,8 +27,13 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   });
 
+  const gpu = data?.gpuTypes?.reduce((sum: any, v: any) => {
+    sum[v.id] = v;
+    return sum;
+  }, {});
+
   return {
-    props: { data: { gpu: [...data.gpuTypes] } },
+    props: { data: { gpu } },
     revalidate: process.env.VERCEL_ENV === "production" ? 600 : 30,
   };
 };
