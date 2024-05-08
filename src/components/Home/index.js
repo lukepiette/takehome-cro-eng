@@ -6,7 +6,6 @@ import { Pricing } from "./Pricing";
 import { Scale } from "./Scale";
 
 export default function Overview({ data }) {
-  console.log(data);
   return (
     <Stack
       sx={{
