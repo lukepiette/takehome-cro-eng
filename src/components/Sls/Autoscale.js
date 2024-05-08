@@ -34,7 +34,7 @@ export default function Autoscale() {
         <Box
           display="inline-flex"
           sx={{
-            background: "-webkit-linear-gradient(45deg, #CAD9FF, #7F39FF)",
+            background: "linear-gradient(45deg, #CAD9FF, #7F39FF)",
             backgroundClip: "text",
             textFillColor: "transparent",
           }}

@@ -82,7 +82,7 @@ export default function Analytics({ showHeader = true }) {
             <Box
               display="inline-flex"
               sx={{
-                background: "-webkit-linear-gradient(-90deg, #CAD9FF, #7F39FF)",
+                background: "linear-gradient(-90deg, #CAD9FF, #7F39FF)",
                 backgroundClip: "text",
                 textFillColor: "transparent",
               }}
@@ -101,8 +101,8 @@ export default function Analytics({ showHeader = true }) {
         spacing={3}
       >
         <HeadlineBox title="Usage Analytics">
-          Real-time usage analytics for your endpoint with metrics on
-          completed and failed requests. Useful for endpoints that have fluctuating usage
+          Real-time usage analytics for your endpoint with metrics on completed
+          and failed requests. Useful for endpoints that have fluctuating usage
           profiles throughout the day.
         </HeadlineBox>
 
@@ -382,8 +382,7 @@ const HeadlineBox = ({ children, title, ...props }) => (
         pr: 1.4,
       }}
     >
-      See the console{" "}
-      <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+      See the console <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
     </ButtonLink>
   </Stack>
 );
