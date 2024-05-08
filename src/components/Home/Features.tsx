@@ -323,9 +323,11 @@ function FakePod() {
 function FakeTemplate({
   icon,
   title,
+  id,
 }: {
   icon: React.ReactNode;
   title: string;
+  id?: string;
 }) {
   return (
     <Box
@@ -366,7 +368,14 @@ function FakeTemplate({
         </Typography>
       </Stack>
       {/* @ts-ignore */}
-      <Button variant="outlined" size="small" gradient>
+      <Button
+        variant="outlined"
+        size="small"
+        gradient
+        href={`/console/explore/${id}`}
+        target="_blank"
+        rel="noreferrer"
+      >
         Deploy
       </Button>
     </Box>
@@ -520,16 +529,32 @@ export function Features() {
               >
                 <Grid container spacing={2} padding={2} height="100%">
                   <Grid item xs={6}>
-                    <FakeTemplate icon={<Pytorch />} title="PyTorch" />
+                    <FakeTemplate
+                      icon={<Pytorch />}
+                      title="PyTorch"
+                      id="runpod-torch-v220"
+                    />
                   </Grid>
                   <Grid item xs={6}>
-                    <FakeTemplate icon={<Tensorflow />} title="Tensorflow" />
+                    <FakeTemplate
+                      icon={<Tensorflow />}
+                      title="Tensorflow"
+                      id="runpod-tensorflow"
+                    />
                   </Grid>
                   <Grid item xs={6}>
-                    <FakeTemplate icon={<Docker />} title="Docker" />
+                    <FakeTemplate
+                      icon={<Docker />}
+                      title="Docker"
+                      id="runpod-kobold-united"
+                    />
                   </Grid>
                   <Grid item xs={6}>
-                    <FakeTemplate icon={<Runpod />} title="Runpod" />
+                    <FakeTemplate
+                      icon={<Runpod />}
+                      title="Runpod"
+                      id="runpod-desktop"
+                    />
                   </Grid>
                 </Grid>
               </CodeBlock>
