@@ -5,9 +5,8 @@ import { Features } from "./Features";
 import { Pricing } from "./Pricing";
 import { Scale } from "./Scale";
 import Community from "./Community";
-import Everything from "./Everything"
-import Launch from "./Launch"
-
+import Everything from "./Everything";
+import Launch from "./Launch";
 
 export default function Overview({ data }) {
   return (

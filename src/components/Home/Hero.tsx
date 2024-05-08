@@ -51,6 +51,10 @@ export function Hero() {
           position: "relative",
         }}
         gap={5}
+        px={{
+          xs: 3,
+          md: 0,
+        }}
       >
         <Box
           display={{ xs: "none", xl: "block" }}
@@ -79,14 +83,16 @@ export function Hero() {
         <Typography
           fontWeight={600}
           fontSize={{
-            xs: 60,
-            md: 130,
+            xs: 80,
             lg: 162,
             xl: 192,
           }}
+          lineHeight={{
+            xs: "80px",
+            md: "184.32px",
+          }}
           sx={{
             width: "100%",
-            lineHeight: `184.32px`,
             letterSpacing: `-0.03em`,
             textAlign: `center`,
             background: `linear-gradient(120deg, rgba(255, 255, 255, 0.2) 32.07%, rgba(145, 78, 255, 0.3) 75.29%);`,
@@ -115,24 +121,15 @@ export function Hero() {
             Get started
             <KeyboardArrowRightIcon
               sx={{
-                display: { xs: "none", md: "inherit" },
                 fontSize: 20,
                 ml: 0.6,
               }}
             />
           </ButtonLink>
-          <ButtonLink
-            href="https://docs.runpod.io"
-            variant="outlined"
-            gradient
-            sx={{
-              display: { xs: "none", md: "inherit" },
-            }}
-          >
+          <ButtonLink href="https://docs.runpod.io" variant="outlined" gradient>
             Read the docs
             <KeyboardArrowRightIcon
               sx={{
-                display: { xs: "none", md: "inherit" },
                 fontSize: 20,
                 ml: 0.6,
               }}

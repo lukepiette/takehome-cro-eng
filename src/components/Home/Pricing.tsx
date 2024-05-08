@@ -1,6 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
+import ButtonLink from "@components/ButtonLink";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 function FeatureCheck({ title }: { title: string }) {
   return (
@@ -135,6 +144,8 @@ export function Pricing({
     };
   };
 }) {
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Stack
       gap={4}
@@ -148,24 +159,24 @@ export function Pricing({
         fontWeight={600}
         textAlign={"center"}
         lineHeight={"28px"}
+        px={{
+          xs: 3,
+          md: 0,
+        }}
       >
         <span style={{ color: "#bbb9ff" }}>Powerful</span> & Cost-Effective GPUs
-        <br />
+        {!isSmall ? <br /> : " "}
         for Every Workload
       </Typography>
-      <Stack
-        direction={"row"}
-        columnGap={12}
-        rowGap={3}
-        alignItems={"center"}
-        justifyContent={"center"}
-        flexWrap={"wrap"}
-      >
-        <FeatureCheck title={"Zero fees for ingress/egress"} />
-        <FeatureCheck title={"Global interoperability"} />
-        <FeatureCheck title={"99.99% Uptime"} />
-        <FeatureCheck title={"$0.05/GB/month Network Storage"} />
-      </Stack>
+      <ButtonLink href="https://docs.runpod.io" variant="contained" gradient>
+        See all GPUs
+        <KeyboardArrowRightIcon
+          sx={{
+            fontSize: 20,
+            ml: 0.6,
+          }}
+        />
+      </ButtonLink>
       <div
         style={{
           width: "230rem",
@@ -180,7 +191,7 @@ export function Pricing({
           zIndex: -1,
         }}
       />
-      <Box
+      <Stack
         sx={{
           border: "1px solid rgba(249, 250, 251, 0.16)",
           background:
@@ -189,7 +200,33 @@ export function Pricing({
           backdropFilter: "blur(64px)",
           padding: 3,
         }}
+        gap={3}
       >
+        <Stack gap={1}>
+          <Typography fontWeight={500}>
+            Thousands of GPUs across 30+ Regions
+          </Typography>
+          <Typography maxWidth={"30rem"}>
+            Deploy any container on Secure Cloud. Public and private image repos
+            are supported. Configure your environment the way you want.
+          </Typography>
+        </Stack>
+        <Stack
+          direction={"row"}
+          columnGap={12}
+          rowGap={2}
+          alignItems={"center"}
+          justifyContent={{
+            xs: "start",
+            md: "space-between",
+          }}
+          flexWrap={"wrap"}
+        >
+          <FeatureCheck title={"Zero fees for ingress/egress"} />
+          <FeatureCheck title={"Global interoperability"} />
+          <FeatureCheck title={"99.99% Uptime"} />
+          <FeatureCheck title={"$0.05/GB/month Network Storage"} />
+        </Stack>
         <Grid container spacing={2}>
           <GPUPrice
             name="A100"
@@ -234,7 +271,7 @@ export function Pricing({
             manufacturer="nvidia"
           />
         </Grid>
-      </Box>
+      </Stack>
     </Stack>
   );
 }

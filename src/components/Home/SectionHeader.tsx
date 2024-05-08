@@ -21,7 +21,16 @@ export function SectionHeader({
   glow?: boolean;
 }) {
   return (
-    <Stack gap={"27px"} alignItems={"center"} zIndex={1} textAlign={"center"}>
+    <Stack
+      gap={"27px"}
+      alignItems={"center"}
+      zIndex={1}
+      textAlign={"center"}
+      px={{
+        xs: 3,
+        md: 0,
+      }}
+    >
       <Stack direction={"row"} gap={2} alignItems={"center"}>
         <div
           style={{

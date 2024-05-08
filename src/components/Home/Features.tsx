@@ -28,14 +28,14 @@ function Feature({
     <Stack
       position={"relative"}
       gap={4}
-      flexBasis={"50%"}
-      maxWidth={"50%"}
+      flexBasis={{ xs: "auto", md: "50%" }}
+      maxWidth={{ xs: "100%", md: "50%" }}
       flexShrink={1}
       flexGrow={0}
       alignItems={"start"}
       justifyContent={"center"}
-      paddingLeft={right ? "8rem" : 0}
-      paddingRight={left ? "8rem" : 0}
+      paddingLeft={{ xs: 0, md: right ? "8rem" : 0 }}
+      paddingRight={{ xs: 0, md: left ? "8rem" : 0 }}
     >
       {children}
     </Stack>
@@ -44,7 +44,13 @@ function Feature({
 
 function Divider() {
   return (
-    <Stack alignItems={"center"} height={"100%"} gap={-1} width={0}>
+    <Stack
+      alignItems={"center"}
+      height={"100%"}
+      gap={-1}
+      width={0}
+      display={{ xs: "none", md: "flex" }}
+    >
       <div
         style={{
           background:
@@ -74,12 +80,26 @@ function Divider() {
 function FeatureRow({
   left,
   right,
+  reverseWhenSmall,
 }: {
   left: React.ReactNode;
   right: React.ReactNode;
+  reverseWhenSmall?: boolean;
 }) {
   return (
-    <Stack direction={"row"} minHeight={"20rem"} width="100%">
+    <Stack
+      direction={{
+        xs: reverseWhenSmall ? "column-reverse" : "column",
+        md: "row",
+      }}
+      minHeight={{ xs: "auto", md: "20rem" }}
+      width="100%"
+      gap={{ xs: 8, md: 0 }}
+      alignItems={{
+        xs: "center",
+        md: "initial",
+      }}
+    >
       <Feature left>{left}</Feature>
       <Divider />
       <Feature right>{right}</Feature>
@@ -106,11 +126,11 @@ function FakePod() {
   return (
     <Stack
       gap={3}
-      p={3}
+      p={2}
       sx={{
         background:
           "radial-gradient(50.12% 50.12% at 100.49% 75.43%, #1E293B 0%, rgba(15, 23, 42, 0) 100%)",
-        borderRadius: "17.28px",
+        borderRadius: "14px",
         overflow: "hidden",
         border: "1px rgba(249, 250, 251, 0.1) solid",
       }}
@@ -163,7 +183,12 @@ function FakePod() {
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction={"row"} justifyContent={"space-between"} gap={2}>
+      <Stack
+        direction={"row"}
+        justifyContent={"space-between"}
+        gap={1}
+        flexWrap={"wrap"}
+      >
         <Stack>
           <Typography fontSize={11} fontWeight={500}>
             200 GB Disk: 200 GB Pod Volume
@@ -181,59 +206,70 @@ function FakePod() {
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction={"row"} gap={1} alignItems={"center"}>
-        <PublicIcon
-          fontSize="small"
-          sx={{
-            color: "#6152a8",
-          }}
-        />
-        <Typography>CA</Typography>
+      <Stack direction={"row"} gap={1} alignItems={"center"} flexWrap={"wrap"}>
+        <Stack direction={"row"} gap={0.5} alignItems={"center"}>
+          <PublicIcon
+            fontSize="small"
+            sx={{
+              color: "#6152a8",
+            }}
+          />
+          <Typography>CA</Typography>
+        </Stack>
         <div
           style={{
             width: "1px",
-            height: "100%",
+            height: "1rem",
             background:
               "linear-gradient(180deg, rgba(255,255,255,0) 0%, #4A494F 50%, rgba(101, 77, 255, 0.0) 100%)",
+            flexShrink: 0,
           }}
         />
-        <CloudDownloadOutlinedIcon
-          fontSize="small"
-          sx={{
-            opacity: 0.5,
-          }}
-        />
-        <Typography>8654 Mbps</Typography>
+        <Stack direction={"row"} gap={0.5} alignItems={"center"}>
+          <CloudDownloadOutlinedIcon
+            fontSize="small"
+            sx={{
+              opacity: 0.5,
+            }}
+          />
+          <Typography>8654 Mbps</Typography>
+        </Stack>
         <div
           style={{
             width: "1px",
-            height: "100%",
+            height: "1rem",
             background:
               "linear-gradient(180deg, rgba(255,255,255,0) 0%, #4A494F 50%, rgba(101, 77, 255, 0.0) 100%)",
+            flexShrink: 0,
           }}
         />
-        <CloudUploadOutlinedIcon
-          fontSize="small"
-          sx={{
-            opacity: 0.5,
-          }}
-        />
-        <Typography>938 Mbps</Typography>
+        <Stack direction={"row"} gap={0.5} alignItems={"center"}>
+          <CloudUploadOutlinedIcon
+            fontSize="small"
+            sx={{
+              opacity: 0.5,
+            }}
+          />
+          <Typography>938 Mbps</Typography>
+        </Stack>
         <div
           style={{
             width: "1px",
-            height: "100%",
+            height: "1rem",
             background:
               "linear-gradient(180deg, rgba(255,255,255,0) 0%, #4A494F 50%, rgba(101, 77, 255, 0.0) 100%)",
+            flexShrink: 0,
           }}
         />
-        <SaveOutlinedIcon
-          fontSize="small"
-          sx={{
-            opacity: 0.5,
-          }}
-        />
-        <Typography>963 MBps</Typography>
+        <Stack direction={"row"} gap={0.5} alignItems={"center"}>
+          <SaveOutlinedIcon
+            fontSize="small"
+            sx={{
+              opacity: 0.5,
+            }}
+          />
+          <Typography>963 MBps</Typography>
+        </Stack>
       </Stack>
       <Stack
         p={1}
@@ -289,16 +325,34 @@ function FakeTemplate({
         background: "rgba(0,0,0,0.3)",
         borderRadius: 8,
         border: "1px solid rgba(255,255,255,0.1)",
-        padding: 16,
         display: "flex",
         flexDirection: "column",
         gap: 8,
         height: "100%",
         justifyContent: "space-between",
       }}
+      maxWidth={"100%"}
+      maxHeight={"100%"}
+      p={{
+        xs: 1.5,
+        md: 2,
+      }}
     >
-      <Stack direction={"row"} gap={2} alignItems={"center"}>
-        {icon}
+      <Stack
+        direction={{
+          xs: "column",
+          md: "row",
+        }}
+        gap={{
+          xs: 0.5,
+          md: 2,
+        }}
+        alignItems={{
+          xs: "start",
+          md: "center",
+        }}
+      >
+        <Box>{icon}</Box>
         <Typography fontSize={15} fontWeight={500}>
           {title}
         </Typography>
@@ -319,10 +373,18 @@ export function Features() {
       mt={24}
       position={"relative"}
       maxWidth={"75.5rem"}
+      gap={{
+        xs: 16,
+        md: 0,
+      }}
+      px={{
+        xs: 3,
+        md: 0,
+      }}
     >
       <FeatureRow
         left={
-          <>
+          <Box marginBottom={{ xs: 12, md: 0 }}>
             <ShellBlock
               style={{
                 height: 220,
@@ -343,9 +405,21 @@ export function Features() {
             <CodeBlock
               style={{
                 position: "absolute",
-                transform: "translate(2rem, 6rem)",
-                width: 350,
                 height: 220,
+              }}
+              sx={{
+                top: {
+                  xs: "6rem",
+                  md: "19rem",
+                },
+                left: {
+                  xs: "0rem",
+                  md: "2rem",
+                },
+                width: {
+                  xs: "350px",
+                  md: "350px",
+                },
               }}
             >
               <Typography
@@ -374,7 +448,7 @@ export function Features() {
                 </span>
               </Typography>
             </CodeBlock>
-          </>
+          </Box>
         }
         right={
           <>
@@ -393,6 +467,7 @@ export function Features() {
         }
       />
       <FeatureRow
+        reverseWhenSmall
         left={
           <>
             <Typography variant="h2">

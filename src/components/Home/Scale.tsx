@@ -28,7 +28,14 @@ export function Scale() {
         number={2}
         name="Scale"
         title={
-          <Typography fontWeight={600} fontSize={48} lineHeight={"48px"}>
+          <Typography
+            fontWeight={600}
+            fontSize={{
+              xs: 40,
+              md: 48,
+            }}
+            lineHeight={"48px"}
+          >
             Scale your ML inference
             <br />
             with <span style={{ color: "#afa0ff" }}>Serverless</span>

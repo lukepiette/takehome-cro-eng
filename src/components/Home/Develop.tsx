@@ -1,11 +1,22 @@
 import ButtonLink from "@components/ButtonLink";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { ShellBlock } from "@components/ShellBlock";
 
 export function Develop() {
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Stack gap={"27px"} alignItems={"center"} zIndex={1} textAlign={"center"}>
+    <Stack
+      gap={"27px"}
+      alignItems={"center"}
+      zIndex={1}
+      textAlign={"center"}
+      px={{
+        xs: 3,
+        md: 0,
+      }}
+    >
       <Stack direction={"row"} gap={2} alignItems={"center"}>
         <div
           style={{
@@ -24,9 +35,12 @@ export function Develop() {
         </div>
         <Typography variant={"h4"}>Develop</Typography>
       </Stack>
-      <Typography fontWeight={600} fontSize={48} lineHeight={"48px"}>
-        Seamlessly spin up GPUs for your
-        <br />
+      <Typography
+        fontWeight={600}
+        fontSize={{ xs: 40, md: 48 }}
+        lineHeight={"48px"}
+      >
+        Globally distributed GPU{!isSmall && <br />} cloud for your{" "}
         <span style={{ color: "#afa0ff" }}>AI workloads</span>
       </Typography>
       <Typography fontWeight={400} fontSize={16}>
