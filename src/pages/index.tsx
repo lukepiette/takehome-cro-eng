@@ -8,11 +8,45 @@ import Homepage from "@components/Home";
 const Home: NextPage = ({ data }: any) => (
   <>
     <Head>
-      <title>Rent Cloud GPUs from $0.2/hour</title>
+      <title>RunPod - The Cloud Built for AI</title>
       <meta
         name="description"
-        content="Save over 80% on GPUs. GPU rental made easy with Jupyter for Tensorflow, PyTorch or any other AI framework."
+        content="Develop, train, and scale AI models in one cloud. Spin up on-demand GPUs with GPU Cloud, scale ML inference with Serverless."
       />
+      <meta name="author" content="RunPod" />
+
+      {/* Open Graph Tags */}
+      <meta
+        property="og:title"
+        content="RunPod - The Cloud Built for AI"
+      />
+      <meta
+        property="og:description"
+        content="Develop, train, and scale AI models in one cloud. Spin up on-demand GPUs with GPU Cloud, scale ML inference with Serverless."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.runpod.io/" />
+      <meta
+        property="og:image"
+        content="https://www.runpod.io/static/images/home-page-preview-image.webp"
+      />
+
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@runpod_io" />
+      <meta
+        name="twitter:title"
+        content="RunPod - The Cloud Built for AI"
+      />
+      <meta
+        name="twitter:description"
+        content="Develop, train, and scale AI models in one cloud. Spin up on-demand GPUs with GPU Cloud, scale ML inference with Serverless."
+      />
+      <meta
+        name="twitter:image"
+        content="https://www.runpod.io/static/images/home-page-preview-image.webp"
+      />
+
     </Head>
     <Homepage data={data} />
   </>

@@ -149,6 +149,10 @@ export function Hero() {
           zIndex: 0,
         }}
       >
+        <Typography sx={{color:"#CBCCD2", zIndex:100, mb:3}}>
+          RunPod works with Startups, Academic Institutions, and Enterprises.
+        </Typography>
+
         <TrustedBy />
         <Stack
           sx={{

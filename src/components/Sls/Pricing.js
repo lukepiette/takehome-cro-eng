@@ -237,6 +237,28 @@ export default function Pricing() {
               interrupting your ML inference.
             </Typography>
 
+            <Typography
+              fontSize={20}
+              mt={5}
+              letterSpacing="-0.02em"
+              sx={{
+                background:
+                  "linear-gradient(0deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%)",
+                backgroundClip: "text",
+                textFillColor: "transparent",
+              }}
+            >
+              Pending Certifications
+            </Typography>
+            <Typography
+              color="#94A3B8"
+              fontSize={14}
+              letterSpacing="-0.25px"
+              mt={0.5}
+              mr={3}
+            >
+              Although many of our data center partners have these compliance certifications, RunPod is in the process of getting SOC 2, ISO 27001, and HIPAA. We aim to have all three by early Q3, 2024.
+            </Typography>
             <Stack spacing={1} mt={3} direction={{xs: "column", sm: "row"}}>
               <Box
                 component="img"
@@ -277,7 +299,7 @@ export default function Pricing() {
                 alt="gpu background"
                 src="/static/images/hipaa-light.webp"
               />
-              <Box
+              {/* <Box
                 component="img"
                 sx={{
                   top: {xs: 0, sm: 0},
@@ -289,7 +311,7 @@ export default function Pricing() {
                 }}
                 alt="gpu background"
                 src="/static/images/gdpr-light.webp"
-              />
+              /> */}
             </Stack>
 
             <RegionsBox
