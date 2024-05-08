@@ -184,14 +184,6 @@ export function Pricing({
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const gpuArray = Array.isArray(data?.gpu) ? data.gpu : [];
-
-  const gpuTypesById = gpuArray.reduce((acc, gpu: Gpu) => {
-    // @ts-ignore
-    acc[gpu.id] = gpu;
-    return acc;
-  }, {});
-
   return (
     <Stack
       gap={4}
@@ -304,74 +296,74 @@ export function Pricing({
             name="H100 PCIe"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA H100 PCIe"]}
+            data={data?.gpu["NVIDIA H100 PCIe"]}
           />
           <GPUPrice
             name="H100 SXM"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA H100 80GB HBM3"]}
+            data={data?.gpu["NVIDIA H100 80GB HBM3"]}
           />
           <GPUPrice
             name="A100 PCIe"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA A100 80GB PCIe"]}
+            data={data?.gpu["NVIDIA A100 80GB PCIe"]}
           />
           <GPUPrice
             name="A100 SXM"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA A100-SXM4-80GB"]}
+            data={data?.gpu["NVIDIA A100-SXM4-80GB"]}
           />
           <GPUPrice
             name="A40"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA A40"]}
+            data={data?.gpu["NVIDIA A40"]}
           />
           <GPUPrice
             name="L40"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA L40"]}
+            data={data?.gpu["NVIDIA L40"]}
           />
           <GPUPrice
             name="L40S"
             manufacturer="nvidia"
             // @ts-ignore
 
-            data={gpuTypesById["NVIDIA L40S"]}
+            data={data?.gpu["NVIDIA L40S"]}
           />
           <GPUPrice
             name="RTX A6000"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA RTX A6000"]}
+            data={data?.gpu["NVIDIA RTX A6000"]}
           />
           <GPUPrice
             name="RTX A5000"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA RTX A5000"]}
+            data={data?.gpu["NVIDIA RTX A5000"]}
           />
           <GPUPrice
             name="RTX 4090"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA GeForce RTX 4090"]}
+            data={data?.gpu["NVIDIA GeForce RTX 4090"]}
           />
           <GPUPrice
             name="RTX 3090"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA GeForce RTX 3090"]}
+            data={data?.gpu["NVIDIA GeForce RTX 3090"]}
           />
           <GPUPrice
             name="RTX A4000 Ada"
             manufacturer="nvidia"
             // @ts-ignore
-            data={gpuTypesById["NVIDIA RTX 4000 Ada Generation"]}
+            data={data?.gpu["NVIDIA RTX 4000 Ada Generation"]}
           />
         </Grid>
       </Stack>
