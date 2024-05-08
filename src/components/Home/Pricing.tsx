@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+
 import {
   Box,
   Grid,
@@ -10,6 +11,8 @@ import {
 import CheckIcon from "@mui/icons-material/Check";
 import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import * as R from "ramda";
+import { Gpu, GpuData } from "src/types/gpu";
 
 function FeatureCheck({ title }: { title: string }) {
   return (
@@ -36,23 +39,7 @@ function GPUPrice({
   name,
   manufacturer = "nvidia",
   data,
-}: {
-  name: string;
-  manufacturer?: "nvidia" | "amd";
-  data?: {
-    communityPrice?: number;
-    securePrice?: number;
-    secureCloud?: boolean;
-    communityCloud?: boolean;
-    maxGpuCount?: number;
-    memoryInGb?: number;
-    lowestPrice?: {
-      minMemory?: number;
-      minVcpu?: number;
-      stockStatus?: string;
-    };
-  };
-}) {
+}: Gpu & { data: GpuData }) {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Stack
@@ -191,15 +178,11 @@ export function Pricing({
   data,
 }: {
   data: {
-    gpu: {
-      [key: string]: {
-        securePrice: number;
-        communityPrice: number;
-        memoryInGb: number;
-      };
-    };
+    gpu: Gpu[];
   };
 }) {
+  const gpusByName = R.indexBy((gpu: Gpu) => gpu?.id, data?.gpu);
+
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -313,62 +296,75 @@ export function Pricing({
           <GPUPrice
             name="H100 PCIe"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA H100 PCIe"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA H100 PCIe"]}
           />
           <GPUPrice
             name="H100 SXM"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA H100 80GB HBM3"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA H100 80GB HBM3"]}
           />
           <GPUPrice
             name="A100 PCIe"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA A100 80GB PCIe"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA A100 80GB PCIe"]}
           />
           <GPUPrice
             name="A100 SXM"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA A100-SXM4-80GB"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA A100-SXM4-80GB"]}
           />
           <GPUPrice
             name="A40"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA A40"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA A40"]}
           />
           <GPUPrice
             name="L40"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA L40"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA L40"]}
           />
           <GPUPrice
             name="L40S"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA L40S"]}
+            // @ts-ignore
+
+            data={gpusByName["NVIDIA L40S"]}
           />
           <GPUPrice
             name="RTX A6000"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA RTX A6000"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA RTX A6000"]}
           />
           <GPUPrice
             name="RTX A5000"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA RTX A5000"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA RTX A5000"]}
           />
           <GPUPrice
             name="RTX 4090"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA GeForce RTX 4090"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA GeForce RTX 4090"]}
           />
           <GPUPrice
             name="RTX 3090"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA GeForce RTX 3090"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA GeForce RTX 3090"]}
           />
           <GPUPrice
             name="RTX A4000 Ada"
             manufacturer="nvidia"
-            data={data?.gpu["NVIDIA RTX 4000 Ada Generation"]}
+            // @ts-ignore
+            data={gpusByName["NVIDIA RTX 4000 Ada Generation"]}
           />
         </Grid>
       </Stack>
