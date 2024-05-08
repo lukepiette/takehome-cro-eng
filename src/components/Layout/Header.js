@@ -6,15 +6,20 @@ import {
   Drawer,
   IconButton,
   Stack,
+  Typography,
   styled,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 import ButtonLink from "@components/ButtonLink";
 // import TopAdvertisement from "@components/TopAdvertisement"
 import Logo from "./Logo";
+import Link from "next/link";
 
 const links = [
   {
@@ -64,6 +69,9 @@ const HeaderWrapper = styled(Box)(
 
 export default function Home() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -172,6 +180,73 @@ export default function Home() {
               </IconButton>
             </Stack>
           </Container>
+        </HeaderWrapper>
+
+        <HeaderWrapper>
+          <Stack
+            direction={"row"}
+            width={"100%"}
+            height={"100%"}
+            gap={2}
+            paddingY={1}
+            alignItems={"center"}
+            justifyContent={"center"}
+            sx={{
+              background:
+                "linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(77, 148, 255, 0.03) 100%)",
+            }}
+          >
+            <Stack
+              sx={{
+                p: 0.5,
+                flexShrink: 0,
+                borderRadius: 100,
+                background: "rgba(255, 255, 255, 0.1)",
+              }}
+            >
+              <FavoriteIcon sx={{ color: "#fff", fontSize: "12px" }} />
+            </Stack>
+
+            <Typography>We just raised our 20 million Seed</Typography>
+
+            <div
+              style={{
+                height: "1rem",
+                width: "2px",
+                borderRadius: "100%",
+                background: "rgba(255, 255, 255, 0.1)",
+              }}
+            />
+
+            {isSmall ? (
+              <Link
+                href={"/"}
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <KeyboardArrowRightIcon sx={{ color: "#fff" }} />
+              </Link>
+            ) : (
+              <ButtonLink
+                href="/"
+                variant="text"
+                sx={{
+                  "&:hover": {
+                    textDecoration: "underline",
+                    background: "transparent",
+                  },
+                  px: 0,
+                }}
+              >
+                Learn more
+                <KeyboardArrowRightIcon sx={{ color: "#fff" }} />
+              </ButtonLink>
+            )}
+          </Stack>
         </HeaderWrapper>
 
         <Drawer
