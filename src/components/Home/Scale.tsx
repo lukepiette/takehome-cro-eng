@@ -139,7 +139,7 @@ export function Scale() {
             >
               Respond to user demand in real time with GPU workers that
               <br />
-              scale from 0 to 100s in a minute.
+              scale from 0 to 100s in seconds.
             </Typography>
 
             <Box mb={3.9} ml={6} mt="auto" position="relative">

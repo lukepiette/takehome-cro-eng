@@ -169,7 +169,7 @@ export default function Launch({ data }) {
               pr: 1.4,
             }}
           >
-            Get Started{" "}
+            Get started{" "}
             <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
         </Stack>
