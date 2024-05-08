@@ -48,7 +48,16 @@ export default function Launch({ data }) {
   }, [md, ref, sm]);
 
   return (
-    <Stack alignItems="center" position="relative" mt={15} mb={10} width="100%">
+    <Stack
+      alignItems="center"
+      position="relative"
+      mt={{
+        xs: -20,
+        sm: 15,
+      }}
+      mb={10}
+      width="100%"
+    >
       <Box
         borderRadius={100}
         boxShadow="0px 2.74px 0px rgba(77, 148, 255, 0.25), inset 0px -24.55px 48px rgba(77, 148, 255, 0.1), inset 0px -78.5px 100px #BD00FF"

@@ -21,7 +21,10 @@ export function Hero() {
         background: `linear-gradient(180deg, #000000 0%, #0D0033 12.5%, #6134E2 36.91%, #7F52FF 43.5%, #dcdafc 60%, #684bbc 70%, #000000 75%)`,
         zIndex: 0,
       }}
-      gap={10}
+      gap={{
+        xs: 0,
+        sm: 10,
+      }}
     >
       <Cloud1
         style={{
