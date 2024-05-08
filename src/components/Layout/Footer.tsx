@@ -7,10 +7,12 @@ import TwitterIcon from "@mui/icons-material/X";
 // import FacebookIcon from "@mui/icons-material/Facebook"
 // import LinkedInIcon from "@mui/icons-material/LinkedIn"
 
+//     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.48) 14.23%, #000000 42.26%, #000824 76%, #7F52FF 110%);
+
+
 const LongFooterWrapper = styled(Card)(
   () => `
     align-items: center;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.48) 14.23%, #000000 42.26%, #000824 76%, #7F52FF 110%);
     border-radius: 0;
     display: flex;
     flex-direction: column;

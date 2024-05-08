@@ -454,9 +454,9 @@ export function Features() {
                   </span>
                   <br />
                   <br />
-                  Success! Test your changes locally by connecting
+                  Success! Test your changes locally by 
                   <br />
-                  to the API server at:
+                  connecting to the API server at:
                   <br />
                   <span style={{ opacity: 0.8 }}>
                     {">"} https://landing-page123.proxy.runpod.net

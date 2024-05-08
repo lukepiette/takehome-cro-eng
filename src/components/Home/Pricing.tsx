@@ -211,10 +211,10 @@ export function Pricing({
       maxWidth={"75.5rem"}
     >
       <Typography
-        fontSize={24}
         fontWeight={600}
         textAlign={"center"}
         lineHeight={"28px"}
+        variant="h2"
         px={{
           xs: 3,
           md: 0,
