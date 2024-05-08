@@ -34,20 +34,31 @@ function FeatureCheck({ title }: { title: string }) {
 
 function GPUPrice({
   name,
-  price,
   manufacturer = "nvidia",
-  size,
+  data,
 }: {
   name: string;
   manufacturer?: "nvidia" | "amd";
-  price?: number;
-  size?: number;
+  data?: {
+    communityPrice?: number;
+    securePrice?: number;
+    secureCloud?: boolean;
+    communityCloud?: boolean;
+    maxGpuCount?: number;
+    memoryInGb?: number;
+    lowestPrice?: {
+      minMemory?: number;
+      minVcpu?: number;
+      stockStatus?: string;
+    };
+  };
 }) {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Stack
         sx={{
           p: 2,
+          height: "100%",
           borderRadius: "12px",
           border: "1px rgba(233.61, 235.39, 238.30, 0.11) solid",
           boxShadow: "0px 4px 100px rgba(0, 0, 0, 0.25)",
@@ -101,10 +112,17 @@ function GPUPrice({
             }}
           >
             <Typography fontSize={11} color="rgb(180,180,180)">
-              Starting at{" "}
-              <span style={{ fontFamily: "monospace", color: "#fff" }}>
-                ${price || "???"}/hr
+              Starting from{" "}
+              <span
+                style={{ fontFamily: "monospace", color: "#fff", fontSize: 12 }}
+              >
+                $
+                {Math.min(
+                  data?.communityPrice || 0,
+                  data?.securePrice || 0
+                ).toFixed(2) || "???"}
               </span>
+              /hr
             </Typography>
           </Box>
         </Stack>
@@ -116,15 +134,53 @@ function GPUPrice({
         />
         <Stack
           direction={"row"}
-          alignItems={"center"}
+          alignItems={"end"}
           justifyContent={"space-between"}
         >
-          <Typography fontWeight={400} fontSize={18}>
-            {name}
-          </Typography>
-          <Typography fontSize={14} fontWeight={400} color={"rgb(180,180,180)"}>
-            {size || "???"}GB VRAM
-          </Typography>
+          <Stack gap={0.25}>
+            <Typography fontWeight={400} fontSize={18} mb={0.5}>
+              {name}
+            </Typography>
+            <Typography
+              fontSize={14}
+              fontWeight={400}
+              color={"rgb(180,180,180)"}
+            >
+              {data?.memoryInGb || "???"}GB VRAM
+            </Typography>
+            <Typography
+              fontSize={14}
+              fontWeight={400}
+              color={"rgb(180,180,180)"}
+            >
+              {data?.lowestPrice?.minMemory || "???"}GB RAM
+            </Typography>
+            <Typography
+              fontSize={14}
+              fontWeight={400}
+              color={"rgb(180,180,180)"}
+            >
+              {data?.lowestPrice?.minVcpu || "???"} vCPUs
+            </Typography>
+          </Stack>
+          <Stack gap={1}>
+            {data?.secureCloud && (
+              <Stack alignItems={"end"}>
+                <Typography>${data?.securePrice?.toFixed(2)}/hr</Typography>
+                <Typography fontSize={12} sx={{ opacity: 0.5 }}>
+                  Secure Cloud
+                </Typography>
+              </Stack>
+            )}
+            {data?.communityCloud && (
+              <Stack alignItems={"end"}>
+                <Typography>${data?.communityPrice?.toFixed(2)}/hr</Typography>
+                <Typography fontSize={12} sx={{ opacity: 0.5 }}>
+                  Community Cloud
+                </Typography>
+              </Stack>
+            )}
+          </Stack>
         </Stack>
       </Stack>
     </Grid>
@@ -144,6 +200,7 @@ export function Pricing({
     };
   };
 }) {
+  console.log(data);
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -168,7 +225,7 @@ export function Pricing({
         {!isSmall ? <br /> : " "}
         for Every Workload
       </Typography>
-      <ButtonLink href="/console/deploy" variant="contained" gradient>
+      <ButtonLink href="/gpu-instance/pricing" variant="contained" gradient>
         See all GPUs
         <KeyboardArrowRightIcon
           sx={{
@@ -229,46 +286,64 @@ export function Pricing({
         </Stack>
         <Grid container spacing={2}>
           <GPUPrice
-            name="A100"
-            price={data?.gpu["NVIDIA A100 80GB PCIe"]?.securePrice}
-            size={data?.gpu["NVIDIA A100 80GB PCIe"]?.memoryInGb}
+            name="H100 PCIe"
             manufacturer="nvidia"
+            data={data?.gpu["NVIDIA H100 PCIe"]}
+          />
+          <GPUPrice
+            name="H100 SXM"
+            manufacturer="nvidia"
+            data={data?.gpu["NVIDIA H100 80GB HBM3"]}
+          />
+          <GPUPrice
+            name="A100 PCIe"
+            manufacturer="nvidia"
+            data={data?.gpu["NVIDIA A100 80GB PCIe"]}
+          />
+          <GPUPrice
+            name="A100 SXM"
+            manufacturer="nvidia"
+            data={data?.gpu["NVIDIA A100-SXM4-80GB"]}
+          />
+          <GPUPrice
+            name="A40"
+            manufacturer="nvidia"
+            data={data?.gpu["NVIDIA A40"]}
           />
           <GPUPrice
             name="L40"
-            price={data?.gpu["NVIDIA L40"]?.securePrice}
-            size={data?.gpu["NVIDIA L40"]?.memoryInGb}
             manufacturer="nvidia"
+            data={data?.gpu["NVIDIA L40"]}
+          />
+          <GPUPrice
+            name="L40S"
+            manufacturer="nvidia"
+            data={data?.gpu["NVIDIA L40S"]}
           />
           <GPUPrice
             name="RTX A6000"
-            price={data?.gpu["NVIDIA RTX A6000"]?.securePrice}
-            size={data?.gpu["NVIDIA RTX A6000"]?.memoryInGb}
             manufacturer="nvidia"
+            data={data?.gpu["NVIDIA RTX A6000"]}
+          />
+          <GPUPrice
+            name="RTX A5000"
+            manufacturer="nvidia"
+            data={data?.gpu["NVIDIA RTX A5000"]}
           />
           <GPUPrice
             name="RTX 4090"
-            price={
-              data?.gpu["NVIDIA GeForce RTX 4090"]?.securePrice ||
-              data?.gpu["NVIDIA GeForce RTX 4090"]?.communityPrice
-            }
-            size={data?.gpu["NVIDIA GeForce RTX 4090"]?.memoryInGb}
             manufacturer="nvidia"
+            data={data?.gpu["NVIDIA GeForce RTX 4090"]}
           />
           <GPUPrice
             name="RTX 3090"
-            price={
-              data?.gpu["NVIDIA GeForce RTX 3090"]?.securePrice ||
-              data?.gpu["NVIDIA GeForce RTX 3090"]?.communityPrice
-            }
-            size={data?.gpu["NVIDIA GeForce RTX 3090"]?.memoryInGb}
             manufacturer="nvidia"
+            data={data?.gpu["NVIDIA GeForce RTX 3090"]}
           />
           <GPUPrice
-            name="RTX A4000"
-            price={data?.gpu["NVIDIA RTX A4000"]?.securePrice}
-            size={data?.gpu["NVIDIA RTX A4000"]?.memoryInGb}
+            name="RTX A4000 Ada"
             manufacturer="nvidia"
+            data={data?.gpu["NVIDIA RTX 4000 Ada Generation"]}
           />
         </Grid>
       </Stack>
