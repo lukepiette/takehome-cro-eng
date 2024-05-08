@@ -168,7 +168,7 @@ export function Pricing({
         {!isSmall ? <br /> : " "}
         for Every Workload
       </Typography>
-      <ButtonLink href="https://docs.runpod.io" variant="contained" gradient>
+      <ButtonLink href="/console/deploy" variant="contained" gradient>
         See all GPUs
         <KeyboardArrowRightIcon
           sx={{

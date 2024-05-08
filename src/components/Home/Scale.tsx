@@ -49,11 +49,7 @@ export function Scale() {
           </Typography>
         }
         button={
-          <ButtonLink
-            href="https://docs.runpod.io/cli/install-runpodctl"
-            variant="contained"
-            gradient
-          >
+          <ButtonLink href="/console/serverless" variant="contained" gradient>
             Deploy now
             <KeyboardArrowRightIcon
               sx={{
