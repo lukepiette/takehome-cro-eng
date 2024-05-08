@@ -158,7 +158,7 @@ export default function Hero() {
               pr: 1.4,
             }}
           >
-            Read the Docs <ArrowRightAltIcon sx={{ fontSize: 18, ml: 0.6 }} />
+            Read the docs <ArrowRightAltIcon sx={{ fontSize: 18, ml: 0.6 }} />
           </ButtonLink>
         </Stack>
 
@@ -261,7 +261,7 @@ export default function Hero() {
                 <div>&gt; runpodctl config --apiKey $(RUNPOD_API_KEY)</div>
               )}
               {progress > 2 && <div>&gt; runpodctl project create</div>} */}
-              {progress > 0 && <div>&gt; runpodctl project deploy</div>}
+              {progress > 0 && <div>&gt; <span style={{ color: "#FF8FFD" }}>runpodctl</span> project <span style={{ color: "#979DFF" }}>deploy</span></div>}
               <br />
               {progress > 1 && (
                 <div>

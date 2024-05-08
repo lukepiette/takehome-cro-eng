@@ -86,7 +86,7 @@ export default function Footer() {
             pr: 1.4,
           }}
         >
-          Sign Up <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+          Sign up <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
         </ButtonLink>
         <ButtonLink
           href="https://meetings.runpod.io/meetings/runpod/firstconnect"
@@ -103,7 +103,7 @@ export default function Footer() {
             pr: 1.4,
           }}
         >
-          Talk to our Team{" "}
+          Talk to our team{" "}
           <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
         </ButtonLink>
       </Stack>

@@ -53,7 +53,7 @@ export default function Autoscale() {
         px={2}
       >
         For your expected load, provision active workers running 24/7 with a 40%
-        discount &amp; flex workers to handle any burst traffic.
+        discount &amp; flex workers to handle any sudden traffic.
       </Typography>
 
       <ButtonLink

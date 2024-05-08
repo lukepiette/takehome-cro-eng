@@ -10,30 +10,15 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import useFetch from "use-http";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useTrigger from "react-use-trigger/useTrigger";
+import PersonIcon from "@mui/icons-material/Person";
 
 const requestTrigger = createTrigger();
 
 const reviews = [
   {
-    name: "Tengwei Cai",
-    title: "Head of Product",
-    review: `The ability to capture responses is a game-changer. If a user gets
-  tired of the sign up and leaves, that data is still persisted.
-  Additionally, it&apos;s great to be able to select between formats.`,
-  },
-  {
-    name: "Jessie J",
-    title: "Head of Data",
-    review: `The ability to capture responses is a game-changer. If a user gets
-  tired of the sign up and leaves, that data is still persisted.
-  Additionally, it&apos;s great to be able to select between formats.`,
-  },
-  {
-    name: "Mark Luk",
-    title: "Head of Eng",
-    review: `The ability to capture responses is a game-changer. If a user gets
-  tired of the sign up and leaves, that data is still persisted.
-  Additionally, it&apos;s great to be able to select between formats.`,
+    name: "Hara Kang",
+    title: "CTO, LOVO AI",
+    review: `"It really shows that RunPod is made by developers. They know exactly what engineers really want and they ship those features in order of importance."`,
   },
 ];
 
@@ -220,7 +205,7 @@ export default function Counter({ data }) {
               pr: 1.4,
             }}
           >
-            Book a Call{" "}
+            Book a call{" "}
             <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
         </Stack>
@@ -232,6 +217,26 @@ export default function Counter({ data }) {
 const ReviewBox = ({ children, name, title }) => (
   <Stack>
     <Stack alignItems="center">
+      <Box
+        sx={{
+          width: 36,
+          height: 36,
+          borderRadius: '50%',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          border: '0.5px solid #fff',
+          marginBottom: 1
+        }}
+      >
+        <PersonIcon
+          sx={{
+            fontSize: 17, // Adjust icon size as needed
+            color: 'rgba(255, 255, 255, 0.7)' // Adjust icon color as needed
+          }}
+        />
+      </Box>
       <Typography
         color="#BEC2FD"
         fontSize={10}

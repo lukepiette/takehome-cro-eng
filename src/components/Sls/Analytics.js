@@ -97,8 +97,8 @@ export default function Analytics() {
         spacing={3}
       >
         <HeadlineBox title="Usage Analytics">
-          Monitor your endpoint usage with real-time analytics on requests
-          completed and failed. Useful for endpoints that have fluctuating usage
+          Real-time usage analytics for your endpoint with metrics on
+          completed and failed requests. Useful for endpoints that have fluctuating usage
           profiles throughout the day.
         </HeadlineBox>
 
@@ -414,7 +414,7 @@ const HeadlineBox = ({ children, title, ...props }) => (
         pr: 1.4,
       }}
     >
-      See the Dashboard{" "}
+      See the console{" "}
       <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
     </ButtonLink>
   </Stack>

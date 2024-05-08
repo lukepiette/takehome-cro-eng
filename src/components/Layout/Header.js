@@ -139,7 +139,7 @@ export default function Home() {
                     pr: { xs: 2, md: 1.4 },
                   }}
                 >
-                  Sign Up
+                  Sign up
                   <KeyboardArrowRightIcon
                     sx={{
                       display: { xs: "none", md: "inherit" },
