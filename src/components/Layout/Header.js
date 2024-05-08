@@ -232,8 +232,9 @@ export default function Home() {
               </Link>
             ) : (
               <ButtonLink
-                href="/"
+                href="https://www.intelcapital.com/runpod-raises-20m-in-seed-funding-co-led-by-intel-capital-and-dell-technologies-capital/"
                 variant="text"
+                target="_blank"
                 sx={{
                   "&:hover": {
                     textDecoration: "underline",
