@@ -17,8 +17,8 @@ export const reviews = [
     name: "Josh Payne",
     title: "CEO, Coframe",
     review: `"The setup process was great! Very quick and easy. RunPod had the exact GPUs we needed for AI inference and the pricing was very fair based on what I saw out on the market. The main value proposition for us was the flexibility RunPod offered. We were able to scale up effortlessly to meet the demand at launch."`,
-    cost: 35,
-    speed: 60,
+    cost: 85,
+    speed: 35,
   },
   {
     href: "https://blog.runpod.io/how-krnl-ai-scaled-to-10-000-concurrent-users-while-cutting-infrastructure-costs-by-65-with-runpod/",
@@ -308,7 +308,7 @@ export const ReviewBox = ({
         pr: 1.4,
       }}
     >
-      Case Study <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+      Read more<KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
     </ButtonLink>
 
     {/* <Stack

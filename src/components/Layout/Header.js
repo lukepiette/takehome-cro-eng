@@ -43,8 +43,8 @@ const links = [
 const HeaderAndDividerWrapper = styled(Box)(
   () => `
     width: 100%;
-    position: -webkit-sticky !important; // For Safari
-    position: sticky !important;
+    position: -webkit-relative !important; // For Safari
+    position: relative !important;
     top: 0 !important;
     z-index: 1100;
   `
@@ -56,8 +56,8 @@ const HeaderWrapper = styled(Box)(
     display: flex;
     align-items: center;
     height: 56px;
-    position: -webkit-sticky !important; // For Safari
-    position: sticky !important;
+    position: -webkit-relative !important; // For Safari
+    position: relative !important;
     top: 0 !important;
     z-index: 1100;
     background: rgba(28, 28, 28, 0.1);
@@ -207,7 +207,7 @@ export default function Home() {
               <FavoriteIcon sx={{ color: "#fff", fontSize: "12px" }} />
             </Stack>
 
-            <Typography>We just raised our 20 million Seed</Typography>
+            <Typography>We raised $20M to revolutionize AI cloud at scale</Typography>
 
             <div
               style={{
@@ -232,7 +232,7 @@ export default function Home() {
               </Link>
             ) : (
               <ButtonLink
-                href="https://www.businesswire.com/news/home/20240508053225/en/RunPod-Raises-20M-in-Seed-Funding-Co-led-by-Intel-Capital-and-Dell-Technologies-Capital?_gl=1*1a320p4*_ga*OTQ0NDQxNjkyLjE3MTQ3NjEzOTE.*_ga_ZQWF70T3FK*MTcxNTE3MzU5OS4xMy4xLjE3MTUxNzM5ODguNi4wLjA"
+                href="https://blog.runpod.io/runpods-20mm-milestone-fueling-our-vision-empowering-our-team/"
                 variant="text"
                 target="_blank"
                 sx={{
