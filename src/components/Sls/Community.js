@@ -3,8 +3,9 @@ import { useState } from "react";
 import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const reviews = [
+export const reviews = [
   {
+    href: "https://blog.runpod.io/3-reasons-why-lovo-ai-switched-to-runpod-serverless/",
     name: "Hara Kang",
     title: "CTO, LOVO AI",
     review: `"There are definitely providers who offer much cheaper pricing than Runpod. But everytime, they have an inferior developer experience. If you're paying 50% less for a GPU elsewhere, that cost is coming out somewhere else, be it developer time or lack of reliability. For the value, Runpod provides competitive prices and we're willing to pay a premium to reduce the headache that normally comes with ML ops."`,
@@ -12,6 +13,7 @@ const reviews = [
     speed: 30,
   },
   {
+    href: "https://blog.runpod.io/how-coframe-used-runpod-serverless-to-scale-during-their-viral-product-hunt-launch/",
     name: "Josh Payne",
     title: "CEO, Coframe",
     review: `"The setup process was great! Very quick and easy. RunPod had the exact GPUs we needed for AI inference and the pricing was very fair based on what I saw out on the market. The main value proposition for us was the flexibility RunPod offered. We were able to scale up effortlessly to meet the demand at launch."`,
@@ -19,6 +21,7 @@ const reviews = [
     speed: 60,
   },
   {
+    href: "https://blog.runpod.io/how-krnl-ai-scaled-to-10-000-concurrent-users-while-cutting-infrastructure-costs-by-65-with-runpod/",
     name: "Giacomo Locci",
     title: "CPO, KRNL.ai",
     review: `"The cost savings on RunPod have been incredible. Since switching, our team has been able to focus on building the product instead of the infrastructure.
@@ -195,6 +198,7 @@ export default function Community() {
           {reviews.map((v, i) => (
             <ReviewBox
               cost={v.cost}
+              href={v.href}
               key={i}
               name={v.name}
               speed={v.speed}
@@ -235,10 +239,20 @@ export const CircleColor = ({ color }) => (
   />
 );
 
-const ReviewBox = ({ children, cost, name, speed, title, ...props }) => (
+export const ReviewBox = ({
+  children,
+  cost,
+  href,
+  name,
+  speed,
+  title,
+  ...props
+}) => (
   <Stack
+    alignItems="start"
     border="1px solid rgba(255, 255, 255, 0.08)"
     borderRadius={0.8}
+    justifyContent="space-between"
     minWidth={{ xs: "90%", sm: 557 }}
     px={3}
     py={5}
@@ -249,33 +263,55 @@ const ReviewBox = ({ children, cost, name, speed, title, ...props }) => (
     }}
     {...props}
   >
-    <Typography
-      color="#BEC2FD"
-      fontSize={14}
-      fontWeight={500}
-      letterSpacing="0.002em"
-    >
-      {title}
-    </Typography>
-    <Typography
-      fontSize={20}
-      fontWeight={500}
-      letterSpacing="-0.02em"
-      mt={0.4}
+    <Stack>
+      <Typography
+        color="#BEC2FD"
+        fontSize={14}
+        fontWeight={500}
+        letterSpacing="0.002em"
+      >
+        {title}
+      </Typography>
+      <Typography
+        fontSize={20}
+        fontWeight={500}
+        letterSpacing="-0.02em"
+        mt={0.4}
+        sx={{
+          background:
+            "linear-gradient(313.71deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%);",
+          backgroundClip: "text",
+          textFillColor: "transparent",
+        }}
+      >
+        {name}
+      </Typography>
+      <Typography color="#94A3B8" fontSize={16} letterSpacing={-0.25} mt={1}>
+        {children}
+      </Typography>
+    </Stack>
+
+    <ButtonLink
+      href={href}
+      variant="outlined"
       sx={{
         background:
-          "linear-gradient(313.71deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%);",
-        backgroundClip: "text",
-        textFillColor: "transparent",
+          "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
+        borderRadius: 0.8,
+        boxShadow:
+          "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
+        fontSize: 14,
+        fontWeight: 500,
+        height: 40,
+        mt: 2,
+        pl: 2,
+        pr: 1.4,
       }}
     >
-      {name}
-    </Typography>
-    <Typography color="#94A3B8" fontSize={16} letterSpacing={-0.25} mt={1}>
-      {children}
-    </Typography>
+      Case Study <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+    </ButtonLink>
 
-    <Stack
+    {/* <Stack
       alignItems={{ xs: "start", sm: "center" }}
       columnGap={5}
       direction={{ xs: "column", sm: "row" }}
@@ -311,6 +347,6 @@ const ReviewBox = ({ children, cost, name, speed, title, ...props }) => (
           </Typography>
         </Stack>
       ))}
-    </Stack>
+    </Stack> */}
   </Stack>
 );

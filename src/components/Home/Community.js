@@ -1,34 +1,8 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { ReviewBox, reviews } from "@components/Sls/Community";
 import { useState } from "react";
 import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-
-const reviews = [
-  {
-    name: "Hara Kang",
-    title: "CTO, LOVO AI",
-    review: `"There are definitely providers who offer much cheaper pricing than Runpod. But everytime, they have an inferior developer experience. If you're paying 50% less for a GPU elsewhere, that cost is coming out somewhere else, be it developer time or lack of reliability. For the value, Runpod provides competitive prices and we're willing to pay a premium to reduce the headache that normally comes with ML ops."`,
-    cost: 20,
-    speed: 30,
-  },
-  {
-    name: "Josh Payne",
-    title: "CEO, Coframe",
-    review: `"The setup process was great! Very quick and easy. RunPod had the exact GPUs we needed for AI inference and the pricing was very fair based on what I saw out on the market. The main value proposition for us was the flexibility RunPod offered. We were able to scale up effortlessly to meet the demand at launch."`,
-    cost: 35,
-    speed: 60,
-  },
-  {
-    name: "Giacomo Locci",
-    title: "CPO, KRNL.ai",
-    review: `"The cost savings on RunPod have been incredible. Since switching, our team has been able to focus on building the product instead of the infrastructure.
-    We often have unpredictable demand from our users which makes it hard to manage our cloud costs. But with RunPod, we've been able to scale up and down quickly and painlessly.
-    Great reliability in multiple regions and great customer support is why we've been with them for over a year now."`,
-    cost: 65,
-    speed: 30,
-  },
-  ,
-];
 
 export default function Community() {
   const startReviewIndex = Math.floor(reviews.length / 2);
@@ -190,6 +164,7 @@ export default function Community() {
           {reviews.map((v, i) => (
             <ReviewBox
               cost={v.cost}
+              href={v.href}
               key={i}
               name={v.name}
               speed={v.speed}
@@ -228,84 +203,4 @@ export const CircleColor = ({ color }) => (
     }}
     width={8}
   />
-);
-
-const ReviewBox = ({ children, cost, name, speed, title, ...props }) => (
-  <Stack
-    border="1px solid rgba(255, 255, 255, 0.08)"
-    borderRadius={0.8}
-    minWidth={{ xs: "90%", sm: 557 }}
-    px={3}
-    py={5}
-    width={{ xs: "90%", sm: 557 }}
-    sx={{
-      background:
-        "linear-gradient(180deg, rgba(101, 77, 255, 0) 24.5%, rgba(255, 255, 255, 0.0816) 100%), rgba(255, 255, 255, 0.02)",
-    }}
-    {...props}
-  >
-    <Typography
-      color="#BEC2FD"
-      fontSize={14}
-      fontWeight={500}
-      letterSpacing="0.002em"
-    >
-      {title}
-    </Typography>
-    <Typography
-      fontSize={20}
-      fontWeight={500}
-      letterSpacing="-0.02em"
-      mt={0.4}
-      sx={{
-        background:
-          "linear-gradient(313.71deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%);",
-        backgroundClip: "text",
-        textFillColor: "transparent",
-      }}
-    >
-      {name}
-    </Typography>
-    <Typography color="#94A3B8" fontSize={16} letterSpacing={-0.25} mt={1}>
-      {children}
-    </Typography>
-
-    <Stack
-      alignItems={{ xs: "start", sm: "center" }}
-      columnGap={5}
-      direction={{ xs: "column", sm: "row" }}
-      mt={4}
-      rowGap={1.8}
-    >
-      {[
-        { color: "purple", label: "increase in speed", value: speed },
-        { color: "green", label: "reduction in cost", value: cost },
-      ].map((v) => (
-        <Stack alignItems="center" direction="row" key={v.label} spacing={1}>
-          <Stack
-            alignItems="center"
-            bgcolor="rgba(255, 255, 255, 0.1)"
-            borderRadius={0.4}
-            direction="row"
-            px={1}
-            py={0.4}
-            spacing={0.7}
-          >
-            <CircleColor color={v.color} />
-            <Typography color="#fff" fontSize={12} fontFamily="monospace">
-              {v.value}&#37;
-            </Typography>
-          </Stack>
-          <Typography
-            color="rgba(249, 250, 251, 0.64)"
-            fontSize={12}
-            fontWeight={500}
-            letterSpacing="-0.02em"
-          >
-            {v.label}
-          </Typography>
-        </Stack>
-      ))}
-    </Stack>
-  </Stack>
 );
