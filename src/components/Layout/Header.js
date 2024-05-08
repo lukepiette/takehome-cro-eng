@@ -232,7 +232,7 @@ export default function Home() {
               </Link>
             ) : (
               <ButtonLink
-                href="https://www.intelcapital.com/runpod-raises-20m-in-seed-funding-co-led-by-intel-capital-and-dell-technologies-capital/"
+                href="https://www.businesswire.com/news/home/20240508053225/en/RunPod-Raises-20M-in-Seed-Funding-Co-led-by-Intel-Capital-and-Dell-Technologies-Capital?_gl=1*1a320p4*_ga*OTQ0NDQxNjkyLjE3MTQ3NjEzOTE.*_ga_ZQWF70T3FK*MTcxNTE3MzU5OS4xMy4xLjE3MTUxNzM5ODguNi4wLjA"
                 variant="text"
                 target="_blank"
                 sx={{
