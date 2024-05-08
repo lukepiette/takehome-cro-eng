@@ -8,7 +8,6 @@ import Logs from "./Logs";
 import Webhooks from "./Webhooks";
 
 export default function Serverless({ data }) {
-  console.log({ serverlessData: data });
   return (
     <>
       <Hero data={data} />
