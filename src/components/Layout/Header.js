@@ -148,22 +148,7 @@ export default function Home() {
                     }}
                   />
                 </ButtonLink>
-                <ButtonLink
-                  href="/console/login"
-                  variant="outlined"
-                  sx={{
-                    background:
-                      "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
-                    borderRadius: 0.8,
-                    boxShadow:
-                      "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
-                    display: { xs: "none", md: "inherit" },
-                    fontSize: 13,
-                    fontWeight: 500,
-                    height: 36,
-                    px: 2,
-                  }}
-                >
+                <ButtonLink href="/console/login" variant="outlined" gradient>
                   Login
                 </ButtonLink>
               </Stack>

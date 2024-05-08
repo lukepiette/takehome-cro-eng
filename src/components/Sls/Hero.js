@@ -5,6 +5,8 @@ import ButtonLink from "@components/ButtonLink";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useState } from "react";
+import { ShellBlock } from "@components/ShellBlock";
+import { CodeBlock } from "@components/CodeBlock";
 
 export default function Hero() {
   const [progress, setProgress] = useState(0);
@@ -122,7 +124,8 @@ export default function Hero() {
           px={2}
           variant="h2"
         >
-          Only pay for what you use — no idle costs, just unparalleled speed and scalability.
+          Only pay for what you use — no idle costs, just unparalleled speed and
+          scalability.
         </Typography>
 
         <Stack direction="row" mt={4} spacing={{ xs: 1, sm: 1.8 }}>
@@ -163,7 +166,7 @@ export default function Hero() {
         </Stack>
 
         <Stack
-          alignItems={{ xs: "center", md: "flex-start"}}
+          alignItems={{ xs: "center", md: "flex-start" }}
           direction={{ sm: "column", md: "row" }}
           gap={4}
           justifyContent="center"
@@ -171,19 +174,7 @@ export default function Hero() {
           px={{ xs: 2, sm: 2 }}
           width="100%"
         >
-          <CodeBlock sx={{ height: 200}}>
-            <Stack
-              alignItems="center"
-              bgcolor="#212134"
-              direction="row"
-              height={34}
-              pl={1.6}
-              spacing={0.6}
-            >
-              <Box bgcolor="#EE6A5E" borderRadius={100} height={8} width={8} />
-              <Box bgcolor="#F5BF4F" borderRadius={100} height={8} width={8} />
-              <Box bgcolor="#62C554" borderRadius={100} height={8} width={8} />
-            </Stack>
+          <CodeBlock sx={{ height: 200 }}>
             <Stack direction="row" ml={3} mt={2}>
               <Typography color="#B4BAC5" fontFamily="monospace" fontSize={12}>
                 1<br />2<br />3<br />4<br />5
@@ -213,49 +204,13 @@ export default function Hero() {
                   </span>
                 </Typography>
                 runpod.serverless.start&#40;&#123;
-                <span style={{ color: "#95EC4D" }}>&quot;handler&quot;</span>:handler&#125;&#41;
+                <span style={{ color: "#95EC4D" }}>&quot;handler&quot;</span>
+                :handler&#125;&#41;
                 <br />
               </Typography>
             </Stack>
           </CodeBlock>
-          <CodeBlock sx={{height:200}}>
-            <Stack
-              alignItems="center"
-              bgcolor="#212134"
-              direction="row"
-              height={34}
-              px={1.6}
-              py={1.4}
-              spacing={0.6}
-            >
-              <Box
-                bgcolor={`${alpha("#fff", 0.3)}`}
-                borderRadius={100}
-                height={8}
-                width={8}
-              />
-              <Box
-                bgcolor={`${alpha("#fff", 0.2)}`}
-                borderRadius={100}
-                height={8}
-                width={8}
-              />
-              <Box
-                bgcolor={`${alpha("#fff", 0.1)}`}
-                borderRadius={100}
-                height={8}
-                width={8}
-              />
-              <Typography
-                align="right"
-                color={`${alpha("#F9FAFB", 0.48)}`}
-                fontFamily="monospace"
-                fontSize={12}
-                flexGrow={1}
-              >
-                runpodctl -- zsh
-              </Typography>
-            </Stack>
+          <ShellBlock sx={{ height: 200 }}>
             <Typography fontFamily="monospace" fontSize={12} ml={3} mt={2}>
               {/* {progress > 0 && (
                 <div>&gt; runpodctl config --apiKey $(RUNPOD_API_KEY)</div>
@@ -278,37 +233,18 @@ export default function Hero() {
               )} */}
               {progress > 5 && <div>Project deployed successfully!</div>}
               <br />
-              {progress > 7 && <div>Your Serverless API Endpoint: <span style={{ color: "#95EC4D" }}>https://api.runpod.ai/v2/u4y2rv11na8hlx/runsync</span></div>}
+              {progress > 7 && (
+                <div>
+                  Your Serverless API Endpoint:{" "}
+                  <span style={{ color: "#95EC4D" }}>
+                    https://api.runpod.ai/v2/u4y2rv11na8hlx/runsync
+                  </span>
+                </div>
+              )}
             </Typography>
-          </CodeBlock>
+          </ShellBlock>
         </Stack>
       </Stack>
     </Stack>
   );
 }
-
-export const CodeBlock = ({ children, light, left, sx, ...props }) => (
-  <Stack
-    borderRadius={1}
-    bgcolor="#111121"
-    maxWidth={390}
-    overflow="hidden"
-    sx={{
-      borderColor: `${alpha("#5D29F0", 0.4)}`,
-      borderStyle: "solid",
-      borderWidth: light ? 0 : 1,
-      borderBottomWidth: 0,
-      boxShadow: light
-        ? "0px 0px 0px 4px rgba(255, 255, 255, 0.04), 0px 0px 0px 8px rgba(255, 255, 255, 0.04)"
-        : `0 0 0 1px ${alpha("#fff", 0.04)}, 0 0 0 3px ${alpha(
-            "#fff",
-            0.04
-          )}, 0 0 0 8px ${alpha("#fff", 0.04)}`,
-      ...sx,
-    }}
-    width="100%"
-    {...props}
-  >
-    {children}
-  </Stack>
-);

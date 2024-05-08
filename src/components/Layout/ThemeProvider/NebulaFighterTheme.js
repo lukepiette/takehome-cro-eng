@@ -652,6 +652,32 @@ export const NebulaFighterTheme = createTheme({
           padding: "12px 16px",
         },
       },
+      variants: [
+        {
+          props: { variant: "contained", gradient: true },
+          style: {
+            background:
+              "radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.0472) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #5D29F0",
+            borderRadius: 8,
+            fontSize: 13,
+            fontWeight: 500,
+            height: 36,
+          },
+        },
+        {
+          props: { variant: "outlined", gradient: true },
+          style: {
+            background:
+              "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
+            borderRadius: 8,
+            boxShadow:
+              "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
+            fontSize: 13,
+            fontWeight: 500,
+            height: 36,
+          },
+        },
+      ],
     },
     MuiButtonBase: {
       defaultProps: {

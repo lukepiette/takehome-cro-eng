@@ -1,11 +1,11 @@
-import { Box, Stack, useTheme, useMediaQuery, styled } from "@mui/material"
-import Image from "next/legacy/image"
+import { Box, Stack, useTheme, useMediaQuery, styled } from "@mui/material";
+import Image from "next/legacy/image";
 
 const CarouselContainer = styled("div")(({ theme }) => ({
-  "overflow": "hidden",
-  "display": "flex",
-  "animation": "scroll 40s linear infinite",
-  "width": "fit-content",
+  overflow: "hidden",
+  display: "flex",
+  animation: "scroll 40s linear infinite",
+  width: "fit-content",
   "@keyframes scroll": {
     "0%": {
       transform: "translateX(0)",
@@ -14,7 +14,7 @@ const CarouselContainer = styled("div")(({ theme }) => ({
       transform: "translateX(-50%)",
     },
   },
-}))
+}));
 
 const LogoWrapper = styled(Box)(() => ({
   alignItems: "center",
@@ -23,15 +23,16 @@ const LogoWrapper = styled(Box)(() => ({
   paddingLeft: 30,
   display: "flex",
   alignItems: "center",
-}))
+  userSelect: "none",
+}));
 
 const Logo = ({ src, alt, height, width }) => {
   return (
     <LogoWrapper width={width}>
       <Image loading="lazy" alt={alt} height={height} width={width} src={src} />
     </LogoWrapper>
-  )
-}
+  );
+};
 
 const logos = [
   {
@@ -88,14 +89,29 @@ const logos = [
     width: 120,
     alt: "krnl logo",
   },
-]
+];
 
 const TrustedBy = () => {
-  const theme = useTheme()
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Box alignItems={"center"} maxWidth={900} mb={{ xs: 2, sm: 1.5, md: 0 }} overflow="hidden">
+    <Box
+      alignItems={"center"}
+      maxWidth={900}
+      overflow="hidden"
+      sx={{ zIndex: 1, position: "relative" }}
+    >
+      <div
+        style={{
+          height: "100%",
+          position: "absolute",
+          width: "100%",
+          zIndex: 2,
+          background:
+            "linear-gradient(90deg, #000 0%, transparent 10%, transparent 90%, #000 100%)",
+        }}
+      />
       {!isSmallScreen ? (
         <CarouselContainer>
           {logos.map((logo, index) => (
@@ -141,7 +157,7 @@ const TrustedBy = () => {
         </CarouselContainer>
       )}
     </Box>
-  )
-}
+  );
+};
 
-export default TrustedBy
+export default TrustedBy;
