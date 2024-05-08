@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import ButtonLink from "@components/ButtonLink";
 import { CodeBlock } from "@components/CodeBlock";
 import { ShellBlock } from "@components/ShellBlock";
@@ -454,7 +456,7 @@ export function Features() {
                   </span>
                   <br />
                   <br />
-                  Success! Test your changes locally by 
+                  Success! Test your changes locally by
                   <br />
                   connecting to the API server at:
                   <br />
@@ -551,7 +553,13 @@ export function Features() {
                   </Grid>
                   <Grid item xs={6}>
                     <FakeTemplate
-                      icon={<Runpod />}
+                      icon={
+                        <img
+                          src={"/static/svg/runpod-template-logo.svg"}
+                          width="32"
+                          height="32"
+                        />
+                      }
                       title="Runpod"
                       id="runpod-desktop"
                     />
