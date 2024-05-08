@@ -183,14 +183,13 @@ export function Pricing({
 }) {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
-  if (!data || !data.gpu) {
-    return null;
-  }
 
-  const gpuTypesById = (data?.gpu || []).reduce(
-    (acc, gpu: Gpu) => ({ ...acc, [gpu.id]: gpu }),
-    {}
-  );
+  const gpuArray = Array.isArray(data?.gpu) ? data.gpu : [];
+
+  const gpuTypesById = gpuArray.reduce((acc, gpu: Gpu) => {
+    acc[gpu.id] = gpu;
+    return acc;
+  }, {});
 
   return (
     <Stack
