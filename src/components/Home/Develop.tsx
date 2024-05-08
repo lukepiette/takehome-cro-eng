@@ -48,8 +48,8 @@ export function Develop() {
         <span style={{ color: "#afa0ff" }}>AI workloads</span>
       </Typography>
       <Typography fontWeight={400} fontSize={16}>
-        Deploy any GPU workload seamlessly, so you can focus less on
-        <br />
+        Deploy any GPU workload seamlessly, so you can focus less on{" "}
+        {!isSmall && <br />}
         infrastructure and more on running ML models.
       </Typography>
       <ButtonLink

@@ -1,4 +1,11 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { SectionHeader } from "./SectionHeader";
 import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -16,6 +23,8 @@ import {
 import Analytics from "./Analytics";
 
 export function Scale() {
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Container maxWidth="lg">
       <Stack mt={24} position={"relative"} alignItems={"center"} width={"100%"}>
@@ -38,8 +47,8 @@ export function Scale() {
           }
           subtitle={
             <Typography fontWeight={400} fontSize={16}>
-              Run your AI models with autoscaling, job queueing and
-              <br />
+              Run your AI models with autoscaling, job queueing and{" "}
+              {!isSmall && <br />}
               sub 250ms cold start time.
             </Typography>
           }
