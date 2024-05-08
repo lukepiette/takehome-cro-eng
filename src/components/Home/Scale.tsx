@@ -102,96 +102,104 @@ export function Scale() {
       />
       <SlsDivider />
 
-      <Stack
-        border="1px solid #1E293B"
-        borderRadius={2.4}
-        height={400}
-        maxWidth="100%"
-        width="100%"
-        overflow="hidden"
-        position="relative"
-        sx={{
-          background:
-            "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, #1E195B 34.36%, rgba(15, 23, 42, 0.0001) 100%)",
+      <Box
+        px={{
+          xs: 3,
+          md: 0,
         }}
+        maxWidth={"100%"}
       >
-        <Typography
-          fontSize={20}
-          letterSpacing="-0.02em"
-          ml={3.5}
-          mt={3}
-          sx={{
-            background:
-              "linear-gradient(1deg, rgba(248, 250, 252, 0.64) 8%, #F8FAFC 57%, rgba(248, 250, 252, 0.64) 96%)",
-            backgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          Autoscale in seconds
-        </Typography>
-        <Typography
-          color="#B4BAC5"
-          fontSize={16}
-          letterSpacing={-0.25}
-          ml={3.5}
-          mt={1.2}
-        >
-          Respond to user demand in real time with GPU workers that
-          <br />
-          scale from 0 to 100s in a minute.
-        </Typography>
-
-        <Box mb={3.9} ml={6} mt="auto" position="relative">
-          <WorkerBox sx={{ bottom: 40 }} active={undefined} />
-          <WorkerBox active sx={{ bottom: -10 }} />
-          <WorkerCountBox
-            gpu={10}
-            sx={{ bottom: -3, left: 330 }}
-            time="6:24AM"
-          />
-          <WorkerCountBox
-            gpu={100}
-            sx={{ left: 650, top: -10 }}
-            time="11:34AM"
-          />
-          <WorkerCountBox
-            gpu={20}
-            sx={{ bottom: 30, left: 830 }}
-            time="1:34PM"
-          />
-          <SvgAutoscaleLines />
-        </Box>
-
-        <Box
-          bottom={0}
-          height={222}
-          position="absolute"
+        <Stack
+          border="1px solid #1E293B"
+          borderRadius={2.4}
+          height={400}
+          maxWidth="100%"
           width="100%"
+          overflow="hidden"
+          position="relative"
           sx={{
             background:
-              "linear-gradient(165.97deg, rgba(77, 148, 255, 0.24) 8.49%, rgba(255, 255, 255, 0) 91.6%)",
-            opacity: 0.4,
-            transform: "matrix(1, 0, 0, -1, 0, 0)",
-          }}
-        />
-        <Box
-          bottom={-50}
-          height={90}
-          position="absolute"
-          width="100%"
-          sx={{
-            background:
-              "linear-gradient(142.14deg, #538DFF 19.97%, rgba(77, 148, 255, 0) 80.37%)",
-            opacity: 0.1,
+              "radial-gradient(99.75% 99.75% at 50% 99.75%, #1E293B 0%, #1E195B 34.36%, rgba(15, 23, 42, 0.0001) 100%)",
           }}
         >
+          <Typography
+            fontSize={20}
+            letterSpacing="-0.02em"
+            ml={3.5}
+            mt={3}
+            sx={{
+              background:
+                "linear-gradient(1deg, rgba(248, 250, 252, 0.64) 8%, #F8FAFC 57%, rgba(248, 250, 252, 0.64) 96%)",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Autoscale in seconds
+          </Typography>
+          <Typography
+            color="#B4BAC5"
+            fontSize={16}
+            letterSpacing={-0.25}
+            ml={3.5}
+            mt={1.2}
+          >
+            Respond to user demand in real time with GPU workers that
+            <br />
+            scale from 0 to 100s in a minute.
+          </Typography>
+
+          <Box mb={3.9} ml={6} mt="auto" position="relative">
+            <WorkerBox sx={{ bottom: 40 }} active={undefined} />
+            <WorkerBox active sx={{ bottom: -10 }} />
+            <WorkerCountBox
+              gpu={10}
+              sx={{ bottom: -3, left: 330 }}
+              time="6:24AM"
+            />
+            <WorkerCountBox
+              gpu={100}
+              sx={{ left: 650, top: -10 }}
+              time="11:34AM"
+            />
+            <WorkerCountBox
+              gpu={20}
+              sx={{ bottom: 30, left: 830 }}
+              time="1:34PM"
+            />
+            <SvgAutoscaleLines />
+          </Box>
+
           <Box
-            height="1px"
+            bottom={0}
+            height={222}
+            position="absolute"
             width="100%"
-            sx={{ background: "linear-gradient(#538DFF 0%, #EFF6FF 100%)" }}
+            sx={{
+              background:
+                "linear-gradient(165.97deg, rgba(77, 148, 255, 0.24) 8.49%, rgba(255, 255, 255, 0) 91.6%)",
+              opacity: 0.4,
+              transform: "matrix(1, 0, 0, -1, 0, 0)",
+            }}
           />
-        </Box>
-      </Stack>
+          <Box
+            bottom={-50}
+            height={90}
+            position="absolute"
+            width="100%"
+            sx={{
+              background:
+                "linear-gradient(142.14deg, #538DFF 19.97%, rgba(77, 148, 255, 0) 80.37%)",
+              opacity: 0.1,
+            }}
+          >
+            <Box
+              height="1px"
+              width="100%"
+              sx={{ background: "linear-gradient(#538DFF 0%, #EFF6FF 100%)" }}
+            />
+          </Box>
+        </Stack>
+      </Box>
 
       <Analytics showHeader={false} />
     </Stack>

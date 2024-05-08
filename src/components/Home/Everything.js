@@ -83,7 +83,17 @@ export default function Everything({ data }) {
         </Box>
       </Typography>
 
-      <Stack direction={{ xs: "column", sm: "row" }} mt={8} rowGap={3}>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        mt={8}
+        rowGap={3}
+        width="100%"
+        justifyContent={{ xs: "center", sm: "center" }}
+        px={{
+          xs: 3,
+          sm: 0,
+        }}
+      >
         <Block subTitle="guaranteed uptime" title="99.99%" />
         <Block subTitle="network storage" title="10PB+" />
         <Block
@@ -108,9 +118,13 @@ export default function Everything({ data }) {
         flexWrap="wrap"
         gap={4}
         justifyContent="center"
-        maxWidth={1300}
+        maxWidth={"75.5rem"}
         mt={15}
         width="100%"
+        px={{
+          xs: 3,
+          sm: 0,
+        }}
       >
         <TextBlock
           icon={<ViewInArIcon sx={{ fontSize: 10 }} />}
@@ -197,7 +211,10 @@ const TextBlock = ({ children, icon, title }) => (
         boxShadow: "0px 4px 100px rgba(0, 0, 0, 0.25)",
         height: 187,
         padding: 3,
-        width: 378,
+      }}
+      width={{
+        xs: "100%",
+        sm: 378,
       }}
     >
       <Stack alignItems="center" direction="row">
