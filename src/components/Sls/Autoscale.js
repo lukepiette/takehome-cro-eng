@@ -236,7 +236,7 @@ export default function Autoscale() {
   );
 }
 
-const SvgAutoscaleLines = () => (
+export const SvgAutoscaleLines = () => (
   <svg
     width="1150"
     height="150"
@@ -265,7 +265,7 @@ const SvgAutoscaleLines = () => (
   </svg>
 );
 
-const WorkerBox = ({ active, sx }) => (
+export const WorkerBox = ({ active, sx }) => (
   <Stack
     alignItems="center"
     border="1px solid #334155"
@@ -305,7 +305,7 @@ const WorkerBox = ({ active, sx }) => (
   </Stack>
 );
 
-const WorkerCountBox = ({ gpu, sx, time }) => (
+export const WorkerCountBox = ({ gpu, sx, time }) => (
   <Stack
     alignItems="center"
     borderRadius={0.4}
