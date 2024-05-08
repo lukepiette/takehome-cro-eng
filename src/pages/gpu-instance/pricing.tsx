@@ -1,9 +1,9 @@
-import type { GetStaticProps, NextPage } from "next"
-import Head from "next/head"
+import type { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 
-import { GET_GPU_TYPE_INFO } from "@components/InstancePricing/query"
-import apolloClient from "@utils/apolloClient"
-import InstancePricing from "@components/InstancePricing"
+import { GET_GPU_TYPE_INFO } from "@components/InstancePricing/query";
+import apolloClient from "@utils/apolloClient";
+import InstancePricing from "@components/InstancePricing";
 
 const InstancePricingPage: NextPage = ({ data }: any) => (
   <>
@@ -17,7 +17,7 @@ const InstancePricingPage: NextPage = ({ data }: any) => (
 
     <InstancePricing data={data} />
   </>
-)
+);
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await apolloClient.query({
@@ -25,12 +25,12 @@ export const getStaticProps: GetStaticProps = async () => {
     variables: {
       lowestPriceInput: { gpuCount: 1 },
     },
-  })
+  });
 
   return {
-    props: { data: [...data.gpuTypes] },
+    props: { data: { gpu: [...data.gpuTypes] } },
     revalidate: process.env.VERCEL_ENV === "production" ? 600 : 30,
-  }
-}
+  };
+};
 
-export default InstancePricingPage
+export default InstancePricingPage;
