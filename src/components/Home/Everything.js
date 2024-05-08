@@ -1,26 +1,35 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { useState } from "react";
-import ButtonLink from "@components/ButtonLink";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { styled } from "@mui/system";
+import { useInterval } from "@hooks/useInterval";
+import CountUp from "react-countup";
+import createTrigger from "react-use-trigger";
+import EqualizerIcon from "@mui/icons-material/Equalizer";
+import FlashOnIcon from "@mui/icons-material/FlashOn";
+import InboxIcon from "@mui/icons-material/Inbox";
+import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
+import SettingsEthernetIcon from "@mui/icons-material/SettingsEthernet";
+import ShieldIcon from "@mui/icons-material/Shield";
+import StorageIcon from "@mui/icons-material/Storage";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import useFetch from "use-http";
+import useTrigger from "react-use-trigger/useTrigger";
+import ViewInArIcon from "@mui/icons-material/ViewInAr";
 
-export default function Everything() {
+const requestTrigger = createTrigger();
+
+export default function Everything({ data }) {
+  const requestTriggerValue = useTrigger(requestTrigger);
+  const { data: metrics } = useFetch(
+    "https://api.runpod.ai/metrics",
+    {
+      cachePolicy: "no-cache",
+    },
+    [requestTriggerValue]
+  );
+
+  useInterval(() => requestTrigger(), 2000);
+
   return (
     <Stack alignItems="center" position="relative" mt={40} mb={7} width="100%">
-      {/* <Box
-            component="img"
-            sx={{
-                position: 'absolute',
-                zIndex:-10,
-                top: -600,
-                right: 0,
-                bottom: 0,
-                left: 0,        
-            }}
-            alt="gpu background"
-            src="/static/images/clouds-big.webp"
-        /> */}
-
       <Box position="absolute" top={-380} zIndex={-1}>
         <Clouds />
       </Box>
@@ -77,7 +86,20 @@ export default function Everything() {
       <Stack direction={{ xs: "column", sm: "row" }} mt={8} rowGap={3}>
         <Block subTitle="guaranteed uptime" title="99.99%" />
         <Block subTitle="network storage" title="10PB+" />
-        <Block subTitle="requests" title="4,122,305,825" />
+        <Block
+          subTitle="requests"
+          title={
+            <CountUp
+              decimals={0}
+              delay={0}
+              duration={3}
+              end={metrics?.requests || data?.metrics?.requests}
+              preserveValue={true}
+              separator=","
+              start={data?.metrics?.requests - 500}
+            />
+          }
+        />
       </Stack>
 
       <Stack
@@ -90,39 +112,125 @@ export default function Everything() {
         mt={15}
         width="100%"
       >
-        <TextBlock />
-        <TextBlock />
-        <TextBlock />
-        <TextBlock />
-        <TextBlock />
-        <TextBlock />
+        <TextBlock
+          icon={<ViewInArIcon sx={{ fontSize: 10 }} />}
+          title="AI Inference"
+        >
+          We handle millions of inference requests a day. Scale your machine
+          learning inference while keeping costs low with RunPod serverless.
+        </TextBlock>
+        <TextBlock
+          icon={<SettingsEthernetIcon sx={{ fontSize: 10 }} />}
+          title="AI Training"
+        >
+          Run machine learning training tasks that can take up to 7 days. Train
+          on our available NVIDIA H100s and A100s or reserve AMD MI300Xs and AMD
+          MI250s a year in advance.
+        </TextBlock>
+        <TextBlock
+          icon={<EqualizerIcon sx={{ fontSize: 10 }} />}
+          title="Autoscale"
+        >
+          Serverless GPU workers scale from 0 to n with 8+ regions distributed
+          globally. You only pay when your endpoint receives and processes a
+          request.
+        </TextBlock>
+        <TextBlock
+          icon={<InboxIcon sx={{ fontSize: 10 }} />}
+          title="Bring Your Own Container"
+        >
+          Deploy any container on our AI cloud. Public and private image
+          repositories are supported. Configure your environment the way you
+          want.
+        </TextBlock>
+        <TextBlock
+          icon={<SentimentSatisfiedAltIcon sx={{ fontSize: 10 }} />}
+          title="Zero Ops Overhead"
+        >
+          RunPod handles all the operational aspects of your infrastructure from
+          deploying to scaling. You bring the models, let us handle the ML
+          infra.
+        </TextBlock>
+        <TextBlock
+          icon={<StorageIcon sx={{ fontSize: 10 }} />}
+          title="Network Storage"
+        >
+          Serverless workers can access network storage volume backed by NVMe
+          SSD with up to 100Gbps network throughput. 100TB+ storage size is
+          supported, contact us if you need 1PB+.
+        </TextBlock>
+        <TextBlock
+          icon={<TerminalIcon sx={{ fontSize: 10 }} />}
+          title="Easy-to-use CLI"
+        >
+          Use our CLI tool to automatically hot reload local changes while
+          developing, and deploy on Serverless when you’re done tinkering.
+        </TextBlock>
+        <TextBlock
+          icon={<ShieldIcon sx={{ fontSize: 10 }} />}
+          title="Secure & Compliant"
+        >
+          RunPod AI Cloud is built on enterprise-grade GPUs with world-class
+          compliance and security to best serve your machine learning models.
+        </TextBlock>
+        <TextBlock
+          icon={<FlashOnIcon sx={{ fontSize: 10 }} />}
+          title="Lightning Fast Cold-Start"
+        >
+          With Flashboot, watch your cold-starts drop to sub 250 milliseconds.
+          No more waiting for GPUs to warm up when usage is unpredictable.
+        </TextBlock>
       </Stack>
     </Stack>
   );
 }
 
-const TextBlock = () => (
-  <Stack direction="column" gap="32px">
+const TextBlock = ({ children, icon, title }) => (
+  <Stack direction="column">
     <Box
       sx={{
         background:
           "radial-gradient(99.75% 99.75% at 50% 99.75%, rgba(30, 41, 59, 0.24) 0%, rgba(15, 23, 42, 2.4e-05) 100%), rgba(0, 0, 0, 0.01)",
-        padding: "32px",
-        width: "378.67px",
-        height: "187px",
-        border: "1px solid rgba(249, 250, 251, 0.08)",
-        boxShadow: "0px 4px 100px rgba(0, 0, 0, 0.25)",
         backdropFilter: "blur(50px)",
+        border: "1px solid rgba(249, 250, 251, 0.08)",
         borderRadius: "12px",
+        boxShadow: "0px 4px 100px rgba(0, 0, 0, 0.25)",
+        height: 187,
+        padding: 3,
+        width: 378,
       }}
     >
-      <Stack direction="row">
-        <Typography mr="16px">icon</Typography>
-        <Typography>AI Inference</Typography>
+      <Stack alignItems="center" direction="row">
+        <Stack
+          alignItems="center"
+          bgcolor="rgba(255, 255, 255, 0.03)"
+          borderRadius={100}
+          boxShadow="inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #B4ACB7"
+          color="#fff"
+          justifyContent="center"
+          height={18}
+          mr={1.8}
+          width={18}
+        >
+          {icon}
+        </Stack>
+        <Typography
+          color="#fff"
+          fontSize={16}
+          fontWeight={600}
+          letterSpacing="-0.02em"
+        >
+          {title}
+        </Typography>
       </Stack>
-      <Typography mt="16px">
-        We handle millions of inference requests a day. Scale your machine
-        learning inference while keeping costs low with RunPod serverless.
+      <Typography
+        color="rgba(249, 250, 251, 0.64)"
+        fontSize={14}
+        letterSpacing="-0.02em"
+        lineHeight="160%"
+        mt={1.8}
+      >
+        {children}
       </Typography>
     </Box>
   </Stack>

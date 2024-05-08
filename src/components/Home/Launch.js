@@ -1,16 +1,14 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { CircleColor } from "./Community";
+import { RunPodIcon } from "@components/Layout/Logo";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useInterval } from "@hooks/useInterval";
 import { useTheme } from "@mui/material/styles";
 import ButtonLink from "@components/ButtonLink";
-import CountUp from "react-countup";
 import createTrigger from "react-use-trigger";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import useFetch from "use-http";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useTrigger from "react-use-trigger/useTrigger";
-import PersonIcon from "@mui/icons-material/Person";
 
 const requestTrigger = createTrigger();
 
@@ -50,7 +48,7 @@ export default function Launch({ data }) {
   }, [md, ref, sm]);
 
   return (
-    <Stack alignItems="center" position="relative" mt={15} mb={7} width="100%">
+    <Stack alignItems="center" position="relative" mt={15} mb={10} width="100%">
       <Box
         borderRadius={100}
         boxShadow="0px 2.74px 0px rgba(77, 148, 255, 0.25), inset 0px -24.55px 48px rgba(77, 148, 255, 0.1), inset 0px -78.5px 100px #BD00FF"
@@ -92,23 +90,35 @@ export default function Launch({ data }) {
         zIndex={-10}
       />
 
+      <Stack
+        alignItems="center"
+        height={1305}
+        maxWidth={549}
+        textAlign={"center"}
+        justifyContent="center"
+      >
+        <Stack
+          alignItems="center"
+          borderRadius={2.4}
+          boxShadow="inset 9.62749px -9.62749px 25.6733px rgba(188, 47, 255, 0.49), inset 0px 0px 40.1146px #B09DFE, inset 0px 9.62749px 80.2291px #001F4E"
+          height={106}
+          justifyContent="center"
+          width={106}
+          sx={{
+            background:
+              "radial-gradient(88.69% 91.78% at 50.56% 15.16%, #000000 0%, #000000 59.12%, #000342 85.94%)",
+          }}
+        >
+          <RunPodIcon style={{ color: "#fff", height: 75, width: 75 }} />
+        </Stack>
 
-      <Stack alignItems="center" height={1305} maxWidth={549} textAlign={"center"} justifyContent="center">
-        <Box sx={{
-          width: "106.55px",
-          height: "106.55px",
-
-          background: "#FFFFFF",
-          backgroundBlendMode: "multiply",
-          borderRadius: "24px",
-
-          flex: "none",
-          order: 0,
-          flexGrow: 0,
-        }}/>
-
-
-        <Typography fontWeight={600} fontSize={48} mt={"34px"} lineHeight={"48px"}>
+        <Typography
+          color="#fff"
+          fontWeight={600}
+          fontSize={48}
+          mt={"34px"}
+          lineHeight={"48px"}
+        >
           Launch your AI application in{" "}
           <span style={{ color: "#afa0ff" }}>minutes</span>
         </Typography>
@@ -126,10 +136,11 @@ export default function Launch({ data }) {
               lineHeight: "140%",
               width: "430.29px",
               height: "40px",
-              textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
+              textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             }}
           >
-            Start building with the most cost-effective platform for developing and scaling machine learning models.
+            Start building with the most cost-effective platform for developing
+            and scaling machine learning models.
           </Typography>
         </Stack>
 
@@ -152,13 +163,8 @@ export default function Launch({ data }) {
             Get Started{" "}
             <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
-
         </Stack>
       </Stack>
     </Stack>
   );
 }
-
-
-
-
