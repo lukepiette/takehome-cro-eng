@@ -200,7 +200,6 @@ export function Pricing({
     };
   };
 }) {
-  console.log(data);
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -251,11 +250,31 @@ export function Pricing({
       <Stack
         sx={{
           border: "1px solid rgba(249, 250, 251, 0.16)",
-          background:
-            "radial-gradient(99.75% 99.75% at 50% 99.75%, rgba(44, 0, 115, 0.79) 0%, rgba(15, 23, 42, 0.00) 67.22%), rgba(0, 0, 0, 0.04)",
+          background: {
+            xs: "transparent",
+            lg: "radial-gradient(99.75% 99.75% at 50% 99.75%, rgba(44, 0, 115, 0.79) 0%, rgba(15, 23, 42, 0.00) 67.22%), rgba(0, 0, 0, 0.04)",
+          },
           borderRadius: "24px",
-          backdropFilter: "blur(64px)",
-          padding: 3,
+          backdropFilter: {
+            xs: "blur(0px)",
+            lg: "blur(24px)",
+          },
+          padding: {
+            xs: 2,
+            lg: 3,
+          },
+          borderBottomLeftRadius: {
+            xs: 0,
+            lg: "24px",
+          },
+          borderBottomRightRadius: {
+            xs: 0,
+            lg: "24px",
+          },
+          borderColor: {
+            xs: "transparent",
+            lg: "rgba(249, 250, 251, 0.16)",
+          },
         }}
         gap={3}
       >
@@ -269,10 +288,16 @@ export function Pricing({
           </Typography>
         </Stack>
         <Stack
-          direction={"row"}
+          direction={{
+            xs: "column",
+            md: "row",
+          }}
           columnGap={12}
           rowGap={2}
-          alignItems={"center"}
+          alignItems={{
+            xs: "start",
+            md: "center",
+          }}
           justifyContent={{
             xs: "start",
             md: "space-between",

@@ -56,30 +56,6 @@ export function Hero() {
           md: 0,
         }}
       >
-        <Box
-          display={{ xs: "none", xl: "block" }}
-          sx={{
-            position: "absolute",
-            background:
-              "linear-gradient(90deg, #ffffff00 0%, #ffffff22 50%, #ffffff00 100%)",
-            maxWidth: "50rem",
-            width: "100%",
-            height: "1px",
-            top: "3.45rem",
-          }}
-        />
-        <Box
-          display={{ xs: "none", xl: "block" }}
-          sx={{
-            position: "absolute",
-            background:
-              "linear-gradient(90deg, #ffffff00 0%, #ffffff22 50%, #ffffff00 100%)",
-            maxWidth: "80rem",
-            width: "100%",
-            height: "1px",
-            top: "10.15rem",
-          }}
-        />
         <Typography
           fontWeight={600}
           fontSize={{

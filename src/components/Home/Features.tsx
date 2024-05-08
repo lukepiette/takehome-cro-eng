@@ -1,7 +1,15 @@
 import ButtonLink from "@components/ButtonLink";
 import { CodeBlock } from "@components/CodeBlock";
 import { ShellBlock } from "@components/ShellBlock";
-import { Box, Button, Card, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import MemoryIcon from "@mui/icons-material/Memory";
 import PublicIcon from "@mui/icons-material/Public";
@@ -29,7 +37,7 @@ function Feature({
       position={"relative"}
       gap={4}
       flexBasis={{ xs: "auto", md: "50%" }}
-      maxWidth={{ xs: "100%", md: "50%" }}
+      maxWidth={{ xs: "100%", sm: "75%", md: "50%" }}
       flexShrink={1}
       flexGrow={0}
       alignItems={"start"}
@@ -367,211 +375,214 @@ function FakeTemplate({
 
 export function Features() {
   return (
-    <Stack
-      alignItems={"center"}
-      width={"100%"}
-      mt={24}
-      position={"relative"}
-      maxWidth={"75.5rem"}
-      gap={{
-        xs: 16,
-        md: 0,
-      }}
-      px={{
-        xs: 3,
-        md: 0,
-      }}
-    >
-      <FeatureRow
-        left={
-          <Box marginBottom={{ xs: 12, md: 0 }}>
-            <ShellBlock
-              style={{
-                height: 220,
-                width: 350,
-              }}
-            >
-              <Typography
-                fontFamily="monospace"
-                fontSize={12}
-                ml={2}
-                mt={2}
-                width="100%"
-              >
-                {">"} <span style={{ color: "#FF8FFD" }}>runpodctl</span>{" "}
-                project <span style={{ color: "#979DFF" }}>dev</span>
-              </Typography>
-            </ShellBlock>
-            <CodeBlock
-              style={{
-                position: "absolute",
-                height: 220,
-              }}
-              sx={{
-                top: {
-                  xs: "6rem",
-                  md: "19rem",
-                },
-                left: {
-                  xs: "0rem",
-                  md: "2rem",
-                },
-                width: {
-                  xs: "350px",
-                  md: "350px",
-                },
-              }}
-            >
-              <Typography
-                fontFamily="monospace"
-                whiteSpace={"pre-wrap"}
-                fontSize={12}
-                ml={2}
-                mt={2}
-                width="100%"
-              >
-                <span style={{ opacity: 0.8 }}>Provisioning GPUs...</span>
-                <br />
-                <span style={{ opacity: 0.8 }}>Installing dependencies...</span>
-                <br />
-                <span style={{ opacity: 0.8 }}>
-                  Activating project environment...
-                </span>
-                <br />
-                <br />
-                Success! Test your changes locally by connecting
-                <br />
-                to the API server at:
-                <br />
-                <span style={{ opacity: 0.8 }}>
-                  {">"} https://landing-page123.proxy.runpod.net
-                </span>
-              </Typography>
-            </CodeBlock>
-          </Box>
-        }
-        right={
-          <>
-            <Typography variant="h2">
-              Instant hot-reloading for your local changes.
-            </Typography>
-            <Typography>
-              Run code in the cloud that{"'"}s as seamless as running it
-              locally. No need to push your container image every time you add a
-              print statement.
-              <br /> <br />
-              Just hit the endpoint given to you by the CLI to test and deploy
-              when you{"'"}re confident everything works.
-            </Typography>
-          </>
-        }
-      />
-      <FeatureRow
-        reverseWhenSmall
-        left={
-          <>
-            <Typography variant="h2">
-              Choose from 50+ templates ready out-of-the-box,{" "}
-              <span style={{ color: "#afa0ff" }}>
-                or bring your own custom container.
-              </span>
-            </Typography>
-            <Typography>
-              Get setup instantly with PyTorch, Tensorflow, or any other
-              preconfigured environment you might need for your machine learning
-              workflow.
-              <br /> <br />
-              Along with managed and community templates, we also let you
-              configure your own template to fit your deployment needs.
-            </Typography>
-            <Box>
-              <ButtonLink href="/console/explore" variant="contained" gradient>
-                Browse templates
-                <KeyboardArrowRightIcon
-                  sx={{
-                    display: { xs: "none", md: "inherit" },
-                    fontSize: 20,
-                    ml: 0.6,
-                  }}
-                />
-              </ButtonLink>
-            </Box>
-          </>
-        }
-        right={
-          <>
-            <CodeBlock
-              style={{
-                height: 350,
-                width: "100%",
-                marginLeft: "auto",
-                maxWidth: "100%",
-              }}
-            >
-              <Grid container spacing={2} padding={2} height="100%">
-                <Grid item xs={6}>
-                  <FakeTemplate icon={<Pytorch />} title="PyTorch" />
-                </Grid>
-                <Grid item xs={6}>
-                  <FakeTemplate icon={<Tensorflow />} title="Tensorflow" />
-                </Grid>
-                <Grid item xs={6}>
-                  <FakeTemplate icon={<Docker />} title="Docker" />
-                </Grid>
-                <Grid item xs={6}>
-                  <FakeTemplate icon={<Runpod />} title="Runpod" />
-                </Grid>
-              </Grid>
-            </CodeBlock>
-          </>
-        }
-      />
-      <div
-        style={{
-          position: "absolute",
-          top: "1300px",
-          width: "24rem",
-          height: "24rem",
-          transform: "rotate(-105deg) translate(0, -15rem)",
-          background:
-            "radial-gradient(58.26% 58.26% at 58.26% 29.13%, #8C29F0 0%, rgba(101.49, 76.50, 255, 0.51) 28%, rgba(155.04, 76.50, 255, 0.25) 100%)",
-          boxShadow:
-            "0px -30.077733993530273px 30.077733993530273px #BD00FF inset",
-          borderRadius: 50000,
-          filter: "blur(200px)",
-          zIndex: 10,
+    <Container maxWidth={"lg"}>
+      <Stack
+        alignItems={"center"}
+        width={"100%"}
+        mt={24}
+        position={"relative"}
+        gap={{
+          xs: 16,
+          md: 0,
         }}
-      />
-      <FeatureRow
-        left={
-          <>
-            <FakePod />
-          </>
-        }
-        right={
-          <>
-            <Typography variant="h2">Spin up a GPU pod in seconds</Typography>
-            <Typography>
-              it{"'"}s a pain to having to wait upwards of 10 minutes for your
-              pods to spin up - we{"'"}ve cut the cold-boot time down to
-              milliseconds, so you can start building within seconds of
-              deploying your pods.
-            </Typography>
-            <Box>
-              <ButtonLink href="/console/deploy" variant="contained" gradient>
-                Spin up a pod
-                <KeyboardArrowRightIcon
-                  sx={{
-                    display: { xs: "none", md: "inherit" },
-                    fontSize: 20,
-                    ml: 0.6,
-                  }}
-                />
-              </ButtonLink>
+      >
+        <FeatureRow
+          left={
+            <Box marginBottom={{ xs: 12, md: 0 }}>
+              <ShellBlock
+                style={{
+                  height: 220,
+                  width: 350,
+                }}
+              >
+                <Typography
+                  fontFamily="monospace"
+                  fontSize={12}
+                  ml={2}
+                  mt={2}
+                  width="100%"
+                >
+                  {">"} <span style={{ color: "#FF8FFD" }}>runpodctl</span>{" "}
+                  project <span style={{ color: "#979DFF" }}>dev</span>
+                </Typography>
+              </ShellBlock>
+              <CodeBlock
+                style={{
+                  position: "absolute",
+                  height: 220,
+                }}
+                sx={{
+                  top: {
+                    xs: "6rem",
+                    md: "19rem",
+                  },
+                  left: {
+                    xs: "0rem",
+                    md: "2rem",
+                  },
+                  width: {
+                    xs: "350px",
+                    md: "350px",
+                  },
+                }}
+              >
+                <Typography
+                  fontFamily="monospace"
+                  whiteSpace={"pre-wrap"}
+                  fontSize={12}
+                  ml={2}
+                  mt={2}
+                  width="100%"
+                >
+                  <span style={{ opacity: 0.8 }}>Provisioning GPUs...</span>
+                  <br />
+                  <span style={{ opacity: 0.8 }}>
+                    Installing dependencies...
+                  </span>
+                  <br />
+                  <span style={{ opacity: 0.8 }}>
+                    Activating project environment...
+                  </span>
+                  <br />
+                  <br />
+                  Success! Test your changes locally by connecting
+                  <br />
+                  to the API server at:
+                  <br />
+                  <span style={{ opacity: 0.8 }}>
+                    {">"} https://landing-page123.proxy.runpod.net
+                  </span>
+                </Typography>
+              </CodeBlock>
             </Box>
-          </>
-        }
-      />
-    </Stack>
+          }
+          right={
+            <>
+              <Typography variant="h2">
+                Instant hot-reloading for your local changes.
+              </Typography>
+              <Typography>
+                Run code in the cloud that{"'"}s as seamless as running it
+                locally. No need to push your container image every time you add
+                a print statement.
+                <br /> <br />
+                Just hit the endpoint given to you by the CLI to test and deploy
+                when you{"'"}re confident everything works.
+              </Typography>
+            </>
+          }
+        />
+        <FeatureRow
+          reverseWhenSmall
+          left={
+            <>
+              <Typography variant="h2">
+                Choose from 50+ templates ready out-of-the-box,{" "}
+                <span style={{ color: "#afa0ff" }}>
+                  or bring your own custom container.
+                </span>
+              </Typography>
+              <Typography>
+                Get setup instantly with PyTorch, Tensorflow, or any other
+                preconfigured environment you might need for your machine
+                learning workflow.
+                <br /> <br />
+                Along with managed and community templates, we also let you
+                configure your own template to fit your deployment needs.
+              </Typography>
+              <Box>
+                <ButtonLink
+                  href="/console/explore"
+                  variant="contained"
+                  gradient
+                >
+                  Browse templates
+                  <KeyboardArrowRightIcon
+                    sx={{
+                      display: { xs: "none", md: "inherit" },
+                      fontSize: 20,
+                      ml: 0.6,
+                    }}
+                  />
+                </ButtonLink>
+              </Box>
+            </>
+          }
+          right={
+            <>
+              <CodeBlock
+                style={{
+                  height: 350,
+                  width: "100%",
+                  marginLeft: "auto",
+                  maxWidth: "100%",
+                }}
+              >
+                <Grid container spacing={2} padding={2} height="100%">
+                  <Grid item xs={6}>
+                    <FakeTemplate icon={<Pytorch />} title="PyTorch" />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <FakeTemplate icon={<Tensorflow />} title="Tensorflow" />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <FakeTemplate icon={<Docker />} title="Docker" />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <FakeTemplate icon={<Runpod />} title="Runpod" />
+                  </Grid>
+                </Grid>
+              </CodeBlock>
+            </>
+          }
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: "1300px",
+            width: "24rem",
+            height: "24rem",
+            transform: "rotate(-105deg) translate(0, -15rem)",
+            background:
+              "radial-gradient(58.26% 58.26% at 58.26% 29.13%, #8C29F0 0%, rgba(101.49, 76.50, 255, 0.51) 28%, rgba(155.04, 76.50, 255, 0.25) 100%)",
+            boxShadow:
+              "0px -30.077733993530273px 30.077733993530273px #BD00FF inset",
+            borderRadius: 50000,
+            filter: "blur(200px)",
+            zIndex: 10,
+          }}
+        />
+        <FeatureRow
+          left={
+            <>
+              <FakePod />
+            </>
+          }
+          right={
+            <>
+              <Typography variant="h2">Spin up a GPU pod in seconds</Typography>
+              <Typography>
+                it{"'"}s a pain to having to wait upwards of 10 minutes for your
+                pods to spin up - we{"'"}ve cut the cold-boot time down to
+                milliseconds, so you can start building within seconds of
+                deploying your pods.
+              </Typography>
+              <Box>
+                <ButtonLink href="/console/deploy" variant="contained" gradient>
+                  Spin up a pod
+                  <KeyboardArrowRightIcon
+                    sx={{
+                      display: { xs: "none", md: "inherit" },
+                      fontSize: 20,
+                      ml: 0.6,
+                    }}
+                  />
+                </ButtonLink>
+              </Box>
+            </>
+          }
+        />
+      </Stack>
+    </Container>
   );
 }

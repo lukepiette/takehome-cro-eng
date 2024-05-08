@@ -86,7 +86,7 @@ export default function Home() {
               alignItems="center"
               direction="row"
               justifyContent="space-between"
-              px={1}
+              px={0.5}
             >
               <Logo />
 

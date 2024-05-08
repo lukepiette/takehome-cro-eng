@@ -16,6 +16,10 @@ export function Develop() {
         xs: 3,
         md: 0,
       }}
+      mx={{
+        xs: 0,
+        md: 2,
+      }}
     >
       <Stack direction={"row"} gap={2} alignItems={"center"}>
         <div

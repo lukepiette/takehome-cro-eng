@@ -3,11 +3,11 @@ import { ShellBlock } from "@components/ShellBlock";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import ButtonLink from "@components/ButtonLink";
-import ComposedChart from "./ComposedChart";
+import ComposedChart from "@components/Sls/ComposedChart";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import LineChart from "./LineChart";
+import LineChart from "@components/Sls/LineChart";
 
-export default function Analytics({ showHeader = true }) {
+export default function Analytics() {
   const { ref: requestsRef, inView: requestsInView } = useInView({
     threshold: 1,
     fallbackInView: true,
@@ -38,66 +38,11 @@ export default function Analytics({ showHeader = true }) {
   );
 
   return (
-    <Stack
-      alignItems="center"
-      position="relative"
-      maxWidth="100%"
-      mt={showHeader ? 33 : 0}
-      width="100%"
-    >
-      {showHeader && (
-        <>
-          <Box
-            borderRadius={5000}
-            boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1.20311px 1.20311px rgba(77, 148, 255, 0.25), inset 0px -9.02332px 15.0389px #ECD3F7, inset 0px -30.0777px 30.0777px #BD00FF"
-            height={1502}
-            position="absolute"
-            top={-90}
-            width={1502}
-            sx={{
-              background:
-                "radial-gradient(85.83% 85.83% at 50% 14.17%, #6366F1 0%, rgba(128, 0, 255, 0.39) 28%, rgba(77, 148, 255, 0.25) 100%)",
-              filter: "blur(180px)",
-              opacity: 0.5,
-            }}
-            zIndex={-10}
-          />
-
-          <Typography
-            align="center"
-            fontSize={{ xs: 32, sm: 40, md: 48 }}
-            fontWeight={600}
-            letterSpacing="-0.03em"
-            lineHeight="112%"
-            maxWidth={800}
-            px={2}
-            sx={{
-              background:
-                "linear-gradient(313.71deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%)",
-              backgroundClip: "text",
-              textFillColor: "transparent",
-            }}
-          >
-            Monitor your endpoint with{" "}
-            <Box
-              display="inline-flex"
-              sx={{
-                background: "linear-gradient(-90deg, #CAD9FF, #7F39FF)",
-                backgroundClip: "text",
-                textFillColor: "transparent",
-              }}
-            >
-              real-time analytics
-            </Box>
-          </Typography>
-        </>
-      )}
-
+    <Stack alignItems="center" position="relative" maxWidth="100%" width="100%">
       <Stack
         alignItems={{ xs: "center", lg: "stretch" }}
         direction={{ xs: "column", lg: "row" }}
         mt={6}
-        mx={!showHeader ? 0 : 3}
         spacing={3}
       >
         <HeadlineBox title="Usage Analytics">
@@ -111,7 +56,10 @@ export default function Analytics({ showHeader = true }) {
           border="1px solid #1E293B"
           borderRadius={2.4}
           height={495}
-          maxWidth={781}
+          maxWidth={{
+            xs: 1204,
+            lg: 781,
+          }}
           overflow="hidden"
           position="relative"
           width={{ xs: "100%", lg: 781 }}
@@ -175,7 +123,6 @@ export default function Analytics({ showHeader = true }) {
       <Stack
         direction={{ xs: "column-reverse", lg: "row" }}
         mt={6}
-        mx={3}
         overflow="hidden"
         position="relative"
         spacing={3}
@@ -185,7 +132,10 @@ export default function Analytics({ showHeader = true }) {
           border="1px solid #1E293B"
           borderRadius={2.4}
           height={{ xs: 550, sm: 495 }}
-          maxWidth={781}
+          maxWidth={{
+            xs: 1204,
+            lg: 781,
+          }}
           overflow="hidden"
           position="relative"
           width={{ xs: "100%", lg: 781 }}
@@ -261,7 +211,6 @@ export default function Analytics({ showHeader = true }) {
         direction={{ xs: "column", lg: "row" }}
         justifyContent="center"
         mt={6}
-        mx={3}
         position="relative"
       >
         <Box
@@ -289,7 +238,10 @@ export default function Analytics({ showHeader = true }) {
           border="1px solid #1E293B"
           borderRadius={2.4}
           height={495}
-          maxWidth={781}
+          maxWidth={{
+            xs: 1204,
+            lg: 781,
+          }}
           overflow="hidden"
           ml={{ xs: 0, lg: 3 }}
           mt={{ xs: 3, lg: 0 }}
@@ -339,7 +291,10 @@ const HeadlineBox = ({ children, title, ...props }) => (
     alignItems="start"
     border="1px solid #1E293B"
     borderRadius={2.4}
-    maxWidth={781}
+    maxWidth={{
+      xs: 1204,
+      lg: 781,
+    }}
     pb={10}
     pt={{ xs: 2.5, sm: 5 }}
     px={{ xs: 4, sm: 6 }}

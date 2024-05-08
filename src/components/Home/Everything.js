@@ -69,6 +69,14 @@ export default function Everything({ data }) {
         mt={3}
         sx={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
         width={{ xs: "100%", sm: 500 }}
+        px={{
+          xs: 3,
+          md: 0,
+        }}
+        mx={{
+          xs: 0,
+          md: 2,
+        }}
       >
         Everything your app needs. All in{" "}
         <Box
@@ -92,6 +100,10 @@ export default function Everything({ data }) {
         px={{
           xs: 3,
           sm: 0,
+        }}
+        mx={{
+          xs: 0,
+          md: 2,
         }}
       >
         <Block subTitle="guaranteed uptime" title="99.99%" />
@@ -124,6 +136,10 @@ export default function Everything({ data }) {
         px={{
           xs: 3,
           sm: 0,
+        }}
+        mx={{
+          xs: 0,
+          md: 2,
         }}
       >
         <TextBlock

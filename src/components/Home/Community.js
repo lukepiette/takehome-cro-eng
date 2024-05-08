@@ -34,7 +34,7 @@ export default function Community() {
         zIndex={-10}
       />
 
-      <Stack alignItems="center" mb={15} px={{ xs: 3, md: 0 }} width="100%">
+      <Stack alignItems="center" mb={15} px={{ xs: 3, md: 2 }} width="100%">
         <Stack alignItems="start" maxWidth={"75.5rem"} width="100%">
           <Typography
             fontSize={{ xs: 30, sm: 38, md: 48 }}
