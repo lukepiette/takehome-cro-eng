@@ -28,7 +28,7 @@ const Home: NextPage = ({ data }: any) => (
       <meta property="og:url" content="https://www.runpod.io/" />
       <meta
         property="og:image"
-        content="https://www.runpod.io/static/images/serverless-preview.webp"
+        content="https://www.runpod.io/static/images/home-page-preview-image.webp"
       />
 
       {/* Twitter Card Tags */}
@@ -44,7 +44,7 @@ const Home: NextPage = ({ data }: any) => (
       />
       <meta
         name="twitter:image"
-        content="https://www.runpod.io/static/images/serverless-preview.webp"
+        content="https://www.runpod.io/static/images/home-page-preview-image.webp"
       />
 
     </Head>
