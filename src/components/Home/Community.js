@@ -131,9 +131,9 @@ export default function Community() {
       <Stack
         direction="row"
         justifyContent="center"
+        overflow="hidden"
         position="relative"
         maxWidth="100%"
-        width="100%"
       >
         {[-1, 1].map((v, i) => (
           <Stack
@@ -161,7 +161,7 @@ export default function Community() {
                 alignItems: "center",
                 cursor: "pointer",
                 display:
-                  reviewIndex + v > reviews.length - 1 || reviewIndex + v < 0
+                  reviewIndex + v > reviews.length - 1 || reviewIndex + v <= 0
                     ? "none"
                     : "flex",
                 height: "100%",
