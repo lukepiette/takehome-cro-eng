@@ -43,8 +43,8 @@ const links = [
 const HeaderAndDividerWrapper = styled(Box)(
   () => `
     width: 100%;
-    position: -webkit-relative !important; // For Safari
-    position: relative !important;
+    position: -webkit-sticky !important; // For Safari
+    position: sticky !important;
     top: 0 !important;
     z-index: 1100;
   `
@@ -56,8 +56,8 @@ const HeaderWrapper = styled(Box)(
     display: flex;
     align-items: center;
     height: 56px;
-    position: -webkit-relative !important; // For Safari
-    position: relative !important;
+    position: -webkit-sticky !important; // For Safari
+    position: sticky !important;
     top: 0 !important;
     z-index: 1100;
     background: rgba(28, 28, 28, 0.1);
@@ -207,7 +207,9 @@ export default function Home() {
               <FavoriteIcon sx={{ color: "#fff", fontSize: "12px" }} />
             </Stack>
 
-            <Typography>We raised $20M to revolutionize AI cloud at scale</Typography>
+            <Typography>
+              We raised $20M to revolutionize AI cloud at scale
+            </Typography>
 
             <div
               style={{
