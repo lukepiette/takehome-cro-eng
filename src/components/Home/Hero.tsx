@@ -169,14 +169,25 @@ export function Hero() {
         }}
       >
         <Stack
-          direction={"row"}
+          direction={{
+            xs: "column",
+            md: "row",
+          }}
           alignItems={"center"}
           justifyContent={"center"}
           gap={0.5}
           zIndex={1}
           mb={3}
+          maxWidth={{
+            xs: "70%",
+            md: "100%",
+          }}
+          textAlign={{
+            xs: "center",
+            md: "left",
+          }}
         >
-          <Dot />
+          <Dot style={{ flexShrink: 0 }} />
           <Typography sx={{ color: "rgba(249, 250, 251, 0.48)" }}>
             <span style={{ color: "#fff" }}>RunPod</span> works with Startups,
             Academic Institutions, and Enterprises.

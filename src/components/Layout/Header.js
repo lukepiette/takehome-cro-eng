@@ -127,7 +127,10 @@ export default function Home() {
                 alignItems="end"
                 direction="row"
                 justifyContent="end"
-                spacing={1}
+                gap={{
+                  xs: 0.5,
+                  md: 1,
+                }}
                 width={{ xs: "100%", md: "fit-content" }}
               >
                 <ButtonLink
@@ -142,7 +145,7 @@ export default function Home() {
                     fontSize: 13,
                     fontWeight: 500,
                     height: 36,
-                    mr: { xs: 1, md: 0 },
+                    mr: { xs: 0.5, md: 0 },
                     pl: 2,
                     pr: { xs: 2, md: 1.4 },
                   }}
@@ -173,6 +176,7 @@ export default function Home() {
                   fontWeight: 500,
                   height: 36,
                   px: 0.8,
+                  ml: 1,
                 }}
                 onClick={() => setDrawerOpen(true)}
               >
@@ -187,7 +191,10 @@ export default function Home() {
             direction={"row"}
             width={"100%"}
             height={"100%"}
-            gap={2}
+            gap={{
+              xs: 1,
+              md: 2,
+            }}
             paddingY={1}
             alignItems={"center"}
             justifyContent={"center"}
@@ -207,8 +214,23 @@ export default function Home() {
               <FavoriteIcon sx={{ color: "#fff", fontSize: "12px" }} />
             </Stack>
 
-            <Typography>
+            <Typography
+              display={{
+                xs: "none",
+                md: "block",
+              }}
+            >
               We raised $20M to revolutionize AI in the cloud at scale
+            </Typography>
+
+            <Typography
+              display={{
+                xs: "block",
+                md: "none",
+              }}
+              fontSize={11}
+            >
+              We raised $20M to revolutionize AI in the cloud
             </Typography>
 
             <div
