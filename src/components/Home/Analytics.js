@@ -162,8 +162,8 @@ export default function Analytics() {
           <Stack height="100%" justifyContent="space-between" width="100%">
             <Legend
               mr={0.5}
-              ml={4.5}
-              mt={4.5}
+              ml={3.5}
+              mt={3}
               title="Execution Time"
               labels={[
                 { title: "Total", value: "1,420s" },
@@ -296,8 +296,8 @@ const HeadlineBox = ({ children, title, ...props }) => (
       lg: 781,
     }}
     pb={10}
-    pt={{ xs: 2.5, sm: 5 }}
-    px={{ xs: 4, sm: 6 }}
+    pt={3}
+    px={3.5}
     width={{ xs: "100%", lg: 395 }}
     sx={{
       background:

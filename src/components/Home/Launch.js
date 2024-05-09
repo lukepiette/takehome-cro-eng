@@ -53,7 +53,7 @@ export default function Launch({ data }) {
       position="relative"
       mt={{
         xs: -20,
-        sm: 15,
+        md: 15,
       }}
       mb={10}
       width="100%"
@@ -109,13 +109,14 @@ export default function Launch({ data }) {
         <Stack
           alignItems="center"
           borderRadius={2.4}
-          boxShadow="inset 9.62749px -9.62749px 25.6733px rgba(188, 47, 255, 0.49), inset 0px 0px 40.1146px #B09DFE, inset 0px 9.62749px 80.2291px #001F4E"
+          boxShadow="inset 9.62749px -9.62749px 25.6733px rgba(188, 47, 255, 0.3), inset 0px 0px 40.1146px #B09DFEAA, inset 0px 9.62749px 80.2291px #001F4E"
           height={106}
           justifyContent="center"
           width={106}
           sx={{
             background:
               "radial-gradient(88.69% 91.78% at 50.56% 15.16%, #000000 0%, #000000 59.12%, #000342 85.94%)",
+            filter: "saturate(1.7)",
           }}
         >
           <RunPodIcon style={{ color: "#fff", height: 75, width: 75 }} />
@@ -127,6 +128,7 @@ export default function Launch({ data }) {
           fontSize={48}
           mt={"34px"}
           lineHeight={"48px"}
+          letterSpacing={"-1.08px"}
         >
           Launch your AI application in{" "}
           <span style={{ color: "#afa0ff" }}>minutes</span>

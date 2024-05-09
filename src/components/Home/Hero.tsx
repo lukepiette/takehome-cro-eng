@@ -7,6 +7,7 @@ import Circle from "@assets/circle.svg";
 import Cloud1 from "@assets/cloud1.svg";
 import Cloud2 from "@assets/cloud2.svg";
 import Cloud3 from "@assets/cloud3.svg";
+import Dot from "@assets/dot.svg";
 
 export function Hero() {
   return (
@@ -72,7 +73,7 @@ export function Hero() {
           }}
           sx={{
             width: "100%",
-            letterSpacing: `-0.03em`,
+            letterSpacing: `-5.76px`,
             textAlign: `center`,
             background: `linear-gradient(120deg, rgba(255, 255, 255, 0.2) 32.07%, rgba(145, 78, 255, 0.3) 75.29%);`,
             WebkitBackgroundClip: `text`,
@@ -82,10 +83,28 @@ export function Hero() {
         >
           All in one cloud.
         </Typography>
-        <Typography fontSize={24} fontWeight={600} textAlign={"center"}>
+        <Typography
+          fontSize={24}
+          fontWeight={600}
+          textAlign={"center"}
+          letterSpacing={"-0.6px"}
+          color="#FFF"
+        >
           Develop, train, and scale AI
           <br />
-          models with RunPod.
+          models with{" "}
+          <span
+            style={{
+              background:
+                "linear-gradient(141deg, #D9D6FF 43.67%, #CAADFF 79.9%)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            RunPod
+          </span>
+          .
         </Typography>
 
         <Stack
@@ -149,9 +168,20 @@ export function Hero() {
           zIndex: 0,
         }}
       >
-        <Typography sx={{color:"#CBCCD2", zIndex:100, mb:3}}>
-          RunPod works with Startups, Academic Institutions, and Enterprises.
-        </Typography>
+        <Stack
+          direction={"row"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          gap={0.5}
+          zIndex={1}
+          mb={3}
+        >
+          <Dot />
+          <Typography sx={{ color: "rgba(249, 250, 251, 0.48)" }}>
+            <span style={{ color: "#fff" }}>RunPod</span> works with Startups,
+            Academic Institutions, and Enterprises.
+          </Typography>
+        </Stack>
 
         <TrustedBy />
         <Stack

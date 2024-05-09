@@ -67,7 +67,6 @@ export default function Everything({ data }) {
         letterSpacing="-0.03em"
         lineHeight="96%"
         mt={3}
-        sx={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
         width={{ xs: "100%", sm: 500 }}
         px={{
           xs: 3,
@@ -95,7 +94,12 @@ export default function Everything({ data }) {
         direction={{ xs: "column", sm: "row" }}
         mt={8}
         rowGap={3}
+        columnGap={{
+          xs: 0,
+          md: 4,
+        }}
         width="100%"
+        flexWrap={"wrap"}
         justifyContent={{ xs: "center", sm: "center" }}
         px={{
           xs: 3,
@@ -296,6 +300,7 @@ const Block = ({ title, subTitle }) => (
         color="rgba(249, 250, 251, 0.48)"
         fontSize={16}
         letterSpacing={-0.25}
+        fontWeight={400}
       >
         {subTitle}
       </Typography>

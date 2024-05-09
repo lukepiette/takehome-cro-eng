@@ -37,7 +37,7 @@ function Feature({
   return (
     <Stack
       position={"relative"}
-      gap={4}
+      gap={3}
       flexBasis={{ xs: "auto", md: "50%" }}
       maxWidth={{ xs: "100%", sm: "75%", md: "50%" }}
       flexShrink={1}
@@ -340,32 +340,19 @@ function FakeTemplate({
         display: "flex",
         flexDirection: "column",
         gap: 8,
-        height: "100%",
-        justifyContent: "space-between",
       }}
       maxWidth={"100%"}
       maxHeight={"100%"}
-      p={{
-        xs: 1.5,
-        md: 2,
-      }}
+      p={1.5}
     >
-      <Stack
-        direction={{
-          xs: "column",
-          md: "row",
-        }}
-        gap={{
-          xs: 0.5,
-          md: 2,
-        }}
-        alignItems={{
-          xs: "start",
-          md: "center",
-        }}
-      >
+      <Stack direction={"column"} alignItems={"start"}>
         <Box>{icon}</Box>
-        <Typography fontSize={15} fontWeight={500}>
+        <Typography
+          fontSize={16}
+          fontWeight={500}
+          letterSpacing={"-0.44px"}
+          color="white"
+        >
           {title}
         </Typography>
       </Stack>
@@ -377,8 +364,23 @@ function FakeTemplate({
         href={`/console/explore/${id}`}
         target="_blank"
         rel="noreferrer"
+        style={{
+          maxWidth: "6rem",
+          fontSize: 12,
+          paddingLeft: "0.4rem",
+          paddingRight: "0.1rem",
+          paddingTop: "0.1rem",
+          paddingBottom: "0.1rem",
+          height: "2rem",
+        }}
       >
         Deploy
+        <KeyboardArrowRightIcon
+          sx={{
+            fontSize: 16,
+            ml: 0.7,
+          }}
+        />
       </Button>
     </Box>
   );
@@ -469,10 +471,10 @@ export function Features() {
           }
           right={
             <>
-              <Typography variant="h2">
+              <Typography variant="h2" letterSpacing={"-0.48px"}>
                 Instant hot-reloading for your local changes.
               </Typography>
-              <Typography>
+              <Typography color="#94A3B8">
                 Run code in the cloud that{"'"}s as seamless as running it
                 locally. No need to push your container image every time you add
                 a print statement.
@@ -487,13 +489,13 @@ export function Features() {
           reverseWhenSmall
           left={
             <>
-              <Typography variant="h2">
+              <Typography variant="h2" letterSpacing={"-0.48px"}>
                 Choose from 50+ templates ready out-of-the-box,{" "}
                 <span style={{ color: "#afa0ff" }}>
                   or bring your own custom container.
                 </span>
               </Typography>
-              <Typography>
+              <Typography color="#94A3B8">
                 Get setup instantly with PyTorch, Tensorflow, or any other
                 preconfigured environment you might need for your machine
                 learning workflow.
@@ -523,7 +525,7 @@ export function Features() {
             <>
               <CodeBlock
                 style={{
-                  height: 350,
+                  height: "fit-content",
                   width: "100%",
                   marginLeft: "auto",
                   maxWidth: "100%",
@@ -532,21 +534,21 @@ export function Features() {
                 <Grid container spacing={2} padding={2} height="100%">
                   <Grid item xs={6}>
                     <FakeTemplate
-                      icon={<Pytorch />}
+                      icon={<Pytorch width={48} height={48} />}
                       title="PyTorch"
                       id="runpod-torch-v220"
                     />
                   </Grid>
                   <Grid item xs={6}>
                     <FakeTemplate
-                      icon={<Tensorflow />}
+                      icon={<Tensorflow width={48} height={48} />}
                       title="Tensorflow"
                       id="runpod-tensorflow"
                     />
                   </Grid>
                   <Grid item xs={6}>
                     <FakeTemplate
-                      icon={<Docker />}
+                      icon={<Docker width={48} height={48} />}
                       title="Docker"
                       id="runpod-kobold-united"
                     />
@@ -556,8 +558,8 @@ export function Features() {
                       icon={
                         <img
                           src={"/static/svg/runpod-template-logo.svg"}
-                          width="32"
-                          height="32"
+                          width="48"
+                          height="48"
                         />
                       }
                       title="Runpod"
@@ -593,8 +595,10 @@ export function Features() {
           }
           right={
             <>
-              <Typography variant="h2">Spin up a GPU pod in seconds</Typography>
-              <Typography>
+              <Typography variant="h2" letterSpacing={"-0.48px"}>
+                Spin up a GPU pod in seconds
+              </Typography>
+              <Typography color="#94A3B8">
                 it{"'"}s a pain to having to wait upwards of 10 minutes for your
                 pods to spin up - we{"'"}ve cut the cold-boot time down to
                 milliseconds, so you can start building within seconds of

@@ -43,6 +43,7 @@ export function Develop() {
         fontWeight={600}
         fontSize={{ xs: 40, md: 48 }}
         lineHeight={"48px"}
+        letterSpacing={"-1.44px"}
       >
         Globally distributed GPU{!isSmall && <br />} cloud for your{" "}
         <span style={{ color: "#afa0ff" }}>AI workloads</span>

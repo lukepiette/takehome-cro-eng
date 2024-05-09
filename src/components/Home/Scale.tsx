@@ -39,6 +39,7 @@ export function Scale() {
                 md: 48,
               }}
               lineHeight={"48px"}
+              letterSpacing={"-1.44px"}
             >
               Scale your ML inference
               <br />

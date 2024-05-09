@@ -251,7 +251,7 @@ export const ReviewBox = ({
   <Stack
     alignItems="start"
     border="1px solid rgba(255, 255, 255, 0.08)"
-    borderRadius={0.8}
+    borderRadius={"12px"}
     justifyContent="space-between"
     minWidth={{ xs: "90%", sm: 557 }}
     px={3}
@@ -259,7 +259,7 @@ export const ReviewBox = ({
     width={{ xs: "90%", sm: 557 }}
     sx={{
       background:
-        "linear-gradient(180deg, rgba(101, 77, 255, 0) 24.5%, rgba(255, 255, 255, 0.0816) 100%), rgba(255, 255, 255, 0.02)",
+        "linear-gradient(180deg, rgba(101, 77, 255, 0.00) 24.5%, rgba(255, 255, 255, 0.08) 100%), rgba(255, 255, 255, 0.02)",
     }}
     {...props}
   >
@@ -277,16 +277,18 @@ export const ReviewBox = ({
         fontWeight={500}
         letterSpacing="-0.02em"
         mt={0.4}
-        sx={{
-          background:
-            "linear-gradient(313.71deg, rgba(248, 250, 252, 0.64) 8.27%, #F8FAFC 57.24%, rgba(248, 250, 252, 0.64) 96.6%);",
-          backgroundClip: "text",
-          textFillColor: "transparent",
-        }}
+        color="#FFF"
       >
         {name}
       </Typography>
-      <Typography color="#94A3B8" fontSize={16} letterSpacing={-0.25} mt={1}>
+      <Typography
+        color="#94A3B8"
+        fontSize={14}
+        letterSpacing={"-0.25px"}
+        lineHeight={"24px"}
+        fontWeight={400}
+        mt={1}
+      >
         {children}
       </Typography>
     </Stack>
@@ -295,11 +297,10 @@ export const ReviewBox = ({
       href={href}
       variant="outlined"
       sx={{
-        background:
-          "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
-        borderRadius: 0.8,
-        boxShadow:
-          "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
+        borderRadius: "4px",
+        border: "1px solid rgba(255, 255, 255, 0.10)",
+        background: "rgba(255, 255, 255, 0.02)",
+        boxShadow: "0px -6px 24px 0px rgba(255, 255, 255, 0.24) inset",
         fontSize: 14,
         fontWeight: 500,
         height: 40,

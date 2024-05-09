@@ -23,7 +23,7 @@ function FeatureCheck({ title }: { title: string }) {
         sx={{
           p: 0.7,
           borderRadius: 100,
-          background: "rgb(70,70,70)",
+          background: "rgba(255, 255, 255, 0.16)",
           opacity: 0.8,
           flexShrink: 0,
         }}
@@ -125,27 +125,27 @@ function GPUPrice({
           justifyContent={"space-between"}
         >
           <Stack gap={0.25}>
-            <Typography fontWeight={400} fontSize={18} mb={0.5}>
+            <Typography fontWeight={600} fontSize={16} mb={0.5}>
               {name}
             </Typography>
             <Typography
               fontSize={14}
               fontWeight={400}
-              color={"rgb(180,180,180)"}
+              color={"rgba(249, 250, 251, 0.64)"}
             >
               {data?.memoryInGb || "???"}GB VRAM
             </Typography>
             <Typography
               fontSize={14}
               fontWeight={400}
-              color={"rgb(180,180,180)"}
+              color={"rgba(249, 250, 251, 0.64)"}
             >
               {data?.lowestPrice?.minMemory || "???"}GB RAM
             </Typography>
             <Typography
               fontSize={14}
               fontWeight={400}
-              color={"rgb(180,180,180)"}
+              color={"rgba(249, 250, 251, 0.64)"}
             >
               {data?.lowestPrice?.minVcpu || "???"} vCPUs
             </Typography>
@@ -201,6 +201,7 @@ export function Pricing({
           xs: 3,
           md: 0,
         }}
+        letterSpacing={"-0.48px"}
       >
         <span style={{ color: "#bbb9ff" }}>Powerful</span> & Cost-Effective GPUs
         {!isSmall ? <br /> : " "}
@@ -274,7 +275,7 @@ export function Pricing({
             xs: "column",
             md: "row",
           }}
-          columnGap={12}
+          columnGap={2}
           rowGap={2}
           alignItems={{
             xs: "start",
