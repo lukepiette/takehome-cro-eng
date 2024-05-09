@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/runpod/landing-ui/compare/v1.2.1...v1.2.2) (2024-05-09)
+
+
+### Bug Fixes
+
+* mobile header spacing ([fe39d57](https://github.com/runpod/landing-ui/commit/fe39d57eccfe6385bd63e6b536b86d61a816000a))
+
 ## [1.2.1](https://github.com/runpod/landing-ui/compare/v1.2.0...v1.2.1) (2024-05-09)
 
 
