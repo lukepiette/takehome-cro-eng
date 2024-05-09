@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/runpod/landing-ui/compare/v1.2.0...v1.2.1) (2024-05-09)
+
+
+### Bug Fixes
+
+* mobile stuff ([7d4d431](https://github.com/runpod/landing-ui/commit/7d4d43138ff2da3b234a76a1173324e32f4a1216))
+
 ## [1.2.0](https://github.com/runpod/landing-ui/compare/v1.1.2...v1.2.0) (2024-05-09)
 
 
