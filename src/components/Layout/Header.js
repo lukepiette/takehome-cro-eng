@@ -96,7 +96,14 @@ export default function Home() {
               justifyContent="space-between"
               px={0.5}
             >
-              <Logo />
+              <Stack
+                width={"100%"}
+                maxWidth={"15rem"}
+                direction={"row"}
+                justifyContent={"start"}
+              >
+                <Logo />
+              </Stack>
 
               <Stack
                 alignItems="center"
@@ -127,11 +134,10 @@ export default function Home() {
                 alignItems="end"
                 direction="row"
                 justifyContent="end"
-                gap={{
-                  xs: 0.5,
-                  md: 1,
-                }}
-                width={{ xs: "100%", md: "fit-content" }}
+                gap={1}
+                width={"100%"}
+                flexShrink={0}
+                maxWidth={"15rem"}
               >
                 <ButtonLink
                   href="/console/signup"
@@ -145,7 +151,6 @@ export default function Home() {
                     fontSize: 13,
                     fontWeight: 500,
                     height: 36,
-                    mr: { xs: 0.5, md: 0 },
                     pl: 2,
                     pr: { xs: 2, md: 1.4 },
                   }}
@@ -162,26 +167,24 @@ export default function Home() {
                 <ButtonLink href="/console/login" variant="outlined" gradient>
                   Login
                 </ButtonLink>
+                <IconButton
+                  sx={{
+                    background:
+                      "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
+                    borderRadius: 0.8,
+                    boxShadow:
+                      "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
+                    display: { xs: "inherit", md: "none" },
+                    fontSize: 13,
+                    fontWeight: 500,
+                    height: 36,
+                    px: 0.8,
+                  }}
+                  onClick={() => setDrawerOpen(true)}
+                >
+                  <MenuIcon />
+                </IconButton>
               </Stack>
-
-              <IconButton
-                sx={{
-                  background:
-                    "radial-gradient(106.71% 106.71% at 50% -6.71%, #45005E 0%, #000000 46.08%, #000342 85.94%)",
-                  borderRadius: 0.5,
-                  boxShadow:
-                    "inset 0px -6px 24px rgba(255, 255, 255, 0.24), inset 0px 1px 2px #BD00FF;",
-                  display: { xs: "inherit", md: "none" },
-                  fontSize: 13,
-                  fontWeight: 500,
-                  height: 36,
-                  px: 0.8,
-                  ml: 1,
-                }}
-                onClick={() => setDrawerOpen(true)}
-              >
-                <MenuIcon />
-              </IconButton>
             </Stack>
           </Container>
         </HeaderWrapper>
