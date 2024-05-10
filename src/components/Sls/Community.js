@@ -8,7 +8,7 @@ export const reviews = [
     href: "https://blog.runpod.io/3-reasons-why-lovo-ai-switched-to-runpod-serverless/",
     name: "Hara Kang",
     title: "CTO, LOVO AI",
-    review: `"There are definitely providers who offer much cheaper pricing than Runpod. But everytime, they have an inferior developer experience. If you're paying 50% less for a GPU elsewhere, that cost is coming out somewhere else, be it developer time or lack of reliability. For the value, Runpod provides competitive prices and we're willing to pay a premium to reduce the headache that normally comes with ML ops."`,
+    review: `"There are definitely providers who offer much cheaper pricing than Runpod. But they always have an inferior developer experience. If you're paying 50% less for a GPU elsewhere, that cost is coming out somewhere else, be it developer time or lack of reliability. For the value, Runpod provides competitive prices and we're willing to pay a premium to reduce the headache that normally comes with ML ops."`,
     cost: 20,
     speed: 30,
   },
