@@ -217,16 +217,11 @@ export default function Home() {
               <FavoriteIcon sx={{ color: "#fff", fontSize: "12px" }} />
             </Stack>
 
-            <Typography
-              display={{
-                xs: "none",
-                md: "block",
-              }}
-            >
-              We raised $20M to revolutionize AI in the cloud at scale
+            <Typography>
+              We just raised 20M to revolutionize AI/ML cloud computing
             </Typography>
 
-            <Typography
+            {/* <Typography
               display={{
                 xs: "block",
                 md: "none",
@@ -234,7 +229,7 @@ export default function Home() {
               fontSize={11}
             >
               We raised $20M to revolutionize AI in the cloud
-            </Typography>
+            </Typography> */}
 
             <div
               style={{
