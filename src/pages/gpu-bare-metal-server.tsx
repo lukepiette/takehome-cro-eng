@@ -2,8 +2,8 @@ import { Box, Card, Stack, Typography, useTheme } from "@mui/material"
 import Head from "next/head"
 import Image from "next/legacy/image"
 
-import UbuntuLogo from "/public/static/svg/ubuntu-new-logo.svg"
-import WindowsLogo from "/public/static/svg/windows-word-logo.svg"
+import UbuntuLogo from "@assets/ubuntu.svg"
+import WindowsLogo from "@assets/windows.svg"
 import StartButton from "@components/StartButton"
 
 
@@ -85,10 +85,10 @@ export default function GpuBareServer() {
             sx={{ borderRadius: 0.5, p: 2 }} 
             >
               <Box>
-                <Image alt="ubuntu logo" src={UbuntuLogo} width={120} height={50} />
+                <UbuntuLogo alt="ubuntu logo" width={70} height={70} />
               </Box>
               <Box pt={1}>
-                <Image alt="windows logo" src={WindowsLogo} width={120} height={35}/>
+                <WindowsLogo alt="windows logo" width={60} height={60}/>
               </Box>
           </Stack>
         </Card>

@@ -3,8 +3,8 @@ import ChatIcon from "@mui/icons-material/Forum"
 import EmailIcon from "@mui/icons-material/Email"
 import Image from "next/legacy/image"
 
-import PurpleDiscordLogo from "/public/static/svg/discord-logo-purple.svg"
-import WhiteDiscordLogo from "/public/static/svg/discord-logo-white.svg"
+import PurpleDiscordLogo from "@assets/discord-logo-purple.svg"
+import WhiteDiscordLogo from "@assets/discord-logo-white.svg"
 
 export default function Contact() {
   const theme = useTheme()
@@ -67,12 +67,11 @@ export default function Contact() {
               variant="outlined"
             >
               <Stack spacing={2} alignItems="center">
-                <Image
-                  alt="discord logo"
-                  src={darkMode ? WhiteDiscordLogo : PurpleDiscordLogo}
-                  width={70}
-                  height={70}
-                />
+                {
+                  darkMode ? 
+                  <WhiteDiscordLogo alt="discord logo" width={70} height={50} />
+                  : < PurpleDiscordLogo alt="discord logo" width={70} height={70} />
+                }
                 <Typography variant="h4">Discord</Typography>
               </Stack>
             </Button>
