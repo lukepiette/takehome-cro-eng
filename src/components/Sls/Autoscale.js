@@ -4,6 +4,8 @@ import CheckIcon from "@mui/icons-material/Check";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import LaunchIcon from "@mui/icons-material/Launch";
 import Link from "next/link";
+import SignUp from "@components/SignUpButton"
+
 
 export default function Autoscale() {
   return (
@@ -56,24 +58,7 @@ export default function Autoscale() {
         discount &amp; flex workers to handle any sudden traffic.
       </Typography>
 
-      <ButtonLink
-        href="/console/serverless"
-        variant="contained"
-        sx={{
-          background:
-            "radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.0472) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #5D29F0",
-          borderRadius: 0.8,
-          boxShadow:
-            "0px 2px 0px rgba(0, 0, 0, 0.5), inset -3px -4px 7px rgba(9, 0, 114, 0.24)",
-          fontWeight: 600,
-          height: 40,
-          my: 3,
-          pl: 2,
-          pr: 1.4,
-        }}
-      >
-        Try it now <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
-      </ButtonLink>
+      <SignUp text="Try it now" url="/console/serverless" utmContent="serverless-autoscale" my={3} />
 
       <Stack
         alignItems="center"
