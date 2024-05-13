@@ -4,8 +4,8 @@ import Image from "next/legacy/image"
 
 import ButtonLink from "@components/ButtonLink"
 import DeploySeconds from "@components/Home/DeploySeconds"
-import PytorchLogo from "/public/static/svg/pytorchLogo.svg"
-import TensorFlowLogo from "/public/static/svg/tensorflowLogo.svg"
+import PytorchLogo from "@assets/pytorch.svg"
+import TensorFlowLogo from "@assets/tensorflow.svg"
 
 export default function GpuInstance() {
   const theme = useTheme()
@@ -74,10 +74,10 @@ export default function GpuInstance() {
       </Stack>
       <Stack alignItems={"center"} justifyContent="center" direction="row" my={6} spacing={3}>
         <Box>
-          <Image unoptimized alt="tensorflow logo" src={TensorFlowLogo} width={40} height={42} />
+          <TensorFlowLogo unoptimized alt="tensorflow logo" width={90} height={90} />
         </Box>
         <Box>
-          <Image unoptimized alt="pytorch logo" src={PytorchLogo} width={40} height={48} />
+          <PytorchLogo unoptimized alt="pytorch logo" width={90} height={90} />
         </Box>
       </Stack>
 
@@ -140,12 +140,12 @@ const Tensorflow = () => (
     direction={{ xs: "column-reverse", md: "row-reverse" }}
   >
     <Box maxWidth={{ xs: "100%", md: "inherit" }} textAlign={"center"} width={500}>
-      <Image
+      <TensorFlowLogo
         unoptimized
         alt="tensorflow logo"
         layout="responsive"
-        src={TensorFlowLogo}
-        width={100}
+        width={90}
+        height={90}
       />
     </Box>
     <Card
@@ -188,7 +188,7 @@ const Pytorch = () => (
     direction={{ xs: "column-reverse", md: "row" }}
   >
     <Box maxWidth={{ xs: "100%", md: "inherit" }} textAlign={"center"} width={500}>
-      <Image unoptimized alt="pytorch logo" layout="responsive" src={PytorchLogo} width={240} />
+      <PytorchLogo unoptimized alt="pytorch logo" layout="responsive" width={90} height={90}/>
     </Box>
     <Card
       sx={{

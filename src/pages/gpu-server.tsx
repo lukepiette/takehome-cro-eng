@@ -3,8 +3,8 @@ import Head from "next/head"
 
 import ButtonLink from "@components/ButtonLink"
 import Image from "next/legacy/image"
-import UbuntuLogo from "/public/static/svg/ubuntu-word-logo.svg"
-import WindowsLogo from "/public/static/svg/windows-word-logo.svg"
+import UbuntuLogo from "@assets/ubuntu.svg"
+import WindowsLogo from "@assets/windows.svg"
 
 export default function GpuServer() {
   const theme = useTheme()
@@ -60,20 +60,23 @@ export default function GpuServer() {
         <Stack
           direction="row"
           spacing={3}
-          sx={{ backgroundColor: "#f2f5f9", borderRadius: 0.5, p: 2 }}
+          sx={{ borderRadius: 0.5, p: 2 }}
         >
           <Box>
-            <Image alt="ubuntu logo" src={UbuntuLogo} width={100} height={35} />
+            <UbuntuLogo
+              style={{ zIndex: 0, shapeRendering: "geometricPrecision" }}
+              shapeRendering="geometricPrecision"
+            />
           </Box>
           <Box>
-            <Image alt="windows logo" src={WindowsLogo} width={120} height={35} />
+            <WindowsLogo alt="windows logo" width={70} height={70} />
           </Box>
         </Stack>
       </Stack>
 
       <BringYourContainer />
       <Tensorflow />
-      <Pytorch />
+      {/* <Pytorch /> */}
     </>
   )
 }
