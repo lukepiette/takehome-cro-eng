@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/runpod/landing-ui/compare/v1.2.2...v1.3.0) (2024-05-14)
+
+
+### Features
+
+* added tracking for serverless sign ups using utmContent local storage hook ([0aa1643](https://github.com/runpod/landing-ui/commit/0aa1643f0bce7d7c92ee18bc582275db6732eff3))
+* update ToS ([0cb0a80](https://github.com/runpod/landing-ui/commit/0cb0a803ee43ec7bc152ab5d46f1cc5248bd0389))
+
 ## [1.2.2](https://github.com/runpod/landing-ui/compare/v1.2.1...v1.2.2) (2024-05-09)
 
 
