@@ -162,7 +162,7 @@ export default function Pricing() {
             3 7B and medium sized models like Yi 34B.
           </GpuBox>
           <GpuBox
-            name="A500"
+            name="A5000"
             priceActive={0.00016}
             priceFlex={0.00026}
             vram={24}
