@@ -155,7 +155,7 @@ export default function Community() {
             position="absolute"
             right={v > 0 ? 0 : "inherit"}
             top={0}
-            width={{ xs: 100, sm: 80, md: 220, lg: 368 }}
+            width={{ xs: 100, sm: 80, md: 220, lg: 368 }} 
             sx={{
               background:
                 "linear-gradient(270deg, #000000 0%, rgba(1, 1, 17, 0) 100%), linear-gradient(270deg, #000000 0%, rgba(1, 1, 17, 0) 100%)",

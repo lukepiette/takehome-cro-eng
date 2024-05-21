@@ -26,7 +26,7 @@ export default function Overview({ data }) {
       <Features />
       <Pricing data={data} />
       <Scale />
-      <Community />
+      {/* <Community /> */}
       <Everything data={data} />
       <Launch />
     </Stack>
