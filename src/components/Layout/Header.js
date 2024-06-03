@@ -218,7 +218,7 @@ export default function Home() {
             </Stack>
 
             <Typography>
-              We just raised 20M to revolutionize AI/ML cloud computing
+              We raised 20M to revolutionize AI/ML cloud computing
             </Typography>
 
             {/* <Typography

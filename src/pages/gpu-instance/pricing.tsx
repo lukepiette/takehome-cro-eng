@@ -8,13 +8,43 @@ import InstancePricing from "@components/InstancePricing";
 const InstancePricingPage: NextPage = ({ data }: any) => (
   <>
     <Head>
-      <title>GPU Instance Pricing</title>
+      <title>Pricing for GPU Instances, Storage, and Serverless</title>
       <meta
         name="description"
-        content="Runpod Instance pricing for H100, A100, RTX A6000, RTX A5000, RTX 3090, RTX 4090, and more."
+        content="RunPod pricing for GPU Instances, Storage, and Serverless."
+      />
+      <meta name="author" content="RunPod" />
+
+      <meta
+        property="og:title"
+        content="Pricing for GPU Instances, Storage, and Serverless"
+      />
+      <meta
+        property="og:description"
+        content="RunPod pricing for GPU Instances, Storage, and Serverless."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.runpod.io/gpu-instance/pricing" />
+      <meta
+        property="og:image"
+        content="https://www.runpod.io/static/images/pricing-preview.webp"
+      />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@runpod_io" />
+      <meta
+        name="twitter:title"
+        content="Pricing for GPU Instances, Storage, and Serverless"
+      />
+      <meta
+        name="twitter:description"
+        content="RunPod pricing for GPU Instances, Storage, and Serverless."
+      />
+      <meta
+        name="twitter:image"
+        content="https://www.runpod.io/static/images/pricing-preview.webp"
       />
     </Head>
-
     <InstancePricing data={data} />
   </>
 );
