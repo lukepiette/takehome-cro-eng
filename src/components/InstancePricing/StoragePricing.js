@@ -82,7 +82,8 @@ import {
           fontSize={14}
           letterSpacing={-0.25}
           mt={2.5}
-          mx={3}
+          px={4}
+
         >
           Flexible and cost-effective storage for every workload. No fees for ingress/egress. 
         </Typography>
@@ -144,7 +145,7 @@ import {
           }}
           gap={3}
         >
-          <Stack gap={1}>
+          <Stack gap={1} px={3}>
             <Typography fontWeight={500}>
              Over 100PB of storage available across North America and Europe.
             </Typography>
@@ -169,6 +170,8 @@ import {
               md: "space-between",
             }}
             flexWrap={"wrap"}
+            px={3}
+
           >
             <FeatureCheck title={"Zero fees for ingress/egress"} />
             <FeatureCheck title={"Global interoperability"} />

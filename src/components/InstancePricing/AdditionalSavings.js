@@ -108,7 +108,6 @@ export default function AdditionalSavings() {
 
         <Stack
           alignItems="start"
-          mt={{ xs: 40, md: 0 }}
           maxWidth={1090}
           width="100%"
         >
