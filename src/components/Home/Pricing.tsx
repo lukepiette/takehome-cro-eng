@@ -104,10 +104,10 @@ function GPUPrice({
                 style={{ fontFamily: "monospace", color: "#fff", fontSize: 12 }}
               >
                 $
-                {Math.min(
-                  data?.communityPrice || 0,
-                  data?.securePrice || 0
-                ).toFixed(2) || "???"}
+                  {data?.communityCloud ? Math.min(
+                    data?.communityPrice || 0,
+                    data?.securePrice || 0
+                  ).toFixed(2) || "???" : data?.securePrice || 0}
               </span>
               /hr
             </Typography>
@@ -294,17 +294,23 @@ export function Pricing({
         </Stack>
         <Grid container spacing={2}>
           <GPUPrice
+              name="MI300X"
+              manufacturer="amd"
+              // @ts-ignore
+              data={data?.gpu["AMD Instinct MI300X OAM"]}
+          />
+          <GPUPrice
             name="H100 PCIe"
             manufacturer="nvidia"
             // @ts-ignore
             data={data?.gpu["NVIDIA H100 PCIe"]}
           />
-          <GPUPrice
+          {/* <GPUPrice
             name="H100 SXM"
             manufacturer="nvidia"
             // @ts-ignore
             data={data?.gpu["NVIDIA H100 80GB HBM3"]}
-          />
+          /> */}
           <GPUPrice
             name="A100 PCIe"
             manufacturer="nvidia"
