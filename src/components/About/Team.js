@@ -156,9 +156,9 @@ export default function Team() {
         </Box>
       </Box>
       
-      <Grid container sx={{maxWidth: '75.5rem', mt:{xs:0, md:4}, padding:2, pl: {xs: 4, sm:4, md: 8, lg:0} }} gap={{xs: 5, sm: 3, md: 4, lg:5}}>
+      <Grid container sx={{maxWidth: '75.5rem', mt:{xs:0, md:4}, padding:2, ml: {xs: 4, sm:4, md: 8, lg:0} }} gap={{xs: 0, sm: 3, md: 4, lg:5}}>
         {shuffledTeamMembers.map((member, index) => (
-            <Grid item xs={5} sm={3.5} md={2.5} lg={2} key={index}>
+            <Grid item xs={12} sm={3.5} md={2.5} lg={2} key={index}>
                 <ProfileCard {...member} />
             </Grid>
             ))}
@@ -178,7 +178,6 @@ export default function Team() {
         alignItems: 'flex-start',
         gap: '24px',
         width: '214.4px',
-        height: '420px',
         filter: 'drop-shadow(0px 4px 100px rgba(0, 0, 0, 0.16))',
         backdropFilter: 'blur(50px)',
         borderRadius: '12px',
@@ -186,8 +185,8 @@ export default function Team() {
     >
       <Box
         sx={{
-          width: '214.4px',
-          height: '220px',
+          width: {xs: '80vw', sm: '214.4px'},
+          height: {xs: '83vw', sm: '220px'},
           backgroundImage: `url(${image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -197,117 +196,117 @@ export default function Team() {
 
         }}
       />
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '4px',
-          width: '214.4px',
-          height: '137px',
-        }}
-      >
-        <Typography
-          sx={{
-            fontWeight: '600',
-            fontSize: '16px',
-            lineHeight: '19px',
-            letterSpacing: '-0.02em',
-            color: '#FFFFFF',
-          }}
-        >
-          {name}
-        </Typography>
-        {pronouns ? <Box
+        <Box
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            gap: '8px',
-            width: '83px',
-            height: '36px',
-            background: 'rgba(255, 255, 255, 0.1)',
-            boxShadow: 'inset 0px -6px 24px rgba(255, 255, 255, 0.24)',
-            borderRadius: '100px',
-            
+            gap: '4px',
+            width: '214.4px',
+            height: '177px',
           }}
         >
           <Typography
             sx={{
-              fontWeight: '500',
-              fontSize: '14px',
-              lineHeight: '20px',
-              textAlign: 'center',
+              fontWeight: '600',
+              fontSize: '16px',
+              lineHeight: '19px',
+              letterSpacing: '-0.02em',
               color: '#FFFFFF',
             }}
           >
-            {pronouns}
+            {name}
           </Typography>
-        </Box> : <></>}
-        <Typography
-          sx={{
-            fontWeight: '500',
-            fontSize: '14px',
-            lineHeight: '22px',
-            letterSpacing: '-0.02em',
-            color: 'rgba(249, 250, 251, 0.64)',
-            width: '100%',
-          }}
-        >
-          {bio}
-        </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '0px',
-            width: '60px',
-            height: '24px',
-            marginLeft:'-8px',
-            mt:0.5,
-          }}
-        >
-        {twitter && (
-          <IconButton
-            href={twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="inherit"
+          {pronouns ? <Box
             sx={{
-              width: '40px',   // Adjust the width
-              height: '40px',  // Adjust the height
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '8px',
+              width: '83px',
+              height: '36px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              boxShadow: 'inset 0px -6px 24px rgba(255, 255, 255, 0.24)',
+              borderRadius: '100px',
+              
             }}
           >
-            <TwitterIcon />
-          </IconButton>
-        )}
-        {github && (
-          <IconButton
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="inherit"
+            <Typography
+              sx={{
+                fontWeight: '500',
+                fontSize: '14px',
+                lineHeight: '20px',
+                textAlign: 'center',
+                color: '#FFFFFF',
+              }}
+            >
+              {pronouns}
+            </Typography>
+          </Box> : <></>}
+          <Typography
             sx={{
-              width: '40px',   // Adjust the width
-              height: '40px',  // Adjust the height
+              fontWeight: '500',
+              fontSize: '14px',
+              lineHeight: '22px',
+              letterSpacing: '-0.02em',
+              color: 'rgba(249, 250, 251, 0.64)',
+              width: {xs:'80vw',sm:'100%'},
             }}
           >
-            <GitHubIcon />
-          </IconButton>
-        )}
-        {linkedin && (
-          <IconButton
-            href={linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="inherit"
+            {bio}
+          </Typography>
+          <Box
             sx={{
-              width: '40px',   // Adjust the width
-              height: '40px',  // Adjust the height
+              display: 'flex',
+              flexDirection: 'row',
+              gap: '0px',
+              width: '60px',
+              height: '24px',
+              marginLeft:'-8px',
+              mt:0.5,
             }}
           >
-            <LinkedInIcon />
-          </IconButton>
-        )}
+            {twitter && (
+              <IconButton
+                href={twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+                sx={{
+                  width: '40px',   // Adjust the width
+                  height: '40px',  // Adjust the height
+                }}
+              >
+                <TwitterIcon />
+              </IconButton>
+            )}
+            {github && (
+              <IconButton
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+                sx={{
+                  width: '40px',   // Adjust the width
+                  height: '40px',  // Adjust the height
+                }}
+              >
+                <GitHubIcon />
+              </IconButton>
+            )}
+            {linkedin && (
+              <IconButton
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                color="inherit"
+                sx={{
+                  width: '40px',   // Adjust the width
+                  height: '40px',  // Adjust the height
+                }}
+              >
+                <LinkedInIcon />
+              </IconButton>
+            )}
         </Box>
       </Box>
     </Box>
