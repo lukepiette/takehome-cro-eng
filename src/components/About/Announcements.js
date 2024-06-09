@@ -78,8 +78,8 @@ export default function Announcements() {
             href="https://blog.runpod.io/runpods-20mm-milestone-fueling-our-vision-empowering-our-team"
             target="_blank"
             sx={{
-              width: {xs:'400px', sm: '508px', md:'608px'},
-              height: '342px',
+              width: {xs:'80vw', sm: '508px', md:'608px'},
+              aspectRatio: '16/12',
               background: `url('/static/images/about/20m-fundraising-image-preview.webp') center center / cover no-repeat`,
               border: '1px solid rgba(255, 255, 255, 0.12)',
               borderRadius: '12px',
@@ -91,7 +91,7 @@ export default function Announcements() {
               display: 'flex',
               flexDirection: 'column',
               gap: '16px',
-              width: {xs:'400px', sm: '508px', md:'608px'},
+              width: {xs:'80vw', sm: '508px', md:'608px'},
             }}
           >
             <Typography
@@ -162,6 +162,7 @@ export default function Announcements() {
                   width: '0px',
                   height: '20px',
                   borderLeft: '1px solid rgba(249, 250, 251, 0.48)',
+                  display:{xs:'none',sm:'block'}
                 }}
               />
               <Typography
@@ -171,6 +172,7 @@ export default function Announcements() {
                   lineHeight: '160%',
                   letterSpacing: '-0.03em',
                   color: 'rgba(249, 250, 251, 0.48)',
+                  display:{xs:'none',sm:'block'}
                 }}
               >
                 4 Min Read
