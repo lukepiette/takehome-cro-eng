@@ -107,7 +107,7 @@ export default function Announcements() {
                 textFillColor: 'transparent',
               }}
             >
-              RunPod's $20MM Milestone: Fueling Our Vision, Empowering Our Team
+              RunPod{"'"}s $20MM Milestone: Fueling Our Vision, Empowering Our Team
             </Typography>
             <Typography
               sx={{
