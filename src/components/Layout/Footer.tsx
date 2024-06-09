@@ -56,6 +56,7 @@ export const Footer = () => (
 
       <Stack width={130}>
         <Title name="Company" />
+        <FooterLink href="/about">About</FooterLink>
         <FooterLink
           href="https://jobs.gusto.com/boards/runpod-inc-28beb0b2-4886-4575-bc81-f0e2f07a86eb"
           target="_blank"
