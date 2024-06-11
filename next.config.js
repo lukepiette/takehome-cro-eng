@@ -22,6 +22,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/endpoints",
+        destination: "https://blog.runpod.io/refocusing-core-strengths-shift-managed-ai-apis-serverless-flexibility/",
+        permanent: true,
+      },
+      {
         source: "/serverless-ai",
         destination: "/serverless-gpu",
         permanent: true,
