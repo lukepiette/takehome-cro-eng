@@ -424,15 +424,7 @@ const gpuFlexPrice = {
   80: 0.0013,
   80.9: 0.0025,
 };
-const gpuActivePrice = {
-  16: 0.00012,
-  24: 0.00016,
-  24.9: 0.00026,
-  48: 0.00029,
-  48.9: 0.00041,
-  80: 0.00078,
-  80.9: 0.0015,
-};
+
 const PricingCalculator = () => {
   const [executionTime, setExecutionTime] = useState(3);
   const [requests, setRequests] = useState(100);
@@ -446,9 +438,11 @@ const PricingCalculator = () => {
   const handleVram = (v) => () => setVram(v);
 
   const price = useMemo(() => {
-    const baseFlex = gpuFlexPrice[vram] * requests * executionTime * 0.5;
-    const baseReserved = gpuActivePrice[vram] * requests * executionTime * 0.5;
-    const coldstart = gpuFlexPrice[vram] * requests * 0.5 * 1;
+    const coldStartTime = 1;
+    const activeWorkerDiscount = 0.6;
+    const baseFlex = gpuFlexPrice[vram] * requests * 0.5 * executionTime;
+    const baseReserved = gpuFlexPrice[vram] * activeWorkerDiscount * 3600;
+    const coldstart = gpuFlexPrice[vram] * requests * 0.5 * coldStartTime;
     const total = (baseFlex + baseReserved + coldstart) * 24 * 30;
     return baseFlex <= 0 ? 0 : total;
   }, [executionTime, requests, vram]);
