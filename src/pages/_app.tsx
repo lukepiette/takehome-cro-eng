@@ -12,6 +12,8 @@ import useReferral from '@hooks/useReferral'
 import useUtm from '@hooks/useUtm'
 import useMeetingBooked from '@hooks/useMeetingBooked'
 import useReferrer from '@hooks/useReferrer'
+import React, { useEffect } from 'react';
+
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -34,6 +36,9 @@ export default function MyApp({
   const canonicalUrl = (
     `https://www.runpod.io` + (router.asPath === '/' ? '' : router.asPath)
   ).split('?')[0]
+
+  // @ts-ignore
+  useEffect(() => { window.CFQ?.push({ emit: 'pageHydrated' }) }, [])
 
   return (
     <CacheProvider value={emotionCache}>
