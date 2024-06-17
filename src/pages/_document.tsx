@@ -1,8 +1,8 @@
 import createEmotionCache from "@utils/createEmotionCache";
 import createEmotionServer from "@emotion/server/create-instance";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Script from 'next/script'
-const coframeProjectId = '66493c53a8c0cb866f5f1b35'
+// import Script from 'next/script'
+// const coframeProjectId = '66493c53a8c0cb866f5f1b35'
 
 
 export default class MyDocument extends Document {
@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           />
           <meta name="theme-color" content="#1975ff" />
           {(this.props as any).emotionStyleTags}
-          <Script strategy="beforeInteractive" src={`https://cdn.coframe.ai/cf-latest.min.js?project_id=${coframeProjectId}`} />
+          {/* <Script strategy="beforeInteractive" src={`https://cdn.coframe.ai/cf-latest.min.js?project_id=${coframeProjectId}`} />
           <Script id='coframe-setup' strategy="beforeInteractive">
             {`
               // Antiflicker: hide body until coframe:show event or 2s timeout
@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
                 waitForHydration: true,
               }});
             `}
-          </Script>
+          </Script> */}
         </Head>
         <body>
           <noscript>
