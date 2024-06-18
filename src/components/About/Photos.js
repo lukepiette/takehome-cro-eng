@@ -21,14 +21,14 @@ export default function Photos() {
         { src: '/static/images/about/tp-10.webp', aspectRatio: '16/20', size: 2 },
         { src: '/static/images/about/tp-12.webp', aspectRatio: '16/20', size: 2 },
         { src: '/static/images/about/tp-11.webp', aspectRatio: '16/20', size: 2 },
-        { src: '/static/images/about/tp-5.webp', aspectRatio: '16/20', size: 2 },
+        { src: '/static/images/about/tp-1.webp', aspectRatio: '16/20', size: 2 },
         { src: '/static/images/about/tp-4.webp', aspectRatio: '16/20', size: 2 },
 
-        { src: '/static/images/about/tp-9.webp', aspectRatio: '16/20', size: 2 },
-        { src: '/static/images/about/tp-1.webp', aspectRatio: '16/20', size: 2 },
-        { src: '/static/images/about/tp-6.webp', aspectRatio: '16/20', size: 2 },
-        { src: '/static/images/about/tp-7.webp', aspectRatio: '16/20', size: 2 },
-        { src: '/static/images/about/tp-8.webp', aspectRatio: '16/20', size: 2 },
+        // { src: '/static/images/about/tp-5.webp', aspectRatio: '16/20', size: 2 },
+        // { src: '/static/images/about/tp-9.webp', aspectRatio: '16/20', size: 2 },
+        // { src: '/static/images/about/tp-6.webp', aspectRatio: '16/20', size: 2 },
+        // { src: '/static/images/about/tp-7.webp', aspectRatio: '16/20', size: 2 },
+        // { src: '/static/images/about/tp-8.webp', aspectRatio: '16/20', size: 2 },
 
 
         // { src: '/static/images/about/tp-14.webp', aspectRatio: '16/20', size: 2 },
