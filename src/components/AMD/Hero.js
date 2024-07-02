@@ -101,8 +101,8 @@ export default function Hero() {
                   sx={{ borderColor: pulseColor, color: "white", mt: 2 }}
                   endIcon={<KeyboardArrowRightIcon />}
                 >
-                  Reserve
-                  <Typography display={{ xs: "none", md: "inline-block" }}>&nbsp;MI300X</Typography>
+                  MI300X
+                  <Typography display={{ xs: "none", md: "inline-block" }}>&nbsp;On-Demand</Typography>
                 </Button>
               </Stack>
               <Stack>
@@ -118,8 +118,8 @@ export default function Hero() {
                   sx={{ borderColor: pulseColor, color: "white", mt: 2 }}
                   endIcon={<KeyboardArrowRightIcon />}
                 >
-                  Reserve
-                  <Typography display={{ xs: "none", md: "inline-block" }}>&nbsp;MI250</Typography>
+                  MI250
+                  <Typography display={{ xs: "none", md: "inline-block" }}>&nbsp;On-Demand</Typography>
                 </Button>
               </Stack>
             </Stack>

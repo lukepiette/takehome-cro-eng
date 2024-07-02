@@ -34,9 +34,10 @@ export default function MyApp({
   const router = useRouter()
 
   const canonicalUrl = (
-    `https://www.runpod.io` + (router.asPath === '/' ? '' : router.asPath)
+    `https://www.runpod.io` + (router.asPath === '/' || router.asPath === '/index' ? '' : router.asPath)
   ).split('?')[0]
 
+  
   // @ts-ignore
   // useEffect(() => { window.CFQ?.push({ emit: 'pageHydrated' }) }, [])
 
