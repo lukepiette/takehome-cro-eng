@@ -28,17 +28,17 @@ const ScaleAMDGPUs = () => {
           sx={{ borderColor: pulseColor, color: "white", marginRight: 2 }}
           endIcon={<KeyboardArrowRightIcon />}
         >
-          Reserve MI300X GPUs
+          Deploy MI300X GPUs
         </Button>
-        <Button
+        {/* <Button
           href={"https://meetings.runpod.io/meetings/runpod/amd-mi250-interest"}
           variant="outlined"
           size="large"
           sx={{ borderColor: pulseColor, color: "white" }}
           endIcon={<KeyboardArrowRightIcon />}
         >
-          Reserve MI250 GPUs
-        </Button>
+          Deploy MI250 GPUs
+        </Button> */}
       </Stack>
     </Stack>
   )
