@@ -30,7 +30,7 @@ const ScaleAMDGPUs = () => {
         >
           Deploy MI300X GPUs
         </Button>
-        <Button
+        {/* <Button
           href={"https://meetings.runpod.io/meetings/runpod/amd-mi250-interest"}
           variant="outlined"
           size="large"
@@ -38,7 +38,7 @@ const ScaleAMDGPUs = () => {
           endIcon={<KeyboardArrowRightIcon />}
         >
           Deploy MI250 GPUs
-        </Button>
+        </Button> */}
       </Stack>
     </Stack>
   )

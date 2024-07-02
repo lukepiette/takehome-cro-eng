@@ -95,13 +95,13 @@ export default function Hero() {
                 <Typography fontSize={{ xs: 15, sm: 16 }}>192 GB</Typography>
                 <Typography fontSize={{ xs: 15, sm: 16 }}>3.2 Tbps Network</Typography>
                 <Button
-                  href={"https://meetings.runpod.io/meetings/runpod/amd-mi300x-interest"}
+                  href={"https://www.runpod.io/console/deploy"}
                   variant="outlined"
                   size="large"
                   sx={{ borderColor: pulseColor, color: "white", mt: 2 }}
                   endIcon={<KeyboardArrowRightIcon />}
                 >
-                  MI300X
+                  Deploy
                   <Typography display={{ xs: "none", md: "inline-block" }}>&nbsp;On-Demand</Typography>
                 </Button>
               </Stack>
@@ -111,16 +111,16 @@ export default function Hero() {
                 </Typography>
                 <Typography fontSize={{ xs: 15, sm: 16 }}>128 GB</Typography>
                 <Typography fontSize={{ xs: 15, sm: 16 }}>1.6 Tbps Network</Typography>
-                <Button
+                {/* <Button
                   href={"https://meetings.runpod.io/meetings/runpod/amd-mi250-interest"}
                   variant="outlined"
                   size="large"
                   sx={{ borderColor: pulseColor, color: "white", mt: 2 }}
                   endIcon={<KeyboardArrowRightIcon />}
                 >
-                  MI250
-                  <Typography display={{ xs: "none", md: "inline-block" }}>&nbsp;On-Demand</Typography>
-                </Button>
+                  Reserve
+                  <Typography display={{ xs: "none", md: "inline-block" }}>&nbsp;MI250</Typography>
+                </Button> */}
               </Stack>
             </Stack>
           </Stack>

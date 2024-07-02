@@ -42,18 +42,28 @@ const MI300X = () => {
 
         <Stack direction="row" spacing={{ xs: 0, sm: 8, md: 12, lg: 20 }}>
           <Stack direction="column" justifyContent={{ xs: "center", md: "start" }}>
+            <Typography fontSize={18} mt={2}>
+              On-Demand MI300X GPUs available.
+            </Typography>
+            <Typography fontSize={15} variant="subtitle1">
+              Scale up to hundreds of MI300X on-demand.
+            </Typography>
+
+            <Button
+              href={"https://www.runpod.io/console/deploy"}
+              variant="outlined"
+              size="large"
+              sx={{ borderColor: pulseColor, color: "white", mt: 3, width: 215 }}
+              endIcon={<KeyboardArrowRightIcon />}
+            >
+              Deploy On-Demand
+            </Button>
+
             <Typography fontSize={18} mt={3}>
               1-month to 3-year reservations available.
             </Typography>
             <Typography fontSize={15} variant="subtitle1">
               Schedule a time with our team to learn more.
-            </Typography>
-
-            <Typography fontSize={18} mt={2}>
-              On-Demand options coming soon.
-            </Typography>
-            <Typography fontSize={15} variant="subtitle1">
-              Arriving as early as April 2024.
             </Typography>
 
             <Button
@@ -63,8 +73,9 @@ const MI300X = () => {
               sx={{ borderColor: pulseColor, color: "white", mt: 3, width: 175 }}
               endIcon={<KeyboardArrowRightIcon />}
             >
-              Reserve Now
+              Book a Call
             </Button>
+
 
             <Stack
               alignItems="center"
@@ -299,7 +310,7 @@ const MI250 = () => (
             On-Demand options coming soon.
           </Typography>
           <Typography fontSize={15} variant="subtitle1">
-            Arriving as early as April 2024.
+            Arriving as early as August 2024.
           </Typography>
 
           <Button
@@ -309,7 +320,7 @@ const MI250 = () => (
             sx={{ borderColor: pulseColor, color: "white", mt: 3, width: 175 }}
             endIcon={<KeyboardArrowRightIcon />}
           >
-            Reserve Now
+            Book a Call
           </Button>
 
           <Stack
