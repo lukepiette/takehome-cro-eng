@@ -12,7 +12,7 @@ import useReferral from '@hooks/useReferral'
 import useUtm from '@hooks/useUtm'
 import useMeetingBooked from '@hooks/useMeetingBooked'
 import useReferrer from '@hooks/useReferrer'
-// import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 
 const clientSideEmotionCache = createEmotionCache()
@@ -39,7 +39,7 @@ export default function MyApp({
 
   
   // @ts-ignore
-  // useEffect(() => { window.CFQ?.push({ emit: 'pageHydrated' }) }, [])
+  useEffect(() => { window.CFQ?.push({ emit: 'pageHydrated' }) }, [])
 
   return (
     <CacheProvider value={emotionCache}>
