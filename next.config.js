@@ -1,124 +1,129 @@
 /** @type {import('next').NextConfig} */
-const { CONSOLE_URL } = process.env;
+const { CONSOLE_URL } = process.env
 
 const nextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)",
+        source: '/(.*)',
         headers: [
           {
-            key: "X-Frame-Options",
-            value: "DENY",
+            key: 'X-Frame-Options',
+            value: 'DENY',
           },
           {
-            key: "Content-Security-Policy",
+            key: 'Content-Security-Policy',
             value: "frame-ancestors 'self'",
           },
         ],
       },
-    ];
+    ]
   },
   async redirects() {
     return [
       {
-        source: "/endpoints",
-        destination: "https://blog.runpod.io/refocusing-core-strengths-shift-managed-ai-apis-serverless-flexibility/",
+        source: '/endpoints',
+        destination:
+          'https://blog.runpod.io/refocusing-core-strengths-shift-managed-ai-apis-serverless-flexibility/',
         permanent: true,
       },
       {
-        source: "/serverless-ai",
-        destination: "/serverless-gpu",
+        source: '/serverless-ai',
+        destination: '/serverless-gpu',
         permanent: true,
       },
       {
-        source: "/gsc",
-        destination: "/console/gpu-cloud",
+        source: '/gsc',
+        destination: '/console/gpu-cloud',
         permanent: true,
       },
       {
-        source: "/my-pods",
-        destination: "/console/pods",
+        source: '/my-pods',
+        destination: '/console/pods',
         permanent: true,
       },
       {
-        source: "/gpu-secure-cloud",
-        destination: "/console/gpu-cloud",
+        source: '/gpu-secure-cloud',
+        destination: '/console/gpu-cloud',
         permanent: true,
       },
       {
-        source: "/gpu-browse",
-        destination: "/console/gpu-browse",
+        source: '/gpu-browse',
+        destination: '/console/gpu-browse',
         permanent: true,
       },
       {
-        source: "/host/machines",
-        destination: "/console/host/machines",
+        source: '/host/machines',
+        destination: '/console/host/machines',
         permanent: true,
       },
       {
-        source: "/client/payment-success",
-        destination: "/console/client/payment-success",
+        source: '/client/payment-success',
+        destination: '/console/client/payment-success',
         permanent: true,
       },
       {
-        source: "/client/crypto-payment-success",
-        destination: "/console/client/crypto-payment-success",
+        source: '/client/crypto-payment-success',
+        destination: '/console/client/crypto-payment-success',
         permanent: true,
       },
       {
-        source: "/faq",
-        destination: "/docs/faq",
+        source: '/faq',
+        destination: '/docs/faq',
         permanent: true,
       },
       {
-        source: "/recipes",
-        destination: "/blog/tag/recipes",
+        source: '/recipes',
+        destination: '/blog/tag/recipes',
         permanent: true,
-      },
-      {
-        permanent: true,
-        basePath: false,
-        source: "/blog/:slug",
-        destination: "https://blog.runpod.io/:slug",
       },
       {
         permanent: true,
         basePath: false,
-        source: "/blog",
-        destination: "https://blog.runpod.io",
+        source: '/blog/:slug',
+        destination: 'https://blog.runpod.io/:slug',
       },
-    ];
+      {
+        permanent: true,
+        basePath: false,
+        source: '/blog',
+        destination: 'https://blog.runpod.io',
+      },
+    ]
   },
   async rewrites() {
     return [
       {
-        source: "/:path*",
+        source: '/:path*',
         destination: `/:path*`,
       },
       {
-        source: "/console",
+        source: '/console',
         destination: `${CONSOLE_URL}/console`,
       },
       {
-        source: "/console/:path*",
+        source: '/console/:path*',
         destination: `${CONSOLE_URL}/console/:path*`,
       },
-    ];
+      {
+        source: '/contact',
+        destination: 'https://contact.runpod.io',
+      },
+    ]
   },
   reactStrictMode: true,
-  images: { domains: ["imagedelivery.net"] },
+  images: { domains: ['imagedelivery.net'] },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
-    });
-    return config;
+      use: ['@svgr/webpack'],
+    })
+    return config
   },
-};
+}
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = withBundleAnalyzer(nextConfig)
