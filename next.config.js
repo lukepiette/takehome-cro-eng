@@ -89,6 +89,12 @@ const nextConfig = {
         source: '/blog',
         destination: 'https://blog.runpod.io',
       },
+      {
+        permanent: true,
+        basePath: false,
+        source: '/contact',
+        destination: 'https://contact.runpod.io',
+      },
     ]
   },
   async rewrites() {
@@ -104,10 +110,6 @@ const nextConfig = {
       {
         source: '/console/:path*',
         destination: `${CONSOLE_URL}/console/:path*`,
-      },
-      {
-        source: '/contact',
-        destination: 'https://contact.runpod.io',
       },
     ]
   },
