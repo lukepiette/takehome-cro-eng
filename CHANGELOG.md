@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.1](https://github.com/runpod/landing-ui/compare/v1.3.0...v1.3.1) (2024-07-10)
+
+
+### Bug Fixes
+
+* remove gpu server ([90cc7bf](https://github.com/runpod/landing-ui/commit/90cc7bf5f18a714e7c6cfe80d6aaba007c024ad3))
+* typo on A500 ([ddc5932](https://github.com/runpod/landing-ui/commit/ddc5932106f6621212b360a55b5e0613b65d18f0))
+
 ## [1.3.0](https://github.com/runpod/landing-ui/compare/v1.2.2...v1.3.0) (2024-05-14)
 
 
