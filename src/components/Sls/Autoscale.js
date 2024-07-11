@@ -1,11 +1,8 @@
 import { Box, Stack, Typography } from "@mui/material";
-import ButtonLink from "@components/ButtonLink";
 import CheckIcon from "@mui/icons-material/Check";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import LaunchIcon from "@mui/icons-material/Launch";
 import Link from "next/link";
-import SignUp from "@components/SignUpButton"
-
+import SignUp from "@components/SignUpButton";
 
 export default function Autoscale() {
   return (
@@ -54,11 +51,16 @@ export default function Autoscale() {
         mt={3}
         px={2}
       >
-        For your expected load, provision active workers running 24/7 with a 40%
+        For your expected load, provision active workers running 24/7 with a 30%
         discount &amp; flex workers to handle any sudden traffic.
       </Typography>
 
-      <SignUp text="Try it now" url="/console/serverless" utmContent="serverless-autoscale" my={3} />
+      <SignUp
+        text="Try it now"
+        url="/console/serverless"
+        utmContent="serverless-autoscale"
+        my={3}
+      />
 
       <Stack
         alignItems="center"

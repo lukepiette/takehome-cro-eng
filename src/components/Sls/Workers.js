@@ -40,7 +40,7 @@ export default function Autoscale() {
               px={0.8}
               py={0.4}
             >
-              -40% DISCOUNT
+              -30% DISCOUNT
             </Typography>
           </Stack>
           <Typography
@@ -135,8 +135,8 @@ export default function Autoscale() {
             letterSpacing={-0.25}
             mt={1}
           >
-            Flashboot is an optimization layer for our container system to manage
-            deployments and scale up workers in real time.
+            Flashboot is an optimization layer for our container system to
+            manage deployments and scale up workers in real time.
           </Typography>
         </Stack>
       </Stack>

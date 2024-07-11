@@ -1,7 +1,6 @@
 import { Stack } from "@mui/material";
 import Analytics from "./Analytics";
 import Autoscale from "./Autoscale";
-import Community from "./Community";
 import Counter from "./Counter";
 import Footer from "./Footer";
 import Hero from "./Hero";
@@ -16,9 +15,8 @@ export default function Serverless({ data }) {
       <Autoscale />
       <Workers />
       <Analytics />
-      <Pricing />
+      <Pricing title1="Cost effective" title2="for every inference workload" />
       <Startup />
-      {/* <Community /> */}
       <Counter data={data} />
       <Footer />
     </Stack>
