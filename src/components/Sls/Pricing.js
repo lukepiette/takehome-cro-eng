@@ -14,6 +14,25 @@ import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import SignUp from "@components/SignUpButton";
 
+const gpuActivePrice = {
+  16: 0.4,
+  24: 0.46,
+  24.9: 0.77,
+  48: 0.85,
+  48.9: 1.33,
+  80: 2.17,
+  80.9: 4.47,
+};
+const gpuFlexPrice = {
+  16: 0.58,
+  24: 0.66,
+  24.9: 1.1,
+  48: 1.22,
+  48.9: 1.9,
+  80: 2.72,
+  80.9: 5.59,
+};
+
 export default function Pricing({ slim, title1, title2 }) {
   const [priceType, setPriceType] = useState("Second");
 
@@ -181,8 +200,8 @@ export default function Pricing({ slim, title1, title2 }) {
           <GpuBox
             name="A100"
             perSecond={priceType == "Second"}
-            priceActive={2.23}
-            priceFlex={2.79}
+            priceActive={gpuActivePrice[80]}
+            priceFlex={gpuFlexPrice[80]}
             vram={80}
           >
             High throughput GPU, yet still very cost-effective.
@@ -190,8 +209,8 @@ export default function Pricing({ slim, title1, title2 }) {
           <GpuBox
             name="H100"
             perSecond={priceType == "Second"}
-            priceActive={4.47}
-            priceFlex={5.59}
+            priceActive={gpuActivePrice[80.9]}
+            priceFlex={gpuFlexPrice[80.9]}
             pro
             vram={80}
           >
@@ -200,8 +219,8 @@ export default function Pricing({ slim, title1, title2 }) {
           <GpuBox
             name="A6000"
             perSecond={priceType == "Second"}
-            priceActive={0.85}
-            priceFlex={1.22}
+            priceActive={gpuActivePrice[48]}
+            priceFlex={gpuFlexPrice[48]}
             vram={48}
           >
             A cost-effective option for running big models.
@@ -209,8 +228,8 @@ export default function Pricing({ slim, title1, title2 }) {
           <GpuBox
             name="L40"
             perSecond={priceType == "Second"}
-            priceActive={1.22}
-            priceFlex={1.74}
+            priceActive={gpuActivePrice[48.9]}
+            priceFlex={gpuFlexPrice[48.9]}
             pro
             vram={48}
           >
@@ -219,8 +238,8 @@ export default function Pricing({ slim, title1, title2 }) {
           <GpuBox
             name="A5000"
             perSecond={priceType == "Second"}
-            priceActive={0.46}
-            priceFlex={0.66}
+            priceActive={gpuActivePrice[24]}
+            priceFlex={gpuFlexPrice[24]}
             vram={24}
           >
             Great for small-to-medium sized inference workloads.
@@ -228,8 +247,8 @@ export default function Pricing({ slim, title1, title2 }) {
           <GpuBox
             name="4090"
             perSecond={priceType == "Second"}
-            priceActive={0.77}
-            priceFlex={1.1}
+            priceActive={gpuActivePrice[24.9]}
+            priceFlex={gpuFlexPrice[24.9]}
             pro
             vram={24}
           >
@@ -239,8 +258,8 @@ export default function Pricing({ slim, title1, title2 }) {
             last
             name="A4000"
             perSecond={priceType == "Second"}
-            priceActive={0.4}
-            priceFlex={0.58}
+            priceActive={gpuActivePrice[16]}
+            priceFlex={gpuFlexPrice[16]}
             vram={16}
           >
             The most cost-effective for small models.
@@ -464,25 +483,6 @@ const GpuBox = ({
     </Stack>
   </Stack>
 );
-
-const gpuActivePrice = {
-  16: 0.4,
-  24: 0.46,
-  24.9: 0.77,
-  48: 0.85,
-  48.9: 1.22,
-  80: 2.23,
-  80.9: 4.47,
-};
-const gpuFlexPrice = {
-  16: 0.58,
-  24: 0.66,
-  24.9: 1.1,
-  48: 1.22,
-  48.9: 1.74,
-  80: 2.79,
-  80.9: 5.59,
-};
 
 const PricingCalculator = () => {
   const [executionTime, setExecutionTime] = useState(3);
