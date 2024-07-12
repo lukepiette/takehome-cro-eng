@@ -24,7 +24,7 @@ const InstancePricingPage: NextPage = ({ data }: any) => (
         content="RunPod pricing for GPU Instances, Storage, and Serverless."
       />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.runpod.io/gpu-instance/pricing" />
+      <meta property="og:url" content="https://www.runpod.io/pricing" />
       <meta
         property="og:image"
         content="https://www.runpod.io/static/images/pricing-preview.webp"
