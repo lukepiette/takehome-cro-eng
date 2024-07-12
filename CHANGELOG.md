@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/runpod/landing-ui/compare/v1.4.0...v1.5.0) (2024-07-12)
+
+
+### Features
+
+* update sls 24gb pricing ([9923400](https://github.com/runpod/landing-ui/commit/9923400d636c2fa0e406285a9edc60c620fb2d4d))
+
 ## [1.4.0](https://github.com/runpod/landing-ui/compare/v1.3.1...v1.4.0) (2024-07-12)
 
 
