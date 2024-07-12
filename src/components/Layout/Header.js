@@ -196,7 +196,8 @@ export default function Home() {
             height={"100%"}
             gap={{
               xs: 1,
-              md: 2,
+              md: 1.5,
+              lg: 2,
             }}
             paddingY={1}
             alignItems={"center"}
@@ -214,22 +215,10 @@ export default function Home() {
                 background: "rgba(255, 255, 255, 0.1)",
               }}
             >
-              <FavoriteIcon sx={{ color: "#fff", fontSize: "12px" }} />
+              <FavoriteIcon sx={{ color: "#fff", fontSize: 15 }} />
             </Stack>
 
-            <Typography>
-              We raised 20M to revolutionize AI/ML cloud computing
-            </Typography>
-
-            {/* <Typography
-              display={{
-                xs: "block",
-                md: "none",
-              }}
-              fontSize={11}
-            >
-              We raised $20M to revolutionize AI in the cloud
-            </Typography> */}
+            <Typography>New pricing: More AI power, less cost!</Typography>
 
             <div
               style={{
@@ -242,7 +231,9 @@ export default function Home() {
 
             {isSmall ? (
               <Link
-                href={"/"}
+                href={
+                  "http://blog.runpod.io/runpod-slashes-gpu-prices-powering-your-ai-applications-for-less"
+                }
                 style={{
                   textDecoration: "none",
                   color: "inherit",
@@ -254,7 +245,7 @@ export default function Home() {
               </Link>
             ) : (
               <ButtonLink
-                href="https://blog.runpod.io/runpods-20mm-milestone-fueling-our-vision-empowering-our-team/"
+                href="http://blog.runpod.io/runpod-slashes-gpu-prices-powering-your-ai-applications-for-less"
                 variant="text"
                 target="_blank"
                 sx={{
