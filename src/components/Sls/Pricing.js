@@ -16,7 +16,7 @@ import SignUp from "@components/SignUpButton";
 
 const gpuActivePrice = {
   16: 0.4,
-  24: 0.46,
+  24: 0.48,
   24.9: 0.77,
   48: 0.85,
   48.9: 1.33,
@@ -25,7 +25,7 @@ const gpuActivePrice = {
 };
 const gpuFlexPrice = {
   16: 0.58,
-  24: 0.66,
+  24: 0.69,
   24.9: 1.1,
   48: 1.22,
   48.9: 1.9,
