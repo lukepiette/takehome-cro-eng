@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.4.0](https://github.com/runpod/landing-ui/compare/v1.3.1...v1.4.0) (2024-07-12)
+
+
+### Features
+
+* move pricing page to root ([3b46928](https://github.com/runpod/landing-ui/commit/3b4692853deb8b876c5927e4d9f9aa0d37ceeac2))
+* update banner with less code blog url ([090b6a4](https://github.com/runpod/landing-ui/commit/090b6a44a35ae70f0c1cefd1605dd22156182255))
+* update new sls pricing ([5b3626c](https://github.com/runpod/landing-ui/commit/5b3626ca8367af14ceb70754ceb001d6169f4164))
+* update new sls pricing ([2ce13c8](https://github.com/runpod/landing-ui/commit/2ce13c888d0a16daa093f7c26b855b2a9fc53005))
+
 ## [1.3.1](https://github.com/runpod/landing-ui/compare/v1.3.0...v1.3.1) (2024-07-10)
 
 
