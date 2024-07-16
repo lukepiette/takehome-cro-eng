@@ -12,8 +12,22 @@ import useReferral from '@hooks/useReferral'
 import useUtm from '@hooks/useUtm'
 import useMeetingBooked from '@hooks/useMeetingBooked'
 import useReferrer from '@hooks/useReferrer'
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
+import { datadogRum } from '@datadog/browser-rum'
+datadogRum.init({
+  applicationId: '9646f322-a150-48e3-921e-0eaa8c688bf3',
+  clientToken: 'pube3c053eff42fbe401deb7e312aa9b9f5',
+  site: 'datadoghq.com',
+  service: 'www',
+  env: 'prod',
+  defaultPrivacyLevel: 'mask-user-input',
+  sessionSampleRate: 100,
+  sessionReplaySampleRate: 20,
+  trackUserInteractions: true,
+  trackResources: true,
+  trackLongTasks: true,
+})
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -34,12 +48,14 @@ export default function MyApp({
   const router = useRouter()
 
   const canonicalUrl = (
-    `https://www.runpod.io` + (router.asPath === '/' || router.asPath === '/index' ? '' : router.asPath)
+    `https://www.runpod.io` +
+    (router.asPath === '/' || router.asPath === '/index' ? '' : router.asPath)
   ).split('?')[0]
 
-  
-  // @ts-ignore
-  useEffect(() => { window.CFQ?.push({ emit: 'pageHydrated' }) }, [])
+  useEffect(() => {
+    // @ts-expect-error
+    window.CFQ?.push({ emit: 'pageHydrated' })
+  }, [])
 
   return (
     <CacheProvider value={emotionCache}>
