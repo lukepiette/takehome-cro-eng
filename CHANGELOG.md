@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/runpod/landing-ui/compare/v1.5.0...v1.6.0) (2024-07-16)
+
+
+### Features
+
+* datadog ([#99](https://github.com/runpod/landing-ui/issues/99)) ([4b88bc1](https://github.com/runpod/landing-ui/commit/4b88bc1af2e6e7f7cc0b91e203734a816d422245))
+
 ## [1.5.0](https://github.com/runpod/landing-ui/compare/v1.4.0...v1.5.0) (2024-07-12)
 
 
