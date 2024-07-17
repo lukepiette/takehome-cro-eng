@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/runpod/landing-ui/compare/v1.6.0...v1.6.1) (2024-07-17)
+
+
+### Bug Fixes
+
+* pre-render error ([#101](https://github.com/runpod/landing-ui/issues/101)) ([d9c3c96](https://github.com/runpod/landing-ui/commit/d9c3c96f99aea88d59d76b96dd774a24e29fbaff))
+
 ## [1.6.0](https://github.com/runpod/landing-ui/compare/v1.5.0...v1.6.0) (2024-07-16)
 
 
