@@ -39,10 +39,11 @@ export default function ReferralInfo() {
 
       <Stack
         alignItems={"center"}
-        direction={{ xs: "column", md: "row" }}
+        direction={{ xs: "column", sm: "column", md: "row" }}
         justifyContent="center"
         my={6}
         spacing={6}
+        padding={4}
       >
         <Stack sx={{padding:5,borderRadius:5, backgroundImage:"url(/static/images/gpu/gpu-background-middle.webp)"}}>
           <Typography align={"center"} sx={{ fontSize: 20, mb: 5 }}>
