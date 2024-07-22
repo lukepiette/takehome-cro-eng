@@ -250,7 +250,7 @@ export default function ReferralInfo() {
           fontSize={12}
           sx={{ maxWidth: 350, mt: 5 }}
         >
-          <strong>Note</strong>: Any fraud, including breaking RunPod TOS or epxloiting the referral program may lead to being banned from all 3 referral programs.
+          <strong>Note</strong>: Any fraud, including breaking RunPod TOS or exploiting the referral program may lead to being banned from all 3 referral programs.
         </Typography>
       </Stack>
     </>
