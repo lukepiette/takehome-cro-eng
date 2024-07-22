@@ -45,7 +45,7 @@ export default function ReferralInfo() {
         spacing={6}
         padding={4}
       >
-        <Stack sx={{padding:5,borderRadius:5, backgroundImage:"url(/static/images/gpu/gpu-background-middle.webp)"}}>
+        <Stack sx={{padding:5,borderRadius:5, border:"2px solid white", backgroundImage:"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/images/gpu/gpu-background-middle.webp)", }}>
           <Typography align={"center"} sx={{ fontSize: 20, mb: 5 }}>
             Pod Referral Program{" "}
             <Typography color="primary" display="inline-block" sx={{ fontSize: 14 }}>
@@ -117,7 +117,7 @@ export default function ReferralInfo() {
             Program runs until December 31, 2024. Referrals must be new RunPod accounts for commission to qualify.
           </Typography>
         </Stack>
-        <Stack sx={{padding:5,borderRadius:5, backgroundImage:"url(/static/images/gpu/gpu-background-top.webp)"}}>
+        <Stack sx={{padding:5,borderRadius:5, border:"2px solid white", backgroundImage:"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/images/gpu/gpu-background-top.webp)"}}>
           <Typography align={"center"} sx={{ fontSize: 20, mb: 5 }}>
             Serverless Referral Program{" "}
             <Typography color="primary" display="inline-block" sx={{ fontSize: 14 }}>
@@ -173,7 +173,7 @@ export default function ReferralInfo() {
             Program runs until December 31, 2024. Referrals must be new RunPod accounts for commission to qualify.
           </Typography>
         </Stack>
-        <Stack sx={{padding:5,borderRadius:5, backgroundImage:"url(/static/images/gpu/gpu-background-middle.webp)"}}>
+        <Stack sx={{padding:5,borderRadius:5, border:"2px solid white", backgroundImage:"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/images/gpu/gpu-background-middle.webp)"}}>
           <Typography align={"center"} sx={{ fontSize: 20, mb: 5 }}>
           Template Referral Program{" "}
             <Typography color="primary" display="inline-block" sx={{ fontSize: 14 }}>
