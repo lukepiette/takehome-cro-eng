@@ -1,11 +1,14 @@
-import type { NextPage } from "next"
+import type { GetStaticProps, NextPage } from "next"
 import Head from "next/head"
 
 // import { GET_GPU_TYPES } from "@components/InstancePricing/query"
 // import apolloClient from "@utils/apolloClient"
 import Overview from "@components/GPU/MI300X"
 
-const Home: NextPage = () => (
+import { GET_GPU_TYPE_INFO } from "@components/InstancePricing/query"
+import apolloClient from "@utils/apolloClient"
+
+const Home: NextPage = ({ data }: any) => (
   <>
     <Head>
       <title>Rent AMD MI300X 192GB GPUs On-Demand</title>
@@ -26,10 +29,30 @@ const Home: NextPage = () => (
       <meta name="twitter:description" content="Rent high-performance Nvidia AMD MI300X 192GB GPUs on-demand. Perfect for running Machine Learning workloads." />
       <meta name="twitter:image" content="https://www.runpod.io/static/images/gpu/preview/mi300x-preview-image.webp" />
     </Head>
-    <Overview />
+    <Overview data={data} />
 
   </>
 )
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await apolloClient.query({
+    query: GET_GPU_TYPE_INFO,
+    variables: {
+      lowestPriceInput: { gpuCount: 1 },
+    },
+  });
+
+  const gpu = data?.gpuTypes?.reduce((sum: any, v: any) => {
+    sum[v.id] = v;
+    return sum;
+  }, {});
+
+  return {
+    props: { data: { gpu } },
+    revalidate: process.env.VERCEL_ENV === "production" ? 600 : 30,
+  };
+};
+
 
 
 export default Home
