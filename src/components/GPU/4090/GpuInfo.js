@@ -33,4 +33,5 @@ const GpuInfo = {
     }
 }
 
+
 export default GpuInfo

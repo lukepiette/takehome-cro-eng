@@ -19,8 +19,8 @@ const GpuInfo = {
         price: "$4.89/hr",
         price3Month: "Book a call",
         price6Month: "Book a call",
-        price12Month: "$3.25/hr",
-        price36Month: "$2.45/hr",
+        price12Month: "Book a call",
+        price36Month: "Book a call",
     },
     comparedTo: {
         name: "H100 SXM",

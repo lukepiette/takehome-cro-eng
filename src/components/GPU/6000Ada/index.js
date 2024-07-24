@@ -10,8 +10,19 @@ import GpuInfo from "./GpuInfo"
 // import { GET_GPU_TYPES } from "@components/InstancePricing/query"
 // import apolloClient from "@utils/apolloClient"
 
+export default function Overview({ data }) {
+  // Extract prices from data if available
+  const securePrice = data?.gpu["NVIDIA RTX 6000 Ada Generation"]?.securePrice?.toFixed(2);
+  const communityPrice = data?.gpu["NVIDIA RTX 6000 Ada Generation"]?.communityPrice?.toFixed(2);
 
-export default function Overview() {
+  // Update GpuInfo with the formatted prices if they exist
+  if (securePrice) {
+    GpuInfo.secure.price = `$${securePrice}/hr`;
+  }
+  if (communityPrice) {
+    GpuInfo.community.price = `$${communityPrice}/hr`;
+  }
+  
   return (
     <Container
       sx={{

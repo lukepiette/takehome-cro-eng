@@ -11,7 +11,15 @@ import GpuInfo from "./GpuInfo"
 // import apolloClient from "@utils/apolloClient"
 
 
-export default function Overview() {
+export default function Overview({ data }) {
+  // Extract prices from data if available
+  const securePrice = data?.gpu["AMD Instinct MI300X OAM"]?.securePrice?.toFixed(2);
+
+  // Update GpuInfo with the formatted prices if they exist
+  if (securePrice) {
+    GpuInfo.info.price = `$${securePrice}/hr`;
+  }
+
   return (
     <Container
       sx={{

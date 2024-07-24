@@ -11,7 +11,19 @@ import GpuInfo from "./GpuInfo"
 // import apolloClient from "@utils/apolloClient"
 
 
-export default function Overview() {
+export default function Overview({ data }) {
+  // Extract prices from data if available
+  const securePrice = data?.gpu["NVIDIA RTX A6000"]?.securePrice?.toFixed(2);
+  const communityPrice = data?.gpu["NVIDIA RTX A6000"]?.communityPrice?.toFixed(2);
+
+  // Update GpuInfo with the formatted prices if they exist
+  if (securePrice) {
+    GpuInfo.secure.price = `$${securePrice}/hr`;
+  }
+  if (communityPrice) {
+    GpuInfo.community.price = `$${communityPrice}/hr`;
+  }
+
   return (
     <Container
       sx={{

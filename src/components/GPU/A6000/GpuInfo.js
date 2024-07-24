@@ -9,8 +9,8 @@ const GpuInfo = {
     gpuImageLg: 550,
     secure: {
         price: "$0.79/hr",
-        price3Month: "$0.71/hr",
-        price6Month: "$0.67/hr",
+        price3Month: "Book a call",
+        price6Month: "Book a call",
         price12Month: "Book a call",
         price36Month: "Book a call",
         VRAM: "48 GB",
