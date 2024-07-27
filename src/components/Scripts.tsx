@@ -1,4 +1,4 @@
-import Script from "next/script"
+import Script from "next/script";
 
 export default function Scripts() {
   return (
@@ -30,5 +30,5 @@ export default function Scripts() {
         strategy="lazyOnload"
       />
     </>
-  )
+  );
 }
