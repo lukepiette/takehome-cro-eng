@@ -26,9 +26,10 @@ export default function useReferral() {
     }
   }, [router]);
 
-  if (process.env.NEXT_PUBLIC_DEV && refId !== "runpod") {
-    return false;
-  } else {
-    return true;
-  }
+  return true;
+  // if (process.env.NEXT_PUBLIC_DEV && refId !== "runpod") {
+  //   return false;
+  // } else {
+  //   return true;
+  // }
 }
