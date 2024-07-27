@@ -41,7 +41,7 @@ const Home: NextPage = ({ data = null }: any) => (
         content="https://www.runpod.io/static/images/home-page-preview-image.webp"
       />
     </Head>
-    <Homepage data={data} />
+    {/* <Homepage data={data} /> */}
   </>
 );
 
