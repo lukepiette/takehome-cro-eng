@@ -19,8 +19,10 @@ export default function useReferral() {
       const referralId = window.localStorage.getItem("runpodReferralId");
       setRefId(referralId);
 
-      // if (process.env.NEXT_PUBLIC_DEV && referralId !== "runpod")
-      // window.location.replace("https://www.runpod.io" + window.location.pathname)
+      if (process.env.NEXT_PUBLIC_DEV && referralId !== "runpod")
+        window.location.replace(
+          "https://www.runpod.io" + window.location.pathname
+        );
     }
   }, [router]);
 
