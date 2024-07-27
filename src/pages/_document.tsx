@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           />
           <meta name="theme-color" content="#1975ff" />
           {(this.props as any).emotionStyleTags}
-          {/* <Script
+          <Script
             strategy="beforeInteractive"
             src={`https://cdn.coframe.ai/cf-latest.min.js?project_id=${coframeProjectId}`}
           />
@@ -39,7 +39,7 @@ export default class MyDocument extends Document {
               }});
             `}
           </Script>
-          <Scripts /> */}
+          <Scripts />
         </Head>
         <body>
           <noscript>
