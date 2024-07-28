@@ -18,10 +18,11 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#1975ff" />
           {(this.props as any).emotionStyleTags}
           <Script
+            async
             strategy="beforeInteractive"
             src={`https://cdn.coframe.ai/cf-latest.min.js?project_id=${coframeProjectId}`}
           />
-          <Script id="coframe-setup" strategy="beforeInteractive">
+          <Script async id="coframe-setup" strategy="beforeInteractive">
             {`
               // Antiflicker: hide body until coframe:show event or 2s timeout
               const style = document.createElement('style');

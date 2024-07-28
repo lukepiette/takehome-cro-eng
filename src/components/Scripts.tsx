@@ -3,7 +3,7 @@ import Script from "next/script";
 export default function Scripts() {
   return (
     <>
-      <Script id="google-tag-manager" strategy="afterInteractive">
+      <Script async id="google-tag-manager" strategy="lazyOnload">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -26,6 +26,7 @@ export default function Scripts() {
         `}
       </Script> */}
       <Script
+        async
         src="https://cmp.osano.com/Azqe0cTA60Bv66GT/bf30d28b-8dc1-4ec4-a26b-c52a5500d7d7/osano.js"
         strategy="lazyOnload"
       />
