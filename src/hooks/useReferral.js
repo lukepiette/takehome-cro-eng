@@ -19,16 +19,17 @@ export default function useReferral() {
       const referralId = window.localStorage.getItem("runpodReferralId");
       setRefId(referralId);
 
-      if (process.env.NEXT_PUBLIC_DEV && referralId !== "runpod")
-        window.location.replace(
-          "https://www.runpod.io" + window.location.pathname
-        );
+      // if (process.env.NEXT_PUBLIC_DEV && referralId !== "runpod")
+      //   window.location.replace(
+      //     "https://www.runpod.io" + window.location.pathname
+      //   );
     }
   }, [router]);
 
-  if (process.env.NEXT_PUBLIC_DEV && refId !== "runpod") {
-    return false;
-  } else {
-    return true;
-  }
+  return true;
+  // if (process.env.NEXT_PUBLIC_DEV && refId !== "runpod") {
+  //   return false;
+  // } else {
+  //   return true;
+  // }
 }
