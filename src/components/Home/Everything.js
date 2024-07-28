@@ -56,6 +56,7 @@ export default function Everything({ data }) {
           width: "168px",
           height: "55px",
         }}
+        loading="lazy"
         alt="cloud image everything header"
         src="/static/images/everything-clouds.png"
       />
