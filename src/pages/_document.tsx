@@ -8,7 +8,7 @@ const coframeProjectId = "66493c53a8c0cb866f5f1b35";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en-US">
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <link

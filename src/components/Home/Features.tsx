@@ -557,6 +557,7 @@ export function Features() {
                     <FakeTemplate
                       icon={
                         <img
+                          alt="runpod logo"
                           src={"/static/svg/runpod-template-logo.svg"}
                           width="48"
                           height="48"
