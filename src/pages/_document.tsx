@@ -3,6 +3,7 @@ import createEmotionServer from "@emotion/server/create-instance";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 import Scripts from "@components/Scripts";
+
 const coframeProjectId = "66493c53a8c0cb866f5f1b35";
 
 export default class MyDocument extends Document {
@@ -11,10 +12,10 @@ export default class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <link
+          {/* <link
             href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..600&display=swap"
             rel="stylesheet"
-          />
+          /> */}
           <meta name="theme-color" content="#1975ff" />
           {(this.props as any).emotionStyleTags}
           <Script

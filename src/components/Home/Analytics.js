@@ -1,4 +1,4 @@
-import { alpha, Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { ShellBlock } from "@components/ShellBlock";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";

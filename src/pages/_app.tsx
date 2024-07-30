@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 
 import { CacheProvider, EmotionCache } from "@emotion/react";
+import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Layout from "../components/Layout";
@@ -12,6 +13,8 @@ import useUtm from "@hooks/useUtm";
 import useMeetingBooked from "@hooks/useMeetingBooked";
 import useReferrer from "@hooks/useReferrer";
 import React, { useEffect } from "react";
+
+const inter = Inter({ weight: ["400", "500", "600"], subsets: ["latin"] });
 
 import { datadogRum } from "@datadog/browser-rum";
 datadogRum.init({
@@ -69,9 +72,11 @@ export default function MyApp({
         />
       </Head>
       {shouldRender && (
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <main className={inter.className}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </main>
       )}
     </CacheProvider>
   );

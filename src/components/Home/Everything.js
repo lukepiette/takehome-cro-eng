@@ -320,14 +320,14 @@ const Clouds = () => (
     <g opacity="0.32">
       <mask id="path-1-inside-1_949_2215" fill="white">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M900.13 271.773C791.566 193.92 660.635 151.272 525.307 151.272C354.724 151.272 191.126 219.037 70.5053 339.658C-26.762 436.925 -89.6587 562.138 -110.368 696.426C-238.632 726.203 -357.199 791.349 -451.809 885.959C-584.936 1019.09 -659.726 1199.65 -659.726 1387.92L-235.959 1387.92V1388.03L780.701 1388.03H1797.36V1387.92H2303.16C2303.16 1199.65 2228.37 1019.09 2095.24 885.961C1999.07 789.787 1878.14 724.058 1747.43 694.979C1717.58 591.213 1661.81 495.661 1584.1 417.948C1463.48 297.326 1299.88 229.562 1129.3 229.562C1050.21 229.562 972.626 244.128 900.13 271.773Z"
         />
       </mask>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M900.13 271.773C791.566 193.92 660.635 151.272 525.307 151.272C354.724 151.272 191.126 219.037 70.5053 339.658C-26.762 436.925 -89.6587 562.138 -110.368 696.426C-238.632 726.203 -357.199 791.349 -451.809 885.959C-584.936 1019.09 -659.726 1199.65 -659.726 1387.92L-235.959 1387.92V1388.03L780.701 1388.03H1797.36V1387.92H2303.16C2303.16 1199.65 2228.37 1019.09 2095.24 885.961C1999.07 789.787 1878.14 724.058 1747.43 694.979C1717.58 591.213 1661.81 495.661 1584.1 417.948C1463.48 297.326 1299.88 229.562 1129.3 229.562C1050.21 229.562 972.626 244.128 900.13 271.773Z"
         fill="url(#paint0_linear_949_2215)"
       />
@@ -340,14 +340,14 @@ const Clouds = () => (
     <g opacity="0.32">
       <mask id="path-3-inside-2_949_2215" fill="white">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M922.107 320.764C836.441 259.331 733.126 225.678 626.341 225.678C491.737 225.678 362.645 279.15 267.465 374.33C190.713 451.082 141.082 549.885 124.741 655.849C23.5299 679.346 -70.0284 730.752 -144.683 805.407C-249.732 910.455 -308.747 1052.93 -308.747 1201.49L25.6396 1201.49V1201.58L827.868 1201.58H1630.1V1201.49H2029.21C2029.21 1052.93 1970.2 910.456 1865.15 805.408C1789.26 729.518 1693.84 677.653 1590.7 654.708C1567.15 572.828 1523.14 497.429 1461.82 436.107C1366.64 340.927 1237.54 287.456 1102.94 287.456C1040.53 287.456 979.313 298.949 922.107 320.764Z"
         />
       </mask>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M922.107 320.764C836.441 259.331 733.126 225.678 626.341 225.678C491.737 225.678 362.645 279.15 267.465 374.33C190.713 451.082 141.082 549.885 124.741 655.849C23.5299 679.346 -70.0284 730.752 -144.683 805.407C-249.732 910.455 -308.747 1052.93 -308.747 1201.49L25.6396 1201.49V1201.58L827.868 1201.58H1630.1V1201.49H2029.21C2029.21 1052.93 1970.2 910.456 1865.15 805.408C1789.26 729.518 1693.84 677.653 1590.7 654.708C1567.15 572.828 1523.14 497.429 1461.82 436.107C1366.64 340.927 1237.54 287.456 1102.94 287.456C1040.53 287.456 979.313 298.949 922.107 320.764Z"
         fill="url(#paint2_linear_949_2215)"
       />
@@ -360,14 +360,14 @@ const Clouds = () => (
     <g opacity="0.32">
       <mask id="path-5-inside-3_949_2215" fill="white">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M900.13 121.271C791.565 43.4183 660.635 0.770518 525.307 0.770508C354.724 0.770495 191.126 68.5347 70.5053 189.156C-26.762 286.423 -89.6587 411.636 -110.368 545.924C-238.632 575.701 -357.199 640.847 -451.809 735.457C-584.936 868.584 -659.726 1049.14 -659.726 1237.41L-235.96 1237.41V1237.53L780.7 1237.53H1797.36V1237.42H2303.16C2303.16 1049.15 2228.37 868.586 2095.24 735.459C1999.07 639.285 1878.14 573.556 1747.43 544.477C1717.58 440.711 1661.81 345.159 1584.1 267.445C1463.48 146.824 1299.88 79.0601 1129.3 79.0601C1050.21 79.0601 972.626 93.6256 900.13 121.271Z"
         />
       </mask>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M900.13 121.271C791.565 43.4183 660.635 0.770518 525.307 0.770508C354.724 0.770495 191.126 68.5347 70.5053 189.156C-26.762 286.423 -89.6587 411.636 -110.368 545.924C-238.632 575.701 -357.199 640.847 -451.809 735.457C-584.936 868.584 -659.726 1049.14 -659.726 1237.41L-235.96 1237.41V1237.53L780.7 1237.53H1797.36V1237.42H2303.16C2303.16 1049.15 2228.37 868.586 2095.24 735.459C1999.07 639.285 1878.14 573.556 1747.43 544.477C1717.58 440.711 1661.81 345.159 1584.1 267.445C1463.48 146.824 1299.88 79.0601 1129.3 79.0601C1050.21 79.0601 972.626 93.6256 900.13 121.271Z"
         fill="url(#paint4_linear_949_2215)"
       />
@@ -380,14 +380,14 @@ const Clouds = () => (
     <g opacity="0.32">
       <mask id="path-7-inside-4_949_2215" fill="white">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M853.083 334.809C809.658 303.668 757.285 286.609 703.154 286.609C634.92 286.609 569.481 313.714 521.233 361.963C482.326 400.87 457.167 450.955 448.884 504.67C397.578 516.581 350.151 542.639 312.307 580.483C259.057 633.734 229.141 705.958 229.141 781.266L398.648 781.266V781.312L805.311 781.312H1211.98V781.267H1414.29C1414.29 705.959 1384.38 633.735 1331.13 580.484C1292.66 542.015 1244.29 515.723 1192 504.092C1180.06 462.585 1157.76 424.364 1126.67 393.279C1078.42 345.031 1012.98 317.925 944.75 317.925C913.115 317.925 882.082 323.751 853.083 334.809Z"
         />
       </mask>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M853.083 334.809C809.658 303.668 757.285 286.609 703.154 286.609C634.92 286.609 569.481 313.714 521.233 361.963C482.326 400.87 457.167 450.955 448.884 504.67C397.578 516.581 350.151 542.639 312.307 580.483C259.057 633.734 229.141 705.958 229.141 781.266L398.648 781.266V781.312L805.311 781.312H1211.98V781.267H1414.29C1414.29 705.959 1384.38 633.735 1331.13 580.484C1292.66 542.015 1244.29 515.723 1192 504.092C1180.06 462.585 1157.76 424.364 1126.67 393.279C1078.42 345.031 1012.98 317.925 944.75 317.925C913.115 317.925 882.082 323.751 853.083 334.809Z"
         fill="url(#paint6_linear_949_2215)"
       />
@@ -407,9 +407,9 @@ const Clouds = () => (
         gradientUnits="userSpaceOnUse"
       >
         <stop />
-        <stop offset="0.125" stop-color="#10003C" />
-        <stop offset="0.37775" stop-color="#7F52FF" stop-opacity="0.8" />
-        <stop offset="0.65" stop-opacity="0" />
+        <stop offset="0.125" stopColor="#10003C" />
+        <stop offset="0.37775" stopColor="#7F52FF" stopOpacity="0.8" />
+        <stop offset="0.65" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_949_2215"
@@ -419,9 +419,9 @@ const Clouds = () => (
         y2="769.652"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#334155" stop-opacity="0.01" />
-        <stop offset="0.526196" stop-color="#334155" stop-opacity="0.32" />
-        <stop offset="1" stop-color="#334155" stop-opacity="0.01" />
+        <stop stopColor="#334155" stopOpacity="0.01" />
+        <stop offset="0.526196" stopColor="#334155" stopOpacity="0.32" />
+        <stop offset="1" stopColor="#334155" stopOpacity="0.01" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_949_2215"
@@ -432,9 +432,9 @@ const Clouds = () => (
         gradientUnits="userSpaceOnUse"
       >
         <stop />
-        <stop offset="0.125" stop-color="#10003C" />
-        <stop offset="0.37775" stop-color="#7F52FF" stop-opacity="0.8" />
-        <stop offset="0.65" stop-opacity="0" />
+        <stop offset="0.125" stopColor="#10003C" />
+        <stop offset="0.37775" stopColor="#7F52FF" stopOpacity="0.8" />
+        <stop offset="0.65" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_949_2215"
@@ -444,9 +444,9 @@ const Clouds = () => (
         y2="713.631"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#334155" stop-opacity="0.01" />
-        <stop offset="0.526196" stop-color="#334155" stop-opacity="0.32" />
-        <stop offset="1" stop-color="#334155" stop-opacity="0.01" />
+        <stop stopColor="#334155" stopOpacity="0.01" />
+        <stop offset="0.526196" stopColor="#334155" stopOpacity="0.32" />
+        <stop offset="1" stopColor="#334155" stopOpacity="0.01" />
       </linearGradient>
       <linearGradient
         id="paint4_linear_949_2215"
@@ -457,9 +457,9 @@ const Clouds = () => (
         gradientUnits="userSpaceOnUse"
       >
         <stop />
-        <stop offset="0.125" stop-color="#10003C" />
-        <stop offset="0.37775" stop-color="#7F52FF" stop-opacity="0.8" />
-        <stop offset="0.65" stop-opacity="0" />
+        <stop offset="0.125" stopColor="#10003C" />
+        <stop offset="0.37775" stopColor="#7F52FF" stopOpacity="0.8" />
+        <stop offset="0.65" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint5_linear_949_2215"
@@ -469,9 +469,9 @@ const Clouds = () => (
         y2="619.15"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#334155" stop-opacity="0.01" />
-        <stop offset="0.526196" stop-color="#334155" stop-opacity="0.32" />
-        <stop offset="1" stop-color="#334155" stop-opacity="0.01" />
+        <stop stopColor="#334155" stopOpacity="0.01" />
+        <stop offset="0.526196" stopColor="#334155" stopOpacity="0.32" />
+        <stop offset="1" stopColor="#334155" stopOpacity="0.01" />
       </linearGradient>
       <linearGradient
         id="paint6_linear_949_2215"
@@ -482,9 +482,9 @@ const Clouds = () => (
         gradientUnits="userSpaceOnUse"
       >
         <stop />
-        <stop offset="0.125" stop-color="#10003C" />
-        <stop offset="0.37775" stop-color="#7F52FF" stop-opacity="0.8" />
-        <stop offset="0.65" stop-opacity="0" />
+        <stop offset="0.125" stopColor="#10003C" />
+        <stop offset="0.37775" stopColor="#7F52FF" stopOpacity="0.8" />
+        <stop offset="0.65" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint7_linear_949_2215"
@@ -494,9 +494,9 @@ const Clouds = () => (
         y2="533.96"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#334155" stop-opacity="0.01" />
-        <stop offset="0.526196" stop-color="#334155" stop-opacity="0.32" />
-        <stop offset="1" stop-color="#334155" stop-opacity="0.01" />
+        <stop stopColor="#334155" stopOpacity="0.01" />
+        <stop offset="0.526196" stopColor="#334155" stopOpacity="0.32" />
+        <stop offset="1" stopColor="#334155" stopOpacity="0.01" />
       </linearGradient>
     </defs>
   </svg>

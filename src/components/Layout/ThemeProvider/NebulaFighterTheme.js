@@ -1193,8 +1193,7 @@ export const NebulaFighterTheme = createTheme({
     borderRadius: 10,
   },
   typography: {
-    fontFamily:
-      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamily: "inherit",
     h1: {
       fontWeight: 400,
       fontSize: 35,
