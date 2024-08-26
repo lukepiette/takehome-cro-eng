@@ -96,7 +96,7 @@ const Subheader = () => {
             width: '100%', 
           }}
         >
-          Forget rate limits and upgrade headaches. With RunPod, your AI ambitions know no bounds. Scale from <span style={{ color: '#FFFFFF' }}>1 to 1,000 GPUs instantly</span>, across the globe. Our platform is built for the bold—those who push the boundaries of what's possible in AI.
+          Forget rate limits and upgrade headaches. With RunPod, your AI ambitions know no bounds. Scale from <span style={{ color: '#FFFFFF' }}>1 to 1,000 GPUs instantly</span>, across the globe. Our platform is built for the bold—those who push the boundaries of what{"'"}s possible in AI.
         </Typography>
 
       </ContentWrapper>
