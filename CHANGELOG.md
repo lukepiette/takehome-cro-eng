@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.7.0](https://github.com/runpod/landing-ui/compare/v1.6.1...v1.7.0) (2024-08-26)
+
+
+### Features
+
+* add internal ref link ([#111](https://github.com/runpod/landing-ui/issues/111)) ([a25e94c](https://github.com/runpod/landing-ui/commit/a25e94c150e7bf76a671d5eaee530418d08ec476))
+* implement font inline to page ([eddb7a3](https://github.com/runpod/landing-ui/commit/eddb7a37cc5751561a0ed526c3f2aaea974f06dd))
+* improve pagespeed ([55688b2](https://github.com/runpod/landing-ui/commit/55688b27ef60263854a2e9fb7b3557a5057754b3))
+* improve pagespeed ([f840d9f](https://github.com/runpod/landing-ui/commit/f840d9f5d9b234b4ea4e0d1db84e4923b077ed47))
+* improve pagespeed ([2a5ff62](https://github.com/runpod/landing-ui/commit/2a5ff62cdf7476981c43996265ce61629a30788e))
+* optimize performance ([338cf8d](https://github.com/runpod/landing-ui/commit/338cf8d8c0ac8841dfae2714b2420ddbf830ec13))
+* remove coframe js ([8c957e4](https://github.com/runpod/landing-ui/commit/8c957e439179ac7d203b95ebbce8637ef885e79f))
+* remove datadog rum to improve performance ([243f31f](https://github.com/runpod/landing-ui/commit/243f31fc5a542cf7525c0c933d4c76c095a1ae73))
+* test performance ([eded452](https://github.com/runpod/landing-ui/commit/eded452b49d947472674011b9510c2abfb795fc9))
+* test performance ([9382bf8](https://github.com/runpod/landing-ui/commit/9382bf8a689cf11794be1d8866b868c6da884858))
+* test performance ([3810dae](https://github.com/runpod/landing-ui/commit/3810dae10654cc5660a3fc23a7deab035d168f5b))
+* test performance ([f66974a](https://github.com/runpod/landing-ui/commit/f66974af31c62f217c8ed7c75c4dafb540dab51e))
+* test performance ([e36cdbf](https://github.com/runpod/landing-ui/commit/e36cdbfdaa1df6dc0bcb952611d2f7009ff48268))
+* test performance ([eef1c77](https://github.com/runpod/landing-ui/commit/eef1c77f2fd941f60acab26d85546d8bbfa5c174))
+* test performance ([89e2484](https://github.com/runpod/landing-ui/commit/89e24844ef0372febe8f7e12c33b237edb3d06eb))
+* test performance ([7984941](https://github.com/runpod/landing-ui/commit/7984941adbbabafe124733d015d307fcf5ffb561))
+* test performance ([725316a](https://github.com/runpod/landing-ui/commit/725316a431482e1c103d042c63bc33214c42c403))
+* test performance ([c6afdad](https://github.com/runpod/landing-ui/commit/c6afdad985dcc2a139ae1fb938d42a80a08aad0b))
+* update env ([e9e2959](https://github.com/runpod/landing-ui/commit/e9e2959bcc21431db324902a5c5dab71f716a357))
+
+
+### Bug Fixes
+
+* swap jobs board to greenhouse ([#113](https://github.com/runpod/landing-ui/issues/113)) ([66a41bf](https://github.com/runpod/landing-ui/commit/66a41bf0116496158ff3d346986a9540a72c03c0))
+
 ## [1.6.1](https://github.com/runpod/landing-ui/compare/v1.6.0...v1.6.1) (2024-07-17)
 
 
