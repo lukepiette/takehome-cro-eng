@@ -103,7 +103,7 @@ const Hero = () => {
             maxWidth: '352.29px' 
           }}
         >
-          <span style={{ color: '#FFFFFF' }}>Our prices make AI teams smile</span>. We{"'"}re not just inexpensive—we're setting a new standard for GPU cloud.
+          <span style={{ color: '#FFFFFF' }}>Our prices make AI teams smile</span>. We{"'"}re not just inexpensive—we{"'"}re setting a new standard for GPU cloud.
         </Typography>
         <StyledButton
           component={Link}
