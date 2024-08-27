@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Typography, Button, useMediaQuery } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { styled } from "@mui/system";
+import { Testimonial } from "@pages/ppc/[slug]";
 
 const QuoteWrapper = styled(Box)(({ theme }) => ({
 	boxSizing: "border-box",
@@ -64,7 +65,6 @@ const AuthorDetails = styled(Box)({
 });
 
 const AuthorRole = styled(Typography)(({ theme }) => ({
-	fontFamily: "Inter",
 	fontStyle: "normal",
 	fontWeight: 500,
 	fontSize: "10px",
@@ -77,7 +77,6 @@ const AuthorRole = styled(Typography)(({ theme }) => ({
 }));
 
 const AuthorName = styled(Typography)(({ theme }) => ({
-	fontFamily: "Inter",
 	fontStyle: "normal",
 	fontWeight: 500,
 	fontSize: "14px",
@@ -102,7 +101,6 @@ const QuoteContent = styled(Box)(({ theme }) => ({
 }));
 
 const QuoteTitle = styled(Typography)(({ theme }) => ({
-	fontFamily: "Inter",
 	fontStyle: "normal",
 	fontWeight: 600,
 	fontSize: "20px",
@@ -117,7 +115,6 @@ const QuoteTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const QuoteText = styled(Typography)(({ theme }) => ({
-	fontFamily: "Inter",
 	fontStyle: "normal",
 	fontWeight: 400,
 	fontSize: "16px",
@@ -164,7 +161,6 @@ const G2Icon = styled("img")({
 
 const G2Text = styled(Typography)(({ theme }) => ({
 	width: "140px",
-	fontFamily: "Inter",
 	fontStyle: "normal",
 	fontWeight: 500,
 	fontSize: "14px",
@@ -180,44 +176,28 @@ const G2Text = styled(Typography)(({ theme }) => ({
 	}
 }));
 
-const Quote = () => {
-	const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-
+const Quote = ({ testimonial }: { testimonial: Testimonial }) => {
 	return (
 		<QuoteWrapper>
 			<TitleContent>
 				<AuthorInfo>
 					<AuthorImage
-						src="/static/images/ppc/daniel-chang-headshot.webp"
-						alt="ByteDance logo"
+						src={testimonial.picture}
+						alt="Quote Profile Image"
 					/>
 					<AuthorDetails>
-						<AuthorName>Daniel Chang</AuthorName>
-						<AuthorRole>Software Engineer at Databricks</AuthorRole>
+						<AuthorName>{testimonial.name}</AuthorName>
+						<AuthorRole>{testimonial.title}</AuthorRole>
 					</AuthorDetails>
 				</AuthorInfo>
 				<QuoteContent>
-					<QuoteTitle>
-						{'"'}RunPod{"'"}s cost-efficiency and pricing
-						transparency are unmatched.{'"'}
-					</QuoteTitle>
-					<QuoteText>
-						{isMobile
-							? `${'"'}Whether I need 10 GPUs or 1000, I can see exactly what I'm spending in real-time. This level of clarity and affordability has transformed how I approach large-scale workloads.${'"'}`
-							: `${'"'}Whether I need 10 GPUs or 1000, I can see exactly what I'm spending in real-time. This level of clarity and affordability has transformed how I approach large-scale workloads, allowing me to optimize costs without compromising on performance.${'"'}`}
-					</QuoteText>
+					<QuoteTitle>{testimonial.bigQuote}</QuoteTitle>
+					<QuoteText>{testimonial.smallQuote}</QuoteText>
 				</QuoteContent>
 			</TitleContent>
-			<G2Button
-				href="https://www.g2.com/products/runpod/reviews"
-				target="_blank">
+			<G2Button href="https://www.g2.com/products/runpod/reviews">
 				<G2Icon src="/static/images/ppc/g2-logo.webp" alt="G2" />
-				<G2Text>
-					{/* <Box component="span" sx={{ color: '#FF492C', fontWeight: 'bold', marginRight: '4px' }}>
-            4.7
-          </Box> */}
-					4.7 out of 5 stars
-				</G2Text>
+				<G2Text>4.7 out of 5 stars</G2Text>
 			</G2Button>
 		</QuoteWrapper>
 	);
