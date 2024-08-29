@@ -115,9 +115,9 @@ const Comparison = () => {
               width: '100%', 
             }}
           >
-            30+ GPU models at your fingertips. Whether you're fine-tuning or going full Skynet, we've got the silicon to match.
+            30+ GPU models at your fingertips. Whether you{"'"}re fine-tuning or going full Skynet, we{"'"}ve got the silicon to match.
             <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
-              {' '}Spread across 31 regions, our global network puts teraflops in your backyard. And our support? They don't just read from a script—they read your mind.
+              {' '}Spread across 31 regions, our global network puts teraflops in your backyard. And our support? They don{"'"}t just read from a script—they read your mind.
             </Box>
           </Typography>
         </Box>

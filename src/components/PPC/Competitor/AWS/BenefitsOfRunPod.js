@@ -133,7 +133,7 @@ const BenefitsOfRunPod = () => {
         <Box sx={{ width: '100%' }}>
           <ListItem>Our docker-native platform deploys in seconds, not centuries.</ListItem>
           <ListItem>Rock-solid reliability for production that never sleeps.</ListItem>
-          <ListItem>And a price tag that'll make your CFO grin.</ListItem>
+          <ListItem>And a price tag that{"'"}ll make your CFO grin.</ListItem>
         </Box>
 
       </ContentWrapper>

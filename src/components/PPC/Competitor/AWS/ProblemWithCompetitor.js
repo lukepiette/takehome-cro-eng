@@ -128,7 +128,7 @@ const ProblemWithCompetitor = () => {
             width: '100%', 
           }}
         >
-          <span style={{ color: '#FFFFFF' }}>You wouldn't use a horse and buggy to win a Formula 1 race. So why use AWS for your AI workloads? </span>It's a relic of the CPU era, lumbering in a world that demands GPU agility.
+          <span style={{ color: '#FFFFFF' }}>You wouldn{"'"}t use a horse and buggy to win a Formula 1 race. So why use AWS for your AI workloads? </span>It{"'"}s a relic of the CPU era, lumbering in a world that demands GPU agility.
         </Typography>
         <Box sx={{ width: '100%' }}>
           <ListItem>No single A100 or H100 instances.</ListItem>
@@ -145,7 +145,7 @@ const ProblemWithCompetitor = () => {
               mt: 2,
             }}
           >
-            AWS isn't just inefficient for AI—it's holding you back. It's time to evolve.
+            AWS isn{"'"}t just inefficient for AI—it{"'"}s holding you back. It{"'"}s time to evolve.
           </Typography>
         </Box>
 

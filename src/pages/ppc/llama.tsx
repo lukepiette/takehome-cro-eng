@@ -6,7 +6,7 @@ const UnlimitedScalePage: NextPage = ({ data = null }: any) => {
   return (
     <>
       <Head>
-        <title>Switch From AWS And Save With RunPod's GPU Cloud</title>
+        <title>Run Llama With A Custom API endpoint</title>
         <meta name="description" content="Switch From AWS And Save With RunPod's GPU Cloud" />
       </Head>
       <main>
