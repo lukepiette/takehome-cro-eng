@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, useMediaQuery } from '@mui/material';
+import { Box, Typography, Button, useMediaQuery } from '@mui/material';
 import { styled } from '@mui/system';
 
 const QuoteWrapper = styled(Box)(({ theme }) => ({
@@ -193,7 +193,7 @@ const Quote = () => {
           </QuoteText>
         </QuoteContent>
       </TitleContent>
-      <G2Button >
+      <G2Button>
         <G2Icon src="/static/images/ppc/g2-logo.webp" alt="G2" />
         <G2Text>
           {/* <Box component="span" sx={{ color: '#FF492C', fontWeight: 'bold', marginRight: '4px' }}>
