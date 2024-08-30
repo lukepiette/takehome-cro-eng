@@ -2,15 +2,16 @@ import React from 'react';
 import { Box, Grid, Stack, Typography, useMediaQuery, useTheme, Link, Button } from '@mui/material';
 import { styled } from '@mui/system';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
 
-const GpuRow = ({ gpu, runpodPrice, awsPrice, isFirstInCategory, isLastInCategory }) => {
+const GpuRow = ({ gpu, communityPrice, securePrice, isFirstInCategory, isLastInCategory }) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const runpodPriceFormatted = runpodPrice.toFixed(2);
-  const awsPriceFormatted = awsPrice ? awsPrice.toFixed(2) : 'NA';
-  
-  const [gpuModel, vramPart] = gpu.split(' ');
+  const parts = gpu.split(' ');
+  const vramPart = parts.slice(-2).join(' '); // Get the last two parts (XXGB VRAM)
+  const gpuModel = parts.slice(0, -2).join(' '); // Join the rest back together
   
   return (
     <Stack
@@ -26,15 +27,17 @@ const GpuRow = ({ gpu, runpodPrice, awsPrice, isFirstInCategory, isLastInCategor
         background: "linear-gradient(270deg, rgba(51, 65, 85, 0.0001) 0%, rgba(51, 65, 85, 0.32) 52.62%, rgba(51, 65, 85, 0.0001) 100%)",
       }}
     >
-      <Box width="33.33%" px={isXs ? 1 : 2.2} py={1.6}>
-        <Typography color="#fff" fontSize={isXs ? 14 : 18} fontWeight="bold" component="span">
-          {gpuModel}
-        </Typography>
-        <Typography color="#fff" fontSize={isXs ? 12 : 18} fontWeight="300" component="span" ml={1}>
-          {vramPart}
-        </Typography>
+      <Box width="30%" px={isXs ? 1 : 2.2} py={1.6}>
+        <Stack direction="column" spacing={0.5}>
+          <Typography color="#fff" fontSize={isXs ? 14 : 18} fontWeight="bold">
+            {gpuModel}
+          </Typography>
+          <Typography color="rgba(255, 255, 255, 0.7)" fontSize={isXs ? 12 : 14} fontWeight="300">
+            {vramPart}
+          </Typography>
+        </Stack>
       </Box>
-      <Box width="33.33%" px={isXs ? 1 : 2.2} py={1.6}>
+      <Box width="35%" px={isXs ? 1 : 2.2} py={1.6}>
         <Box
           sx={{
             backgroundColor: '#5D29F0',
@@ -50,12 +53,12 @@ const GpuRow = ({ gpu, runpodPrice, awsPrice, isFirstInCategory, isLastInCategor
             width: 'auto',
           }}
         >
-          ${runpodPriceFormatted}/hr
+          ${communityPrice}/hr
         </Box>
       </Box>
-      <Box width="33.33%" px={isXs ? 1 : 2.2} py={1.6}>
-        <Typography color="rgba(249, 250, 251, 0.48)" fontSize={isXs ? 14 : 18}>
-          {awsPrice ? `$${awsPriceFormatted}/hr` : 'NA'}
+      <Box width="35%" px={isXs ? 1 : 2.2} py={1.6}>
+        <Typography color="#FFFFFF" fontSize={isXs ? 14 : 18}>
+          {securePrice ? `$${securePrice}/hr` : 'NA'}
         </Typography>
       </Box>
     </Stack>
@@ -67,20 +70,23 @@ const Pricing = () => {
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
 
   const tableData = [
-    { gpu: 'H100 80GB VRAM', runpodPrice: 2.79, awsPrice: 12.29 },
-    { gpu: 'A100 80GB VRAM', runpodPrice: 1.19, awsPrice: 7.35 },
-    { gpu: 'L40S 48GB VRAM', runpodPrice: 0.79, awsPrice: 1.96 },
-    { gpu: 'L4 24GB VRAM', runpodPrice: 0.43, awsPrice: 1.00 },
-    { gpu: 'V100 16GB VRAM', runpodPrice: 0.19, awsPrice: 3.06 },
+    { gpu: 'H100 80GB VRAM', communityPrice: 2.69, securePrice: 3.29 },
+    { gpu: 'A100 80GB VRAM', communityPrice: 1.19, securePrice: 1.69 },
+    { gpu: 'A40 48GB VRAM', communityPrice: 0.47, securePrice: 0.35 },
+    { gpu: 'RTX A6000 48GB VRAM', communityPrice: 0.49, securePrice: 0.76 },
+    { gpu: 'RTX 4090 24GB VRAM', communityPrice: 0.44, securePrice: 0.69 },
+    { gpu: 'RTX 3090 24GB VRAM', communityPrice: 0.22, securePrice: 0.43 },
+    { gpu: 'RTX A4000 16GB VRAM', communityPrice: 0.17, securePrice: 0.32 },
+    { gpu: 'V100 16GB VRAM', communityPrice: 0.19, securePrice: null },
   ];
 
-  // Sort the tableData entries by RunPod price (highest to lowest)
-  const sortedTableData = tableData.sort((a, b) => b.runpodPrice - a.runpodPrice);
+  // Sort the tableData entries by Community Cloud price (highest to lowest)
+  const sortedTableData = tableData.sort((a, b) => b.communityPrice - a.communityPrice);
 
   // Calculate max savings
   const maxSavings = tableData.reduce((max, row) => {
-    if (row.awsPrice) {
-      const savings = Math.round((1 - row.runpodPrice / row.awsPrice) * 100);
+    if (row.securePrice) {
+      const savings = Math.round((1 - row.communityPrice / row.securePrice) * 100);
       return Math.max(max, savings);
     }
     return max;
@@ -138,7 +144,6 @@ const Pricing = () => {
     <Box sx={{ p: 3, borderRadius: 2 }}>
       <HeroWrapper>
         <ContentWrapper>
-
           <Typography 
             variant="h1" 
             sx={{ 
@@ -199,20 +204,44 @@ const Pricing = () => {
         <Box sx={{ position: 'relative', zIndex: 1 }}>
           
           <Box>
+            <Grid container alignItems="center" mb={0}>
+              <Grid item xs={3.6}>
+                <Typography fontSize={isXs ? 14 : 24} fontWeight="bold" textAlign="left" color="#FFFFFF" pl={isXs ? 1 : 2.2}>
+                  {isXs ? '' : 'GPU Model'}
+                </Typography>
+              </Grid>
+              <Grid item xs={4.2}>
+                <Typography fontSize={isXs ? 16 : 24} fontWeight="bold" textAlign="left" color="#FFFFFF" pl={isXs ? 1 : 1}>
+                  {isXs ? 'Community' : 'Community Cloud'}
+                </Typography>
+              </Grid>
+              <Grid item xs={4.2}>
+                <Typography fontSize={isXs ? 16 : 24} fontWeight="bold" textAlign="left" pl={isXs ? 1 : 1} color="#FFFFFF">
+                  {isXs ? 'Secure' : 'Secure Cloud'}
+                </Typography>
+              </Grid>
+            </Grid>
+
             <Grid container alignItems="center" mb={2}>
-              <Grid item xs={4}>
-                <Typography fontSize={isXs ? 20 : 26} fontWeight="bold" textAlign="left" color="#FFFFFF" pl={isXs ? 1 : 2.2}>
-                  GPU
+              <Grid item xs={3.6}></Grid>
+              <Grid item xs={4.2}>
+                <Typography fontSize={isXs ? 10 : 14} textAlign="left" color="#FFFFFF" pl={isXs ? 1 : 1}>
+                  <CheckIcon sx={{ color: '#4CAF50', fontSize: 'inherit', verticalAlign: 'middle', mr: 0.5 }} />
+                  99.50% Uptime
+                </Typography>
+                <Typography fontSize={isXs ? 10 : 14} textAlign="left" color="#FFFFFF" pl={isXs ? 1 : 1}>
+                  <CloseIcon sx={{ color: '#9e9e9e', fontSize: 'inherit', verticalAlign: 'middle', mr: 0.5 }} />
+                  Network Storage
                 </Typography>
               </Grid>
-              <Grid item xs={4}>
-                <Typography fontSize={isXs ? 20 : 26} fontWeight="bold" textAlign="left" color="#FFFFFF" pl={isXs ? 1 : 2.2}>
-                  RunPod
+              <Grid item xs={4.2}>
+                <Typography fontSize={isXs ? 10 : 14} textAlign="left" color="#FFFFFF" pl={isXs ? 1 : 1}>
+                  <CheckIcon sx={{ color: '#4CAF50', fontSize: 'inherit', verticalAlign: 'middle', mr: 0.5 }} />
+                  99.99% Uptime
                 </Typography>
-              </Grid>
-              <Grid item xs={4}>
-                <Typography fontSize={isXs ? 20 : 26} fontWeight="bold" textAlign="left" pl={isXs ? 1 : 2.2} color="rgba(249, 250, 251, 0.48)">
-                  {isXs ? "AWS" : "AWS EC2"}
+                <Typography fontSize={isXs ? 10 : 14} textAlign="left" color="#FFFFFF" pl={isXs ? 1 : 1}>
+                  <CheckIcon sx={{ color: '#4CAF50', fontSize: 'inherit', verticalAlign: 'middle', mr: 0.5 }} />
+                  Network Storage
                 </Typography>
               </Grid>
             </Grid>
@@ -222,8 +251,8 @@ const Pricing = () => {
                 <GpuRow
                   key={gpu.gpu}
                   gpu={gpu.gpu}
-                  runpodPrice={gpu.runpodPrice}
-                  awsPrice={gpu.awsPrice}
+                  communityPrice={gpu.communityPrice}
+                  securePrice={gpu.securePrice}
                   isFirstInCategory={index === 0}
                   isLastInCategory={index === sortedTableData.length - 1}
                 />
@@ -255,12 +284,12 @@ const Pricing = () => {
           <Typography 
             variant="body1" 
             sx={{ 
-              color: '#FFFFFF', 
+              color: '#ffffff', 
               fontSize: '1rem',
               textAlign: 'center',
             }}
           >
-            +27 more GPU models on RunPod
+            +24 more GPU models on RunPod
           </Typography>
         </Box>
 

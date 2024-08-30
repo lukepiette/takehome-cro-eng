@@ -4,7 +4,7 @@ import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useTheme } from "@mui/material/styles";
 
-export default function FooterGetStarted() {
+export default function Footer() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 

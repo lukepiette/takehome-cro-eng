@@ -1,16 +1,16 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head';
-import AWSComparison from '@components/PPC/Competitor/AWS';
+import CostEffective from '@components/PPC/Unified';
 
-const UnlimitedScalePage: NextPage = ({ data = null }: any) => {
+const CostEffectivePage: NextPage = ({ data = null }: any) => {
   return (
     <>
       <Head>
-        <title>Switch From AWS And Save With RunPod{"'"}s GPU Cloud</title>
-        <meta name="description" content="Slash Your GPU Costs by 57% When You Switch From AWS" />
+        <title>Launch a GPU in Seconds with RunPod</title>
+        <meta name="description" content="Our prices make AI teams smile. We're not just inexpensive—we're setting a new standard for GPU cloud." />
       </Head>
       <main>
-        <AWSComparison data={data}/>
+        <CostEffective data={data}/>
       </main>
     </>
   );
@@ -37,4 +37,4 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }
 
-export default UnlimitedScalePage;
+export default CostEffectivePage;

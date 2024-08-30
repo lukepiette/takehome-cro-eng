@@ -134,7 +134,7 @@ const Logos = () => {
             <DotInnerSmall />
           </Dot>
           <Text variant="body2">
-          Senior ML engineers and top executives from the world{"'"}s leading companies <span style={{ color: '#FFFFFF' }}>slash millions in costs</span> every year by choosing RunPod for their critical AI workloads.
+          AI teams at leading companies choose RunPod for our unparalleled speed and developer experience—<span style={{ color: '#FFFFFF' }}>making AI development not just possible, but enjoyable.</span>
           </Text>
         </TextContainer>
         <LogosWrapper>
