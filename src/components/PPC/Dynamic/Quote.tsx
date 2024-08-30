@@ -1,7 +1,15 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import { Testimonial } from "@pages/ppc/[slug]";
+
+type Testimonial = {
+	name: string;
+	title: string;
+	picture: string;
+	bigQuote: string;
+	smallQuote: string;
+	smallQuoteMobile?: string;
+};
 
 const QuoteWrapper = styled(Box)(({ theme }) => ({
 	boxSizing: "border-box",

@@ -57,7 +57,7 @@ const Hero = ({
 	buttonText
 }: {
 	header: ReactNode;
-	subHeader: ReactNode;
+	subHeader?: ReactNode;
 	buttonText: string;
 }) => {
 	return (
@@ -78,7 +78,7 @@ const Hero = ({
 				/>
 
 				{header}
-				{subHeader}
+				{subHeader && subHeader}
 
 				<StyledButton
 					component={Link}
