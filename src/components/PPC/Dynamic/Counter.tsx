@@ -130,23 +130,46 @@ const Ellipse1595 = styled("div")(({ theme }) => ({
 	}
 }));
 
-export default function Counter({ data }: { data: any }) {
-	const theme = useTheme();
-	const sm = useMediaQuery(theme.breakpoints.up("sm"));
-	const md = useMediaQuery(theme.breakpoints.up("md"));
+// Add this type definition at the top of the file
+type Metrics = {
+  requests: number;
+  // Add other properties as needed
+};
 
-	const ref = useRef(null);
+export default function Counter({ data }: { data: { metrics: Metrics } }) {
+	const [metrics, setMetrics] = useState<Metrics | null>(null);
 	const [width, setWidth] = useState(0);
-	const requestTriggerValue = useTrigger(requestTrigger);
-	const { data: metrics } = useFetch("https://api.runpod.ai/metrics", [
-		requestTriggerValue
-	]);
+	const ref = useRef<HTMLElement>(null);
 
-	useInterval(() => requestTrigger(), 2000);
 	useEffect(() => {
-		// @ts-ignore
-		setWidth(ref.current ? ref.current.offsetWidth : 0);
-	}, [md, ref, sm]);
+		let intervalId: NodeJS.Timeout;
+
+		const fetchData = async () => {
+			console.log('Fetching data...'); // Debug log
+			try {
+				const response = await fetch('https://api.runpod.ai/metrics');
+				const responseData = await response.json();
+				console.log('Data received:', responseData); // Debug log
+				setMetrics(responseData);
+			} catch (error) {
+				console.error('Fetch error:', error);
+			}
+		};
+
+		fetchData(); // Initial fetch
+		intervalId = setInterval(fetchData, 2000);
+
+		return () => {
+			console.log('Clearing interval'); // Debug log
+			clearInterval(intervalId);
+		};
+	}, []); // Empty dependency array
+
+	useEffect(() => {
+		if (ref.current && width === 0) {
+			setWidth(ref.current.getBoundingClientRect().width);
+		}
+	}, [metrics]);
 
 	return (
 		<Stack alignItems="center" position="relative" width="100%">

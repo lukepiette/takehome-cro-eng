@@ -16,7 +16,7 @@ const HeroWrapper = styled(Box)(({ theme }) => ({
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "center",
-	padding: "48px 16px",
+	padding: "24px 16px",
 	gap: "48px",
 	width: "100%",
 	maxWidth: "768.98px",
@@ -180,7 +180,7 @@ const Pricing = ({
 	const sortedTableData = gpuPricing.sort((a, b) => b.ourPrice - a.ourPrice);
 
 	return (
-		<Box sx={{ p: 3, borderRadius: 2 }}>
+		<Box sx={{ borderRadius: 2 }}>
 			<HeroWrapper>
 				<ContentWrapper>
 					{header}
