@@ -8,7 +8,6 @@ import Footer from "@components/PPC/Dynamic/Footer";
 import Hero from "@components/PPC/Dynamic/Hero";
 import Logos from "@components/PPC/Dynamic/Logos";
 import Quote from "@components/PPC/Dynamic/Quote";
-import squeezePages from "@utils/squeezepages";
 
 const HeroWrapper = styled(Box)(({ theme }) => ({
 	display: "flex",

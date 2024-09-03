@@ -136,7 +136,7 @@ const QuoteText = styled(Typography)(({ theme }) => ({
 	}
 }));
 
-const G2Button = styled(Button)(({ theme }) => ({
+const G2Button = styled(Box)(({ theme }) => ({
 	display: "flex",
 	flexDirection: "row",
 	alignItems: "center",
@@ -203,7 +203,7 @@ const Quote = ({ testimonial }: { testimonial: Testimonial }) => {
 					<QuoteText>{testimonial.smallQuote}</QuoteText>
 				</QuoteContent>
 			</TitleContent>
-			<G2Button href="https://www.g2.com/products/runpod/reviews">
+			<G2Button>
 				<G2Icon src="/static/images/ppc/g2-logo.webp" alt="G2" />
 				<G2Text>4.7 out of 5 stars</G2Text>
 			</G2Button>

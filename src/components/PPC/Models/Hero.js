@@ -3,7 +3,7 @@ import { Box, Typography, Button, Link } from '@mui/material';
 import { styled } from '@mui/system';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import RequestCounter from './RequestCounter';
-import Logos from './Logos';
+import Logos from '../Dynamic/Logos';
 
 const HeroWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -47,7 +47,18 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const Hero = ({ data }) => {
+const Text = styled(Typography)({
+	width: "100%",
+	fontStyle: "normal",
+	fontWeight: 500,
+	fontSize: "14px",
+	lineHeight: "20px",
+	textAlign: "center",
+	letterSpacing: "-0.25px",
+	color: "rgba(249, 250, 251, 0.48)"
+});
+
+const Hero = ({ data, modelName }) => {
   return (
     <HeroWrapper>
       <ContentWrapper>
@@ -89,7 +100,7 @@ const Hero = ({ data }) => {
               display: 'inline',
             }}
           >
-            Llama 3{' '}
+            {modelName}{' '}
           </Box>
           with your own custom API endpoint
         </Typography>
@@ -107,7 +118,19 @@ const Hero = ({ data }) => {
       <RequestCounter data={data}/>
 
       <Box sx={{ height: { xs: '15px', sm: '0px', md: '0px' }, marginTop: { xs: -10, sm: -10, md: -15 } }}></Box>
-      <Logos />
+      <Logos
+						logoText={
+							<Text variant="body2">
+								Senior ML engineers and top executives from the
+								world{"'"}s leading companies{" "}
+								<span style={{ color: "#FFFFFF" }}>
+									slash millions in costs
+								</span>{" "}
+								every year by choosing RunPod for their critical
+								AI workloads.
+							</Text>
+						}
+					/>
 
       <Box
         sx={{

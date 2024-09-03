@@ -210,8 +210,9 @@ function FakePod() {
         ))}
       </Stack>
     </Stack>
-  );
-}
+  );}
+
+
 
 const HeroWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -316,6 +317,12 @@ const Subheader = () => {
         </Typography>
         <FakePod />
       </ContentWrapper>
+      <StyledButton
+        component={Link}
+        href="/console/deploy"
+        endIcon={<ChevronRightIcon />}>
+        Start feeling the magic
+      </StyledButton>
     </HeroWrapper>
   );
 };

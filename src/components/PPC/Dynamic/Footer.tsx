@@ -109,8 +109,6 @@ export default function Footer() {
 				}}>
 				<Typography
 					sx={{
-						fontFamily: "SF Pro Display",
-						fontStyle: "normal",
 						fontWeight: 500,
 						fontSize: isMobile ? "24px" : "40px",
 						lineHeight: isMobile ? "32px" : "48px",

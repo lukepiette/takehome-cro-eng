@@ -148,10 +148,15 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 						}
 					/>
 
+          <Box
+						sx={{
+							height: { xs: "0px", sm: "25px", md: "75px" }
+					}}></Box>
+
 					<Subheader />
 					<Box
 						sx={{
-							height: { xs: "0px", sm: "75px", md: "0px" }
+							height: { xs: "0px", sm: "75px", md: "25px" }
 						}}></Box>
 
 					<Pricing />
@@ -170,9 +175,9 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 							picture:
 								"/static/images/ppc/daniel-chang-headshot.webp",
 							bigQuote:
-								"RunPod's cost-efficiency and pricing transparency are unmatched.",
+								'"RunPod\'s ability to scale on-demand is unmatched."',
 							smallQuote:
-								"Whether I need 10 GPUs or 1000, I can see exactly what I'm spending in real-time. This level of clarity and affordability has transformed how I approach large-scale workloads, allowing me to optimize costs without compromising on performance."
+								'"Whether I need 10 GPUs or 1000, they\'re available instantly. This level of flexibility has transformed how I approach large-scale workloads, allowing me to think bigger and move faster than ever before."'
 						}}
 					/>
 
@@ -184,7 +189,7 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 
 					<Box
 						sx={{
-							height: { xs: "50px", sm: "75px", md: "100px" }
+							height: { xs: "50px", sm: "75px", md: "125px" }
 						}}></Box>
 					<Comparison />
 

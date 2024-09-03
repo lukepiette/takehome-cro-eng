@@ -70,16 +70,26 @@ const DotInnerSmall = styled(DotInner)({
 	top: "3.57px"
 });
 
-const LogosWrapper = styled(Box)({
-	display: "flex",
-	flexDirection: "row",
-	alignItems: "center",
-	flexWrap: "wrap",
-	justifyContent: "center",
-	gap: "19.2px",
-	width: "100%",
-	maxWidth: "456.13px"
-});
+const LogosWrapper = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  width: '80%',
+  maxWidth: '600px',
+  margin: '0 auto',
+  gap: '20px', // Reduced gap for desktop
+  [theme.breakpoints.down('sm')]: {
+    flexWrap: 'nowrap',
+    overflowX: 'auto',
+    justifyContent: 'flex-start',
+    width: '100vw', // Full viewport width on mobile
+    maxWidth: 'none', // Remove max-width constraint on mobile
+    margin: '0 -16px', // Negative margin to counteract parent padding
+    padding: '0 16px', // Add padding to the sides
+    gap: '15px',
+  },
+}));
 
 const Logo = styled(Box)<{ width?: string | number; height?: string | number }>(
 	({ theme, width, height }) => ({
@@ -87,7 +97,7 @@ const Logo = styled(Box)<{ width?: string | number; height?: string | number }>(
 		height,
 		[theme.breakpoints.down("sm")]: {
 			width: "auto",
-			height: "20px"
+			height: "15px"
 		}
 	})
 );
@@ -95,25 +105,31 @@ const Logo = styled(Box)<{ width?: string | number; height?: string | number }>(
 const logoImages = [
 	{
 		src: "/static/images/ppc/meta-logo.webp",
-		width: "80.46px",
+		width: "65.46px",
 		height: "25.6px",
 		alt: "Meta logo"
 	},
 	{
-		src: "/static/images/ppc/mistralai-logo.webp",
-		width: "51.63px",
+		src: "/static/images/ppc/verizon-logo.webp",
+		width: "71.63px",
 		height: "16.54px",
-		alt: "Mistral AI logo"
+		alt: "Verizon logo"
 	},
+	// {
+	// 	src: "/static/images/ppc/mistralai-logo.webp",
+	// 	width: "51.63px",
+	// 	height: "16.54px",
+	// 	alt: "Mistral AI logo"
+	// },
 	{
 		src: "/static/images/ppc/siemens-logo.webp",
-		width: "84.11px",
+		width: "74.11px",
 		height: "18.65px",
 		alt: "Siemens logo"
 	},
 	{
 		src: "/static/images/ppc/bytedance-logo.webp",
-		width: "84.04px",
+		width: "89.04px",
 		height: "14.49px",
 		alt: "ByteDance logo"
 	},

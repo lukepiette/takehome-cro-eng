@@ -28,7 +28,7 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  gap: '48px',
+  gap: '24px',
   width: '100%',
   [theme.breakpoints.down('sm')]: {
     gap: '32px',

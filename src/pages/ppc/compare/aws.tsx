@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import Counter from "@components/PPC/Dynamic/Counter";
+
 import Footer from "@components/PPC/Dynamic/Footer";
 import Hero from "@components/PPC/Dynamic/Hero";
 import Logos from "@components/PPC/Dynamic/Logos";
@@ -123,7 +124,7 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 
 					<Box
 						sx={{
-							height: { xs: "50px", sm: "75px", md: "100px" }
+							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
 					<ProblemWithCompetitor
@@ -137,7 +138,7 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 										md: "42px"
 									},
 									fontWeight: 600,
-									lineHeight: "96%",
+									lineHeight: "110%",
 									letterSpacing: "-0.03em",
 									textAlign: "left",
 									color: "#FFFFFF",
@@ -204,7 +205,7 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 
 					<Box
 						sx={{
-							height: { xs: "0px", sm: "0px", md: "0px" }
+							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
 					<BenefitsOfRunPod
@@ -268,7 +269,7 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 
 					<Box
 						sx={{
-							height: { xs: "0px", sm: "0px", md: "0px" }
+							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
 					<Pricing
@@ -351,7 +352,7 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 					/>
 					<Box
 						sx={{
-							height: { xs: "25px", sm: "75px", md: "75px" }
+							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
 					<Comparison
@@ -450,7 +451,7 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 					/>
 					<Box
 						sx={{
-							height: { xs: "25px", sm: "75px", md: "75px" }
+							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
 					<Quote
@@ -465,18 +466,19 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 					/>
 					<Box
 						sx={{
-							height: { xs: "25px", sm: "75px", md: "75px" }
+							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
 					<Counter data={data} />
+
 					<Box
 						sx={{
-							height: { xs: "25px", sm: "75px", md: "75px" }
+							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
 					<Box
 						sx={{
-							height: { xs: "100px", sm: "75px", md: "50px" }
+							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
 					<Footer />
