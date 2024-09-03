@@ -13,16 +13,6 @@ export default function Scripts() {
         `}
       </Script>
 
-      {/* Hyros Tracking Script */}
-      <Script id="hyros-tracking-script" strategy="afterInteractive">
-        {`
-          var head = document.head;
-          var script = document.createElement('script');
-          script.type = 'text/javascript';
-          script.src = "https://t.runpod.io/v1/lst/universal-script?ph=59651d1f641a2973889f965456ffa7031ab2cec99425593a3fa59d66493a6653&tag=!clicked&ref_url=" + encodeURI(document.URL);
-          head.appendChild(script);
-        `}
-      </Script>
       {/* <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-KMF5V28LQG"
         strategy="lazyOnload"
