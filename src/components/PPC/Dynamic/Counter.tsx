@@ -224,12 +224,12 @@ export default function Counter({ data }: { data: any }) {
 
 				{/* <Box mt={{ xs: 3, sm: 4, md: 6 }} spacing={1.8}></Box> */}
 
-				<StyledButton
+				{/* <StyledButton
 					component={Link}
 					href="/console/deploy"
 					endIcon={<ChevronRightIcon />}>
 					See our GPU pricing dashboard
-				</StyledButton>
+				</StyledButton> */}
 			</Stack>
 		</Stack>
 	);

@@ -148,6 +148,11 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 						}
 					/>
 
+          <Box
+						sx={{
+							height: { xs: "0px", sm: "25px", md: "50px" }
+					}}></Box>
+
 					<Subheader />
 					<Box
 						sx={{
