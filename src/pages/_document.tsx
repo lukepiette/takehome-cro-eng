@@ -9,6 +9,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en-US">
         <Head>
+
           <link rel="icon" href="/favicon.ico" />
           {/* <link
             href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..600&display=swap"
@@ -29,7 +30,6 @@ export default class MyDocument extends Document {
               head.appendChild(script);
             `}
           </Script>
-s
         </Head>
         <body>
           <noscript>
