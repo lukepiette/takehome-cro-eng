@@ -1,7 +1,6 @@
 import createEmotionCache from "@utils/createEmotionCache";
 import createEmotionServer from "@emotion/server/create-instance";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Scripts from "@components/Scripts";
 
 export default class MyDocument extends Document {
   render() {
@@ -9,13 +8,8 @@ export default class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          {/* <link
-            href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..600&display=swap"
-            rel="stylesheet"
-          /> */}
           <meta name="theme-color" content="#1975ff" />
           {(this.props as any).emotionStyleTags}
-          <Scripts />
         </Head>
         <body>
           <noscript>

@@ -14,6 +14,10 @@ import useMeetingBooked from "@hooks/useMeetingBooked";
 import useReferrer from "@hooks/useReferrer";
 import React, { useEffect } from "react";
 
+import Scripts from "@components/Scripts";
+
+
+
 const inter = Inter({ weight: ["400", "500", "600"], subsets: ["latin"] });
 
 // import { datadogRum } from "@datadog/browser-rum";
@@ -78,6 +82,7 @@ export default function MyApp({
           </Layout>
         </main>
       )}
+      <Scripts />
     </CacheProvider>
   );
 }
