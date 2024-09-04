@@ -1,15 +1,12 @@
 import createEmotionCache from "@utils/createEmotionCache";
 import createEmotionServer from "@emotion/server/create-instance";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Scripts from "@components/Scripts";
-import Script from "next/script";
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en-US">
         <Head>
-
           <link rel="icon" href="/favicon.ico" />
           {/* <link
             href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..600&display=swap"
@@ -17,19 +14,6 @@ export default class MyDocument extends Document {
           /> */}
           <meta name="theme-color" content="#1975ff" />
           {(this.props as any).emotionStyleTags}
-
-          <Scripts />
-
-          {/* Hyros Tracking Script */}
-          <Script id="hyros-tracking-script" strategy="afterInteractive">
-            {`
-              var head = document.head;
-              var script = document.createElement('script');
-              script.type = 'text/javascript';
-              script.src = "https://t.runpod.io/v1/lst/universal-script?ph=59651d1f641a2973889f965456ffa7031ab2cec99425593a3fa59d66493a6653&tag=!clicked&ref_url=" + encodeURI(document.URL);
-              head.appendChild(script);
-            `}
-          </Script>
         </Head>
         <body>
           <noscript>

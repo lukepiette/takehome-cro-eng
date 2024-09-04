@@ -3,6 +3,16 @@ import Script from "next/script";
 export default function Scripts() {
   return (
     <>
+      <Script id="hyros-tracking" strategy="afterInteractive">
+        {`
+          var head = document.head;
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = "https://t.runpod.io/v1/lst/universal-script?ph=59651d1f641a2973889f965456ffa7031ab2cec99425593a3fa59d66493a6653&tag=!clicked&ref_url=" + encodeURIComponent(document.URL);
+          head.appendChild(script);
+        `}
+      </Script>
+
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
