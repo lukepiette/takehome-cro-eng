@@ -22,6 +22,7 @@ export default function Scripts() {
           })(window,document,'script','dataLayer','GTM-MF5S74JV');
         `}
       </Script>
+
       {/* <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-KMF5V28LQG"
         strategy="lazyOnload"
