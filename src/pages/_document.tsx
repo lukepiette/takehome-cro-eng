@@ -8,6 +8,10 @@ export default class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
           <link rel="icon" href="/favicon.ico" />
+          {/* <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..600&display=swap"
+            rel="stylesheet"
+          /> */}
           <meta name="theme-color" content="#1975ff" />
           {(this.props as any).emotionStyleTags}
         </Head>
