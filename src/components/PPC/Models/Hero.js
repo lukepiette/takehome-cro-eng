@@ -107,7 +107,7 @@ const Hero = ({ data, modelName }) => {
 
         <StyledButton
           component={Link}
-          href="/console/deploy"
+          href="/console/signup"
           endIcon={<ChevronRightIcon />}
         >
           Create your API endpoint
