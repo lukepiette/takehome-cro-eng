@@ -87,11 +87,11 @@ export default function Pricing({ slim, title1, title2 }) {
       </Typography>
 
       <Stack direction="row" my={3} spacing={1.8}>
-        <SignUp
+        {/* <SignUp
           text="Get started"
           url="/console/serverless"
           utmContent="serverless-pricing"
-        />
+        /> */}
 
         <ButtonLink
           href="https://meetings.runpod.io/meetings/runpod/firstconnect"
@@ -106,6 +106,14 @@ export default function Pricing({ slim, title1, title2 }) {
             height: 40,
             pl: 2,
             pr: 1.4,
+            fontSize: '22px',
+            padding: '24px 30px',
+            '& .MuiButton-startIcon': {
+              marginRight: '8px',
+            },
+            '& .MuiSvgIcon-root': {
+              fontSize: '26px',
+            },
           }}
         >
           Book a call <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />

@@ -54,19 +54,29 @@ export function Scale() {
             </Typography>
           }
           button={
-            <ButtonLink href="/console/serverless" variant="contained" gradient>
-              Deploy now
-              <KeyboardArrowRightIcon
-                sx={{
-                  display: { xs: "none", md: "inherit" },
-                  fontSize: 20,
-                  ml: 0.6,
-                }}
-              />
+            <ButtonLink 
+              href="/console/serverless" 
+              variant="contained" 
+              gradient
+              size="large"
+              sx={{
+                fontSize: '22px',
+                padding: '24px 30px',
+                '& .MuiButton-startIcon': {
+                  marginRight: '8px',
+                },
+                '& .MuiSvgIcon-root': {
+                  fontSize: '26px',
+                },
+              }}
+            >
+              Deploy Now
+              <KeyboardArrowRightIcon />
             </ButtonLink>
-          }
-        >
-          <ShellBlock sx={{ height: 90, mt: 2, mb: 16 }}>
+            }
+          >
+            <Box height={20}></Box>
+          {/* <ShellBlock sx={{ height: 90, mt: 2, mb: 16 }}>
             <Typography
               fontFamily="monospace"
               fontSize={12}
@@ -77,27 +87,27 @@ export function Scale() {
               {">"} <span style={{ color: "#FF8FFD" }}>runpodctl</span> project{" "}
               <span style={{ color: "#979DFF" }}>deploy</span>
             </Typography>
-          </ShellBlock>
+          </ShellBlock> */}
         </SectionHeader>
 
         <Cloud1
           style={{
             position: "absolute",
-            top: "500px",
+            top: "300px",
             transform: "translateX(-20rem)",
           }}
         />
         <Cloud2
           style={{
             position: "absolute",
-            top: "500px",
+            top: "300px",
             transform: "translateX(40rem)",
           }}
         />
         <Cloud3
           style={{
             position: "absolute",
-            top: "550px",
+            top: "350px",
             transform: "translateX(-36rem)",
           }}
         />

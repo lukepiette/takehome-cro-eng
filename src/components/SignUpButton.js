@@ -26,10 +26,19 @@ export default function SignUp({ text = "Try it now", url = '/console/serverless
         height: 40,
         pl: 2,
         pr: 1.4,
-        my: my
+        my: my,
+        fontSize: '22px',
+        padding: '24px 30px',
+        '& .MuiButton-startIcon': {
+          marginRight: '8px',
+        },
+        '& .MuiSvgIcon-root': {
+          fontSize: '26px',
+        },
       }}
     >
       {text} <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
     </ButtonLink>
+
   );
 }

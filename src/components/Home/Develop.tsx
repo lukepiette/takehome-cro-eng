@@ -53,7 +53,7 @@ export function Develop() {
         {!isSmall && <br />}
         infrastructure and more on running ML models.
       </Typography>
-      <ButtonLink
+      {/* <ButtonLink
         href="https://docs.runpod.io/cli/install-runpodctl"
         variant="contained"
         gradient
@@ -89,7 +89,7 @@ export function Develop() {
           {">"} <span style={{ color: "#FF8FFD" }}>runpodctl</span> project{" "}
           <span style={{ color: "#979DFF" }}>create</span>
         </Typography>
-      </ShellBlock>
+      </ShellBlock> */}
     </Stack>
   );
 }

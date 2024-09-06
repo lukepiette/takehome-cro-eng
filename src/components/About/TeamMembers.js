@@ -2,7 +2,7 @@ const TeamMembers = [
 	{
 		name: "Luke Piette",
 		image: "/static/images/about/team/luke_1.webp",
-		bio: "Luke leads growth at RunPod and has been part of the team for over a year",
+		bio: "Luke leads growth at RunPod.",
 		twitter: "https://x.com/LukePiette",
 		github: "https://github.com/lukepiette",
 		linkedin: "https://www.linkedin.com/in/lukepiette/"

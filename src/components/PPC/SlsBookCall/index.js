@@ -18,7 +18,7 @@ export default function Serverless({ data }) {
       <Analytics />
       <Pricing />
       <Startup />
-      {/* <Community /> */}
+      <Community />
       <Counter data={data} />
       <Footer />
     </Stack>

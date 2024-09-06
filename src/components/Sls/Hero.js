@@ -131,9 +131,9 @@ export default function Hero() {
         </Typography>
 
         <Stack direction="row" mt={4} spacing={{ xs: 1, sm: 1.8 }}>
-          <SignUp text="Try it now" url="/console/serverless" utmContent="serverless-hero"/>
+          <SignUp text="Get Started" url="/console/serverless" utmContent="serverless-hero"/>
 
-          <ButtonLink
+          {/* <ButtonLink
             href="https://docs.runpod.io/serverless/overview"
             variant="outlined"
             sx={{
@@ -149,7 +149,7 @@ export default function Hero() {
             }}
           >
             Read the docs <ArrowRightAltIcon sx={{ fontSize: 18, ml: 0.6 }} />
-          </ButtonLink>
+          </ButtonLink> */}
         </Stack>
 
         <Stack

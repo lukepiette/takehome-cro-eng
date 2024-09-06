@@ -159,27 +159,25 @@ export default function Startup() {
             Save more by committing to longer-term usage.
             Reserve discounted active and flex workers by speaking with our team.
           </Typography>
-          <ButtonLink 
-            href="https://meetings.runpod.io/meetings/runpod/firstconnect" 
-            variant="contained" 
-            gradient
-            size="large"
+          <ButtonLink
+            href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+            variant="contained"
             sx={{
-              fontSize: '22px',
-              padding: '24px 30px',
-              '& .MuiButton-startIcon': {
-                marginRight: '8px',
-              },
-              '& .MuiSvgIcon-root': {
-                fontSize: '26px',
-              },
+              background:
+                "radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.0472) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #5D29F0",
+              borderRadius: 0.8,
+              boxShadow:
+                "0px 3px 0px rgba(0, 0, 0, 0.5), inset -3px -4px 7px rgba(9, 0, 114, 0.24)",
+              fontWeight: 600,
+              height: 40,
               mt: 3,
+              pl: 2,
+              pr: 1.4,
             }}
           >
             Book a call{" "}
-            <KeyboardArrowRightIcon />
+            <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
-
         </Stack>
       </Stack>
 

@@ -129,24 +129,22 @@ export default function Hero() {
         </Typography>
 
         <Stack direction="row" mt={4} spacing={{ xs: 1, sm: 1.8 }}>
-        <ButtonLink 
-            href="/console/serverless" 
-            variant="contained" 
-            gradient
-            size="large"
+          <ButtonLink
+            href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+            variant="contained"
             sx={{
-              fontSize: '22px',
-              padding: '24px 30px',
-              '& .MuiButton-startIcon': {
-                marginRight: '8px',
-              },
-              '& .MuiSvgIcon-root': {
-                fontSize: '26px',
-              },
+              background:
+                "radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.0472) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #5D29F0",
+              borderRadius: 0.8,
+              boxShadow:
+                "0px 3px 0px rgba(0, 0, 0, 0.5), inset -3px -4px 7px rgba(9, 0, 114, 0.24)",
+              fontWeight: 600,
+              height: 40,
+              pl: 2,
+              pr: 1.4,
             }}
           >
-            Get Started
-            <KeyboardArrowRightIcon />
+            Book a call<KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
 
         </Stack>
@@ -196,6 +194,39 @@ export default function Hero() {
               </Typography>
             </Stack>
           </CodeBlock>
+          <ShellBlock sx={{ height: 200 }}>
+            <Typography fontFamily="monospace" fontSize={12} ml={3} mt={2}>
+              {/* {progress > 0 && (
+                <div>&gt; runpodctl config --apiKey $(RUNPOD_API_KEY)</div>
+              )}
+              {progress > 2 && <div>&gt; runpodctl project create</div>} */}
+              {progress > 0 && <div>&gt; <span style={{ color: "#FF8FFD" }}>runpodctl</span> project <span style={{ color: "#979DFF" }}>deploy</span></div>}
+              <br />
+              {progress > 1 && (
+                <div>
+                  Deploying project.
+                  {progress > 3 && "."}
+                  {progress > 4 && "."}
+                </div>
+              )}
+              {/* {progress > 5 && (
+                <div>
+                  Syncing files.{progress > 9 && "."}
+                  {progress > 10 && "."}
+                </div>
+              )} */}
+              {progress > 5 && <div>Project deployed successfully!</div>}
+              <br />
+              {progress > 7 && (
+                <div>
+                  Your Serverless API Endpoint:{" "}
+                  <span style={{ color: "#95EC4D" }}>
+                    https://api.runpod.ai/v2/u4y2rv11na8hlx/runsync
+                  </span>
+                </div>
+              )}
+            </Typography>
+          </ShellBlock>
         </Stack>
       </Stack>
     </Stack>
