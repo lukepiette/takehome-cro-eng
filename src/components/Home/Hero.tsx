@@ -115,23 +115,24 @@ export function Hero() {
           mb={10}
           width={"fit-content"}
         >
-          <ButtonLink href="/console/signup" variant="contained" gradient>
+          <ButtonLink 
+            href="/console/signup" 
+            variant="contained" 
+            gradient
+            size="large"
+            sx={{
+              fontSize: '22px',
+              padding: '24px 30px',
+              '& .MuiButton-startIcon': {
+                marginRight: '8px',
+              },
+              '& .MuiSvgIcon-root': {
+                fontSize: '26px',
+              },
+            }}
+          >
             Get started
-            <KeyboardArrowRightIcon
-              sx={{
-                fontSize: 20,
-                ml: 0.6,
-              }}
-            />
-          </ButtonLink>
-          <ButtonLink href="https://docs.runpod.io" variant="outlined" gradient>
-            Read the docs
-            <KeyboardArrowRightIcon
-              sx={{
-                fontSize: 20,
-                ml: 0.6,
-              }}
-            />
+            <KeyboardArrowRightIcon />
           </ButtonLink>
         </Stack>
 

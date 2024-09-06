@@ -173,6 +173,14 @@ export default function Startup() {
               mt: 3,
               pl: 2,
               pr: 1.4,
+              fontSize: '22px',
+              padding: '24px 30px',
+              '& .MuiButton-startIcon': {
+                marginRight: '8px',
+              },
+              '& .MuiSvgIcon-root': {
+                fontSize: '26px',
+              },
             }}
           >
             Book a call{" "}

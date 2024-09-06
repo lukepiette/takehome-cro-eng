@@ -392,7 +392,7 @@ export function Features() {
       <Stack
         alignItems={"center"}
         width={"100%"}
-        mt={24}
+        mt={10}
         position={"relative"}
         gap={{
           xs: 16,

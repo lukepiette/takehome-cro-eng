@@ -207,15 +207,26 @@ export function Pricing({
         {!isSmall ? <br /> : " "}
         for Every Workload
       </Typography>
-      <ButtonLink href="/gpu-instance/pricing" variant="contained" gradient>
-        See all GPUs
-        <KeyboardArrowRightIcon
+      <ButtonLink 
+          href="/console/deploy" 
+          variant="contained" 
+          gradient
+          size="large"
           sx={{
-            fontSize: 20,
-            ml: 0.6,
+            fontSize: '22px',
+            padding: '24px 30px',
+            '& .MuiButton-startIcon': {
+              marginRight: '8px',
+            },
+            '& .MuiSvgIcon-root': {
+              fontSize: '26px',
+            },
           }}
-        />
+        >
+          See all GPUs
+          <KeyboardArrowRightIcon />
       </ButtonLink>
+
       <div
         style={{
           width: "230rem",

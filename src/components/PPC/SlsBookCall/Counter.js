@@ -190,7 +190,7 @@ export default function Counter({ data }) {
             Join our Discord{" "}
             <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
-          {/* <ButtonLink
+          <ButtonLink
             href="https://meetings.runpod.io/meetings/runpod/firstconnect"
             variant="outlined"
             sx={{
@@ -207,7 +207,7 @@ export default function Counter({ data }) {
           >
             Book a call{" "}
             <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
-          </ButtonLink> */}
+          </ButtonLink>
         </Stack>
       </Stack>
     </Stack>
