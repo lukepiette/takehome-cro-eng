@@ -27,11 +27,11 @@ const LlamaPage: NextPage = ({ data = null }: any) => {
   return (
     <>
         <HTMLHead
-            title="Run Llama 3 With A Custom API endpoint"
-            description="In minutes, create a custom API endpoint to host your Llama 3 model."
+            title="Run Llama 3.1 405B With A Custom API endpoint"
+            description="In minutes, create a custom API endpoint to host your Llama 3.1 405B model."
         />
         <main>
-            <ModelPage modelName={"Llama 3"} data={data}/>
+            <ModelPage modelName={"Llama 3.1 405B"} data={data}/>
         </main>
     </>
   );

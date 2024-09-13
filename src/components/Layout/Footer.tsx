@@ -51,6 +51,8 @@ export const Footer = () => (
         <FooterLink href='https://docs.runpod.io/faq'>FAQ</FooterLink>
         <FooterLink href='https://blog.runpod.io'>Blog</FooterLink>
         <FooterLink href='/console/host/docs/faq'>Become a Host</FooterLink>
+        <FooterLink href='/dir/gpu-benchmarks'>GPU Benchmarks</FooterLink>
+        <FooterLink href='/dir/gpu-models'>GPU Models</FooterLink>
       </Stack>
 
       <Stack width={130}>
