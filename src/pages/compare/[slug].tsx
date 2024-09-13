@@ -1,7 +1,7 @@
 // pages/comparison/[slug].tsx
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
-import CompareGpus from '@components/CompareGpu';
+import CompareGpus from '@components/CompareGPU';
 import gpuData from './gpus.json'; // Ensure you import the correct JSON
 
 interface GpuDataType {
