@@ -46,8 +46,6 @@ export default [
 		name: "Ty Gibbons",
 		image: "/static/images/about/team/ty.webp",
 		bio: "Culture champion at RunPod",
-		twitter: "",
-		github: "",
 		linkedin: "https://www.linkedin.com/in/ty-gibbons-he-him-3b00b948/"
 	},
 	{
@@ -63,9 +61,7 @@ export default [
 		name: "Aditya Shankar",
 		image: "/static/images/about/team/aditya.webp",
 		bio: "Customer relations, Technical writer and Engineer at Runpod",
-		twitter: "",
-		github: "https://github.com/therealadityashankar",
-		linkedin: ""
+		github: "https://github.com/therealadityashankar"
 	},
 	{
 		name: "Kadeeja Best",
@@ -88,7 +84,6 @@ export default [
 		image: "/static/images/about/team/pardeep.webp",
 		bio: "CTO - ❤️ Code & Anime",
 		twitter: "https://x.com/flash__singh",
-		github: "",
 		linkedin: "https://www.linkedin.com/in/pardeep-singh-917830237/"
 	},
 	{
@@ -133,15 +128,12 @@ export default [
 		name: "Charlotte Daniels",
 		image: "/static/images/about/team/charlotte.webp",
 		bio: "Leads Data and AI at RunPod",
-		twitter: "",
-		github: "",
 		linkedin: "https://www.linkedin.com/in/danielscharlotte"
 	},
 	{
 		name: "Zhen Lu",
 		image: "/static/images/about/team/zhen.webp",
 		bio: "CEO",
-		twitter: "",
 		github: "https://github.com/zhl146",
 		linkedin: "https://www.linkedin.com/in/zeen/",
 		spotifyPlaylist:
@@ -151,7 +143,6 @@ export default [
 		name: "Efron Licht",
 		image: "/static/images/about/team/efron.webp",
 		bio: "Staff Software Engineer (evil?). Backend, Systems Programming, & Devops. Check out my articles on software https://eblog.fly.dev",
-		twitter: "",
 		github: "https://gitlab.com/efronlicht",
 		linkedin: "https://www.linkedin.com/in/efronlicht/"
 	}
