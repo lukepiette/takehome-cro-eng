@@ -1,54 +1,46 @@
 import React from 'react';
 import { Box, Stack, Typography, Link } from '@mui/material';
 import Hero from './Hero';
-import CostChart from './CostChart';
-import ThroughputChart from './ThroughputChart';
+import Overview from './Overview'; 
+import Footer from './Footer'; 
 
-const CompareGpus = ({ firstGPUData, secondGPUData }) => {
+const CompareGpus = ({ firstGPUData, secondGPUData, gpuList }) => {
   return (
-    <>
-      {/* Hero section */}
-      <Hero firstGPUData={firstGPUData} secondGPUData={secondGPUData} />
+    <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+      <Hero 
+        firstGPUData={firstGPUData} 
+        secondGPUData={secondGPUData} 
+        gpuList={gpuList}
+      />
 
-      {/* Cost comparison section */}
-      <Box sx={{ padding: '20px', marginTop: 2 }}>
-        <Typography variant="h2" align="center"
-                  sx={{ 
-                    fontSize: { xs: '28px', sm: '32px', md: '36px' }, 
-                    fontWeight: 600, 
-                    lineHeight: '96%', 
-                    letterSpacing: '-0.03em', 
-                    color: '#FFFFFF', 
-                  }}>
-            Llama 8B Benchmarks
-        </Typography>
-        <Typography variant="body1" sx={{ 
-            fontSize: { xs: '14px', sm: '16px' }, 
-            textAlign: 'center', 
-            color: 'rgba(255, 255, 255, 0.7)',
-            maxWidth: '500px',
-            margin: '0 auto', // Add this line
-            mt:3
-            }}>
-            Benchmarks where run on <Link href="https://huggingface.co/meta-llama/Meta-Llama-3.1-8B" target="_blank">Llama 3.1 8B</Link> using vLLM. For more details on vLLM, check out the <Link href="https://github.com/vllm-project/vllm/tree/main/benchmarks" target="_blank">vLLM benchmarks repository</Link>
-        </Typography>
+      <Box height={50}/>
 
-        {/* Throughput comparison section */}
-        <Stack mt={7}>
-            <Typography variant="h3" align="center" gutterBottom>
-            Throughput Comparison
-            </Typography>
-            <ThroughputChart firstGPUData={firstGPUData} secondGPUData={secondGPUData} />
-        </Stack>
+      <Overview 
+        gpuList={gpuList}
+        firstGPUData={firstGPUData}
+        secondGPUData={secondGPUData}
+      />
 
-        <Stack mt={7} mb={10}>
-            <Typography variant="h3" align="center" gutterBottom>
-            Cost Comparison
-            </Typography>
-            <CostChart firstGPUData={firstGPUData} secondGPUData={secondGPUData} />
-        </Stack>
-      </Box>
-    </>
+      <Footer />
+
+      {/* Background element */}
+      <Box
+        sx={{
+          position: 'absolute',
+          left: '-50%',
+          right: '-50%',
+          top: '20rem',
+          height: '30%',
+          background:
+            "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 65, 163, 0.25) 18.87%, rgba(4, 0, 16, 0.80) 52.12%, #170042 75%)",
+          filter: "blur(64px)",
+          zIndex: -1,
+          transform: 'rotate(169.39deg)',
+          transformOrigin: 'center center',
+          pointerEvents: 'none',
+        }}
+      />
+    </Box>
   );
 };
 

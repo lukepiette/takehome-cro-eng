@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Grid, Card, CardContent, Select, MenuItem, Button } from '@mui/material';
+import { Box, Typography, Select, MenuItem, Card, CircularProgress } from '@mui/material';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import gpus from '../../pages/compare/gpus.json';
 
-const Hero = ({ firstGPUData, secondGPUData }) => {
-  const router = useRouter();
-  const [firstGPU, setFirstGPU] = useState(firstGPUData.name);
-  const [secondGPU, setSecondGPU] = useState(secondGPUData.name);
+const GPUCard = ({ gpuData, isFirst, onGPUChange, gpuList, isBestGPU }) => {
+  const [isLoading, setIsLoading] = useState(false);
 
-  const updateURL = (gpu1, gpu2) => {
-    const gpu1Key = Object.keys(gpus).find(key => gpus[key].name === gpu1);
-    const gpu2Key = Object.keys(gpus).find(key => gpus[key].name === gpu2);
-    router.push(`/compare/${gpu1Key}-vs-${gpu2Key}`);
-  };
+  useEffect(() => {
+    setIsLoading(false);
+  }, [gpuData]);
 
-  const GPUCard = ({ gpuData, isFirst }) => (
+  if (!gpuData) {
+    return <Box>Loading GPU data...</Box>;
+  }
+
+  return (
     <Card sx={{
       display: 'flex',
       flexDirection: 'column',
@@ -24,12 +21,13 @@ const Hero = ({ firstGPUData, secondGPUData }) => {
       alignItems: 'center',
       padding: { xs: '10px', sm: '20px' },
       width: '100%',
-      maxWidth: '400px',
+      maxWidth: { xs: '100%', sm: '400px' },
       height: 'auto',
-      minHeight: { xs: 'auto', sm: '387px' },
+      minHeight: { xs: 'auto', sm: '320px' },
       borderRadius: '8px',
       backgroundColor: 'transparent',
       boxShadow: 'none',
+      marginBottom: { xs: '20px', sm: 0 },
     }}>
 
       
@@ -38,13 +36,13 @@ const Hero = ({ firstGPUData, secondGPUData }) => {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        height: { xs: 'auto', sm: '260px' },
+        height: { xs: 'auto', sm: '190px' },
       }}>
         <Typography
           sx={{
             textAlign: 'center',
             fontWeight: 600,
-            marginBottom: { xs: 2, sm: 3 },
+            marginBottom: { xs: 1, sm: 2 },
             color: '#FFFFFF',
             fontSize: { xs: '24px', sm: '24px' },
           }}
@@ -53,43 +51,28 @@ const Hero = ({ firstGPUData, secondGPUData }) => {
         </Typography>
         <Box sx={{
           width: '100%',
-          height: '160px',
+          height: '140px',
           display: { xs: 'none', sm: 'flex' },
           justifyContent: 'center',
           alignItems: 'center',
+          position: 'relative',
+          marginBottom: '10px',
         }}>
+          {isLoading ? (
+            <CircularProgress sx={{ position: 'absolute', zIndex: 1 }} />
+          ) : null}
           <Box
             component="img"
+            key={gpuData.urlName}
             sx={{
               maxWidth: '100%',
-              maxHeight: '160px',
+              maxHeight: '140px',
               objectFit: 'contain',
+              opacity: isLoading ? 0.5 : 1,
+              transition: 'opacity 0.3s',
             }}
             src={gpuData.gpuImagePath}
             alt={`${gpuData.name} image`}
-          />
-        </Box>
-        <Box sx={{
-          width: '100%',
-          height: '60px',
-          display: { xs: 'none', sm: 'flex' },
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          <Box
-            component="img"
-            sx={{
-              width: gpuData.manufacturer === "nvidia" ? '85px' : '70px',
-              height: 'auto',
-              maxHeight: gpuData.manufacturer === "nvidia" ? '40px' : 'none',
-              objectFit: 'contain',
-            }}
-            src={
-              gpuData.manufacturer === "nvidia"
-                ? "/static/images/companies/nvidia.png"
-                : "/static/images/companies/amd.svg"
-            }
-            alt={`${gpuData.manufacturer} logo`}
           />
         </Box>
       </Box>
@@ -97,21 +80,17 @@ const Hero = ({ firstGPUData, secondGPUData }) => {
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         width: '100%',
-        mt: { xs: 2, sm: 3 }
+        flexGrow: 1,
       }}>
         <Select
-          value={isFirst ? firstGPU : secondGPU}
+          value={gpuData.urlName}
           onChange={(e) => {
-            if (isFirst) {
-              setFirstGPU(e.target.value);
-              updateURL(e.target.value, secondGPU);
-            } else {
-              setSecondGPU(e.target.value);
-              updateURL(firstGPU, e.target.value);
-            }
+            const newGPU = e.target.value;
+            setIsLoading(true);
+            onGPUChange(newGPU);
           }}
           sx={{
             width: '100%',
@@ -141,149 +120,203 @@ const Hero = ({ firstGPUData, secondGPUData }) => {
               },
             },
           }}
+          renderValue={(selected) => (
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Box
+                component="img"
+                src={
+                  gpuData.manufacturer === "nvidia"
+                    ? "/static/images/companies/nvidia-emblem.webp"
+                    : "/static/images/companies/amd.svg"
+                }
+                alt={`${gpuData.manufacturer} logo`}
+                sx={{
+                  width: '20px',
+                  height: '13px',
+                  marginRight: '8px',
+                }}
+              />
+              {gpuData.name}
+            </Box>
+          )}
         >
-          {Object.entries(gpus).map(([key, gpu]) => (
-            <MenuItem sx={{fontFamily: 'monospace'}}key={key} value={gpu.name}>{gpu.name}</MenuItem>
-          ))}
+          {Object.values(gpuList).length > 0 ? (
+            Object.values(gpuList).map((gpu) => (
+              <MenuItem 
+                sx={{
+                  fontFamily: 'monospace',
+                  backgroundColor: gpu.urlName === gpuData.urlName
+                    ? isBestGPU
+                      ? 'rgba(0, 255, 0, 0.05)'  // Very light green for best GPU
+                      : 'rgba(169, 169, 169, 0.05)'  // Very light grey for second-best GPU
+                    : 'transparent',
+                  '&:hover': {
+                    backgroundColor: gpu.urlName === gpuData.urlName
+                      ? isBestGPU
+                        ? 'rgba(0, 255, 0, 0.1)'  // Slightly darker green on hover
+                        : 'rgba(169, 169, 169, 0.1)'  // Slightly darker grey on hover
+                      : 'rgba(255, 255, 255, 0.05)',  // Very subtle hover effect for other items
+                  },
+                }} 
+                key={gpu.urlName} 
+                value={gpu.urlName}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Box
+                    component="img"
+                    src={
+                      gpu.manufacturer === "nvidia"
+                        ? "/static/images/companies/nvidia-emblem.webp"
+                        : "/static/images/companies/amd.svg"
+                    }
+                    alt={`${gpu.manufacturer} logo`}
+                    sx={{
+                      width: '20px',
+                      height: '13px',
+                      marginRight: '8px',
+                    }}
+                  />
+                  {gpu.name}
+                </Box>
+              </MenuItem>
+            ))
+          ) : (
+            <MenuItem disabled>No GPUs available</MenuItem>
+          )}
         </Select>
 
       </Box>
     </Card>
   );
+};
+
+export default function Hero({ firstGPUData, secondGPUData, gpuList }) {
+  const router = useRouter();
+
+  const updateURL = (gpu1, gpu2) => {
+    router.push(`/compare/${gpu1}-vs-${gpu2}`);
+  };
+
+  const handleFirstGPUChange = (newGPU) => {
+    updateURL(newGPU, secondGPUData.urlName);
+  };
+
+  const handleSecondGPUChange = (newGPU) => {
+    updateURL(firstGPUData.urlName, newGPU);
+  };
+
+  if (!firstGPUData || !secondGPUData) {
+    return <Box>Loading GPU data...</Box>;
+  }
+
+  // Determine which GPU is the best (you'll need to implement this logic)
+  const isBestGPU = (gpu) => {
+    // Implement your logic to determine the best GPU
+    // For example, you could compare their performance metrics
+    // Return true if the given GPU is the best, false otherwise
+  };
 
   return (
     <Box sx={{ 
-      display: 'flex', 
-      flexDirection: 'column', 
-      alignItems: 'center', 
-      gap: { xs: '24px', sm: '48px' },
-      padding: { xs: '10px', sm: '20px', md: '40px' },
-      backgroundColor: 'transparent',
-      color: '#ffffff',
-      mt: { xs: 2, sm: 5 }
+      position: 'relative',
+      overflow: 'hidden', // Add this to prevent content from overflowing
+      width: '100%', // Ensure the box takes full width
     }}>
-      {/* New Content */}
-      <Box sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        maxWidth: '650px',
-        textAlign: 'center',
+      <Box sx={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        gap: { xs: '16px', sm: '24px', md: '48px' },
+        padding: { xs: '20px', sm: '30px', md: '40px' },
+        backgroundColor: 'transparent',
+        color: '#ffffff',
+        mt: { xs: 1, sm: 2, md: 5 },
       }}>
-        <Typography 
-          variant="h1" 
-          sx={{ 
-            fontSize: { xs: '28px', sm: '32px', md: '48px' }, 
-            fontWeight: 600, 
-            lineHeight: '110%', 
-            letterSpacing: '-0.03em', 
-            color: '#FFFFFF', 
-          }}
-        >
-          Compare GPU Performance on AI Workloads
-          <Box
-            component="span"
-            sx={{
-              background: 'linear-gradient(90deg, #C3BDFF 0%, #9E69FF 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              color: 'transparent',
-              display: 'inline',
+        {/* New Content */}
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          maxWidth: '650px',
+          textAlign: 'center',
+          px: { xs: 2, sm: 3, md: 0 },
+        }}>
+          <Typography 
+            variant="h1" 
+            sx={{ 
+              fontSize: { xs: '24px', sm: '28px', md: '48px' }, 
+              fontWeight: 600, 
+              lineHeight: '110%', 
+              letterSpacing: '-0.03em', 
+              color: '#FFFFFF', 
+              mb: { xs: 2, sm: 3 },
             }}
           >
+            Compare GPU Performance on AI Workloads
+            <Box
+              component="span"
+              sx={{
+                background: 'linear-gradient(90deg, #C3BDFF 0%, #9E69FF 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                color: 'transparent',
+                display: 'inline',
+              }}
+            >
+            </Box>
+            
+          </Typography>
+          <Box sx={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center', 
+              gap: { xs: '8px', sm: '16px' },
+          }}>
           </Box>
-          
-        </Typography>
-        <Box sx={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            gap: { xs: '8px', sm: '16px' },
-        }}>
         </Box>
-      </Box>
 
-      {/* GPU Comparison Section */}
-      <Box sx={{
-        display: 'flex',
-        flexDirection: { xs: 'column', md: 'row' },
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: { xs: '16px', sm: '32px', md: '64px' },
-        width: '100%',
-        maxWidth: '1200px',
-        margin: '0 auto',
-      }}>
-        <Box sx={{ width: '100%', maxWidth: '400px' }}>
-          <GPUCard gpuData={firstGPUData} isFirst={true} />
-        </Box>
-        <Typography variant="h5" sx={{ 
-          fontWeight: 600, 
-          fontSize: { xs: '20px', sm: '24px' },
-          my: { xs: 1, sm: 2, md: 0 }
+        {/* GPU Comparison Section */}
+        <Box sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: { xs: '16px', sm: '24px', md: '64px' },
+          width: '100%',
+          maxWidth: '1200px',
+          margin: '0 auto',
         }}>
-          Vs.
-        </Typography>
-        <Box sx={{ width: '100%', maxWidth: '400px' }}>
-          <GPUCard gpuData={secondGPUData} isFirst={false} />
+          <Box sx={{ width: '100%', maxWidth: { xs: '100%', sm: '400px' } }}>
+            <GPUCard 
+              gpuData={firstGPUData} 
+              isFirst={true} 
+              onGPUChange={handleFirstGPUChange}
+              gpuList={gpuList}
+              isBestGPU={isBestGPU(firstGPUData)}
+            />
+          </Box>
+          <Typography variant="h5" sx={{ 
+            fontWeight: 600, 
+            fontSize: { xs: '18px', sm: '20px', md: '24px' },
+            my: { xs: 1, sm: 2, md: 0 }
+          }}>
+            Vs.
+          </Typography>
+          <Box sx={{ width: '100%', maxWidth: { xs: '100%', sm: '400px' } }}>
+            <GPUCard 
+              gpuData={secondGPUData} 
+              isFirst={false}
+              onGPUChange={handleSecondGPUChange}
+              gpuList={gpuList}
+              isBestGPU={isBestGPU(secondGPUData)}
+            />
+          </Box>
         </Box>
-      </Box>
 
-      <div
-          style={{
-            width: "230rem",
-            height: "42.12575rem",
-            position: "absolute",
-            left: "-115rem",
-            top: "30rem",
-            transform: "rotate(169.39deg)",
-            background:
-              "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 65, 163, 0.25) 18.87%, rgba(4, 0, 16, 0.80) 52.12%, #170042 75%)",
-            filter: "blur(64px)",
-            zIndex: -1,
-          }}
-        />
-        
-      {/* <Box
-				sx={{
-					width: "2024px",
-					height: "795px",
-					position: "absolute",
-					overflow: "hidden",
-					zIndex: -1
-				}}>
-				<Box
-					sx={{
-						position: "absolute",
-						width: "1485.9px",
-						height: "1485.9px",
-						left: "calc(50% - 1485.9px/2 - 0.12px)",
-						top: "calc(50% - 1385.9px/2 + 728.96px)",
-						background:
-							"radial-gradient(85.83% 85.83% at 50% 14.17%, #000000 0%, #000000 59.12%, #000342 85.94%)",
-						boxShadow:
-							"0px 2.40622px 2.40622px rgba(77, 148, 255, 0.25), inset 0px -18.0466px 30.0777px #538DFF, inset 0px -60.1555px 60.1555px #538DFF",
-						borderRadius: "50%"
-					}}
-				/>
-				<Box
-					sx={{
-						position: "absolute",
-						width: "1273.19px",
-						height: "1273.19px",
-						left: "calc(50% - 1273.19px/2 - 0.12px)",
-						top: "calc(50% - 1173.19px/2 + 659.69px)",
-						background:
-							"radial-gradient(85.83% 85.83% at 50% 14.17%, #000000 0%, #000000 59.12%, #000000 85.94%)",
-						boxShadow:
-							"0px 2.40622px 2.40622px rgba(77, 148, 255, 0.25), inset 0px -8px 30.0777px #5D29F0, inset 0px -60.1555px 0px #538DFF",
-						borderRadius: "50%"
-					}}
-				/>
-			</Box> */}
+        {/* Update the background div */}
+
+      </Box>
     </Box>
   );
-};
-
-export default Hero;
+}

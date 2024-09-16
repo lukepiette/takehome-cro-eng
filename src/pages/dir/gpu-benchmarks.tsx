@@ -2,10 +2,24 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Box, Typography, List, ListItem, ListItemText, TextField } from '@mui/material';
-import gpuData from '../compare/gpus.json'; // Import the GPU data
+import { getGpuData } from '../compare/gpus.js'; // Updated import
 
 interface GpuDataType {
+  urlName: string;
   name: string;
+  gpuImagePath: string;
+  VRAM: string;
+  price: number;
+  manufacturer: string;
+  performanceData: Array<{
+    batchSize: number;
+    requestsPerSecond: number;
+    requestLatency: number;
+    timeToFirstToken: number;
+    interTokenLatency: number;
+    outputTokenThroughput: number;
+    costPer1MTokens: number;
+  }>;
 }
 
 interface GpuDataDict {
@@ -19,34 +33,24 @@ interface GpuComparison {
 }
 
 export default function GpuBenchmarks() {
-  const gpus: GpuDataDict = gpuData;
+  const gpus: GpuDataDict = getGpuData();
   
   // State to store the search query
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Declare comparisons array with the correct type
-  const comparisons: GpuComparison[] = [];
-
+  // Check if gpus is defined before getting keys
   const gpuKeys = Object.keys(gpus);
 
-  // Generate all possible comparisons (bidirectional links)
-  gpuKeys.forEach((firstGpu) => {
-    gpuKeys.forEach((secondGpu) => {
-      if (firstGpu !== secondGpu) {
-        comparisons.push({
-          firstGpuName: gpus[firstGpu].name,
-          secondGpuName: gpus[secondGpu].name,
-          link: `/compare/${firstGpu}-vs-${secondGpu}`,
-        });
-
-        comparisons.push({
-          firstGpuName: gpus[secondGpu].name,
-          secondGpuName: gpus[firstGpu].name,
-          link: `/compare/${secondGpu}-vs-${firstGpu}`,
-        });
-      }
-    });
-  });
+  // Declare comparisons array with the correct type
+  const comparisons: GpuComparison[] = gpuKeys.flatMap((firstGpu) =>
+    gpuKeys
+      .filter((secondGpu) => firstGpu !== secondGpu)
+      .map((secondGpu) => ({
+        firstGpuName: gpus[firstGpu].name,
+        secondGpuName: gpus[secondGpu].name,
+        link: `/compare/${gpus[firstGpu].urlName}-vs-${gpus[secondGpu].urlName}`,
+      }))
+  );
 
   // Filter comparisons based on the search query
   const filteredComparisons = comparisons.filter((comparison) =>
