@@ -173,7 +173,7 @@ export function getGpuData() {
     a40: {
       urlName: "a40",
       name: "A40 48GB",
-      gpuImagePath: "/static/images/gpu/a40-gpu.webp",
+      gpuImagePath: "/static/images/gpu/A40-gpu.webp",
       VRAM: "48GB",
       price: 40.00, // Default dummy price
       manufacturer: "nvidia",
