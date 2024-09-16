@@ -1,4 +1,4 @@
-const TeamMembers = [
+export default [
 	{
 		name: "Luke Piette",
 		image: "/static/images/about/team/luke_1.webp",
@@ -11,9 +11,10 @@ const TeamMembers = [
 		name: "Zack McKenna",
 		image: "/static/images/about/team/zack.webp",
 		bio: "Software Engineer at RunPod",
-		twitter: "",
 		github: "https://github.com/zackmckenna",
-		linkedin: "https://www.linkedin.com/in/zack-mckenna-77912678/"
+		linkedin: "https://www.linkedin.com/in/zack-mckenna-77912678/",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/5lcwfsFaweIsQTIUDEyGJt?si=3168d53577324ad0"
 	},
 	{
 		name: "Marut Pandya",
@@ -21,7 +22,9 @@ const TeamMembers = [
 		bio: "Machine Learning Engineer - Transforming Possibilities with Cutting-Edge ML Infrastructure and Compound AI Systems",
 		twitter: "https://x.com/pandya_marut",
 		github: "https://github.com/pandyamarut",
-		linkedin: "https://www.linkedin.com/in/marutpandya/"
+		linkedin: "https://www.linkedin.com/in/marutpandya/",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/1o1jkRp7z4o1D0FuSfhXTG?si=0291eee6e1d4467c"
 	},
 	{
 		name: "Zeke",
@@ -35,9 +38,9 @@ const TeamMembers = [
 		name: "Margarita Melkoumov",
 		image: "/static/images/about/team/margarita.webp",
 		bio: "Sales Development Representative at RunPod",
-		twitter: "",
-		github: "",
-		linkedin: "https://www.linkedin.com/in/margarita-melkoumov-aa0960192/"
+		linkedin: "https://www.linkedin.com/in/margarita-melkoumov-aa0960192/",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/62BvvjuT7hz1GA8DOo86BI?si=8785f85c54254613"
 	},
 	{
 		name: "Ty Gibbons",
@@ -51,9 +54,10 @@ const TeamMembers = [
 		name: "Nathaniel Saxe",
 		image: "/static/images/about/team/nathan.webp",
 		bio: "Software Engineer - Backend, CLI, Data Infrastructure",
-		twitter: "",
 		github: "https://github.com/DireLines",
-		linkedin: "https://www.linkedin.com/in/nathaniel-saxe-b67440201"
+		linkedin: "https://www.linkedin.com/in/nathaniel-saxe-b67440201",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/3xl4l22uImW0lahCw82sqj?si=a23a9447f9814523"
 	},
 	{
 		name: "Aditya Shankar",
@@ -67,9 +71,9 @@ const TeamMembers = [
 		name: "Kadeeja Best",
 		image: "/static/images/about/team/kadeeja.webp",
 		bio: "Customer Success Lead at RunPod. Cat lover. Former cellist 🎻",
-		twitter: "",
-		github: "",
-		linkedin: "https://www.linkedin.com/in/kadeeja-b-650532241/"
+		linkedin: "https://www.linkedin.com/in/kadeeja-b-650532241/",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/2dx4BWkmh7dAGjZLNQSvnh?si=6a35b1a068c84511"
 	},
 	{
 		name: "Aileen Luo",
@@ -99,17 +103,16 @@ const TeamMembers = [
 		name: "Namrata Raut",
 		image: "/static/images/about/team/namrata.webp",
 		bio: "Technical Software Analyst and Customer Experience Specialist",
-		twitter: "",
-		github: "",
-		linkedin: "https://www.linkedin.com/in/namrata-raut"
+		linkedin: "https://www.linkedin.com/in/namrata-raut",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/3myEJOjATa3WyGiBRrx5iL?si=5fb443dfd309485e"
 	},
 	{
 		name: "Geovany Jimenez",
 		image: "/static/images/about/team/geovany.webp",
 		bio: "Technical Support Analyst",
-		twitter: "",
-		github: "",
-		linkedin: ""
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/2dWKw6xV5muhVlIKRM3n9v?si=f6d306404ae44d6f"
 	},
 	{
 		name: "Aadil",
@@ -140,7 +143,9 @@ const TeamMembers = [
 		bio: "CEO",
 		twitter: "",
 		github: "https://github.com/zhl146",
-		linkedin: "https://www.linkedin.com/in/zeen/"
+		linkedin: "https://www.linkedin.com/in/zeen/",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/3FHSZSEGp8xRgv6RIegQaf?si=be127fa1e79c44d2"
 	},
 	{
 		name: "Efron Licht",
@@ -150,6 +155,12 @@ const TeamMembers = [
 		github: "https://gitlab.com/efronlicht",
 		linkedin: "https://www.linkedin.com/in/efronlicht/"
 	}
-];
-
-export default TeamMembers;
+] as {
+	name: string;
+	image: string;
+	bio: string;
+	twitter?: string;
+	github?: string;
+	linkedin?: string;
+	spotifyPlaylist?: string;
+}[];

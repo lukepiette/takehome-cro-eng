@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Typography, Button, Grid, IconButton, Link } from "@mui/material";
+import { Box, Typography, Button, Link } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-export default function Announcements() {
+const Announcements: React.FC = () => {
 	return (
 		<Box
 			sx={{
@@ -73,6 +73,7 @@ export default function Announcements() {
 						height: "546px"
 					}}>
 					<Box
+						component={Link}
 						href="https://blog.runpod.io/runpods-20mm-milestone-fueling-our-vision-empowering-our-team"
 						target="_blank"
 						sx={{
@@ -82,7 +83,6 @@ export default function Announcements() {
 							border: "1px solid rgba(255, 255, 255, 0.12)",
 							borderRadius: "12px"
 						}}
-						component={Link}
 					/>
 					<Box
 						sx={{
@@ -182,4 +182,6 @@ export default function Announcements() {
 			</Box>
 		</Box>
 	);
-}
+};
+
+export default Announcements;
