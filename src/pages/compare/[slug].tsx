@@ -4,13 +4,11 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import CompareGpus from '@components/CompareGPU';
 import { getGpuData } from '../compare/gpus'; // Change this line
+import Link from 'next/link';
 
 interface PerformanceData {
   batchSize: number;
   requestsPerSecond: number;
-  requestLatency: number;
-  timeToFirstToken: number;
-  interTokenLatency: number;
   outputTokenThroughput: number;
   costPer1MTokens: number;
 }
@@ -43,8 +41,26 @@ export default function ComparisonPage({
     return <div>Loading...</div>;
   }
 
-  const firstGPUName = firstGPUData?.name || 'Unknown GPU';
-  const secondGPUName = secondGPUData?.name || 'Unknown GPU';
+  // Add this failcheck
+  if (!firstGPUData || !secondGPUData) {
+    return (
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        textAlign: 'center'
+      }}>
+        <h1>Invalid Comparison</h1>
+        <p>One or both of the selected GPUs are not available for comparison.</p>
+        <Link href="/compare/h100sxm-vs-h100pcie">Return to GPU Comparison</Link>
+      </div>
+    );
+  }
+
+  const firstGPUName = firstGPUData.name;
+  const secondGPUName = secondGPUData.name;
   const pageTitle = `${firstGPUName} vs ${secondGPUName} - GPU Comparison | RunPod`;
   const pageDescription = `Compare the performance of ${firstGPUName} and ${secondGPUName} on AI and machine learning tasks on RunPod.`;
   const fullUrl = `https://www.runpod.io${router.asPath.startsWith('/') ? '' : '/'}${router.asPath}`;
@@ -105,8 +121,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
+// Update getStaticProps to handle the case where GPUs are not found
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-
   const gpuData: GpuDataMap = await getGpuData();
 
   if (!params?.slug) {
@@ -118,14 +134,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const firstGPUData = gpuData[firstGPU];
   const secondGPUData = gpuData[secondGPU];
 
-
   if (!firstGPUData || !secondGPUData) {
     return { notFound: true };
   }
 
   // Create gpuList with only the names of the GPUs
   const gpuList = Object.values(gpuData);
-
 
   return {
     props: {

@@ -4,6 +4,13 @@ import Link from 'next/link';
 import { Box, Typography, List, ListItem, ListItemText, TextField } from '@mui/material';
 import { getGpuData } from '../compare/gpus.js'; // Updated import
 
+interface PerformanceData {
+  batchSize: number;
+  requestsPerSecond: number;
+  outputTokenThroughput: number;
+  costPer1MTokens: number;
+}
+
 interface GpuDataType {
   urlName: string;
   name: string;
@@ -11,15 +18,7 @@ interface GpuDataType {
   VRAM: string;
   price: number;
   manufacturer: string;
-  performanceData: Array<{
-    batchSize: number;
-    requestsPerSecond: number;
-    requestLatency: number;
-    timeToFirstToken: number;
-    interTokenLatency: number;
-    outputTokenThroughput: number;
-    costPer1MTokens: number;
-  }>;
+  performanceData: PerformanceData[];
 }
 
 interface GpuDataDict {
