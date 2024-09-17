@@ -89,12 +89,9 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
   }, [router.query, firstGPUData, secondGPUData, selectedMetric, selectedModel, selectedBatchSize]);
 
   const metrics = [
-    { value: 'requestsPerSecond', label: 'Requests Per Second' },
-    { value: 'requestLatency', label: 'Request Latency (s)' },
-    { value: 'timeToFirstToken', label: 'Time to First Token (ms)' },
-    { value: 'interTokenLatency', label: 'Inter-Token Latency (ms)' },
     { value: 'outputTokenThroughput', label: 'Output Token Throughput (tok/s)' },
     { value: 'costPer1MTokens', label: 'Cost Per 1M Tokens ($)' },
+    { value: 'requestsPerSecond', label: 'Requests Per Second' },
   ];
 
   const getBarColor = (gpu, metric) => {
@@ -121,13 +118,14 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
 
   const chartData = gpuList
     .map(gpu => {
-      if (!gpu.performanceData || !gpu.performanceData[0]) {
-        console.warn(`Missing performanceData for GPU: ${gpu.name}`);
+      const performanceData = gpu.performanceData.find(data => data.batchSize === selectedBatchSize);
+      if (!performanceData) {
+        console.warn(`Missing performanceData for GPU: ${gpu.name} at batch size: ${selectedBatchSize}`);
         return null;
       }
       return {
         name: gpu.name,
-        value: gpu.performanceData[0][selectedMetric],
+        value: performanceData[selectedMetric],
         urlName: gpu.urlName
       };
     })
@@ -294,7 +292,7 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
             margin: '0 auto',
             mt: 2
             }}>
-            Benchmarks where run on RunPod gpus using <Link href="https://github.com/neuralmagic/guidellm" target="_blank">guidellm</Link>. For more details on guidellm, check out the <Link href="https://github.com/neuralmagic/guidellm" target="_blank">guidellm github repository</Link>
+            Benchmarks were run on RunPod gpus using <Link href="https://github.com/vllm-project/vllm" target="_blank">vllm</Link>. For more details on vllm, check out the <Link href="https://github.com/vllm-project/vllm" target="_blank">vllm github repository</Link>.
         </Typography>
       
       <Box sx={{ 
@@ -307,7 +305,7 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
         flexWrap: 'wrap',
         gap: 2
       }}>
-        <StyledFormControl sx={{ width: { xs: '100%', sm: 350 }, mb: 2 }}>
+        <StyledFormControl sx={{ width: { xs: '100%', sm: 400 }, mb: 2 }}>
           <InputLabel id="metric-label" sx={{ color: '#F9FAFB', fontFamily: 'Arial, Helvetica, sans-serif' }}>Metric</InputLabel>
           <Select
             labelId="metric-label"
@@ -363,7 +361,9 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
               },
             }}
           >
-            <MenuItem value="1" sx={{ fontFamily: 'monospace' }}>1</MenuItem>
+            {[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024].map((size) => (
+              <MenuItem key={size} value={size} sx={{ fontFamily: 'monospace' }}>{size}</MenuItem>
+            ))}
           </Select>
         </StyledFormControl>
       </Box>
