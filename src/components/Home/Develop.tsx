@@ -1,7 +1,4 @@
-import ButtonLink from "@components/ButtonLink";
 import { Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { ShellBlock } from "@components/ShellBlock";
 
 export function Develop() {
   const theme = useTheme();
@@ -9,9 +6,9 @@ export function Develop() {
   return (
     <Stack
       gap={"27px"}
-      alignItems={"center"}
+      alignItems={{ xs: "flex-start", sm: "center" }}
       zIndex={1}
-      textAlign={"center"}
+      textAlign={{ xs: "left", sm: "center" }}
       px={{
         xs: 3,
         md: 0,
@@ -20,8 +17,14 @@ export function Develop() {
         xs: 0,
         md: 2,
       }}
+      mt={{xs:-5,sm:0}}
     >
-      <Stack direction={"row"} gap={2} alignItems={"center"}>
+      <Stack 
+        direction={"row"} 
+        gap={2} 
+        alignItems={"center"} 
+        sx={{ display: { xs: 'none', sm: 'flex' } }}
+      >
         <div
           style={{
             width: "36px",
@@ -41,14 +44,19 @@ export function Develop() {
       </Stack>
       <Typography
         fontWeight={600}
-        fontSize={{ xs: 40, md: 48 }}
-        lineHeight={"48px"}
+        fontSize={{ xs: 30, md: 48 }}
+        lineHeight={{ xs: "36px", md: "48px" }}
         letterSpacing={"-1.44px"}
+        textAlign={{ xs: "left", sm: "center" }}
       >
         Globally distributed GPU{!isSmall && <br />} cloud for your{" "}
         <span style={{ color: "#afa0ff" }}>AI workloads</span>
       </Typography>
-      <Typography fontWeight={400} fontSize={16}>
+      <Typography
+        fontWeight={400}
+        fontSize={16}
+        textAlign={{ xs: "left", sm: "center" }}
+      >
         Deploy any GPU workload seamlessly, so you can focus less on{" "}
         {!isSmall && <br />}
         infrastructure and more on running ML models.

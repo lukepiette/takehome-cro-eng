@@ -7,6 +7,8 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
+  SxProps,
+  Theme,
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import ButtonLink from "@components/ButtonLink";
@@ -39,7 +41,8 @@ function GPUPrice({
   name,
   manufacturer = "nvidia",
   data,
-}: Gpu & { data: GpuData }) {
+  sx,
+}: Gpu & { data: GpuData; sx?: SxProps<Theme> }) {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Stack
@@ -51,6 +54,7 @@ function GPUPrice({
           boxShadow: "0px 4px 100px rgba(0, 0, 0, 0.25)",
           background:
             "linear-gradient(0deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 100%), radial-gradient(50.12% 50.12% at 100.49% 75.43%, rgba(28.15, 6.51, 63.46, 0.20) 0%, rgba(55.12, 0, 98.43, 0) 100%)",
+          ...sx,
         }}
         gap={0.5}
       >
@@ -188,22 +192,21 @@ export function Pricing({
     <Stack
       gap={4}
       alignItems={"center"}
-      mt={16}
+      mt={{xs:10,sm:16}}
       position={"relative"}
       maxWidth={"75.5rem"}
     >
       <Typography
         fontWeight={600}
-        textAlign={"center"}
-        lineHeight={"28px"}
+        textAlign={{xs:"left",sm:"center"}}
         variant="h2"
         px={{
-          xs: 3,
+          xs: 2,
           md: 0,
         }}
         letterSpacing={"-0.48px"}
       >
-        <span style={{ color: "#bbb9ff" }}>Powerful</span> & Cost-Effective GPUs
+        Powerful & <span style={{ color: "#bbb9ff" }}>Cost-Effective</span> GPUs
         {!isSmall ? <br /> : " "}
         for Every Workload
       </Typography>
@@ -221,6 +224,7 @@ export function Pricing({
             '& .MuiSvgIcon-root': {
               fontSize: '26px',
             },
+            visibility:{xs:"hidden",sm:"visible"}
           }}
         >
           See all GPUs
@@ -272,7 +276,7 @@ export function Pricing({
         }}
         gap={3}
       >
-        <Stack gap={1}>
+        <Stack gap={1} mt={{xs:-13,sm:0}}>
           <Typography fontWeight={500}>
             Thousands of GPUs across 30+ Regions
           </Typography>
@@ -303,12 +307,13 @@ export function Pricing({
           <FeatureCheck title={"99.99% Uptime"} />
           <FeatureCheck title={"$0.05/GB/month Network Storage"} />
         </Stack>
-        <Grid container spacing={2}>
+        <Grid container spacing={{xs:0, sm: 2}}>
           <GPUPrice
-              name="MI300X"
-              manufacturer="amd"
-              // @ts-ignore
-              data={data?.gpu["AMD Instinct MI300X OAM"]}
+            sx={{display:{xs:"none",sm:"block"}}}
+            name="MI300X"
+            manufacturer="amd"
+            // @ts-ignore
+            data={data?.gpu["AMD Instinct MI300X OAM"]}
           />
           <GPUPrice
             name="H100 PCIe"
@@ -328,25 +333,30 @@ export function Pricing({
             // @ts-ignore
             data={data?.gpu["NVIDIA A100 80GB PCIe"]}
           />
+
           <GPUPrice
+            sx={{display:{xs:"none",sm:"block"}}}
             name="A100 SXM"
             manufacturer="nvidia"
             // @ts-ignore
             data={data?.gpu["NVIDIA A100-SXM4-80GB"]}
           />
           <GPUPrice
+            sx={{display:{xs:"none",sm:"block"}}}
             name="A40"
             manufacturer="nvidia"
             // @ts-ignore
             data={data?.gpu["NVIDIA A40"]}
           />
           <GPUPrice
+            sx={{display:{xs:"none",sm:"block"}}}
             name="L40"
             manufacturer="nvidia"
             // @ts-ignore
             data={data?.gpu["NVIDIA L40"]}
           />
           <GPUPrice
+            sx={{display:{xs:"none",sm:"block"}}}
             name="L40S"
             manufacturer="nvidia"
             // @ts-ignore
@@ -360,6 +370,7 @@ export function Pricing({
             data={data?.gpu["NVIDIA RTX A6000"]}
           />
           <GPUPrice
+            sx={{display:{xs:"none",sm:"block"}}}
             name="RTX A5000"
             manufacturer="nvidia"
             // @ts-ignore
@@ -372,12 +383,14 @@ export function Pricing({
             data={data?.gpu["NVIDIA GeForce RTX 4090"]}
           />
           <GPUPrice
+            sx={{display:{xs:"none",sm:"block"}}}
             name="RTX 3090"
             manufacturer="nvidia"
             // @ts-ignore
             data={data?.gpu["NVIDIA GeForce RTX 3090"]}
           />
           <GPUPrice
+            sx={{display:{xs:"none",sm:"block"}}}
             name="RTX A4000 Ada"
             manufacturer="nvidia"
             // @ts-ignore

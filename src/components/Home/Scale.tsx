@@ -26,88 +26,92 @@ export function Scale() {
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   return (
+    <>
+    <Box mt={{xs:5, sm:24}}/>
+
+    <SectionHeader
+      number={2}
+      name="Scale"
+      title={
+        <Typography
+          fontWeight={600}
+          fontSize={{
+            xs: 30,
+            md: 48,
+          }}
+          lineHeight={{xs:"30px", sm:"48px"}}
+          letterSpacing={"-0.48px"}
+        >
+          Scale ML inference
+          <br />
+          with <span style={{ color: "#afa0ff" }}>Serverless</span>
+        </Typography>
+      }
+      subtitle={
+        <Typography fontWeight={400} fontSize={16}>
+          Run your AI models with autoscaling, job queueing and{" "}
+          {!isSmall && <br />}
+          sub 250ms cold start time.
+        </Typography>
+      }
+      button={
+        <ButtonLink 
+          href="/console/serverless" 
+          variant="contained" 
+          gradient
+          size="large"
+          sx={{
+            fontSize: '22px',
+            padding: '24px 30px',
+            '& .MuiButton-startIcon': {
+              marginRight: '8px',
+            },
+            '& .MuiSvgIcon-root': {
+              fontSize: '26px',
+            },
+          }}
+        >
+          Deploy Now
+          <KeyboardArrowRightIcon />
+        </ButtonLink>
+        }
+      >
+        <Box height={20}></Box>
+      {/* <ShellBlock sx={{ height: 90, mt: 2, mb: 16 }}>
+        <Typography
+          fontFamily="monospace"
+          fontSize={12}
+          ml={2}
+          mt={2}
+          width="100%"
+        >
+          {">"} <span style={{ color: "#FF8FFD" }}>runpodctl</span> project{" "}
+          <span style={{ color: "#979DFF" }}>deploy</span>
+        </Typography>
+      </ShellBlock> */}
+    </SectionHeader>
+
     <Container maxWidth="lg">
-      <Stack mt={24} position={"relative"} alignItems={"center"} width={"100%"}>
-        <SectionHeader
-          number={2}
-          name="Scale"
-          title={
-            <Typography
-              fontWeight={600}
-              fontSize={{
-                xs: 40,
-                md: 48,
-              }}
-              lineHeight={"48px"}
-              letterSpacing={"-1.44px"}
-            >
-              Scale your ML inference
-              <br />
-              with <span style={{ color: "#afa0ff" }}>Serverless</span>
-            </Typography>
-          }
-          subtitle={
-            <Typography fontWeight={400} fontSize={16}>
-              Run your AI models with autoscaling, job queueing and{" "}
-              {!isSmall && <br />}
-              sub 250ms cold start time.
-            </Typography>
-          }
-          button={
-            <ButtonLink 
-              href="/console/serverless" 
-              variant="contained" 
-              gradient
-              size="large"
-              sx={{
-                fontSize: '22px',
-                padding: '24px 30px',
-                '& .MuiButton-startIcon': {
-                  marginRight: '8px',
-                },
-                '& .MuiSvgIcon-root': {
-                  fontSize: '26px',
-                },
-              }}
-            >
-              Deploy Now
-              <KeyboardArrowRightIcon />
-            </ButtonLink>
-            }
-          >
-            <Box height={20}></Box>
-          {/* <ShellBlock sx={{ height: 90, mt: 2, mb: 16 }}>
-            <Typography
-              fontFamily="monospace"
-              fontSize={12}
-              ml={2}
-              mt={2}
-              width="100%"
-            >
-              {">"} <span style={{ color: "#FF8FFD" }}>runpodctl</span> project{" "}
-              <span style={{ color: "#979DFF" }}>deploy</span>
-            </Typography>
-          </ShellBlock> */}
-        </SectionHeader>
+      <Stack position={"relative"} alignItems={"center"} width={"100%"} mt={{xs:0,sm:5}}>
 
         <Cloud1
           style={{
             position: "absolute",
-            top: "300px",
+            top: "-25px",
             transform: "translateX(-20rem)",
           }}
         />
         <Cloud2
           style={{
             position: "absolute",
-            top: "300px",
+            top: "-25px",
             transform: "translateX(40rem)",
           }}
         />
         <Cloud3
           style={{
             position: "absolute",
-            top: "350px",
+            top: "25px",
             transform: "translateX(-36rem)",
           }}
         />
@@ -209,5 +213,6 @@ export function Scale() {
         <Analytics />
       </Stack>
     </Container>
+  </>
   );
 }
