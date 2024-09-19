@@ -232,7 +232,7 @@ import {
         </Typography>
   
         <Stack direction="row" my={3} spacing={1.8}>
-          <SignUp text="Get started" url="/console/serverless" utmContent="serverless-pricing" />
+          <SignUp text="Get started" url="/console/signup" utmContent="serverless-pricing" />
         </Stack>
         
         <div
