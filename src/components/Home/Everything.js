@@ -29,7 +29,7 @@ export default function Everything({ data }) {
   useInterval(() => requestTrigger(), 2000);
 
   return (
-    <Stack alignItems="center" position="relative" mt={40} mb={7} width="100%">
+    <Stack alignItems="center" position="relative" mt={{xs:10,sm:40}} mb={7} width="100%">
       <Box position="absolute" top={-380} zIndex={-1}>
         <Clouds />
       </Box>
@@ -66,7 +66,7 @@ export default function Everything({ data }) {
         fontSize={{ xs: 36, sm: 48 }}
         fontWeight={600}
         letterSpacing="-0.03em"
-        lineHeight="96%"
+        lineHeight="100%"
         mt={3}
         width={{ xs: "100%", sm: 500 }}
         px={{
@@ -93,7 +93,7 @@ export default function Everything({ data }) {
 
       <Stack
         direction={{ xs: "column", sm: "row" }}
-        mt={8}
+        mt={{xs:4, sm:8}}
         rowGap={3}
         columnGap={{
           xs: 0,
@@ -136,7 +136,7 @@ export default function Everything({ data }) {
         gap={4}
         justifyContent="center"
         maxWidth={"75.5rem"}
-        mt={15}
+        mt={{xs:5, sm:15}}
         width="100%"
         px={{
           xs: 3,
@@ -231,18 +231,17 @@ export default function Everything({ data }) {
               </Typography>
               <Typography
                 color="#94A3B8"
+                px={2}
                 fontSize={14}
                 letterSpacing="-0.25px"
                 mt={0.5}
-                mr={3}
                 width={375}
                 textAlign={"center"}
               >
-                Although many of our data center partners have these compliance
-                certifications, RunPod is in the process of getting SOC 2, ISO
-                27001, and HIPAA. We aim to have all three by early Q3, 2024.
+                RunPod is in the process of getting SOC 2, ISO
+                27001, and HIPAA. We aim to have all three by early Q4, 2024.
               </Typography>
-              <Stack spacing={1} mt={3} direction={{ xs: "column", sm: "row" }}>
+              <Stack spacing={1} mt={3} direction={{ xs: "row" }}>
                 <Box
                   component="img"
                   sx={{

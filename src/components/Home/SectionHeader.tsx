@@ -1,7 +1,4 @@
-import ButtonLink from "@components/ButtonLink";
 import { Stack, Typography } from "@mui/material";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { ShellBlock } from "@components/ShellBlock";
 
 export function SectionHeader({
   name,
@@ -31,7 +28,7 @@ export function SectionHeader({
         md: 0,
       }}
     >
-      <Stack direction={"row"} gap={2} alignItems={"center"}>
+      <Stack direction={"row"} gap={2} alignItems={"center"} visibility={{xs:"hidden",sm:"visible"}}>
         <div
           style={{
             width: "36px",

@@ -2,11 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import ButtonLink from "@components/ButtonLink";
 import { CodeBlock } from "@components/CodeBlock";
-import { ShellBlock } from "@components/ShellBlock";
 import {
   Box,
   Button,
-  Card,
   Container,
   Grid,
   Stack,
@@ -22,7 +20,6 @@ import SaveOutlinedIcon from "@mui/icons-material/SaveOutlined";
 import Docker from "@assets/docker.svg";
 import Pytorch from "@assets/pytorch.svg";
 import Tensorflow from "@assets/tensorflow.svg";
-import Runpod from "@assets/runpod.svg";
 import { useEffect, useState } from "react";
 
 function Feature({
@@ -91,10 +88,12 @@ function FeatureRow({
   left,
   right,
   reverseWhenSmall,
+  sx,
 }: {
   left: React.ReactNode;
   right: React.ReactNode;
   reverseWhenSmall?: boolean;
+  sx?: any;
 }) {
   return (
     <Stack
@@ -109,6 +108,7 @@ function FeatureRow({
         xs: "center",
         md: "initial",
       }}
+      sx={sx}
     >
       <Feature left>{left}</Feature>
       <Divider />
@@ -189,7 +189,7 @@ function FakePod() {
               fontWeight: "500",
             }}
           >
-            $0.69/hour
+            $2.89/hour
           </Typography>
         </Stack>
       </Stack>
@@ -209,7 +209,7 @@ function FakePod() {
         </Stack>
         <Stack>
           <Typography fontSize={11} fontWeight={500}>
-            1 x A40
+            1 x H100 PCIe
           </Typography>
           <Typography fontSize={11} sx={{ opacity: 0.7 }}>
             9 vCPU 50 GB RAM
@@ -399,9 +399,41 @@ export function Features() {
           md: 0,
         }}
       >
-        <FeatureRow
+        <FeatureRow sx={{mt:{xs:-5, sm:0}}}
           left={
-            <Box marginBottom={{ xs: 12, md: 0 }}>
+            <>
+              <FakePod/>
+            </>
+          }
+          right={
+            <>
+              <Typography variant="h2" letterSpacing={"-0.48px"}>
+                Spin up a GPU pod in seconds
+              </Typography>
+              <Typography color="#94A3B8">
+                it{"'"}s a pain to having to wait upwards of 10 minutes for your
+                pods to spin up - we{"'"}ve cut the cold-boot time down to
+                milliseconds, so you can start building within seconds of
+                deploying your pods.
+              </Typography>
+              <Box>
+                <ButtonLink href="/console/deploy" variant="contained" gradient>
+                  Spin up a pod
+                  <KeyboardArrowRightIcon
+                    sx={{
+                      display: { xs: "none", md: "inherit" },
+                      fontSize: 20,
+                      ml: 0.6,
+                    }}
+                  />
+                </ButtonLink>
+              </Box>
+            </>
+          }
+        />
+        {/* <FeatureRow
+          left={
+            <Box display={{ xs: 'none', sm: 'block' }} marginBottom={{ xs: 12, md: 0 }}>
               <ShellBlock
                 style={{
                   height: 220,
@@ -470,7 +502,7 @@ export function Features() {
             </Box>
           }
           right={
-            <>
+            <Box display={{ xs: 'none', sm: 'block' }}>
               <Typography variant="h2" letterSpacing={"-0.48px"}>
                 Instant hot-reloading for your local changes.
               </Typography>
@@ -482,10 +514,11 @@ export function Features() {
                 Just hit the endpoint given to you by the CLI to test and deploy
                 when you{"'"}re confident everything works.
               </Typography>
-            </>
+            </Box>
           }
-        />
+        /> */}
         <FeatureRow
+          sx={{mt: {xs:-15, sm:0}}}
           reverseWhenSmall
           left={
             <>
@@ -523,52 +556,54 @@ export function Features() {
           }
           right={
             <>
-              <CodeBlock
-                style={{
-                  height: "fit-content",
-                  width: "100%",
-                  marginLeft: "auto",
-                  maxWidth: "100%",
-                }}
-              >
-                <Grid container spacing={2} padding={2} height="100%">
-                  <Grid item xs={6}>
-                    <FakeTemplate
-                      icon={<Pytorch width={48} height={48} />}
-                      title="PyTorch"
-                      id="runpod-torch-v220"
-                    />
+              <Box display={{ xs: 'none', sm: 'block' }}>
+                <CodeBlock
+                  style={{
+                    height: "fit-content",
+                    width: "100%",
+                    marginLeft: "auto",
+                    maxWidth: "100%",
+                  }}
+                >
+                  <Grid container spacing={2} padding={2} height="100%">
+                    <Grid item xs={6}>
+                      <FakeTemplate
+                        icon={<Pytorch width={48} height={48} />}
+                        title="PyTorch"
+                        id="runpod-torch-v220"
+                      />
+                    </Grid>
+                    <Grid item xs={6}>
+                      <FakeTemplate
+                        icon={<Tensorflow width={48} height={48} />}
+                        title="Tensorflow"
+                        id="runpod-tensorflow"
+                      />
+                    </Grid>
+                    <Grid item xs={6}>
+                      <FakeTemplate
+                        icon={<Docker width={48} height={48} />}
+                        title="Docker"
+                        id="runpod-kobold-united"
+                      />
+                    </Grid>
+                    <Grid item xs={6}>
+                      <FakeTemplate
+                        icon={
+                          <img
+                            alt="runpod logo"
+                            src={"/static/svg/runpod-template-logo.svg"}
+                            width="48"
+                            height="48"
+                          />
+                        }
+                        title="Runpod"
+                        id="runpod-desktop"
+                      />
+                    </Grid>
                   </Grid>
-                  <Grid item xs={6}>
-                    <FakeTemplate
-                      icon={<Tensorflow width={48} height={48} />}
-                      title="Tensorflow"
-                      id="runpod-tensorflow"
-                    />
-                  </Grid>
-                  <Grid item xs={6}>
-                    <FakeTemplate
-                      icon={<Docker width={48} height={48} />}
-                      title="Docker"
-                      id="runpod-kobold-united"
-                    />
-                  </Grid>
-                  <Grid item xs={6}>
-                    <FakeTemplate
-                      icon={
-                        <img
-                          alt="runpod logo"
-                          src={"/static/svg/runpod-template-logo.svg"}
-                          width="48"
-                          height="48"
-                        />
-                      }
-                      title="Runpod"
-                      id="runpod-desktop"
-                    />
-                  </Grid>
-                </Grid>
-              </CodeBlock>
+                </CodeBlock>
+              </Box>
             </>
           }
         />
@@ -588,7 +623,8 @@ export function Features() {
             zIndex: 10,
           }}
         />
-        <FeatureRow
+        {/* <FeatureRow
+        
           left={
             <>
               <FakePod />
@@ -619,7 +655,7 @@ export function Features() {
               </Box>
             </>
           }
-        />
+        /> */}
       </Stack>
     </Container>
   );
