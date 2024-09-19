@@ -7,7 +7,6 @@ export default function SignUp({ text = "Try it now", url = '/console/serverless
 
   const handleClick = (event) => {
     event.preventDefault();
-    window.localStorage.setItem("utm_content", utmContent);
     router.push(url);
   };
 
