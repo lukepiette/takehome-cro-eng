@@ -161,6 +161,13 @@ export default [
 		image: "/static/images/about/team/frank.webp",
 		bio: "Product Designer",
 		linkedin: "https://www.linkedin.com/in/frankmyles"
+	},
+	{
+		name: "Brennen Smith",
+		image: "/static/images/about/team/brennen.webp",
+		bio: "Head of Engineering",
+		github: "https://github.com/brennentsmith",
+		linkedin: "https://www.linkedin.com/in/brennensmith/"
 	}
 ] as {
 	name: string;
