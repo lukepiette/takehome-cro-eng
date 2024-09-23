@@ -145,6 +145,22 @@ export default [
 		bio: "Staff Software Engineer (evil?). Backend, Systems Programming, & Devops. Check out my articles on software https://eblog.fly.dev",
 		github: "https://gitlab.com/efronlicht",
 		linkedin: "https://www.linkedin.com/in/efronlicht/"
+	},
+	{
+		name: "Tim Pietrusky",
+		image: "/static/images/about/team/tim.webp",
+		bio: "DevRel Engineer; VJ; Founder Mode",
+		github: "https://github.com/TimPietrusky",
+		linkedin: "https://www.linkedin.com/in/timpietrusky/",
+		twitter: "https://x.com/NERDDISCO",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/0z8r16xVGfP1ZtcEsMRvlN?si=589e7b6c4e43430d"
+	},
+	{
+		name: "Frank Myles",
+		image: "/static/images/about/team/frank.webp",
+		bio: "Product Designer",
+		linkedin: "https://www.linkedin.com/in/frankmyles"
 	}
 ] as {
 	name: string;
