@@ -168,6 +168,49 @@ export default [
 		bio: "Head of Engineering",
 		github: "https://github.com/brennentsmith",
 		linkedin: "https://www.linkedin.com/in/brennensmith/"
+	},
+	{
+		name: "Sarah Melancon",
+		image: "/static/images/about/team/sarah.webp",
+		bio: "Data Analyst by day, salsa dancer by night",
+		linkedin: "https://linkedin.com/in/sarahlikesmath/"
+	},
+	{
+		name: "SatishChandra Gandi",
+		image: "/static/images/about/team/satish.webp",
+		bio: "Senior Cloud Engineer",
+		linkedin: "https://www.linkedin.com/in/satishg-89b315162"
+	},
+	{
+		name: "Rutvik Patel",
+		image: "/static/images/about/team/rutvik.webp",
+		bio: "Staff Software Engineer",
+		github: "https://github.com/rutvik-runpod",
+		linkedin: "https://www.linkedin.com/in/rutvikpatel/",
+		twitter: "https://x.com/rutvikhp"
+	},
+	{
+		name: "Carlson Cheng",
+		image: "/static/images/about/team/carlson.webp",
+		bio: "AI Ops Engineer",
+		twitter: "https://x.com/carlsoncheng_",
+		github: "https://github.com/carlsoncarlson",
+		linkedin: "https://www.linkedin.com/in/carlsoncheng",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/586exG2UubiN0uKbZEGyuE?nd=1&dlsi=57cde166f04342ca"
+	},
+	{
+		name: "Hector Vallejos",
+		image: "/static/images/about/team/hector.webp",
+		bio: "Technical Support Analyst",
+		linkedin: "https://www.linkedin.com/in/hector-vallejos-ba872210b/",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/6taaUiin3G3ICycHQxE5M5?nd=1&dlsi=565a65f0af9541be"
+	},
+	{
+		name: "Chris Love",
+		image: "/static/images/about/team/chris.webp",
+		bio: "Head of Business Operations"
 	}
 ] as {
 	name: string;
