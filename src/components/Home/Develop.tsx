@@ -17,7 +17,7 @@ export function Develop() {
         xs: 0,
         md: 2,
       }}
-      mt={{xs:-5,sm:0}}
+      mt={{xs:-35,sm:0}}
     >
       <Stack 
         direction={"row"} 

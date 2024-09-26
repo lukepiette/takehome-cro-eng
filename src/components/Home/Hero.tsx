@@ -167,6 +167,7 @@ export function Hero() {
           alignItems: "center",
           position: "relative",
           zIndex: 0,
+          display: { xs: 'none', sm: 'flex' }, // Add this line
         }}
       >
         <Stack
@@ -195,7 +196,7 @@ export function Hero() {
           </Typography>
         </Stack>
 
-        <TrustedBy />
+        <TrustedBy sx={{ display: { xs: 'none', sm: 'block' } }} />
         <Stack
           sx={{
             width: "100%",
