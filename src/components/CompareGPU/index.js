@@ -1,16 +1,17 @@
 import React from 'react';
-import { Box, Stack, Typography, Link } from '@mui/material';
+import { Box } from '@mui/material';
 import Hero from './Hero';
 import Overview from './Overview'; 
 import Footer from './Footer'; 
 
-const CompareGpus = ({ firstGPUData, secondGPUData, gpuList }) => {
+const CompareGpus = ({ firstGPUData, secondGPUData, gpuList, isLoading }) => {
   return (
     <Box sx={{ position: 'relative', overflow: 'hidden' }}>
       <Hero 
         firstGPUData={firstGPUData} 
         secondGPUData={secondGPUData} 
         gpuList={gpuList}
+        isLoading={isLoading}
       />
 
       <Box height={50}/>

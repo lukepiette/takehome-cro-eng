@@ -91,30 +91,27 @@ const logos = [
   },
 ];
 
-const TrustedBy = () => {
+const TrustedBy = ({ sx }) => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isXsScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Box
       alignItems={"center"}
       maxWidth={900}
       overflow="hidden"
-      sx={{ zIndex: 1, position: "relative" }}
+      sx={{ zIndex: 1, position: "relative", ...sx }}
     >
-      <div
-        style={{
-          height: "100%",
-          position: "absolute",
-          width: "100%",
-          zIndex: 2,
-          background:
-            "linear-gradient(90deg, #000 0%, transparent 10%, transparent 90%, #000 100%)",
-        }}
-      />
-      {!isSmallScreen ? (
-        <CarouselContainer>
-          {logos.map((logo, index) => (
+      {isXsScreen ? (
+        <Stack
+          direction="row"
+          flexWrap="wrap"
+          justifyContent="center"
+          alignItems="center"
+          spacing={2}
+          sx={{ py: 2 }}
+        >
+          {logos.map((logo) => (
             <Logo
               key={logo.src}
               src={logo.src}
@@ -123,38 +120,40 @@ const TrustedBy = () => {
               alt={logo.alt}
             />
           ))}
-          {logos.map((logo, index) => (
-            <Logo
-              key={logo.src}
-              src={logo.src}
-              width={logo.width}
-              height={logo.height}
-              alt={logo.alt}
-              paddingTop={100}
-            />
-          ))}
-        </CarouselContainer>
+        </Stack>
       ) : (
-        <CarouselContainer>
-          {logos.map((logo, index) => (
-            <Logo
-              key={logo.src}
-              src={logo.src}
-              width={logo.width * 1.2}
-              height={logo.height * 1.2}
-              alt={logo.alt}
-            />
-          ))}
-          {logos.map((logo, index) => (
-            <Logo
-              key={logo.src}
-              src={logo.src}
-              width={logo.width}
-              height={logo.height}
-              alt={logo.alt}
-            />
-          ))}
-        </CarouselContainer>
+        <>
+          <div
+            style={{
+              height: "100%",
+              position: "absolute",
+              width: "100%",
+              zIndex: 2,
+              background:
+                "linear-gradient(90deg, #000 0%, transparent 10%, transparent 90%, #000 100%)",
+            }}
+          />
+          <CarouselContainer>
+            {logos.map((logo) => (
+              <Logo
+                key={logo.src}
+                src={logo.src}
+                width={logo.width}
+                height={logo.height}
+                alt={logo.alt}
+              />
+            ))}
+            {logos.map((logo) => (
+              <Logo
+                key={`${logo.src}-duplicate`}
+                src={logo.src}
+                width={logo.width}
+                height={logo.height}
+                alt={logo.alt}
+              />
+            ))}
+          </CarouselContainer>
+        </>
       )}
     </Box>
   );

@@ -1,17 +1,43 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Select, MenuItem, Card, CircularProgress } from '@mui/material';
+import { Box, Typography, Select, MenuItem, Card, CircularProgress, Divider } from '@mui/material';
 import { useRouter } from 'next/router';
 
+
 const GPUCard = ({ gpuData, isFirst, onGPUChange, gpuList, isBestGPU }) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setIsLoading(false);
   }, [gpuData]);
 
   if (!gpuData) {
-    return <Box>Loading GPU data...</Box>;
+    return (
+      <Box sx={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: { xs: '200px', sm: '320px' },
+        width: '100%',
+        maxWidth: { xs: '100%', sm: '400px' }
+      }}>
+        <CircularProgress sx={{ color: '#5D29F0' }} />
+      </Box>
+    );
   }
+
+  const groupedGPUs = {
+    '80GB': [],
+    '48GB': [],
+    '24GB': [],
+    '16GB': [],
+  };
+
+  Object.values(gpuList).forEach(gpu => {
+    if (groupedGPUs[gpu.VRAM]) {
+      groupedGPUs[gpu.VRAM].push(gpu);
+    }
+  });
 
   return (
     <Card sx={{
@@ -58,9 +84,15 @@ const GPUCard = ({ gpuData, isFirst, onGPUChange, gpuList, isBestGPU }) => {
           position: 'relative',
           marginBottom: '10px',
         }}>
-          {isLoading ? (
-            <CircularProgress sx={{ position: 'absolute', zIndex: 1 }} />
-          ) : null}
+          {isLoading && (
+            <CircularProgress 
+              sx={{ 
+                position: 'absolute', 
+                zIndex: 1,
+                color: '#5D29F0', // Match the color with your theme
+              }} 
+            />
+          )}
           <Box
             component="img"
             key={gpuData.urlName}
@@ -73,6 +105,7 @@ const GPUCard = ({ gpuData, isFirst, onGPUChange, gpuList, isBestGPU }) => {
             }}
             src={gpuData.gpuImagePath}
             alt={`${gpuData.name} image`}
+            onLoad={() => setIsLoading(false)}
           />
         </Box>
       </Box>
@@ -87,10 +120,14 @@ const GPUCard = ({ gpuData, isFirst, onGPUChange, gpuList, isBestGPU }) => {
       }}>
         <Select
           value={gpuData.urlName}
+          open={isOpen}
+          onOpen={() => setIsOpen(true)}
+          onClose={() => setIsOpen(false)}
           onChange={(e) => {
             const newGPU = e.target.value;
             setIsLoading(true);
             onGPUChange(newGPU);
+            setIsOpen(false);  // Close the dropdown after selection
           }}
           sx={{
             width: '100%',
@@ -140,49 +177,64 @@ const GPUCard = ({ gpuData, isFirst, onGPUChange, gpuList, isBestGPU }) => {
             </Box>
           )}
         >
-          {Object.values(gpuList).length > 0 ? (
-            Object.values(gpuList).map((gpu) => (
-              <MenuItem 
-                sx={{
+          {Object.entries(groupedGPUs).map(([memorySize, gpus]) => (
+            gpus.length > 0 && (
+              <React.Fragment key={memorySize}>
+                <MenuItem disabled sx={{ 
+                  opacity: 0.7, 
+                  fontSize: '0.8em',
                   fontFamily: 'monospace',
-                  backgroundColor: gpu.urlName === gpuData.urlName
-                    ? isBestGPU
-                      ? 'rgba(0, 255, 0, 0.05)'  // Very light green for best GPU
-                      : 'rgba(169, 169, 169, 0.05)'  // Very light grey for second-best GPU
-                    : 'transparent',
-                  '&:hover': {
-                    backgroundColor: gpu.urlName === gpuData.urlName
-                      ? isBestGPU
-                        ? 'rgba(0, 255, 0, 0.1)'  // Slightly darker green on hover
-                        : 'rgba(169, 169, 169, 0.1)'  // Slightly darker grey on hover
-                      : 'rgba(255, 255, 255, 0.05)',  // Very subtle hover effect for other items
-                  },
-                }} 
-                key={gpu.urlName} 
-                value={gpu.urlName}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Box
-                    component="img"
-                    src={
-                      gpu.manufacturer === "nvidia"
-                        ? "/static/images/companies/nvidia-emblem.webp"
-                        : "/static/images/companies/amd.svg"
-                    }
-                    alt={`${gpu.manufacturer} logo`}
+                  color: '#FFFFFF !important',
+                }}>
+                  {memorySize} GPUs
+                </MenuItem>
+                {gpus.map((gpu) => (
+                  <MenuItem 
                     sx={{
-                      width: '20px',
-                      height: '13px',
-                      marginRight: '8px',
+                      fontFamily: 'monospace',
+                      backgroundColor: gpu.urlName === gpuData.urlName
+                        ? isBestGPU
+                          ? 'rgba(0, 255, 0, 0.05)'  // Very light green for best GPU
+                          : 'rgba(169, 169, 169, 0.05)'  // Very light grey for second-best GPU
+                        : 'transparent',
+                      '&:hover': {
+                        backgroundColor: gpu.urlName === gpuData.urlName
+                          ? isBestGPU
+                            ? 'rgba(0, 255, 0, 0.1)'  // Slightly darker green on hover
+                            : 'rgba(169, 169, 169, 0.1)'  // Slightly darker grey on hover
+                          : 'rgba(255, 255, 255, 0.05)',  // Very subtle hover effect for other items
+                      },
+                    }} 
+                    key={gpu.urlName} 
+                    value={gpu.urlName}
+                    onClick={() => {
+                      onGPUChange(gpu.urlName);
+                      setIsOpen(false);  // Close the dropdown after selection
                     }}
-                  />
-                  {gpu.name}
-                </Box>
-              </MenuItem>
-            ))
-          ) : (
-            <MenuItem disabled>No GPUs available</MenuItem>
-          )}
+                  >
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <Box
+                        component="img"
+                        src={
+                          gpu.manufacturer === "nvidia"
+                            ? "/static/images/companies/nvidia-emblem.webp"
+                            : "/static/images/companies/amd.svg"
+                        }
+                        alt={`${gpu.manufacturer} logo`}
+                        sx={{
+                          width: '20px',
+                          height: '13px',
+                          marginRight: '8px',
+                        }}
+                      />
+                      {gpu.name}
+                    </Box>
+                  </MenuItem>
+                ))}
+                {memorySize !== '16GB' && <Divider />}
+              </React.Fragment>
+            )
+          ))}
         </Select>
 
       </Box>
@@ -190,24 +242,18 @@ const GPUCard = ({ gpuData, isFirst, onGPUChange, gpuList, isBestGPU }) => {
   );
 };
 
-export default function Hero({ firstGPUData, secondGPUData, gpuList }) {
+export default function CompareGpus({ firstGPUData, secondGPUData, gpuList }) {
   const router = useRouter();
 
-  const updateURL = (gpu1, gpu2) => {
-    router.push(`/compare/${gpu1}-vs-${gpu2}`);
-  };
-
   const handleFirstGPUChange = (newGPU) => {
-    updateURL(newGPU, secondGPUData.urlName);
+    const newPath = `/compare/${newGPU}-vs-${secondGPUData.urlName}`;
+    router.push(newPath, undefined, { shallow: true });
   };
 
   const handleSecondGPUChange = (newGPU) => {
-    updateURL(firstGPUData.urlName, newGPU);
+    const newPath = `/compare/${firstGPUData.urlName}-vs-${newGPU}`;
+    router.push(newPath, undefined, { shallow: true });
   };
-
-  if (!firstGPUData || !secondGPUData) {
-    return <Box>Loading GPU data...</Box>;
-  }
 
   // Determine which GPU is the best (you'll need to implement this logic)
   const isBestGPU = (gpu) => {
@@ -219,8 +265,8 @@ export default function Hero({ firstGPUData, secondGPUData, gpuList }) {
   return (
     <Box sx={{ 
       position: 'relative',
-      overflow: 'hidden', // Add this to prevent content from overflowing
-      width: '100%', // Ensure the box takes full width
+      overflow: 'hidden',
+      width: '100%',
     }}>
       <Box sx={{ 
         display: 'flex', 
@@ -265,7 +311,7 @@ export default function Hero({ firstGPUData, secondGPUData, gpuList }) {
               }}
             >
             </Box>
-            
+          
           </Typography>
           <Box sx={{ 
               display: 'flex', 

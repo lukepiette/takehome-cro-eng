@@ -18,6 +18,9 @@ export default function Overview({ data }) {
         marginRight: "auto",
         zIndex: 0,
         overflow: "hidden",
+        // Add responsive styles for mobile
+        width: "100%",
+        maxWidth: "100vw",
       }}
     >
       <Hero data={data} />
@@ -31,3 +34,5 @@ export default function Overview({ data }) {
     </Stack>
   );
 }
+
+// Remove the withLogging HOC and related exports

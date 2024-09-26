@@ -16,9 +16,16 @@ interface GpuDataType {
   name: string;
   gpuImagePath: string;
   VRAM: string;
-  price: number;
   manufacturer: string;
-  performanceData: PerformanceData[];
+  benchmarks: {
+    [modelName: string]: {
+      [batchSizeConfig: string]: {
+        performanceData: PerformanceData[];
+      };
+    } | {
+      fitsOnGpu: boolean;
+    };
+  };
 }
 
 interface GpuDataDict {
