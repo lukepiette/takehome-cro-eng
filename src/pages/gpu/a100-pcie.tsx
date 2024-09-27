@@ -13,7 +13,7 @@ import Pricing from "@components/GPU2/Dynamic/Pricing";
 import Scale from "@components/GPU2/Static/Scale";
 import Comparison from "@components/GPU2/Static/Comparison";
 
-import GpuInfo from "@components/GPU2/GpuData/6000ada";
+import GpuInfo from "@components/GPU2/GpuData/a100pcie";
 import { GET_GPU_TYPE_INFO } from "@components/InstancePricing/query";
 import apolloClient from "@utils/apolloClient";
 
@@ -28,33 +28,33 @@ const Text = styled(Typography)({
 	color: "rgba(249, 250, 251, 0.48)"
 });
 
+
 // Update the type definition for the component props
 const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> = ({ gpuData, metrics, sd, whisper }) => {
 	// const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 	// TODO: useMediaQuery is not working in this file, fix it lol
-	const gpuSpecData = gpuData?.["NVIDIA RTX 6000 Ada Generation"] || {};
-	console.log("GPU DATA", gpuData);
+	const gpuSpecData = gpuData?.["NVIDIA A100 80GB PCIe"] || {};
 
 	return (
 		<>
     <Head>
-      <title>Rent Nvidia RTX 6000 Ada GPUs On-Demand</title>
-      <meta name="description" content="Rent high-performance Nvidia RTX 6000 Ada GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <title>Rent Nvidia A100 80GB PCIe GPUs On-Demand</title>
+      <meta name="description" content="Rent high-performance Nvidia A100 80GB PCIe GPUs on-demand. Perfect for running Machine Learning workloads." />
       <meta name="author" content="RunPod" />
 
       {/* Open Graph Tags */}
-      <meta property="og:title" content="Rent Nvidia RTX 6000 Ada GPUs On-Demand" />
-      <meta property="og:description" content="Rent high-performance Nvidia RTX 6000 Ada GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta property="og:title" content="Rent Nvidia A100 80GB PCIe GPUs On-Demand" />
+      <meta property="og:description" content="Rent high-performance Nvidia A100 80GB PCIe GPUs on-demand. Perfect for running Machine Learning workloads." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.runpod.io/gpu/6000-ada" />
-      <meta property="og:image" content="https://www.runpod.io/static/images/gpu/preview/6000-ada-preview-image.webp" />
+      <meta property="og:url" content="https://www.runpod.io/gpu/a100-pcie" />
+      <meta property="og:image" content="https://www.runpod.io/static/images/gpu/preview/a100-pcie-preview-image.webp" />
 
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@runpod_io" />
-      <meta name="twitter:title" content="Rent Nvidia RTX 6000 Ada GPUs On-Demand" />
-      <meta name="twitter:description" content="Rent high-performance Nvidia RTX 6000 Ada GPUs on-demand. Perfect for running Machine Learning workloads." />
-      <meta name="twitter:image" content="https://www.runpod.io/static/images/gpu/preview/6000-ada-preview-image.webp" />
+      <meta name="twitter:title" content="Rent Nvidia A100 80GB PCIe GPUs On-Demand" />
+      <meta name="twitter:description" content="Rent high-performance Nvidia A100 80GB PCIe GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta name="twitter:image" content="https://www.runpod.io/static/images/gpu/preview/a100-pcie-preview-image.webp" />
     </Head>
 
 			<main>
