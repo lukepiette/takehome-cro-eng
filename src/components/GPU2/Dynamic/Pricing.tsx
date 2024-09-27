@@ -307,7 +307,7 @@ const Pricing: React.FC<PricingProps> = ({ gpuModel, communityPrice, securePrice
           <StyledButton
             endIcon={<ChevronRightIcon />}
           >
-            Deploy Now
+            See Pricing for All GPUs
           </StyledButton>
         </Link>
       </Box>

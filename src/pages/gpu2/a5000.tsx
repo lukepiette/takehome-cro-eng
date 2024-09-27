@@ -14,6 +14,8 @@ import Scale from "@components/GPU2/Static/Scale";
 import Comparison from "@components/GPU2/Static/Comparison";
 
 import GpuInfo from "@components/GPU2/GpuData/a5000";
+import { GET_GPU_TYPE_INFO } from "@components/InstancePricing/query";
+import apolloClient from "@utils/apolloClient";
 
 const Text = styled(Typography)({
 	width: "100%",
@@ -26,37 +28,35 @@ const Text = styled(Typography)({
 	color: "rgba(249, 250, 251, 0.48)"
 });
 
-function HTMLHead({
-	title = "RunPod",
-	description,
-	image_url,
-	thumbnail
-}: {
-	title?: string;
-	description?: string;
-	image_url?: string;
-	thumbnail?: string;
-}) {
-	return (
-		<Head>
-			{title && <title>{title}</title>}
-			{description && <meta name="description" content={description} />}
-			{image_url && <meta name="image" content={image_url} />}
-			{thumbnail && <meta name="thumbnail" content={thumbnail} />}
-		</Head>
-	);
-}
 
-const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
+// Update the type definition for the component props
+const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> = ({ gpuData, metrics, sd, whisper }) => {
 	// const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 	// TODO: useMediaQuery is not working in this file, fix it lol
+	const gpuSpecData = gpuData?.["NVIDIA RTX A5000"] || {};
+	console.log("GPU DATA", gpuData);
 
 	return (
 		<>
-			<HTMLHead
-				title="Launch a GPU in Seconds with RunPod"
-				description="Our prices make AI teams smile. We're not just inexpensive—we're setting a new standard for GPU cloud."
-			/>
+    <Head>
+      <title>Rent Nvidia RTX A5000 GPUs On-Demand</title>
+      <meta name="description" content="Rent high-performance Nvidia RTX A5000 GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta name="author" content="RunPod" />
+
+      {/* Open Graph Tags */}
+      <meta property="og:title" content="Rent Nvidia RTX A5000 GPUs On-Demand" />
+      <meta property="og:description" content="Rent high-performance Nvidia RTX A5000 GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.runpod.io/gpu/a5000" />
+      <meta property="og:image" content="https://www.runpod.io/static/images/gpu/preview/a5000-preview-image.webp" />
+
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@runpod_io" />
+      <meta name="twitter:title" content="Rent Nvidia RTX A5000 GPUs On-Demand" />
+      <meta name="twitter:description" content="Rent high-performance Nvidia RTX A5000 GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta name="twitter:image" content="https://www.runpod.io/static/images/gpu/preview/a5000-preview-image.webp" />
+    </Head>
 
 			<main>
 				<Box sx={{ position: "relative" }}>
@@ -76,7 +76,14 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 									backgroundClip: "text",
 									textFillColor: "transparent"
 								}}>
-								Rent {GpuInfo.name}s On-Demand
+								Rent {GpuInfo.name}s
+								<Box
+									component="br"
+									sx={{
+										display: { xs: 'none', sm: 'inline' }
+									}}
+								/>
+								On-Demand
 								<Box
 									component="span"
 									sx={{
@@ -105,7 +112,10 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
                                 marginTop: "-20px",
                                 color: "#FFFFFF"
                             }}>
-                            From {GpuInfo.community.price}
+                            From ${gpuSpecData?.communityCloud ? Math.min(
+								gpuSpecData?.communityPrice || 0,
+								gpuSpecData?.securePrice || 0
+							).toFixed(2) || "???" : gpuSpecData?.securePrice || 0}/hr
                         </Typography>
 						}
 						buttonText={`Launch a GPU`}
@@ -134,8 +144,8 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 
 					<Pricing 
                         gpuModel={GpuInfo.name + " " + GpuInfo.secure.VRAM} 
-                        communityPrice={parseFloat(GpuInfo.community.price.replace('$', '').replace('/hr', ''))}
-                        securePrice={parseFloat(GpuInfo.secure.price.replace('$', '').replace('/hr', ''))}
+                        communityPrice={gpuSpecData?.communityPrice}
+                        securePrice={gpuSpecData?.securePrice}
                     />
 
                     <Box
@@ -145,12 +155,10 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 
 					<Subheader 
 						gpuModel={GpuInfo.name}
-						hourlyRate={GpuInfo.community.price}
+						hourlyRate={gpuSpecData?.communityPrice}
 						vCPU={parseInt(GpuInfo.secure.vCPU)}
 						ramGB={parseInt(GpuInfo.secure.RAM)}
 					/>
-
-
 
 					<Box
 						sx={{
@@ -176,7 +184,7 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 						sx={{
 							height: { xs: "50px", sm: "75px", md: "100px" }
 						}}></Box>
-					<Counter data={data} />
+					<Counter data={{ metrics, sd, whisper }} />
 
 					<Box
 						sx={{
@@ -196,15 +204,17 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const [metricsResponse, stableDiffusionDataResponse, whisperDataResponse] =
+	const [{ data }, metricsResponse, stableDiffusionDataResponse, whisperDataResponse] =
 		await Promise.all([
+			apolloClient.query({
+				query: GET_GPU_TYPE_INFO,
+				variables: {
+					lowestPriceInput: { gpuCount: 1 },
+				},
+			}),
 			fetch("https://api.runpod.ai/metrics"),
-			fetch(
-				"https://api.runpod.ai/v2/sd-openjourney/metrics/cold_start_quantiles_v1?interval=1d"
-			),
-			fetch(
-				"https://api.runpod.ai/v2/whisper/metrics/cold_start_quantiles_v1?interval=1d"
-			)
+			fetch("https://api.runpod.ai/v2/sd-openjourney/metrics/cold_start_quantiles_v1?interval=1d"),
+			fetch("https://api.runpod.ai/v2/whisper/metrics/cold_start_quantiles_v1?interval=1d")
 		]);
 
 	const [metrics, sdData, whisperData] = await Promise.all([
@@ -213,9 +223,17 @@ export const getStaticProps: GetStaticProps = async () => {
 		whisperDataResponse.json()
 	]);
 
+	const gpu = data?.gpuTypes?.reduce((sum: any, v: any) => {
+		sum[v.id] = v;
+		return sum;
+	}, {});
+
 	return {
 		props: {
-			data: { metrics, sd: sdData, whisper: whisperData }
+			gpuData: gpu,
+			metrics,
+			sd: sdData,
+			whisper: whisperData
 		},
 		revalidate: process.env.VERCEL_ENV === "production" ? 120 : 30
 	};

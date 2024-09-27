@@ -28,26 +28,6 @@ const Text = styled(Typography)({
 	color: "rgba(249, 250, 251, 0.48)"
 });
 
-function HTMLHead({
-	title = "RunPod",
-	description,
-	image_url,
-	thumbnail
-}: {
-	title?: string;
-	description?: string;
-	image_url?: string;
-	thumbnail?: string;
-}) {
-	return (
-		<Head>
-			{title && <title>{title}</title>}
-			{description && <meta name="description" content={description} />}
-			{image_url && <meta name="image" content={image_url} />}
-			{thumbnail && <meta name="thumbnail" content={thumbnail} />}
-		</Head>
-	);
-}
 
 // Update the type definition for the component props
 const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> = ({ gpuData, metrics, sd, whisper }) => {
@@ -58,10 +38,25 @@ const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> 
 
 	return (
 		<>
-			<HTMLHead
-				title="Launch a GPU in Seconds with RunPod"
-				description="Our prices make AI teams smile. We're not just inexpensive—we're setting a new standard for GPU cloud."
-			/>
+    <Head>
+      <title>Rent Nvidia H100 SXM5 GPUs On-Demand</title>
+      <meta name="description" content="Rent high-performance Nvidia H100 80GB SXM5 GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta name="author" content="RunPod" />
+
+      {/* Open Graph Tags */}
+      <meta property="og:title" content="Rent Nvidia H100 80GB SXM5 GPUs On-Demand" />
+      <meta property="og:description" content="Rent high-performance Nvidia H100 80GB SXM5 GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.runpod.io/gpu/h100-sxm5" />
+      <meta property="og:image" content="https://www.runpod.io/static/images/gpu/preview/h100-sxm5-preview-image.webp" />
+
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@runpod_io" />
+      <meta name="twitter:title" content="Rent Nvidia H100 80GB SXM5 GPUs On-Demand" />
+      <meta name="twitter:description" content="Rent high-performance Nvidia H100 80GB SXM5 GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta name="twitter:image" content="https://www.runpod.io/static/images/gpu/preview/h100-sxm5-preview-image.webp" />
+    </Head>
 
 			<main>
 				<Box sx={{ position: "relative" }}>
@@ -117,10 +112,10 @@ const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> 
                                 marginTop: "-20px",
                                 color: "#FFFFFF"
                             }}>
-                            From {gpuSpecData?.communityCloud ? Math.min(
+                            From ${gpuSpecData?.communityCloud ? Math.min(
 								gpuSpecData?.communityPrice || 0,
 								gpuSpecData?.securePrice || 0
-							).toFixed(2) || "???" : gpuSpecData?.securePrice || 0}
+							).toFixed(2) || "???" : gpuSpecData?.securePrice || 0}/hr
                         </Typography>
 						}
 						buttonText={`Launch a GPU`}

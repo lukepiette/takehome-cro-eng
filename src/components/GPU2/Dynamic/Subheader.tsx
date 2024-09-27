@@ -334,7 +334,7 @@ const Subheader: React.FC<SubheaderProps> = ({ gpuModel, hourlyRate, vCPU, ramGB
         </Typography>
         <FakePod gpuModel={gpuModel} hourlyRate={hourlyRate} vCPU={vCPU} ramGB={ramGB} />
       </ContentWrapper>
-      <Link href="/console/deploy" sx={{maxWidth: "288px", width: "100%"}}>
+      <Link href="/console/signup" sx={{maxWidth: "288px", width: "100%"}}>
         <StyledButton endIcon={<ChevronRightIcon />}>
           Start feeling the magic
         </StyledButton>
