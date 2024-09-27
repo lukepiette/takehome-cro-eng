@@ -33,7 +33,7 @@ const Text = styled(Typography)({
 const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> = ({ gpuData, metrics, sd, whisper }) => {
 	// const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 	// TODO: useMediaQuery is not working in this file, fix it lol
-	const gpuSpecData = gpuData?.["NVIDIA H100 80GB PCIe"] || {};
+	const gpuSpecData = gpuData?.["NVIDIA H100 PCIe"] || {};
 
 	return (
 		<>
