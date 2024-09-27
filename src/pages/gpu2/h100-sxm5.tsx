@@ -14,6 +14,8 @@ import Scale from "@components/GPU2/Static/Scale";
 import Comparison from "@components/GPU2/Static/Comparison";
 
 import GpuInfo from "@components/GPU2/GpuData/h100sxm5";
+import { GET_GPU_TYPE_INFO } from "@components/InstancePricing/query";
+import apolloClient from "@utils/apolloClient";
 
 const Text = styled(Typography)({
 	width: "100%",
@@ -47,10 +49,12 @@ function HTMLHead({
 	);
 }
 
-const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
+// Update the type definition for the component props
+const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> = ({ gpuData, metrics, sd, whisper }) => {
 	// const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 	// TODO: useMediaQuery is not working in this file, fix it lol
-	const gpuSpecData = data?.gpu?.["NVIDIA H100 80GB HBM3"] || {};
+	const gpuSpecData = gpuData?.["NVIDIA H100 80GB HBM3"] || {};
+	console.log("GPU DATA", gpuData);
 
 	return (
 		<>
@@ -185,7 +189,7 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 						sx={{
 							height: { xs: "50px", sm: "75px", md: "100px" }
 						}}></Box>
-					<Counter data={data} />
+					<Counter data={{ metrics, sd, whisper }} />
 
 					<Box
 						sx={{
@@ -205,15 +209,17 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const [metricsResponse, stableDiffusionDataResponse, whisperDataResponse] =
+	const [{ data }, metricsResponse, stableDiffusionDataResponse, whisperDataResponse] =
 		await Promise.all([
+			apolloClient.query({
+				query: GET_GPU_TYPE_INFO,
+				variables: {
+					lowestPriceInput: { gpuCount: 1 },
+				},
+			}),
 			fetch("https://api.runpod.ai/metrics"),
-			fetch(
-				"https://api.runpod.ai/v2/sd-openjourney/metrics/cold_start_quantiles_v1?interval=1d"
-			),
-			fetch(
-				"https://api.runpod.ai/v2/whisper/metrics/cold_start_quantiles_v1?interval=1d"
-			)
+			fetch("https://api.runpod.ai/v2/sd-openjourney/metrics/cold_start_quantiles_v1?interval=1d"),
+			fetch("https://api.runpod.ai/v2/whisper/metrics/cold_start_quantiles_v1?interval=1d")
 		]);
 
 	const [metrics, sdData, whisperData] = await Promise.all([
@@ -222,9 +228,17 @@ export const getStaticProps: GetStaticProps = async () => {
 		whisperDataResponse.json()
 	]);
 
+	const gpu = data?.gpuTypes?.reduce((sum: any, v: any) => {
+		sum[v.id] = v;
+		return sum;
+	}, {});
+
 	return {
 		props: {
-			data: { metrics, sd: sdData, whisper: whisperData }
+			gpuData: gpu,
+			metrics,
+			sd: sdData,
+			whisper: whisperData
 		},
 		revalidate: process.env.VERCEL_ENV === "production" ? 120 : 30
 	};

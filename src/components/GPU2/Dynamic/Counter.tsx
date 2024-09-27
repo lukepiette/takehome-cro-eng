@@ -136,7 +136,16 @@ type Metrics = {
   // Add other properties as needed
 };
 
-export default function Counter({ data }: { data: { metrics: Metrics } }) {
+// Update the type definition
+type CounterProps = {
+  data: {
+    metrics: Metrics;
+    sd: any;  // Replace 'any' with the correct type if known
+    whisper: any;  // Replace 'any' with the correct type if known
+  };
+};
+
+export default function Counter({ data }: CounterProps) {
 	const [metrics, setMetrics] = useState<Metrics | null>(null);
 	const [width, setWidth] = useState(0);
 	const ref = useRef<HTMLElement>(null);
@@ -207,10 +216,10 @@ export default function Counter({ data }: { data: { metrics: Metrics } }) {
 							decimals={0}
 							delay={0}
 							duration={3}
-							end={metrics?.requests || data?.metrics?.requests}
+							end={metrics?.requests || data.metrics.requests}
 							preserveValue={true}
 							separator=","
-							start={data?.metrics?.requests - 500}
+							start={data.metrics.requests - 500}
 						/>
 					</Typography>
 				</Box>

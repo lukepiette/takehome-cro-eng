@@ -13,7 +13,7 @@ import Pricing from "@components/GPU2/Dynamic/Pricing";
 import Scale from "@components/GPU2/Static/Scale";
 import Comparison from "@components/GPU2/Static/Comparison";
 
-import GpuInfo from "@components/GPU2/GpuData/h100pcie";
+import GpuInfo from "@components/GPU2/GpuData/h100sxm5";
 
 const Text = styled(Typography)({
 	width: "100%",
@@ -50,6 +50,7 @@ function HTMLHead({
 const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 	// const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 	// TODO: useMediaQuery is not working in this file, fix it lol
+	const gpuSpecData = data?.gpu?.["NVIDIA H100 80GB HBM3"] || {};
 
 	return (
 		<>
@@ -112,7 +113,10 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
                                 marginTop: "-20px",
                                 color: "#FFFFFF"
                             }}>
-                            From {GpuInfo.community.price}
+                            From {gpuSpecData?.communityCloud ? Math.min(
+								gpuSpecData?.communityPrice || 0,
+								gpuSpecData?.securePrice || 0
+							).toFixed(2) || "???" : gpuSpecData?.securePrice || 0}
                         </Typography>
 						}
 						buttonText={`Launch a GPU`}
@@ -141,8 +145,8 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 
 					<Pricing 
                         gpuModel={GpuInfo.name + " " + GpuInfo.secure.VRAM} 
-                        communityPrice={parseFloat(GpuInfo.community.price.replace('$', '').replace('/hr', ''))}
-                        securePrice={parseFloat(GpuInfo.secure.price.replace('$', '').replace('/hr', ''))}
+                        communityPrice={gpuSpecData?.communityPrice}
+                        securePrice={gpuSpecData?.securePrice}
                     />
 
                     <Box
@@ -152,12 +156,10 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 
 					<Subheader 
 						gpuModel={GpuInfo.name}
-						hourlyRate={GpuInfo.community.price}
+						hourlyRate={gpuSpecData?.communityPrice}
 						vCPU={parseInt(GpuInfo.secure.vCPU)}
 						ramGB={parseInt(GpuInfo.secure.RAM)}
 					/>
-
-
 
 					<Box
 						sx={{
