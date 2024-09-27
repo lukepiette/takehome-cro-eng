@@ -85,7 +85,7 @@ const Hero = ({
 
 				<StyledButton
 					component={Link}
-					href="/console/deploy"
+					href="/console/signup"
 					endIcon={<ChevronRightIcon />}>
 						{buttonText}
 				</StyledButton>
