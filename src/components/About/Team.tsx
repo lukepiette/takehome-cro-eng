@@ -101,7 +101,13 @@ export default function Team(): JSX.Element {
 								fontSize: "14px",
 								lineHeight: "20px",
 								textAlign: "center",
-								color: "#FFFFFF"
+								color: "#FFFFFF",
+								whiteSpace: "nowrap",
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								width: "100%",
+								height: "100%"
 							}}>
 							Our Team
 						</Typography>
