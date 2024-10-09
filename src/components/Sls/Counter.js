@@ -191,7 +191,7 @@ export default function Counter({ data }) {
             <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
           {/* <ButtonLink
-            href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
+            href="https://meetings.hubspot.com/runpod/first-connect"
             variant="outlined"
             sx={{
               background:

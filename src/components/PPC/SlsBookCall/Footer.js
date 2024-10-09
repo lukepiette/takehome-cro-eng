@@ -72,7 +72,7 @@ export default function Footer() {
 
       <Stack direction="row" mt={6} spacing={1.8}>
         <ButtonLink
-          href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
+          href="https://meetings.hubspot.com/runpod/first-connect"
           variant="contained"
           sx={{
             background:

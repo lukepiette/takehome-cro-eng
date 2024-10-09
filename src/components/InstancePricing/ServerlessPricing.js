@@ -67,7 +67,7 @@ export default function ServerlessPricing() {
         />
 
         <ButtonLink
-          href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
+          href="https://meetings.hubspot.com/runpod/first-connect"
           variant="outlined"
           sx={{
             background:

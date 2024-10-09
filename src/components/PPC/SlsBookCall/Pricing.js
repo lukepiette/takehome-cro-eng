@@ -87,7 +87,7 @@ export default function Pricing() {
 
       <Stack direction="row" my={3} spacing={1.8}>
         <ButtonLink
-          href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
+          href="https://meetings.hubspot.com/runpod/first-connect"
           variant="contained"
           sx={{
             background:

@@ -295,7 +295,7 @@ export default function AdditionalSavings() {
             active and flex workers by speaking with our team.
           </Typography>
           <ButtonLink
-            href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
+            href="https://meetings.hubspot.com/runpod/first-connect"
             variant="contained"
             sx={{
               background:

@@ -130,7 +130,7 @@ export default function Hero() {
 
         <Stack direction="row" mt={4} spacing={{ xs: 1, sm: 1.8 }}>
           <ButtonLink
-            href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
+            href="https://meetings.hubspot.com/runpod/first-connect"
             variant="contained"
             sx={{
               background:

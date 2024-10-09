@@ -91,7 +91,7 @@ export default function Hero({ data }) {
               <StartButton to="/console/serverless" />
               <Button
                 sx={{ color: "white" }}
-                href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
+                href="https://meetings.hubspot.com/runpod/first-connect"
               >
                 Book a Call
               </Button>
