@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.8.0](https://github.com/runpod/landing-ui/compare/v1.7.0...v1.8.0) (2024-10-09)
+
+
+### Features
+
+* add brennen to about page ([d59aadc](https://github.com/runpod/landing-ui/commit/d59aadc8dcdac8df809ab141706763ffa3016bd8))
+* add speed insights ([#158](https://github.com/runpod/landing-ui/issues/158)) ([5fa8cc8](https://github.com/runpod/landing-ui/commit/5fa8cc8275c823f051d490ce839d08648863f04b))
+* comparison and model (very bare bones) pages + unified page ([714ce78](https://github.com/runpod/landing-ui/commit/714ce78762409c5a94b9598e5f3e49b6c4f379c5))
+* convert about to typescript & add mixtape easter egg ([d4a3f19](https://github.com/runpod/landing-ui/commit/d4a3f19a881325d30612700a3bb4d2b76fea0d27))
+* dynamic squeeze pages ([13eba71](https://github.com/runpod/landing-ui/commit/13eba71a7b12c554f11e7cb5b40c1a452ac6afcc))
+* more members of the team on about page ([9c1f2aa](https://github.com/runpod/landing-ui/commit/9c1f2aa73090c8b8ebeffd7510808130cb70abfb))
+* tim & frank on about page ([4514643](https://github.com/runpod/landing-ui/commit/45146438d1e241c4ca36fe34f731fb0c5aeb19d8))
+
+
+### Bug Fixes
+
+* CTA meeting links ([#174](https://github.com/runpod/landing-ui/issues/174)) ([737be3b](https://github.com/runpod/landing-ui/commit/737be3bc7d8c9df703dd4fa3b362785c3cfebe51))
+* fix haris's picture & remove empty strings ([7b0b7f7](https://github.com/runpod/landing-ui/commit/7b0b7f72c5833a58fcfeb03155ddd3a50b249889))
+* run build ([cb1df18](https://github.com/runpod/landing-ui/commit/cb1df18f7e2933949080893aac498337035b94c8))
+* use jm link ([#175](https://github.com/runpod/landing-ui/issues/175)) ([00f27e6](https://github.com/runpod/landing-ui/commit/00f27e6581e913191dc2905e251a435b6dd0d941))
+
 ## [1.7.0](https://github.com/runpod/landing-ui/compare/v1.6.1...v1.7.0) (2024-08-26)
 
 
