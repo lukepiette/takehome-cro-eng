@@ -87,7 +87,7 @@ export default function Pricing() {
 
       <Stack direction="row" my={3} spacing={1.8}>
         <ButtonLink
-          href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+          href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
           variant="contained"
           sx={{
             background:
@@ -240,18 +240,20 @@ export default function Pricing() {
               mt={0.5}
               mr={3}
             >
-              Although many of our data center partners have these compliance certifications, RunPod is in the process of getting SOC 2, ISO 27001, and HIPAA. We aim to have all three by early Q3, 2024.
+              Although many of our data center partners have these compliance
+              certifications, RunPod is in the process of getting SOC 2, ISO
+              27001, and HIPAA. We aim to have all three by early Q3, 2024.
             </Typography>
-            <Stack spacing={1} mt={3} direction={{xs: "column", sm: "row"}}>
+            <Stack spacing={1} mt={3} direction={{ xs: "column", sm: "row" }}>
               <Box
                 component="img"
                 sx={{
-                  top: {xs: 0, sm: 0},
+                  top: { xs: 0, sm: 0 },
                   right: 0,
                   bottom: 0,
                   left: 0,
                   width: 100,
-                  height: 100,          
+                  height: 100,
                 }}
                 alt="gpu background"
                 src="/static/images/soc2-light.webp"
@@ -259,12 +261,12 @@ export default function Pricing() {
               <Box
                 component="img"
                 sx={{
-                  top: {xs: 0, sm: 0},
+                  top: { xs: 0, sm: 0 },
                   right: 0,
                   bottom: 0,
                   left: 0,
                   width: 100,
-                  height: 100,          
+                  height: 100,
                 }}
                 alt="gpu background"
                 src="/static/images/iso27001-light.webp"
@@ -272,12 +274,12 @@ export default function Pricing() {
               <Box
                 component="img"
                 sx={{
-                  top: {xs: 0, sm: 0},
+                  top: { xs: 0, sm: 0 },
                   right: 0,
                   bottom: 0,
                   left: 0,
                   width: 100,
-                  height: 100,          
+                  height: 100,
                 }}
                 alt="gpu background"
                 src="/static/images/hipaa-light.webp"

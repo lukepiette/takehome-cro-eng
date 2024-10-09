@@ -94,7 +94,7 @@ export default function Pricing({ slim, title1, title2 }) {
         /> */}
 
         <ButtonLink
-          href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+          href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
           variant="outlined"
           sx={{
             background:
@@ -106,13 +106,13 @@ export default function Pricing({ slim, title1, title2 }) {
             height: 40,
             pl: 2,
             pr: 1.4,
-            fontSize: '22px',
-            padding: '24px 30px',
-            '& .MuiButton-startIcon': {
-              marginRight: '8px',
+            fontSize: "22px",
+            padding: "24px 30px",
+            "& .MuiButton-startIcon": {
+              marginRight: "8px",
             },
-            '& .MuiSvgIcon-root': {
-              fontSize: '26px',
+            "& .MuiSvgIcon-root": {
+              fontSize: "26px",
             },
           }}
         >

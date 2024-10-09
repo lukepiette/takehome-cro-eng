@@ -57,7 +57,7 @@ export default function Autoscale() {
       </Typography>
 
       <ButtonLink
-        href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+        href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
         variant="contained"
         sx={{
           background:
@@ -72,7 +72,8 @@ export default function Autoscale() {
           pr: 1.4,
         }}
       >
-        Talk with our team <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+        Talk with our team{" "}
+        <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
       </ButtonLink>
 
       <Stack

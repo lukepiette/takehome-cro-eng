@@ -156,11 +156,11 @@ export default function Startup() {
             mt={3}
             width="100%"
           >
-            Save more by committing to longer-term usage.
-            Reserve discounted active and flex workers by speaking with our team.
+            Save more by committing to longer-term usage. Reserve discounted
+            active and flex workers by speaking with our team.
           </Typography>
           <ButtonLink
-            href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+            href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
             variant="contained"
             sx={{
               background:
@@ -296,8 +296,8 @@ export default function Startup() {
             mt={1.5}
             width={480}
           >
-            Get up to $25K in free compute credits with Runpod. These can be used
-            towards on-demand GPUs and Serverless endpoints.
+            Get up to $25K in free compute credits with Runpod. These can be
+            used towards on-demand GPUs and Serverless endpoints.
           </Typography>
           <ButtonLink
             href="https://share.hsforms.com/1tvg18CtoSH6EYna-eQzpgAecykq"

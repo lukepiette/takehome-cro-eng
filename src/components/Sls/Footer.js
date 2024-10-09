@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { RunPodIcon } from "@components/Layout/Logo";
 import ButtonLink from "@components/ButtonLink";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import SignUp from "@components/SignUpButton"
+import SignUp from "@components/SignUpButton";
 
 export default function Footer() {
   return (
@@ -72,10 +72,14 @@ export default function Footer() {
       </Typography>
 
       <Stack direction="row" mt={6} spacing={1.8}>
-        <SignUp text="Sign up" url="/console/serverless" utmContent="serverless-footer" />
+        <SignUp
+          text="Sign up"
+          url="/console/serverless"
+          utmContent="serverless-footer"
+        />
 
         {/* <ButtonLink
-          href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+          href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
           variant="outlined"
           sx={{
             background:

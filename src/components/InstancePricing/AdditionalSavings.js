@@ -22,7 +22,7 @@ export default function AdditionalSavings() {
         }}
       />
 
-    <Stack
+      <Stack
         alignItems="center"
         border="1px solid rgba(255, 255, 255, 0.08)"
         overflow="hidden"
@@ -106,11 +106,7 @@ export default function AdditionalSavings() {
           zIndex={-1}
         />
 
-        <Stack
-          alignItems="start"
-          maxWidth={1090}
-          width="100%"
-        >
+        <Stack alignItems="start" maxWidth={1090} width="100%">
           <Typography
             fontSize={28}
             fontWeight={600}
@@ -135,8 +131,8 @@ export default function AdditionalSavings() {
             mt={1.5}
             width={480}
           >
-            Get up to $25K in free compute credits with Runpod. These can be used
-            towards on-demand GPUs and Serverless endpoints.
+            Get up to $25K in free compute credits with Runpod. These can be
+            used towards on-demand GPUs and Serverless endpoints.
           </Typography>
           <ButtonLink
             href="https://share.hsforms.com/1tvg18CtoSH6EYna-eQzpgAecykq"
@@ -166,7 +162,6 @@ export default function AdditionalSavings() {
         mt={20}
         mb={15}
       >
-        
         <Stack
           alignItems="center"
           border="1px solid #1E293B"
@@ -296,11 +291,11 @@ export default function AdditionalSavings() {
             mt={3}
             width="100%"
           >
-            Save more by committing to longer-term usage.
-            Reserve discounted active and flex workers by speaking with our team.
+            Save more by committing to longer-term usage. Reserve discounted
+            active and flex workers by speaking with our team.
           </Typography>
           <ButtonLink
-            href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+            href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
             variant="contained"
             sx={{
               background:
@@ -320,8 +315,6 @@ export default function AdditionalSavings() {
           </ButtonLink>
         </Stack>
       </Stack>
-
-
     </Stack>
   );
 }

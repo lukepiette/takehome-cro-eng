@@ -191,7 +191,7 @@ export default function Counter({ data }) {
             <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
           <ButtonLink
-            href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+            href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
             variant="outlined"
             sx={{
               background:
@@ -221,19 +221,19 @@ const ReviewBox = ({ children, name, title }) => (
         sx={{
           width: 36,
           height: 36,
-          borderRadius: '50%',
-          overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          border: '0.5px solid #fff',
-          marginBottom: 1
+          borderRadius: "50%",
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          border: "0.5px solid #fff",
+          marginBottom: 1,
         }}
       >
         <PersonIcon
           sx={{
             fontSize: 17, // Adjust icon size as needed
-            color: 'rgba(255, 255, 255, 0.7)' // Adjust icon color as needed
+            color: "rgba(255, 255, 255, 0.7)", // Adjust icon color as needed
           }}
         />
       </Box>

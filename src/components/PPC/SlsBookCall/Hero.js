@@ -130,7 +130,7 @@ export default function Hero() {
 
         <Stack direction="row" mt={4} spacing={{ xs: 1, sm: 1.8 }}>
           <ButtonLink
-            href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+            href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
             variant="contained"
             sx={{
               background:
@@ -144,9 +144,9 @@ export default function Hero() {
               pr: 1.4,
             }}
           >
-            Book a call<KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
+            Book a call
+            <KeyboardArrowRightIcon sx={{ fontSize: 20, ml: 0.6 }} />
           </ButtonLink>
-
         </Stack>
 
         <Stack
@@ -200,7 +200,12 @@ export default function Hero() {
                 <div>&gt; runpodctl config --apiKey $(RUNPOD_API_KEY)</div>
               )}
               {progress > 2 && <div>&gt; runpodctl project create</div>} */}
-              {progress > 0 && <div>&gt; <span style={{ color: "#FF8FFD" }}>runpodctl</span> project <span style={{ color: "#979DFF" }}>deploy</span></div>}
+              {progress > 0 && (
+                <div>
+                  &gt; <span style={{ color: "#FF8FFD" }}>runpodctl</span>{" "}
+                  project <span style={{ color: "#979DFF" }}>deploy</span>
+                </div>
+              )}
               <br />
               {progress > 1 && (
                 <div>

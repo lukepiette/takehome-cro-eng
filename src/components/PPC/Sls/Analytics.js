@@ -367,7 +367,7 @@ const HeadlineBox = ({ children, title, ...props }) => (
     </Typography>
 
     <ButtonLink
-      href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+      href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
       variant="contained"
       sx={{
         background:

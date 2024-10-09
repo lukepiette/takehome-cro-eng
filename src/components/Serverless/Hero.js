@@ -1,20 +1,20 @@
-import { Box, Button, Stack, Typography, useTheme } from "@mui/material"
-import CheckIcon from "@mui/icons-material/Check"
+import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
 
-import FlashBoot from "./FlashBoot"
-import Metrics from "./Metrics"
-import StartButton from "@components/StartButton"
+import FlashBoot from "./FlashBoot";
+import Metrics from "./Metrics";
+import StartButton from "@components/StartButton";
 
 export default function Hero({ data }) {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <Stack
       justifyContent="space-around"
       sx={{
-        "width": "100%",
-        "position": "relative",
-        "height": "calc(100vh - 71px)",
+        width: "100%",
+        position: "relative",
+        height: "calc(100vh - 71px)",
         "&:before": {
           content: "''",
           height: "100%",
@@ -23,7 +23,7 @@ export default function Hero({ data }) {
           width: "100%",
           zIndex: -1,
         },
-        "fallbacks": [{ height: "96%" }],
+        fallbacks: [{ height: "96%" }],
       }}
     >
       <Stack
@@ -55,28 +55,43 @@ export default function Hero({ data }) {
             <Stack spacing={0.5}>
               <Typography
                 textAlign={{ xs: "center", md: "left" }}
-                sx={{ fontSize: { xs: 20, sm: 24 }, fontWeight: 300, lineHeight: 1.5 }}
+                sx={{
+                  fontSize: { xs: 20, sm: 24 },
+                  fontWeight: 300,
+                  lineHeight: 1.5,
+                }}
                 variant="h2"
               >
                 GPU{" "}
-                <Box component="span" sx={{ display: { xs: "none", sm: "inline" } }}>
+                <Box
+                  component="span"
+                  sx={{ display: { xs: "none", sm: "inline" } }}
+                >
                   compute
                 </Box>{" "}
                 for <strong>AI Inference</strong> and <strong>Training</strong>.
               </Typography>
               <Typography
                 textAlign={{ xs: "center", md: "left" }}
-                sx={{ fontSize: { xs: 20, sm: 22 }, fontWeight: 300, lineHeight: 1.5 }}
+                sx={{
+                  fontSize: { xs: 20, sm: 22 },
+                  fontWeight: 300,
+                  lineHeight: 1.5,
+                }}
               >
                 Pay by the second.
               </Typography>
             </Stack>
 
-            <Stack direction="row" justifyContent={{ xs: "center", md: "start" }} spacing={2}>
+            <Stack
+              direction="row"
+              justifyContent={{ xs: "center", md: "start" }}
+              spacing={2}
+            >
               <StartButton to="/console/serverless" />
               <Button
                 sx={{ color: "white" }}
-                href="https://meetings.runpod.io/meetings/runpod/firstconnect"
+                href="https://meetings.runpod.io/meetings/luke-piette/pricing-outreach"
               >
                 Book a Call
               </Button>
@@ -89,14 +104,19 @@ export default function Hero({ data }) {
 
       <Box />
 
-      <Stack direction="row" justifyContent="center" spacing={{ xs: 0, md: 25 }} width="100%">
+      <Stack
+        direction="row"
+        justifyContent="center"
+        spacing={{ xs: 0, md: 25 }}
+        width="100%"
+      >
         <Metrics data={data} />
         <Stack alignItems={"start"} display={{ xs: "none", sm: "flex" }}>
           <FlashBoot data={data} />
         </Stack>
       </Stack>
     </Stack>
-  )
+  );
 }
 
 const HeroRight = ({ theme }) => (
@@ -128,8 +148,11 @@ const HeroRight = ({ theme }) => (
         }}
         width={200}
       >
-        <CheckIcon sx={{ fontSize: 22, color: theme.palette.success.main, mr: 0.5 }} /> {v}
+        <CheckIcon
+          sx={{ fontSize: 22, color: theme.palette.success.main, mr: 0.5 }}
+        />{" "}
+        {v}
       </Typography>
     ))}
   </Stack>
-)
+);
