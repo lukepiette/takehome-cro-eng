@@ -7,8 +7,8 @@ import CloseIcon from '@mui/icons-material/Close';
 
 interface GpuRowProps {
   gpu: any; // Replace 'any' with the actual type of gpu
-  communityPrice: number;
-  securePrice: number;
+  communityPrice: number | undefined;
+  securePrice: number | undefined;
   isFirstInCategory: boolean;
   isLastInCategory: boolean;
   highlightedPrice?: 'community' | 'secure';
@@ -20,7 +20,7 @@ const GpuRow: React.FC<GpuRowProps> = ({
   securePrice, 
   isFirstInCategory, 
   isLastInCategory, 
-  highlightedPrice = 'community' // Default value
+  highlightedPrice = 'community'
 }) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
@@ -29,27 +29,6 @@ const GpuRow: React.FC<GpuRowProps> = ({
   const vramPart = parts.slice(-2).join(' '); // Get the last two parts (XXGB VRAM)
   const gpuModel = parts.slice(0, -2).join(' '); // Join the rest back together
   
-  const highlightedStyle = {
-    backgroundColor: '#5D29F0',
-    color: '#FFFFFF',
-    border: 'none',
-    borderRadius: '8px',
-    padding: isXs ? '2px 4px' : '4px 8px',
-    fontSize: isXs ? '14px' : '20px',
-    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
-    background: 'linear-gradient(165deg, #5D29F0 20%, #2c1772 100%)',
-    textAlign: 'center',
-    display: 'inline-block',
-    width: 'auto',
-    fontWeight: 'bold'
-  };
-
-  const regularStyle = {
-    color: "#FFFFFF",
-    fontWeight: "bold",
-    fontSize: isXs ? 14 : 20
-  };
-
   return (
     <Stack
       direction="row"
@@ -75,17 +54,28 @@ const GpuRow: React.FC<GpuRowProps> = ({
         </Stack>
       </Box>
       <Box width="35%" px={isXs ? 1 : 2.2} py={1.6}>
-        <Typography
-          sx={highlightedPrice === 'community' ? highlightedStyle : regularStyle}
+        <Box
+          sx={{
+            backgroundColor: '#5D29F0',
+            color: '#FFFFFF',
+            border: 'none',
+            borderRadius: '8px',
+            padding: isXs ? '2px 4px' : '4px 8px',
+            fontSize: isXs ? '14px' : '20px',
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+            background: 'linear-gradient(165deg, #5D29F0 20%, #2c1772 100%)',
+            textAlign: 'center',
+            display: 'inline-block',
+            width: 'auto',
+            fontWeight: 'bold'
+          }}
         >
-          {communityPrice ? `$${communityPrice}/hr` : 'NA'}
-        </Typography>
+          {communityPrice !== undefined ? `$${communityPrice}/hr` : 'NA'}
+        </Box>
       </Box>
       <Box width="35%" px={isXs ? 1 : 2.2} py={1.6}>
-        <Typography
-          sx={highlightedPrice === 'secure' ? highlightedStyle : regularStyle}
-        >
-          {securePrice ? `$${securePrice}/hr` : 'NA'}
+        <Typography color="#FFFFFF" fontWeight="bold" fontSize={isXs ? 14 : 20}>
+          {securePrice !== undefined ? `$${securePrice}/hr` : 'NA'}
         </Typography>
       </Box>
     </Stack>
@@ -94,8 +84,8 @@ const GpuRow: React.FC<GpuRowProps> = ({
 
 interface PricingProps {
   gpuModel: string;
-  communityPrice: number;
-  securePrice: number;
+  communityPrice: number | undefined;
+  securePrice: number | undefined;
   highlightedPrice?: 'community' | 'secure';
 }
 
@@ -113,11 +103,13 @@ const Pricing: React.FC<PricingProps> = ({
   ];
 
   // Sort the tableData entries by Community Cloud price (highest to lowest)
-  const sortedTableData = tableData.sort((a, b) => b.communityPrice - a.communityPrice);
+  const sortedTableData = tableData.sort((a, b) => 
+    (b.communityPrice ?? 0) - (a.communityPrice ?? 0)
+  );
 
   // Calculate max savings
   const maxSavings = tableData.reduce((max, row) => {
-    if (row.securePrice) {
+    if (row.securePrice && row.communityPrice !== undefined) {
       const savings = Math.round((1 - row.communityPrice / row.securePrice) * 100);
       return Math.max(max, savings);
     }
