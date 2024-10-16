@@ -143,7 +143,7 @@ const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> 
 
 					<Pricing 
                         gpuModel={GpuInfo.name + " " + GpuInfo.secure.VRAM} 
-                        communityPrice={gpuSpecData?.communityPrice}
+                        communityPrice={undefined}
                         securePrice={gpuSpecData?.securePrice}
 						highlightedPrice="secure"
                     />
