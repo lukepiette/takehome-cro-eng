@@ -11,9 +11,17 @@ interface GpuRowProps {
   securePrice: number;
   isFirstInCategory: boolean;
   isLastInCategory: boolean;
+  highlightedPrice?: 'community' | 'secure';
 }
 
-const GpuRow: React.FC<GpuRowProps> = ({ gpu, communityPrice, securePrice, isFirstInCategory, isLastInCategory }) => {
+const GpuRow: React.FC<GpuRowProps> = ({ 
+  gpu, 
+  communityPrice, 
+  securePrice, 
+  isFirstInCategory, 
+  isLastInCategory, 
+  highlightedPrice = 'community' // Default value
+}) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -21,6 +29,27 @@ const GpuRow: React.FC<GpuRowProps> = ({ gpu, communityPrice, securePrice, isFir
   const vramPart = parts.slice(-2).join(' '); // Get the last two parts (XXGB VRAM)
   const gpuModel = parts.slice(0, -2).join(' '); // Join the rest back together
   
+  const highlightedStyle = {
+    backgroundColor: '#5D29F0',
+    color: '#FFFFFF',
+    border: 'none',
+    borderRadius: '8px',
+    padding: isXs ? '2px 4px' : '4px 8px',
+    fontSize: isXs ? '14px' : '20px',
+    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+    background: 'linear-gradient(165deg, #5D29F0 20%, #2c1772 100%)',
+    textAlign: 'center',
+    display: 'inline-block',
+    width: 'auto',
+    fontWeight: 'bold'
+  };
+
+  const regularStyle = {
+    color: "#FFFFFF",
+    fontWeight: "bold",
+    fontSize: isXs ? 14 : 20
+  };
+
   return (
     <Stack
       direction="row"
@@ -46,27 +75,16 @@ const GpuRow: React.FC<GpuRowProps> = ({ gpu, communityPrice, securePrice, isFir
         </Stack>
       </Box>
       <Box width="35%" px={isXs ? 1 : 2.2} py={1.6}>
-        <Box
-          sx={{
-            backgroundColor: '#5D29F0',
-            color: '#FFFFFF',
-            border: 'none',
-            borderRadius: '8px',
-            padding: isXs ? '2px 4px' : '4px 8px',
-            fontSize: isXs ? '14px' : '20px',
-            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
-            background: 'linear-gradient(165deg, #5D29F0 20%, #2c1772 100%)',
-            textAlign: 'center',
-            display: 'inline-block',
-            width: 'auto',
-            fontWeight: 'bold'
-          }}
+        <Typography
+          sx={highlightedPrice === 'community' ? highlightedStyle : regularStyle}
         >
-          ${communityPrice}/hr
-        </Box>
+          {communityPrice ? `$${communityPrice}/hr` : 'NA'}
+        </Typography>
       </Box>
       <Box width="35%" px={isXs ? 1 : 2.2} py={1.6}>
-        <Typography color="#FFFFFF" fontWeight="bold" fontSize={isXs ? 14 : 20}>
+        <Typography
+          sx={highlightedPrice === 'secure' ? highlightedStyle : regularStyle}
+        >
           {securePrice ? `$${securePrice}/hr` : 'NA'}
         </Typography>
       </Box>
@@ -78,9 +96,15 @@ interface PricingProps {
   gpuModel: string;
   communityPrice: number;
   securePrice: number;
+  highlightedPrice?: 'community' | 'secure';
 }
 
-const Pricing: React.FC<PricingProps> = ({ gpuModel, communityPrice, securePrice }) => {
+const Pricing: React.FC<PricingProps> = ({ 
+  gpuModel, 
+  communityPrice, 
+  securePrice, 
+  highlightedPrice = 'community' // Default value
+}) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -265,6 +289,7 @@ const Pricing: React.FC<PricingProps> = ({ gpuModel, communityPrice, securePrice
                   securePrice={gpu.securePrice}
                   isFirstInCategory={index === 0}
                   isLastInCategory={index === sortedTableData.length - 1}
+                  highlightedPrice={highlightedPrice}
                 />
               ))}
             </Stack>

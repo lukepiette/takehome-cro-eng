@@ -13,7 +13,7 @@ import Pricing from "@components/GPU2/Dynamic/Pricing";
 import Scale from "@components/GPU2/Static/Scale";
 import Comparison from "@components/GPU2/Static/Comparison";
 
-import GpuInfo from "@components/GPU2/GpuData/a5000";
+import GpuInfo from "@components/GPU2/GpuData/a100sxm";
 import { GET_GPU_TYPE_INFO } from "@components/InstancePricing/query";
 import apolloClient from "@utils/apolloClient";
 
@@ -33,28 +33,28 @@ const Text = styled(Typography)({
 const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> = ({ gpuData, metrics, sd, whisper }) => {
 	// const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 	// TODO: useMediaQuery is not working in this file, fix it lol
-	const gpuSpecData = gpuData?.["NVIDIA RTX A5000"] || {};
+	const gpuSpecData = gpuData?.["NVIDIA A100-SXM4-80GB"] || {};
 
 	return (
 		<>
     <Head>
-      <title>Rent Nvidia RTX A5000 GPUs On-Demand</title>
-      <meta name="description" content="Rent high-performance Nvidia RTX A5000 GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <title>Rent Nvidia A100 80GB SXM GPUs On-Demand</title>
+      <meta name="description" content="Rent high-performance Nvidia A100 80GB SXM GPUs on-demand. Perfect for running Machine Learning workloads." />
       <meta name="author" content="RunPod" />
 
       {/* Open Graph Tags */}
-      <meta property="og:title" content="Rent Nvidia RTX A5000 GPUs On-Demand" />
-      <meta property="og:description" content="Rent high-performance Nvidia RTX A5000 GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta property="og:title" content="Rent Nvidia A100 80GB SXM GPUs On-Demand" />
+      <meta property="og:description" content="Rent high-performance Nvidia A100 80GB SXM GPUs on-demand. Perfect for running Machine Learning workloads." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.runpod.io/gpu/a5000" />
-      <meta property="og:image" content="https://www.runpod.io/static/images/gpu/preview/a5000-preview-image.webp" />
+      <meta property="og:url" content="https://www.runpod.io/gpu/a100-sxm" />
+      <meta property="og:image" content="https://www.runpod.io/static/images/gpu/preview/a100-sxm-preview-image.webp" />
 
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@runpod_io" />
-      <meta name="twitter:title" content="Rent Nvidia RTX A5000 GPUs On-Demand" />
-      <meta name="twitter:description" content="Rent high-performance Nvidia RTX A5000 GPUs on-demand. Perfect for running Machine Learning workloads." />
-      <meta name="twitter:image" content="https://www.runpod.io/static/images/gpu/preview/a5000-preview-image.webp" />
+      <meta name="twitter:title" content="Rent Nvidia A100 80GB SXM GPUs On-Demand" />
+      <meta name="twitter:description" content="Rent high-performance Nvidia A100 80GB SXM GPUs on-demand. Perfect for running Machine Learning workloads." />
+      <meta name="twitter:image" content="https://www.runpod.io/static/images/gpu/preview/a100-sxm-preview-image.webp" />
     </Head>
 
 			<main>
@@ -75,7 +75,7 @@ const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> 
 									backgroundClip: "text",
 									textFillColor: "transparent"
 								}}>
-								Rent {GpuInfo.name}s{" "}
+								Rent {GpuInfo.name}{" "}
 								<Box
 									component="br"
 									sx={{
@@ -145,6 +145,7 @@ const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> 
                         gpuModel={GpuInfo.name + " " + GpuInfo.secure.VRAM} 
                         communityPrice={gpuSpecData?.communityPrice}
                         securePrice={gpuSpecData?.securePrice}
+						highlightedPrice="secure"
                     />
 
                     <Box
