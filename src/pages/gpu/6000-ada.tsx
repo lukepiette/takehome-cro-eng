@@ -74,7 +74,7 @@ const GPUCloud: NextPage<{ gpuData: any; metrics: any; sd: any; whisper: any }> 
 									backgroundClip: "text",
 									textFillColor: "transparent"
 								}}>
-								Rent {GpuInfo.name}
+								Rent {GpuInfo.name}{" "}
 								<Box
 									component="br"
 									sx={{
