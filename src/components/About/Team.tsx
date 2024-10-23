@@ -101,7 +101,13 @@ export default function Team(): JSX.Element {
 								fontSize: "14px",
 								lineHeight: "20px",
 								textAlign: "center",
-								color: "#FFFFFF"
+								color: "#FFFFFF",
+								whiteSpace: "nowrap",
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								width: "100%",
+								height: "100%"
 							}}>
 							Our Team
 						</Typography>
@@ -143,7 +149,7 @@ export default function Team(): JSX.Element {
 							color: "rgba(249, 250, 251, 0.8)",
 							textAlign: "left"
 						}}>
-						<b>We wear multiple hats.</b> Our sales team is has a
+						<b>We wear multiple hats.</b> Our sales team has a
 						strong technical background. Our eng team has an
 						exceptional eye for product. Our datacenter operations
 						team has a strong sales background. Whether you{"'"}re
