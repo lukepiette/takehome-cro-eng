@@ -211,6 +211,38 @@ export default [
 		name: "Chris Love",
 		image: "/static/images/about/team/chris.webp",
 		bio: "Head of Business Operations"
+	},
+	{
+		name: "Brendan McKeag",
+		image: "/static/images/about/team/brendan.webp",
+		bio: "Developer Relations Content Creator and friend to all reptiles"
+	},
+	{
+		name: "Madiator2011",
+		image: "/static/images/about/team/roman.webp",
+		bio: "Technical Support Analyst passionate about leveraging Linux and open-source technologies to drive innovative solutions",
+		github: "https://github.com/kodxana",
+		twitter: "https://bsky.app/profile/madiator2011.madiator.cloud"
+	},
+	{
+		name: "Jamie Ilario",
+		image: "/static/images/about/team/jamie.webp",
+		bio: "Business Operations Associate",
+		linkedin: "https://www.linkedin.com/in/jamie-ilario-6b395514b",
+		spotifyPlaylist:
+			"https://open.spotify.com/playlist/2P3XvMw64BXn9XB1d7BR2B?nd=1&dlsi=fdb8b876cffb485e"
+	},
+	{
+		name: "Agatha",
+		image: "/static/images/about/team/agatha.webp",
+		bio: "Zhen's EA | geek, musician, writer",
+		linkedin: "www.linkedin.com/in/agathalarocca"
+	},
+	{
+		name: "Tristan Pierce",
+		image: "/static/images/about/team/tristan.webp",
+		bio: "Technical Support Analyst at RunPod. Loves Motorcycles, Nature, Adventure, and Philosophy",
+		linkedin: "https://www.linkedin.com/in/tristandpierce/"
 	}
 ] as {
 	name: string;
