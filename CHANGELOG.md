@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/runpod/landing-ui/compare/v1.8.0...v1.9.0) (2024-10-23)
+
+
+### Features
+
+* add more team members to about page ([630f203](https://github.com/runpod/landing-ui/commit/630f203ccdb822b4103ba730ba2ca1590c45955a))
+
 ## [1.8.0](https://github.com/runpod/landing-ui/compare/v1.7.0...v1.8.0) (2024-10-09)
 
 
