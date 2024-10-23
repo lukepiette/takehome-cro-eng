@@ -67,10 +67,36 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
 
   const router = useRouter();
   const [selectedMetric, setSelectedMetric] = useState('outputTokenThroughput');
-  const [selectedModel, setSelectedModel] = useState('llama-8b-instruct');
+  const [selectedModel, setSelectedModel] = useState('');
   const [selectedBatchSize, setSelectedBatchSize] = useState(1);
+  const [selectedPrompt, setSelectedPrompt] = useState('128_128');
   const [highlightedGPUs, setHighlightedGPUs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const getAvailableModels = () => {
+    const selectedGPUs = gpuList.filter(gpu => highlightedGPUs.includes(gpu.urlName));
+    const commonModels = selectedGPUs.reduce((acc, gpu) => {
+      const gpuModels = Object.keys(gpu.benchmarks).filter(model => gpu.benchmarks[model].fitsOnGpu);
+      return acc.length === 0 ? gpuModels : acc.filter(model => gpuModels.includes(model));
+    }, []);
+
+    return [...new Set(commonModels)];
+  };
+
+  const [models, setModels] = useState([]);
+
+  useEffect(() => {
+    const availableModels = getAvailableModels();
+    setModels(availableModels.map(modelValue => ({
+      value: modelValue,
+      label: modelValue // Changed this line to use the original model name
+    })));
+
+    // Select the first available model if none is selected
+    if ((!selectedModel || !availableModels.includes(selectedModel)) && availableModels.length > 0) {
+      setSelectedModel(availableModels[0]);
+    }
+  }, [highlightedGPUs, gpuList, selectedModel]);
 
   useEffect(() => {
 
@@ -89,36 +115,18 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
   }, [router.query, firstGPUData, secondGPUData, selectedMetric, selectedModel, selectedBatchSize]);
 
   const metrics = [
-    { value: 'outputTokenThroughput', label: 'Output Token Throughput (tok/s)' },
-    { value: 'costPer1MTokens', label: 'Cost Per 1M Tokens ($)' },
+    { value: 'outputTokenThroughput', label: 'Output Throughput (tok/s)' },
+    { value: 'costPer1MTokens', label: 'Cost Per 1M Tokens' },
     { value: 'requestsPerSecond', label: 'Requests Per Second' },
   ];
 
-  const getBarColor = (gpu, metric) => {
-    if (highlightedGPUs.includes(gpu.urlName)) {
-      const highlightedData = gpuList
-        .filter(g => highlightedGPUs.includes(g.urlName))
-        .map(g => ({
-          urlName: g.urlName,
-          value: g.performanceData[0][metric]
-        }));
-
-      const isHigherBetter = !['requestLatency', 'timeToFirstToken', 'interTokenLatency', 'costPer1MTokens'].includes(metric);
-      highlightedData.sort((a, b) => isHigherBetter ? b.value - a.value : a.value - b.value);
-
-      if (gpu.urlName === highlightedData[0].urlName) {
-        return 'rgba(0, 128, 0, 0.8)'; // Dark green for the best performing GPU
-      } else {
-        return 'rgba(128, 0, 0, 0.8)'; // Dark red for the second best performing GPU
-      }
-    }
-    return 'rgba(100, 100, 100, 0.1)'; // Light grey for non-highlighted GPUs
-  };
-
-
   const chartData = gpuList
     .map(gpu => {
-      const performanceData = gpu.performanceData.find(data => data.batchSize === selectedBatchSize);
+      const modelData = gpu.benchmarks[selectedModel];
+      if (!modelData || !modelData.fitsOnGpu) {
+        return null;
+      }
+      const performanceData = modelData[selectedPrompt].performanceData.find(data => data.batchSize === selectedBatchSize);
       if (!performanceData) {
         console.warn(`Missing performanceData for GPU: ${gpu.name} at batch size: ${selectedBatchSize}`);
         return null;
@@ -129,7 +137,7 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
         urlName: gpu.urlName
       };
     })
-    .filter(Boolean)  // Remove null entries
+    .filter(Boolean) // Remove null entries
     .sort((a, b) => {
       // Sort based on the metric
       if (['requestLatency', 'timeToFirstToken', 'interTokenLatency', 'costPer1MTokens'].includes(selectedMetric)) {
@@ -140,6 +148,38 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
         return b.value - a.value;
       }
     });
+
+  const getBarColor = (gpu, metric) => {
+    if (highlightedGPUs.includes(gpu.urlName)) {
+      const highlightedData = gpuList
+        .filter(g => highlightedGPUs.includes(g.urlName))
+        .map(g => {
+          const modelData = g.benchmarks[selectedModel];
+          if (!modelData || !modelData.fitsOnGpu) {
+            return null;
+          }
+          const performanceData = modelData[selectedPrompt].performanceData.find(data => data.batchSize === selectedBatchSize);
+          if (!performanceData) {
+            return null;
+          }
+          return {
+            urlName: g.urlName,
+            value: performanceData[metric]
+          };
+        })
+        .filter(Boolean); // Remove null entries
+
+      const isHigherBetter = !['requestLatency', 'timeToFirstToken', 'interTokenLatency', 'costPer1MTokens'].includes(metric);
+      highlightedData.sort((a, b) => isHigherBetter ? b.value - a.value : a.value - b.value);
+
+      if (highlightedData.length > 0 && gpu.urlName === highlightedData[0].urlName) {
+        return 'rgba(0, 128, 0, 0.8)'; // Dark green for the best performing GPU
+      } else if (highlightedData.length > 1 && gpu.urlName === highlightedData[1].urlName) {
+        return 'rgba(128, 0, 0, 0.8)'; // Dark red for the second best performing GPU
+      }
+    }
+    return 'rgba(100, 100, 100, 0.3)'; // Updated color for non-highlighted GPUs
+  };
 
 
   const data = {
@@ -169,6 +209,9 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
   };
 
   const formatValue = (value, metric) => {
+    if (value === null || value === undefined) {
+      return 'N/A'; // or any other placeholder you prefer
+    }
     const unit = getUnitForMetric(metric);
     if (metric === 'costPer1MTokens') {
       return `$${value.toFixed(2)}`;
@@ -305,13 +348,13 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
         flexWrap: 'wrap',
         gap: 2
       }}>
-        <StyledFormControl sx={{ width: { xs: '100%', sm: 400 }, mb: 2 }}>
-          <InputLabel id="metric-label" sx={{ color: '#F9FAFB', fontFamily: 'Arial, Helvetica, sans-serif' }}>Metric</InputLabel>
+        <StyledFormControl sx={{ width: { xs: '100%', sm: 250 }, mb: 2 }}>
+          <InputLabel id="metric-label" sx={{ color: '#F9FAFB', fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '0.9rem' }}>Metric</InputLabel>
           <Select
             labelId="metric-label"
             value={selectedMetric}
             onChange={(e) => setSelectedMetric(e.target.value)}
-            sx={{ fontSize: '1.1rem', fontFamily: 'monospace' }}
+            sx={{ fontSize: '0.9rem', fontFamily: 'monospace' }}
             MenuProps={{
               PaperProps: {
                 sx: {
@@ -322,17 +365,46 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
             }}
           >
             {metrics.map((metric) => (
-              <MenuItem key={metric.value} value={metric.value} sx={{ fontFamily: 'monospace' }}>{metric.label}</MenuItem>
+              <MenuItem key={metric.value} value={metric.value} sx={{ fontFamily: 'monospace', fontSize: '0.9rem' }}>{metric.label}</MenuItem>
             ))}
           </Select>
         </StyledFormControl>
-        <StyledFormControl sx={{ width: { xs: '100%', sm: 200 }, mb: 2 }}>
-          <InputLabel id="model-label" sx={{ color: '#F9FAFB', fontFamily: 'Arial, Helvetica, sans-serif' }}>Model</InputLabel>
+        <StyledFormControl sx={{ width: { xs: '100%', sm: 300 }, mb: 2 }}>
+          <InputLabel id="model-label" sx={{ color: '#F9FAFB', fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '0.9rem' }}>Model</InputLabel>
           <Select
             labelId="model-label"
             value={selectedModel}
             onChange={(e) => setSelectedModel(e.target.value)}
-            sx={{ fontSize: '1.1rem', fontFamily: 'monospace' }}
+            displayEmpty
+            renderValue={(selected) => {
+              if (!selected) {
+                return <em style={{ fontSize: '0.9rem' }}>Select a model</em>;
+              }
+              return selected;
+            }}
+            sx={{ fontSize: '0.9rem', fontFamily: 'monospace' }}
+            MenuProps={{
+              PaperProps: {
+                sx: {
+                  backgroundColor: '#000000',
+                  color: '#F9FAFB',
+                  maxHeight: 300,
+                },
+              },
+            }}
+          >
+            {models.map((model) => (
+              <MenuItem key={model.value} value={model.value} sx={{ fontFamily: 'monospace', fontSize: '0.9rem' }}>{model.label}</MenuItem>
+            ))}
+          </Select>
+        </StyledFormControl>
+        <StyledFormControl sx={{ width: { xs: '100%', sm: 200 }, mb: 2 }}>
+          <InputLabel id="tokens-label" sx={{ color: '#F9FAFB', fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '0.9rem' }}>Tokens</InputLabel>
+          <Select
+            labelId="tokens-label"
+            value={selectedPrompt}
+            onChange={(e) => setSelectedPrompt(e.target.value)}
+            sx={{ fontSize: '0.9rem', fontFamily: 'monospace' }}
             MenuProps={{
               PaperProps: {
                 sx: {
@@ -342,16 +414,16 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
               },
             }}
           >
-            <MenuItem value="llama-8b-instruct" sx={{ fontFamily: 'monospace' }}>Llama 8b Instruct</MenuItem>
+            <MenuItem value="128_128" sx={{ fontFamily: 'monospace', fontSize: '0.9rem' }}>128 input, 128 output</MenuItem>
           </Select>
         </StyledFormControl>
         <StyledFormControl sx={{ width: { xs: '100%', sm: 120 }, mb: 2 }}>
-          <InputLabel id="batch-size-label" sx={{ color: '#F9FAFB', fontFamily: 'Arial, Helvetica, sans-serif' }}>Batch Size</InputLabel>
+          <InputLabel id="batch-size-label" sx={{ color: '#F9FAFB', fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '0.9rem' }}>Batch Size</InputLabel>
           <Select
             labelId="batch-size-label"
             value={selectedBatchSize}
             onChange={(e) => setSelectedBatchSize(e.target.value)}
-            sx={{ fontSize: '1.1rem', fontFamily: 'monospace' }}
+            sx={{ fontSize: '0.9rem', fontFamily: 'monospace' }}
             MenuProps={{
               PaperProps: {
                 sx: {
@@ -362,7 +434,7 @@ const Overview = ({ gpuList, firstGPUData, secondGPUData }) => {
             }}
           >
             {[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024].map((size) => (
-              <MenuItem key={size} value={size} sx={{ fontFamily: 'monospace' }}>{size}</MenuItem>
+              <MenuItem key={size} value={size} sx={{ fontFamily: 'monospace', fontSize: '0.9rem' }}>{size}</MenuItem>
             ))}
           </Select>
         </StyledFormControl>

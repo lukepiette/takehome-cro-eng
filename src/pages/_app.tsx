@@ -13,10 +13,9 @@ import useUtm from "@hooks/useUtm";
 import useMeetingBooked from "@hooks/useMeetingBooked";
 import useReferrer from "@hooks/useReferrer";
 import React, { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Scripts from "@components/Scripts";
-
-
 
 const inter = Inter({ weight: ["400", "500", "600"], subsets: ["latin"] });
 
@@ -83,6 +82,7 @@ export default function MyApp({
         </main>
       )}
       <Scripts />
+      <SpeedInsights />
     </CacheProvider>
   );
 }
