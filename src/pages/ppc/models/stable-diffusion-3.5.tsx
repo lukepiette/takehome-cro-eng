@@ -28,7 +28,7 @@ const LlamaPage: NextPage = ({ data = null }: any) => {
     <>
         <HTMLHead
             title="Run Stable Diffusion 3.5 With A Custom API endpoint"
-            description="In minutes, create a custom API endpoint to host your Stable Diffusion 3.5 model."
+            description="In minutes, create a custom API endpoint to host your Stable Diffusion 3.5 model"
         />
         <main>
             <ModelPage modelName={"Stable Diffusion 3.5"} data={data}/>
