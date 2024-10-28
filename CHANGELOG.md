@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/runpod/landing-ui/compare/v1.9.0...v1.9.1) (2024-10-28)
+
+
+### Bug Fixes
+
+* **e-1849:** book a call button doesnt work ([#188](https://github.com/runpod/landing-ui/issues/188)) ([10bde99](https://github.com/runpod/landing-ui/commit/10bde991b56d47e5c634eed5335f882f0e78fe25))
+
 ## [1.9.0](https://github.com/runpod/landing-ui/compare/v1.8.0...v1.9.0) (2024-10-23)
 
 
