@@ -67,7 +67,7 @@ export default function ServerlessPricing() {
         />
 
         <ButtonLink
-          href="https://meetings.hubspot.com/runpod/first-connect"
+          href="https://meetings.hubspot.com/margarita-melkoumov/runpod-team-discovery-call-"
           variant="outlined"
           sx={{
             background:

@@ -94,7 +94,7 @@ export default function Pricing({ slim, title1, title2 }) {
         /> */}
 
         <ButtonLink
-          href="https://meetings.hubspot.com/runpod/first-connect"
+          href="https://meetings.hubspot.com/margarita-melkoumov/runpod-team-discovery-call-"
           variant="outlined"
           sx={{
             background:

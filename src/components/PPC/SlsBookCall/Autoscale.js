@@ -57,7 +57,7 @@ export default function Autoscale() {
       </Typography>
 
       <ButtonLink
-        href="https://meetings.hubspot.com/runpod/first-connect"
+        href="https://meetings.hubspot.com/margarita-melkoumov/runpod-team-discovery-call-"
         variant="contained"
         sx={{
           background:
