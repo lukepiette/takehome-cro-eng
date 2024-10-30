@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/runpod/landing-ui/compare/v1.9.1...v1.10.0) (2024-10-30)
+
+
+### Features
+
+* ZI script ([#190](https://github.com/runpod/landing-ui/issues/190)) ([1c7fe85](https://github.com/runpod/landing-ui/commit/1c7fe8502d9f20ba8ad20c68389c91515707770c))
+
 ## [1.9.1](https://github.com/runpod/landing-ui/compare/v1.9.0...v1.9.1) (2024-10-28)
 
 
