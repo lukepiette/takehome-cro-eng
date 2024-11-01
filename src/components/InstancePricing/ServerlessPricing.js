@@ -120,7 +120,7 @@ export default function ServerlessPricing() {
             throughput is critical.
           </GpuBox>
           <GpuBox
-            name="A6000"
+            name="A6000, A40"
             priceActive={0.00029}
             priceFlex={0.00048}
             vram={48}
@@ -129,7 +129,7 @@ export default function ServerlessPricing() {
             and many others. Less effective for large language models.
           </GpuBox>
           <GpuBox
-            name="L40"
+            name="L40, L40S, 6000 Ada"
             priceActive={0.00041}
             priceFlex={0.00069}
             pro
@@ -139,7 +139,7 @@ export default function ServerlessPricing() {
             3 7B and medium sized models like Yi 34B.
           </GpuBox>
           <GpuBox
-            name="A5000"
+            name="A5000, L4, 3090"
             priceActive={0.00016}
             priceFlex={0.00026}
             vram={24}
@@ -158,7 +158,7 @@ export default function ServerlessPricing() {
             running Llama3 8B and Mistral 7B.
           </GpuBox>
           <GpuBox
-            name="A4000"
+            name="A4000, A4500, RTX 4000"
             priceActive={0.00012}
             priceFlex={0.0002}
             vram={16}

@@ -225,7 +225,7 @@ export default function Pricing({ slim, title1, title2 }) {
             Extreme throughput for big models.
           </GpuBox>
           <GpuBox
-            name="A6000"
+            name="A6000, A40"
             perSecond={priceType == "Second"}
             priceActive={gpuActivePrice[48]}
             priceFlex={gpuFlexPrice[48]}
@@ -234,7 +234,7 @@ export default function Pricing({ slim, title1, title2 }) {
             A cost-effective option for running big models.
           </GpuBox>
           <GpuBox
-            name="L40"
+            name="L40, L40S, 6000 Ada"
             perSecond={priceType == "Second"}
             priceActive={gpuActivePrice[48.9]}
             priceFlex={gpuFlexPrice[48.9]}
@@ -244,7 +244,7 @@ export default function Pricing({ slim, title1, title2 }) {
             Extreme inference throughput on LLMs like Llama 3 7B.
           </GpuBox>
           <GpuBox
-            name="A5000"
+            name="L4, A5000, 3090"
             perSecond={priceType == "Second"}
             priceActive={gpuActivePrice[24]}
             priceFlex={gpuFlexPrice[24]}
@@ -264,7 +264,7 @@ export default function Pricing({ slim, title1, title2 }) {
           </GpuBox>
           <GpuBox
             last
-            name="A4000"
+            name="A4000, A4500, RTX 4000"
             perSecond={priceType == "Second"}
             priceActive={gpuActivePrice[16]}
             priceFlex={gpuFlexPrice[16]}
