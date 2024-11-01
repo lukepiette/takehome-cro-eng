@@ -317,11 +317,23 @@ import {
           <Box display="flex" alignItems="center" justifyContent="center" mt={2}>
             <Divider style={{ flexGrow: 1, height: 2 }} />
             <Typography variant="h4" align="center" sx={{ mx: 2 }}>
-                192GB VRAM
+                80GB+ VRAM
             </Typography>
             <Divider style={{ flexGrow: 1, height: 2 }} />
           </Box>       
           <Grid container spacing={2}>
+            <GPUPrice
+              name="H100 NVL"
+              manufacturer="nvidia"
+              // @ts-ignore
+              data={data?.gpu["NVIDIA H100 NVL"]}
+            />
+            <GPUPrice
+              name="H200 SXM"
+              manufacturer="nvidia"
+              // @ts-ignore
+              data={data?.gpu["NVIDIA H200"]}
+            />
             <GPUPrice
               name="MI300X"
               manufacturer="amd"
@@ -443,13 +455,19 @@ import {
               data={data?.gpu["NVIDIA A30"]}
             />
             <GPUPrice
+              name="L4"
+              manufacturer="nvidia"
+              // @ts-ignore
+              data={data?.gpu["NVIDIA L4"]}
+            />
+            <GPUPrice
               name="RTX A4500"
               manufacturer="nvidia"
               // @ts-ignore
               data={data?.gpu["NVIDIA RTX A4500"]}
             />
             <GPUPrice
-              name="RTX A4000 Ada"
+              name="RTX 4000 Ada"
               manufacturer="nvidia"
               // @ts-ignore
               data={data?.gpu["NVIDIA RTX 4000 Ada Generation"]}
@@ -459,6 +477,18 @@ import {
               manufacturer="nvidia"
               // @ts-ignore
               data={data?.gpu["NVIDIA RTX A4000"]}
+            />
+            <GPUPrice
+              name="Tesla V100"
+              manufacturer="nvidia"
+              // @ts-ignore
+              data={data?.gpu["Tesla V100-PCIE-16GB"]}
+            />
+            <GPUPrice
+              name="RTX 2000 Ada"
+              manufacturer="nvidia"
+              // @ts-ignore
+              data={data?.gpu["NVIDIA RTX 2000 Ada Generation"]}
             />
             <GPUPrice
               name="RTX 3080"
