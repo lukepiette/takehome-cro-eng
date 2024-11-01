@@ -41,6 +41,8 @@ import {
     name,
     manufacturer = "nvidia",
     data,
+    hideRam = false,
+    hideVcpu = false,
   }) {
     return (
       <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -137,20 +139,24 @@ import {
               >
                 {data?.memoryInGb || "???"}GB VRAM
               </Typography>
-              <Typography
-                fontSize={14}
-                fontWeight={400}
-                color={"rgba(249, 250, 251, 0.64)"}
-              >
-                {data?.lowestPrice?.minMemory || "???"}GB RAM
-              </Typography>
-              <Typography
-                fontSize={14}
-                fontWeight={400}
-                color={"rgba(249, 250, 251, 0.64)"}
-              >
-                {data?.lowestPrice?.minVcpu || "???"} vCPUs
-              </Typography>
+              {!hideRam && (
+                <Typography
+                  fontSize={14}
+                  fontWeight={400}
+                  color={"rgba(249, 250, 251, 0.64)"}
+                >
+                  {data?.lowestPrice?.minMemory || "???"}GB RAM
+                </Typography>
+              )}
+              {!hideVcpu && (
+                <Typography
+                  fontSize={14}
+                  fontWeight={400}
+                  color={"rgba(249, 250, 251, 0.64)"}
+                >
+                  {data?.lowestPrice?.minVcpu || "???"} vCPUs
+                </Typography>
+              )}
             </Stack>
             <Stack gap={1}>
               {data?.secureCloud && (
@@ -331,6 +337,8 @@ import {
             <GPUPrice
               name="H200 SXM"
               manufacturer="nvidia"
+              hideRam={true}
+              hideVcpu={true}
               // @ts-ignore
               data={data?.gpu["NVIDIA H200"]}
             />
@@ -495,12 +503,6 @@ import {
               manufacturer="nvidia"
               // @ts-ignore
               data={data?.gpu["NVIDIA GeForce RTX 3080"]}
-            />
-            <GPUPrice
-              name="RTX 3070"
-              manufacturer="nvidia"
-              // @ts-ignore
-              data={data?.gpu["NVIDIA GeForce RTX 3070"]}
             />
           </Grid>
 
