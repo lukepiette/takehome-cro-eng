@@ -13,7 +13,7 @@ import BenefitsOfRunPod from "@components/PPC/Compare/BenefitsOfRunPod";
 import Pricing from "@components/PPC/Compare/Pricing";
 import Comparison from "@components/PPC/Compare/Comparison";
 
-import adCopy from "./adCopy.js"
+import adCopy from "@components/PPC/Compare/adCopy"
 
 const Text = styled(Typography)({
 	width: "100%",
