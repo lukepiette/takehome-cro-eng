@@ -77,8 +77,8 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 	return (
 		<>
 			<HTMLHead
-				title="Launch a GPU in Seconds with RunPod"
-				description="Our prices make AI teams smile. We're not just inexpensive—we're setting a new standard for GPU cloud."
+				title="Fine-Tune LLMs with RunPod"
+				description="The fastest and most effective platform for fine-tuning large language models."
 			/>
 
 			<main>
@@ -90,13 +90,13 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 								sx={{
 									fontSize: { xs: "32px", sm: "48px" },
 									fontWeight: 600,
-									lineHeight: "96%",
+									lineHeight: "110%",
 									letterSpacing: "-0.03em",
 									textAlign: "center",
 									color: "#FFFFFF",
 									width: "100%"
 								}}>
-								In just{" "}
+								Fine-tune your LLM in minutes,{" "}
 								<Box
 									component="span"
 									sx={{
@@ -108,10 +108,8 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 										color: "transparent",
 										display: "inline"
 									}}>
-									74 seconds
+									not days.{" "}
 								</Box>
-								, the average RunPod user is up and running with
-								a powerful GPU.
 							</Typography>
 						}
 						subHeader={
@@ -126,13 +124,12 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 									width: "100%",
 									maxWidth: "352.29px"
 								}}>
-								Think you can beat our 74-second average?{" "}
 								<span style={{ color: "#FFFFFF" }}>
-									Launch your GPU now and start the clock.
+								Over 10,000 ML engineers trust RunPod for LLM fine-tuning. Join them today.
 								</span>
 							</Typography>
 						}
-						buttonText={"Launch a GPU"}
+						buttonText={"Start Fine-tuning for Free"}
 					/>
 
 					<Logos

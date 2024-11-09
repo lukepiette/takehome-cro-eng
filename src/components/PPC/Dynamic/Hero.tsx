@@ -26,7 +26,7 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
 	width: "100%",
 	[theme.breakpoints.down("sm")]: {
 		gap: "32px"
-	}
+	},
 }));
 
 type StyledButtonProps = {
@@ -39,16 +39,17 @@ const StyledButton = styled(Button)<StyledButtonProps>(({ theme }) => ({
 	boxShadow:
 		"inset 0px -6px 24px rgba(255, 255, 255, 0.16), inset 0px 1px 2px rgba(180, 172, 183, 0.72)",
 	borderRadius: "8px",
-	padding: "16px 8px 15px 12px",
-	width: "100%",
-	maxWidth: "288px",
-	height: "51px",
+	padding: "16px 24px 15px",
+	width: "fit-content",
+	minWidth: "250px",
+	height: "61px",
 	color: "#F9FAFB",
 	textTransform: "none",
 	textDecoration: "none",
 	"&:hover": {
 		textDecoration: "none"
-	}
+	},
+	fontSize: '18px',
 }));
 
 const Hero = ({
@@ -74,6 +75,7 @@ const Hero = ({
 						maxHeight: "80.66px",
 						objectFit: "contain",
 						mt: { xs: 3, sm: 5, md: 10 }
+
 					}}
 				/>
 
