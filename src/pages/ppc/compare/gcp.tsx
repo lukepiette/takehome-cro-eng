@@ -11,6 +11,7 @@ import ProblemWithCompetitor from "@components/PPC/Compare/ProblemWithCompetitor
 import BenefitsOfRunPod from "@components/PPC/Compare/BenefitsOfRunPod";
 import Pricing from "@components/PPC/Compare/Pricing";
 import Comparison from "@components/PPC/Compare/Comparison";
+import adCopy from "./adCopy"
 
 const Text = styled(Typography)({
 	width: "100%",
@@ -104,7 +105,7 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 								their budgets.
 							</Typography>
 						}
-						buttonText={"See the GPU dashboard"}
+						buttonText={adCopy.heroCTA}
 					/>
 
 					<Logos
