@@ -11,6 +11,7 @@ import Subheader from "@components/PPC/Unified/Subheader";
 import Pricing from "@components/PPC/Unified/Pricing";
 import Scale from "@components/PPC/Unified/Scale";
 import Comparison from "@components/PPC/Unified/Comparison";
+import BookCall from "@components/PPC/Unified/BookCall";
 
 const HeroWrapper = styled(Box)(({ theme }) => ({
 	display: "flex",
@@ -132,7 +133,7 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 								</span>
 							</Typography>
 						}
-						buttonText={"Launch a GPU"}
+						buttonText={"Get Started for Free"}
 					/>
 
 					<Logos
@@ -192,6 +193,12 @@ const GPUCloud: NextPage<{ data: any }> = ({ data }) => {
 							height: { xs: "50px", sm: "75px", md: "125px" }
 						}}></Box>
 					<Comparison />
+
+					<Box
+						sx={{
+							height: { xs: "50px", sm: "75px", md: "125px" }
+						}}></Box>
+					<BookCall />
 
 					<Box
 						sx={{

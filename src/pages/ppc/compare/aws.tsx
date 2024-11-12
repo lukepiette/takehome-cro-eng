@@ -12,6 +12,7 @@ import ProblemWithCompetitor from "@components/PPC/Compare/ProblemWithCompetitor
 import BenefitsOfRunPod from "@components/PPC/Compare/BenefitsOfRunPod";
 import Pricing from "@components/PPC/Compare/Pricing";
 import Comparison from "@components/PPC/Compare/Comparison";
+import BookCall from "@components/PPC/Unified/BookCall";
 
 import adCopy from "@components/PPC/Compare/adCopy"
 
@@ -472,16 +473,13 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 						}}></Box>
 
 					<Counter data={data} />
-
 					<Box
 						sx={{
 							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
-					<Box
-						sx={{
-							height: { xs: "25px", sm: "50px", md: "75px" }
-						}}></Box>
+					<BookCall />
+
 
 					<Footer />
 				</Box>
