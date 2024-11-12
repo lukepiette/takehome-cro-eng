@@ -12,6 +12,7 @@ import BenefitsOfRunPod from "@components/PPC/Compare/BenefitsOfRunPod";
 import Pricing from "@components/PPC/Compare/Pricing";
 import Comparison from "@components/PPC/Compare/Comparison";
 import adCopy from "@components/PPC/Compare/adCopy"
+import BookCall from "@components/PPC/Unified/BookCall";
 
 
 const Text = styled(Typography)({
@@ -477,10 +478,8 @@ const CostEffective: NextPage<{ data: any }> = ({ data }) => {
 							height: { xs: "25px", sm: "50px", md: "75px" }
 						}}></Box>
 
-					<Box
-						sx={{
-							height: { xs: "25px", sm: "50px", md: "75px" }
-						}}></Box>
+					<BookCall />
+
 
 					<Footer />
 				</Box>
