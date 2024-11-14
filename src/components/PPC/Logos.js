@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Box } from "@mui/material";
 import { styled } from "@mui/system";
 
@@ -78,20 +78,20 @@ const LogosWrapper = styled(Box)(({ theme }) => ({
   width: '80%',
   maxWidth: '600px',
   margin: '0 auto',
-  gap: '20px', // Reduced gap for desktop
+  gap: '20px', 
   [theme.breakpoints.down('sm')]: {
     flexWrap: 'nowrap',
     overflowX: 'auto',
     justifyContent: 'flex-start',
-    width: '100vw', // Full viewport width on mobile
-    maxWidth: 'none', // Remove max-width constraint on mobile
-    margin: '0 -16px', // Negative margin to counteract parent padding
-    padding: '0 16px', // Add padding to the sides
+    width: '100vw',
+    maxWidth: 'none',
+    margin: '0 -16px',
+    padding: '0 16px', 
     gap: '15px',
   },
 }));
 
-const Logo = styled(Box)<{ width?: string | number; height?: string | number }>(
+const Logo = styled(Box)(
 	({ theme, width, height }) => ({
 		width,
 		height,
@@ -115,12 +115,6 @@ const logoImages = [
 		height: "16.54px",
 		alt: "Verizon logo"
 	},
-	// {
-	// 	src: "/static/images/ppc/mistralai-logo.webp",
-	// 	width: "51.63px",
-	// 	height: "16.54px",
-	// 	alt: "Mistral AI logo"
-	// },
 	{
 		src: "/static/images/ppc/siemens-logo.webp",
 		width: "74.11px",
@@ -141,7 +135,7 @@ const logoImages = [
 	}
 ];
 
-const Logos = ({ logoText }: { logoText: ReactNode }) => {
+const Logos = ({ logoText }) => {
 	return (
 		<LogosContainer>
 			<BackgroundRect />

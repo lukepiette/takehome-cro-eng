@@ -1,15 +1,6 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-
-type Testimonial = {
-	name: string;
-	title: string;
-	picture: string;
-	bigQuote: string;
-	smallQuote: string;
-	smallQuoteMobile?: string;
-};
 
 const QuoteWrapper = styled(Box)(({ theme }) => ({
 	boxSizing: "border-box",
@@ -184,7 +175,7 @@ const G2Text = styled(Typography)(({ theme }) => ({
 	}
 }));
 
-const Quote = ({ testimonial }: { testimonial: Testimonial }) => {
+const Quote = ({ testimonial }) => {
 	return (
 		<QuoteWrapper>
 			<TitleContent>

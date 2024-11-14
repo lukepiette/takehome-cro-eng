@@ -266,7 +266,6 @@ const Pricing = () => {
         </Box>
       </Box>
 
-      {/* Updated Box for the additional text and button */}
       <Box sx={{ 
         mt: 2, 
         display: 'flex', 
@@ -280,7 +279,7 @@ const Pricing = () => {
         <Box sx={{
           width: '100%',
           display: 'flex',
-          justifyContent: 'center', // Changed from 'flex-start' to 'center'
+          justifyContent: 'center', 
           mb: 2,
           mt: -0,
         }}>

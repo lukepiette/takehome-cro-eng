@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Box, Button, Link } from "@mui/material";
 import { styled } from "@mui/system";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -29,11 +29,7 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
 	},
 }));
 
-type StyledButtonProps = {
-	component: any;
-};
-
-const StyledButton = styled(Button)<StyledButtonProps>(({ theme }) => ({
+const StyledButton = styled(Button)(({ theme }) => ({
 	background:
 		"radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.0472) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #5D29F0",
 	boxShadow:
@@ -56,10 +52,6 @@ const Hero = ({
 	header,
 	subHeader,
 	buttonText
-}: {
-	header: ReactNode;
-	subHeader?: ReactNode;
-	buttonText: string;
 }) => {
 	return (
 		<HeroWrapper>

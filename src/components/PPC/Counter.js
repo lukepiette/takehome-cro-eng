@@ -1,39 +1,9 @@
 import { Box, Stack, Typography, Button, Link } from "@mui/material";
 // import { CircleColor } from "./Community";
 import { useEffect, useRef, useState } from "react";
-import { useInterval } from "@hooks/useInterval";
-import { useTheme } from "@mui/material/styles";
 import CountUp from "react-countup";
-import createTrigger from "react-use-trigger";
-import useFetch from "use-http";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import useTrigger from "react-use-trigger/useTrigger";
 import { styled } from "@mui/system";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-const requestTrigger = createTrigger();
-
-type StyledButtonProps = {
-	component: any;
-};
-
-const StyledButton = styled(Button)<StyledButtonProps>(({ theme }) => ({
-	background:
-		"radial-gradient(92.09% 85.42% at 86.3% 87.5%, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0) 86.18%), radial-gradient(65.28% 65.28% at 26.39% 20.83%, rgba(255, 255, 255, 0.0472) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%), #5D29F0",
-	boxShadow:
-		"inset 0px -6px 24px rgba(255, 255, 255, 0.16), inset 0px 1px 2px rgba(180, 172, 183, 0.72)",
-	borderRadius: "8px",
-	padding: "16px 8px 15px 12px",
-	width: "100%",
-	maxWidth: "288px",
-	height: "51px",
-	color: "#F9FAFB",
-	textTransform: "none",
-	textDecoration: "none",
-	"&:hover": {
-		textDecoration: "none"
-	}
-}));
 
 const Ellipse1592 = styled("div")(({ theme }) => ({
 	position: "absolute",
@@ -130,19 +100,13 @@ const Ellipse1595 = styled("div")(({ theme }) => ({
 	}
 }));
 
-// Add this type definition at the top of the file
-type Metrics = {
-  requests: number;
-  // Add other properties as needed
-};
-
-export default function Counter({ data }: { data: { metrics: Metrics } }) {
-	const [metrics, setMetrics] = useState<Metrics | null>(null);
+export default function Counter({ data }) {
+	const [metrics, setMetrics] = useState(null);
 	const [width, setWidth] = useState(0);
-	const ref = useRef<HTMLElement>(null);
+	const ref = useRef(null);
 
 	useEffect(() => {
-		let intervalId: NodeJS.Timeout;
+		let intervalId;
 
 		const fetchData = async () => {
 			console.log('Fetching data...'); // Debug log
@@ -245,14 +209,6 @@ export default function Counter({ data }: { data: { metrics: Metrics } }) {
 					</Typography>
 				</Stack>
 
-				{/* <Box mt={{ xs: 3, sm: 4, md: 6 }} spacing={1.8}></Box> */}
-
-				{/* <StyledButton
-					component={Link}
-					href="/console/deploy"
-					endIcon={<ChevronRightIcon />}>
-					See our GPU pricing dashboard
-				</StyledButton> */}
 			</Stack>
 		</Stack>
 	);

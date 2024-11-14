@@ -18,7 +18,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     fontSize: '14px',
     padding: '12px',
     '&.MuiTableCell-head': {
-      fontSize: '16px', // Changed from 20px to 16px for mobile
+      fontSize: '16px', 
     },
   },
 }));
@@ -133,14 +133,14 @@ const Comparison = () => {
           borderRadius: 2,
           overflow: 'hidden',
           '& .MuiTable-root': {
-            minWidth: { xs: 'auto', sm: 500 }, // Reduced from 650
+            minWidth: { xs: 'auto', sm: 500 }, 
           },
-          maxWidth: '700px', // Reduced from 768.98px
+          maxWidth: '700px', 
           width: '100%',
           margin: '0 auto',
         }}
       >
-        <Table size="small"> {/* Added size="small" to make the table more compact */}
+        <Table size="small"> 
           <TableHead>
             <TableRow>
               <StyledTableCell></StyledTableCell>

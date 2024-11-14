@@ -2,16 +2,17 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import Counter from "@components/PPC/Dynamic/Counter";
-import Footer from "@components/PPC/Dynamic/Footer";
-import Hero from "@components/PPC/Dynamic/Hero";
-import Logos from "@components/PPC/Dynamic/Logos";
-import Quote from "@components/PPC/Dynamic/Quote";
-import Subheader from "@components/PPC/Unified/Subheader";
-import Pricing from "@components/PPC/Unified/Pricing";
-import Scale from "@components/PPC/Unified/Scale";
-import Comparison from "@components/PPC/Unified/Comparison";
-import BookCall from "@components/PPC/Unified/BookCall";
+
+import Counter from "@components/PPC/Counter";
+import Footer from "@components/PPC/Footer";
+import Hero from "@components/PPC/Hero";
+import Logos from "@components/PPC/Logos";
+import Quote from "@components/PPC/Quote";
+import Subheader from "@components/PPC/Subheader";
+import Pricing from "@components/PPC/Pricing";
+import Scale from "@components/PPC/Scale";
+import Comparison from "@components/PPC/Comparison";
+import BookCall from "@components/PPC/BookCall";
 
 const Text = styled(Typography)({
 	width: "100%",
