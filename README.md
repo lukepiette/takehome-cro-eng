@@ -21,7 +21,7 @@ yarn dev
 ## Objectives
 
 ### 1. Page Optimization (45-60 minutes)
-- Modify the existing page to optimize for higher sign-up rate (where user clicks on sign up CTAs)
+- Modify the existing page to optimize for higher sign-up rate (user clicking on sign up CTAs)
 - Focus areas can include:
  - Call-to-action buttons
  - Value proposition messaging
