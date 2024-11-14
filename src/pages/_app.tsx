@@ -9,30 +9,9 @@ import type { AppProps } from "next/app";
 
 import createEmotionCache from "@utils/createEmotionCache";
 import useReferral from "@hooks/useReferral";
-import useUtm from "@hooks/useUtm";
-import useMeetingBooked from "@hooks/useMeetingBooked";
-import useReferrer from "@hooks/useReferrer";
 import React, { useEffect } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-
-import Scripts from "@components/Scripts";
 
 const inter = Inter({ weight: ["400", "500", "600"], subsets: ["latin"] });
-
-// import { datadogRum } from "@datadog/browser-rum";
-// datadogRum.init({
-//   applicationId: "9646f322-a150-48e3-921e-0eaa8c688bf3",
-//   clientToken: "pube3c053eff42fbe401deb7e312aa9b9f5",
-//   site: "datadoghq.com",
-//   service: "www",
-//   env: "prod",
-//   defaultPrivacyLevel: "mask-user-input",
-//   sessionSampleRate: 100,
-//   sessionReplaySampleRate: 20,
-//   trackUserInteractions: true,
-//   trackResources: true,
-//   trackLongTasks: true,
-// });
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -45,9 +24,6 @@ export default function MyApp({
   emotionCache = clientSideEmotionCache,
   pageProps,
 }: MyAppProps) {
-  useUtm();
-  useMeetingBooked();
-  useReferrer();
   const shouldRender = useReferral();
 
   const router = useRouter();
@@ -81,8 +57,6 @@ export default function MyApp({
           </Layout>
         </main>
       )}
-      <Scripts />
-      <SpeedInsights />
     </CacheProvider>
   );
 }

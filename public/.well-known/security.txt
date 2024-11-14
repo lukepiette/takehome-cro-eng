@@ -1,5 +1,0 @@
-Contact: mailto:security@runpod.io
-Expires: 2026-01-31T08:00:00.000Z
-Preferred-Languages: en
-Canonical: https://www.runpod.io/.well-known/security.txt
-Hiring: https://www.runpod.io/careers
