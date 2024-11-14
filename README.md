@@ -9,14 +9,14 @@ You'll be optimizing one of our ad campaign landing pages (runpod.io/ppc/gpu-clo
 ## Getting Started
 
 Install dependencies:
-\```bash
+```bash
 yarn install
-\```
+```
 
 Run the development server:
-\```bash
+```bash
 yarn dev
-\```
+```
 
 ## Objectives
 
